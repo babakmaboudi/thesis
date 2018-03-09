@@ -1,0 +1,26 @@
+\chapter{Manifolds and Differential Forms}
+
+In preparation for later chapters, we recall basic facts regarding differential geometry and symplectic geometry. Although the applications of MOR presented in this thesis are mostly described on a linear vector space, the theory of smooth manifold can provide a great insight into the geometric MOR. The main aim of this chapter is to introduce the concepts of ``symmetry'' and ``structure'' which play an important role in Lagrangian and Hamiltonian mechanics. Exploiting these symmetries and structures in MOR can provide robustness and long-time stability in the reduced system.
+
+\section{Smooth Manifolds}
+Let $M$ to be a topological Hausdorff \cite{friedman1970foundations} set. In the neighborhood $U$ of $p\in M$, the bijective map $x:U\to V\in \mathbb R^{m}$, for some positive integer $m$, is called a \emph{coordinate chart}. $M$ is called a \emph{smooth manifold} if there exists a set of coordinate charts $\{(x_{\alpha},U_{\alpha})\}_{\alpha\in I}$ such that $\{U_{\alpha}\}_{\alpha\in I}$ covers $M$ and that the mapping $x_{\alpha_2}\circ (x_{\alpha_1})^{-1}:\mathbb R^{m} \to \mathbb R^{m}$ is a $C^{\infty}$ mapping, for any $\alpha_1,\alpha_2\in I$. The integer $m$ is called the \emph{dimension} of $M$ if $x_{\alpha}(U_{\alpha}) \subset \mathbb R^{m}$ for all $\alpha \in I$. Throughout this thesis, we assume that there exists a coordinate chart $(x,U)$ that is global, i.e., $U$ covers $M$.
+
+Tangent vectors to a manifold allow us to describe the local dynamics of a particle moving on a smooth manifold. There are multiple ways to define tangent vectors. The most intuitive way however, uses curves defined on a smooth manifold.
+
+A $C^{\infty}$ mapping $\gamma:\mathbb R \to M$ is called a curve on $M$ passing through $p\in M$ if $\gamma(t) = p$, for some $t\in \mathbb R$. Without loss of generality, we may assume that $\gamma$ passes through $p$ at $t=0$. We define an equivalence relation between smooth curves that pass through $p$ as follows: $\gamma_1$ and $\gamma_2$, two smooth curves on $M$, are equivalent if
+\begin{equation} \label{eq:2.1}
+	\frac{d}{dt}(x\circ \gamma_1)|_{t=0} = \frac{d}{dt}(x\circ \gamma_2)|_{t=0},
+\end{equation}
+for a coordinate chart $x$. It is checked easily that this definition is chart independent, i.e., the equivalent classes do not depend on the choice of the coordinate chart.
+\begin{definition}
+A tangent vector $v$ at a point $p\in M$ is an equivalent class of curves on $M$ that pass through $p$. The set of all tangent vectors at $p$ is denoted as $T_pM$ and is called the tangent space of $M$ at point $p$.
+\end{definition}
+It is well known that the $T_pM$ forms a linear vector space \cite{robbin2011introduction}. To be able to define a vector field on a manifold, we need to assign a tangent vector to every point of a manifold. Such an object belongs to a structure that, informally, is obtained by glueing the tangent space $T_pM$ to every point $p\in M$.
+
+In the study of MOR, transformation between vector spaces emerges naturally. In a more general setting, it is beneficial to study transformations between smooth manifolds. Later in this chapter, we discuss how some manifold structures can be preserved over such transformation which lays a basis for geometric MOR.
+
+Let $M$ and $N$ be an $m$ dimensional and an $n$ dimensional smooth manifolds, respectively. Let $f:M\to N$ be a smooth mapping. Then the \emph{differential map} of $f$ at a point $p\in M$, denoted as $T_{p}f$,is a map between the tangent spaces $T_p M$ and $T_{f(p)} N$ defined as
+\begin{equation} \label{eq:2.2}
+	T_p f(v) = \frac{d}{dt}(f\circ \gamma(t))|_{t=0},
+\end{equation}
+for some tangent vector $v\in T_{p} M$ and some curve $\gamma$ in the equivalence class of $v$. It can be shown that $T_p f$ only depends of $v$ and not the choice of the curve $\gamma$ \cite{robbin2011introduction}.
