@@ -57,11 +57,110 @@ In similar fashion, we may obtain a smooth manifold by gluing the cotangent spac
 continuous injective mappings $X:\mathcal M \to T \mathcal M$ and $X^*:\mathcal M \to T^* \mathcal M$ is called a \emph{vector field} and a \emph{covector field} of $\mathcal M$, respectively.
 \end{definition}
 
-
-In the study of MOR, transformation between vector spaces emerges naturally. In a more general setting, it is beneficial to study transformations between smooth manifolds. Later in this chapter, we discuss how some manifold structures can be preserved over such transformation which lays a basis for geometric MOR.
-
-Let $\mathcal M$ and $N$ be an $m$ dimensional and an $n$ dimensional smooth manifolds, respectively. Let $f:\mathcal M\to N$ be a smooth mapping. Then the \emph{differential map} of $f$ at a point $p\in \mathcal M$, denoted as $T_{p}f$,is a map between the tangent spaces $T_p \mathcal M$ and $T_{f(p)} N$ defined as
-\begin{equation} \label{eq:2.4}
-	T_p f(v) = \frac{d}{dt}(f\circ \gamma(t))|_{t=0},
+\begin{definition}
+Suppose that $X$ is a vector field on a smooth manifold $\mathcal M$. The smooth curve $c:(a,b)\to \mathcal M$ is called an \emph{integral curve} of $X$ passing through $p$ if $(a,b)$ is an open interval of $\mathbb R$ containing $0$ such that  $c(0)=p$ satisfying
+\begin{equation} \label{eq:2.5}
+	\frac{d}{dt}c(t) = X(c(t)), \quad \forall t\in(a,b) 
 \end{equation}
-for some tangent vector $v\in T_{p} \mathcal M$ and some curve $\gamma$ in the equivalence class of $v$. It can be shown that $T_p f$ only depends of $v$ and not the choice of the curve $\gamma$ \cite{robbin2011introduction}.
+\end{definition}
+Given a coordinate chart $x$, one can solve \cref{eq:2.5} for $c$. It is known from the theory of ordinary differential equations that \cref{eq:2.5} has a unique solution \cite{teschl2012ordinary}. 
+\begin{definition}
+	The \emph{flow} of $X$ is a collection of maps $\varphi_t : \mathcal M \to \mathcal M$ such that the map $t \to \varphi_t(p)$ is an integral curve for some initial point $p\in \mathcal M$.
+\end{definition}
+Note that from the uniqueness of integral curves we deduce an important property of flows
+\begin{equation}
+	\varphi_{t+s} = \varphi_t \circ \varphi_s.
+\end{equation}
+
+\section{Tensors and Differential Forms}
+Often, quantities that appear in physics are linearly dependent on the vectors and convectors that describe them. Examples of such a quantity would be the measurement of the magnetic field with linearly independent directions of measurement \cite{Wald:106274}, and the strength of resistance in dissipative fluid flows. 
+
+In the context of Hamiltonian systems and symplectic model reduction, we often require to align the flow of the system with respect to some potential. Differential forms and tensors, generalize the idea of inner-product and angle between vectors and convectors to the extent that  alignment of two vector field with respect to one another is possible.
+
+\begin{definition}
+A \emph{$k$-form} $\Omega$ on a manifold $\mathcal M$ is a function $\Omega(p): T_p\mathcal M \times \dots \times T_p\mathcal M \ (k \text{ times}) \to \mathbb R$ such that it is multilinear
+\[
+	\Omega(v_1,\dots,\alpha v_i + v'_i, \dots, v_k) = \alpha \Omega(v_1,\dots,v_i, \dots, v_k) + \Omega(v_1,\dots,v'_i, \dots, v_k),
+\]
+for $i=1,\dots,k$ and some $\alpha \in \mathbb R$, and it is skew-symmetric
+\[
+	\Omega(v_1,\dots,v_i,\dots,v_j, \dots, v_k) = - \Omega(v_1,\dots,v_j,\dots,v_i, \dots, v_k),
+\]
+for $i,j=1,\dots,k$ and $i\neq j$.
+\end{definition}
+
+\begin{definition}
+A \emph{$(k,l)$-tensor} on a manifold $\mathcal M$ is a function 
+\[
+	\Lambda(p):T_p^*\mathcal M \times \dots \times T_p^*\mathcal M \ (k \text{ times}) \times T_p\mathcal M \times \dots \times T_p\mathcal M \ (l \text{ times}) \to \mathbb R
+\]
+That is multilinear.
+\end{definition}
+Therefore the Euclidean inner product is a $(0,2)$-tensor, a covector is a $(0,1)$-tensor and a $1$-form, and any $k$-form is also a $(0,k)$-tensor. 
+
+Given a coordinate chart $x$ and a basis $\{ e_1,\dots,e_m\}$ for $T_{p}\mathcal M$, multilinearity of a $k$-form implies that
+\begin{equation}
+	\Omega(v_1,\dots,v_k) = \sum_{i_1,\dots,i_k =1}^{m} \omega_{i_1,\dots,i_k} v_{1}^{i_1}\dots v_{k}^{i_k}, 
+\end{equation}
+where $\omega_{i_1,\dots,i_k} = \Omega(e_{i_1},\dots,e_{i_k})$ and $v_{l}^{i_l}$ is the $i_l$th component of $v_l$ with respect to the coordinate chart $x$. Therefore, any $k$-form is completely described through $\Omega(e_{i_1},\dots,e_{i_k})$, for $i_1,\dots,i_k=1,\dots,m$. Simple calculation also shows a similar results for $(k,l)$-tensors \cite{Wald:106274}.
+
+We now introduce some basic tensor operators, which allows us to construct higher order tensors and differential forms, from simpler building blocks.
+\begin{definition}
+	Let $\Gamma_1$ and $\Gamma_2$ be a $(k_1,l_l)$-tensor and a $k_2,l_2$-tensor, respectively. Their tensor product $\Gamma_1\otimes \Gamma_2$ is a $(k_1+k_2,l_1+l_2)$-tensor defined as
+\[
+	\begin{aligned}
+	(\Gamma_1\otimes \Gamma_2)(v^*_1,\dots,&v^*_{k_1+k_2};w_1,\dots w_{l_1+l_2}) = \\
+		&\Gamma_1(v^*_1,\dots,v^*_{k_1};w_1,\dots w_{l_1})\cdot \Gamma_1(v^*_{k_1+1},\dots,v^*_{k_1+k_2};w_{l_1+1},\dots w_{l_1+l_2}).
+	\end{aligned}
+\]
+\end{definition}
+To be able to construct differential forms from $(0,k)$-tensors, we need an operator that skew-symmetrizes tensors. The \emph{alternation operator}, is a tensor operator that achieves this and is defined as
+\begin{equation}
+	\textbf{A}(\Gamma)(v_1,\dots,v_l) = \frac{1}{p!} \sum_{\pi \in S_l} \text{sgn}(\pi) \Gamma(v_{\pi(1)},\dots,v_{\pi(l)}).
+\end{equation}
+Here $\Gamma$ is a $(0,l)$-tensor, $S_l$ is the permutation group of the set $\{1,\dots,l\}$ and sgn$(\pi)$ returns $1$ if $\pi$ is an even permutation, and $-1$ if $\pi$ is an odd permutation. It is easily checked that $\textbf{A}(\Gamma)$ is skew-symmetric. Therefore, $\textbf{A}$ constructs a differential form from a $(0,l)$-tensor.
+
+Note that the tensor product of differential forms does not result a differential form, since the skew-symmetry will be lost. The \emph{wedge product} allows us to construct higher order differential forms while preserving the skew-symmetry. Let $\Omega_1$ and $\Omega_2$ be a $k_1$-form and a $k_2$ form, respectively. Then, their wedge product is a $(k_1+k_2)$-from defined as
+\begin{equation}
+	\Omega_1 \wedge \Omega_2 = \frac{k_1! + k_2!}{k_1!k_2!} \mathbf{A}(\Omega_1\otimes \Omega_2).
+\end{equation}
+It is well known that the wedge product is associative, bilinear and anti-commutative \cite{marsden2013introduction}. The following theorem states that any differential $k$-form can be written as a linear combination of wedge product of covectors. We refer the reader to \cite{} for the complete proof.
+\begin{theorem}
+Any $k$-form $\Omega$ can be written locally as
+\begin{equation}
+	\Omega = \sum_{i_1<\dots<i_k} \alpha_{i_1,\dots,i_k} dx_{i_1}\wedge\dots\wedge dx_{i_k}.
+\end{equation}
+\end{theorem}
+
+For a $k$-form $\Omega$, the \emph{exterior derivative} is a $(k+1)$-form $\mathbf d \Omega$, that captures the differential changes in $\Omega$ and for a given coordinate chart $x$ is defined as
+\begin{equation}
+	\mathbf d \Omega =  \sum_j \sum_{i_1<\dots<i_k} \frac{\partial \alpha_{i_1,\dots,i_k}}{\partial x_j} dx_{i_1}\wedge\dots\wedge dx_{i_k}.
+\end{equation}
+Note that the above definition is shown to be to be chart independent and that $\mathbf d (\mathbf d \Omega) = 0$ for any $k$-form $\Omega$. We refer the reader to \cite{} for a detailed proof.
+
+Another basic operator on tensors and differential forms, is the \emph{contraction} operator.
+\begin{definition}
+	Let $\Omega$ be a differential $k$-form and $X$ be a smooth vector field on a smooth manifold $\mathcal M$. The contraction of $\Omega$ with respect to $X$ is a $(k-1)$-form defined by
+\[
+	(\mathbf i_{X}\Omega)_p(v_1,\dots,v_{k-1}) = \Omega(X(p),v_1,\dots,v_k).
+\]
+\end{definition}
+Note that the contraction operator is sometimes referred to as the \emph{interior product}.
+
+In the study of MOR, transformation between vector spaces emerges naturally. In a more general setting, it is beneficial to study transformations between smooth manifolds. Later in this chapter, we discuss how some manifold structures can be preserved over such transformation which lays a foundation for geometric MOR.
+
+Let $\mathcal M$ and $\mathcal N$ be an $m$ dimensional and an $n$ dimensional smooth manifolds, respectively. Furthermore, let $\phi:\mathcal M\to \mathcal N$ be a smooth mapping, i.e., if $(x,U)$ is a coordinate chart for $\mathcal M$ and $(y,V)$ is a coordinate chart for $\mathcal N$ such that $\phi(U)\cap V\neq \emptyset$, then the mapping $y\circ \phi \circ x^{-1}|_{\phi(U)\cap V}:\mathbb R^{m}\to \mathbb R^{n}$ is $C^{\infty}$. The \emph{differential map} of $\phi$ at a point $p\in \mathcal M$, denoted by $T_{p}\phi$, is a map between the tangent spaces $T_p \mathcal M$ and $T_{\phi(p)} \mathcal N$ defined as
+\begin{equation} \label{eq:2.4}
+	T_p \phi(v) = \frac{d}{dt}(\phi\circ \gamma(t))|_{t=0},
+\end{equation}
+for some tangent vector $v\in T_{p} \mathcal M$ and some curve $\gamma$ in the equivalence class of $v$. It can be shown that $T_p f$ only depends of $v$ and not the choice of the curve $\gamma$ \cite{robbin2011introduction}. The inverse function theorem \cite{rudin1976principles} indicates that if $\phi$ is a vector space isomorphism then there is a neighborhood $U$ of $p$ and a neighborhood $V$ of $\phi(p)$, such that $\phi:U\to V$ is a diffeomorphism.
+
+Differential maps are often useful to transfer manifold structures from a known manifold to an unknown manifold. For example, $T_p\phi$ allows us to identify the tangent space of $\mathcal N$ at $\phi_p$ using the tangent space of $M$ at $p$. Similarly, we may use the differential maps to construct differential forms and tensors for unknown manifolds. This can be done by the means of \emph{pull back} and \emph{push forward} of a differential form using the transformation $\phi$.
+
+\begin{definition}
+Let $\phi:\mathcal M \to \mathcal N$ be a smooth manifold mapping and $\Omega$ be a differential $k$-form on $N$. Then the pull back of $\Omega$ with $\phi$, is a $k$-form on $M$ denoted by $\phi^*\Omega$ defined as
+\[
+	(\phi^*\Omega)_p(v_1,\dots,v_k) = \Omega( T_p\phi(v_1) , \dots , T_p\phi(v_k) ),
+\]
+for any $p\in \mathcal M$ and $v_1\dots,v_k \in T_p \mathcal M$. In case $\phi$ is a diffeomorphism, the push forward operator is denoted as $\phi_*$ and is defined by $\phi_* = (\phi^{-1})^*$.
+\end{definition}
