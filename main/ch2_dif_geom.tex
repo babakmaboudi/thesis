@@ -96,7 +96,7 @@ A \emph{$(k,l)$-tensor} on a manifold $\mathcal M$ is a function
 \]
 That is multilinear.
 \end{definition}
-Therefore the Euclidean inner product is a $(0,2)$-tensor, a covector is a $(0,1)$-tensor and a $1$-form, and any $k$-form is also a $(0,k)$-tensor. 
+Therefore the Euclidean inner product is a $(0,2)$-tensor, a covector is a $(0,1)$-tensor and a $1$-form, and any $k$-form is also a $(0,k)$-tensor.
 
 Given a coordinate chart $x$ and a basis $\{ e_1,\dots,e_m\}$ for $T_{p}\mathcal M$, multilinearity of a $k$-form implies that
 \begin{equation}
@@ -164,3 +164,19 @@ Let $\phi:\mathcal M \to \mathcal N$ be a smooth manifold mapping and $\Omega$ b
 \]
 for any $p\in \mathcal M$ and $v_1\dots,v_k \in T_p \mathcal M$. In case $\phi$ is a diffeomorphism, the push forward operator is denoted as $\phi_*$ and is defined by $\phi_* = (\phi^{-1})^*$.
 \end{definition}
+
+\section{Hamiltonian Systems on a Symplectic Manifold}
+It is often useful to describe small changes in a state of a system with respect to some potential, or a vector field. Hamiltonian systems are systems where the changes in the state of the system is under the influence of a \emph{Hamiltonian vector field}. Such systems appear frequently in quantum and particle physics, celestial mechanics and cosmology, fluid mechanics, and classical mechanics. Conserved quantities, e.g. the system energy, are at the core of the dynamics of these systems. Consequently, the integral curve of these systems is aligned with the Hamiltonian vector field such that these quantities are conserved.
+
+Differential forms, are tools that allow us to align an integral with one or more vector fields. To study Hamiltonian systems, we need to study basic features of differential 2-forms.
+
+\begin{definition}
+	Let $\mathcal M$ be a smooth manifold and $p\in \mathcal M$. The differential 2-form $\Omega_p$ is called \emph{non-degenerate} if $\Omega_p(v_1,v_2)=0$, for all $v_2\in T_p \mathcal M$, implies that $v_2 = 0$. $\Omega$ is called non-degenerate, $\Omega_p$ is non-degenerate for all $p\in \mathcal M$.
+\end{definition}
+If a non-zero vector $v\in T_p \mathcal M$ is given, then $\Omega_p^{\flat}(v):=\Omega_p(v,\cdot):T_p \mathcal M \to \mathbb R$ can be viewed as a covector. Therefore, a non-degenerate $\Omega_p$ constructs an injective map $\Omega_p^{\flat}:T_p\mathcal M \to T_p^* \mathcal M$. When $\Omega_p^{\flat}$ is also surjective then it is said to be \emph{strongly non-degenerate}.
+
+\begin{definition}
+	Let $\mathcal P$ be a smooth manifold and $\Omega$ be a closed, non-degenerate 2-form defined on $P$. The pair $(\mathcal P,\Omega)$ is called a \emph{symplectic manifold}.
+\end{definition}
+
+
