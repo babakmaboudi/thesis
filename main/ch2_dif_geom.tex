@@ -32,7 +32,7 @@ It is often desirable to consider the dual space to $T_p\mathcal M$, denoted by 
 where $\delta_{i,j}$ is the Kronecker's delta function.
 
 To be able to define a vector field on a manifold, we need to assign a tangent vector to every point of a manifold. Such an object belongs to a structure that, informally, is obtained by glueing the tangent space $T_p\mathcal M$ to every point $p\in \mathcal M$. This structure is referred to as the \emph{tangent bundle}, denoted as $T \mathcal M$, and is defined as $T \mathcal M := \{ (p,v) | p\in \mathcal M, \ v \in T_p \mathcal M\}$.
-\begin{theorem}
+\begin{theorem} \label{theorem:2.1}
 \cite{robbin2011introduction} The tangent bundle $T\mathcal M$ is a smooth manifold.
 \end{theorem}
 
@@ -51,10 +51,10 @@ It is checked easily that $\pi^{-1}(\{p\})$ is the $m$-dimensional linear vector
 where $v_1,\dots,v_m\in \mathbb R$ are components of $v$ in $\mathbb R^m$. It can be checked easily that for two intersecting coordinate charts $(x_\alpha,U_\alpha)$ and $(x_\beta, U_\beta)$, the transition map $\bar x_{\alpha} \circ (\bar x_\beta)^{-1}$ is a $C^{\infty}$ map. Thus, $T \mathcal M$ is a smooth manifold, and the mapping (\ref{eq:2.3}) suggests, it is $2m$-dimensional.
 \end{proof}
 
-In similar fashion, we may obtain a smooth manifold by gluing the cotangent space $T^*_p \mathcal M$ to the manifold $\mathcal M$ to obtain the \emph{cotangent bundle}, denoted as $T^* \mathcal M$. 
+In a similar fashion, we may obtain a smooth manifold by gluing the cotangent space $T^*_p \mathcal M$ to the manifold $\mathcal M$ to obtain the \emph{cotangent bundle}, denoted as $T^* \mathcal M$. 
 
 \begin{definition}
-continuous injective mappings $X:\mathcal M \to T \mathcal M$ and $X^*:\mathcal M \to T^* \mathcal M$ is called a \emph{vector field} and a \emph{covector field} of $\mathcal M$, respectively.
+continuous injective mappings $X:\mathcal M \to T \mathcal M$ and $X^*:\mathcal M \to T^* \mathcal M$ is called a \emph{vector field} and a \emph{co-vector field} of $\mathcal M$, respectively.
 \end{definition}
 
 \begin{definition}
@@ -67,10 +67,18 @@ Given a coordinate chart $x$, one can solve \cref{eq:2.5} for $c$. It is known f
 \begin{definition}
 	The \emph{flow} of $X$ is a collection of maps $\varphi_t : \mathcal M \to \mathcal M$ such that the map $t \to \varphi_t(p)$ is an integral curve for some initial point $p\in \mathcal M$.
 \end{definition}
-Note that from the uniqueness of integral curves we deduce an important property of flows
+Note that we have $\varphi_0 = id$, the identity map. Furthermore, that the uniqueness of integral curves implies the following important property of flows
 \begin{equation}
 	\varphi_{t+s} = \varphi_t \circ \varphi_s.
 \end{equation}
+
+In the study of MOR, transformation between vector spaces emerges naturally. In a more general setting, it is beneficial to study transformations between smooth manifolds. Later in this chapter, we discuss how some manifold structures can be preserved over such transformation which lays a foundation for geometric MOR.
+
+Let $\mathcal M$ and $\mathcal N$ be an $m$ dimensional and an $n$ dimensional smooth manifolds, respectively. Furthermore, let $\phi:\mathcal M\to \mathcal N$ be a smooth mapping, i.e., if $(x,U)$ is a coordinate chart for $\mathcal M$ and $(y,V)$ is a coordinate chart for $\mathcal N$ such that $\phi(U)\cap V\neq \emptyset$, then the mapping $y\circ \phi \circ x^{-1}|_{\phi(U)\cap V}:\mathbb R^{m}\to \mathbb R^{n}$ is $C^{\infty}$. The \emph{differential map} of $\phi$ at a point $p\in \mathcal M$, denoted by $T_{p}\phi$, is a map between the tangent spaces $T_p \mathcal M$ and $T_{\phi(p)} \mathcal N$ defined as
+\begin{equation} \label{eq:2.4}
+	T_p \phi(v) = \frac{d}{dt}(\phi\circ \gamma(t))|_{t=0},
+\end{equation}
+for some tangent vector $v\in T_{p} \mathcal M$ and some curve $\gamma$ in the equivalence class of $v$. It can be shown that $T_p f$ only depends on $v$ and not the choice of the curve $\gamma$ \cite{robbin2011introduction}. The inverse function theorem \cite{rudin1976principles} indicates that if $\phi$ is a vector space isomorphism then there is a neighborhood $U$ of $p$ and a neighborhood $V$ of $\phi(p)$, such that $\phi:U\to V$ is a diffeomorphism.
 
 \section{Tensors and Differential Forms}
 Often, quantities that appear in physics are linearly dependent on the vectors and convectors that describe them. Examples of such a quantity would be the measurement of the magnetic field with linearly independent directions of measurement \cite{Wald:106274}, and the strength of resistance in dissipative fluid flows. 
@@ -96,7 +104,7 @@ A \emph{$(k,l)$-tensor} on a manifold $\mathcal M$ is a function
 \]
 That is multilinear.
 \end{definition}
-Therefore the Euclidean inner product is a $(0,2)$-tensor, a covector is a $(0,1)$-tensor and a $1$-form, and any $k$-form is also a $(0,k)$-tensor.
+Therefore the Euclidean inner product is a $(0,2)$-tensor, a co-vector is a $(0,1)$-tensor, and any $k$-form is also a $(0,k)$-tensor. We denote by $\Lambda_{k}(\mathcal M)$ and $\Lambda_{k,l}(\mathcal M)$ the set of all differential $k$-forms and $(k,l)$-tensors, respectively.
 
 Given a coordinate chart $x$ and a basis $\{ e_1,\dots,e_m\}$ for $T_{p}\mathcal M$, multilinearity of a $k$-form implies that
 \begin{equation}
@@ -124,21 +132,25 @@ Note that the tensor product of differential forms does not result a differentia
 \begin{equation}
 	\Omega_1 \wedge \Omega_2 = \frac{k_1! + k_2!}{k_1!k_2!} \mathbf{A}(\Omega_1\otimes \Omega_2).
 \end{equation}
-It is well known that the wedge product is associative, bilinear and anti-commutative \cite{marsden2013introduction}. The following theorem states that any differential $k$-form can be written as a linear combination of wedge product of covectors. We refer the reader to \cite{} for the complete proof.
-\begin{theorem}
+It is well known that the wedge product is associative, bilinear and anti-commutative \cite{marsden2013introduction}. The following theorem states that any differential $k$-form can be written as a linear combination of wedge product of co-vectors. We refer the reader to \cite{} for the complete proof.
+\begin{theorem} \label{theorem:2.2}
 Any $k$-form $\Omega$ can be written locally as
 \begin{equation}
 	\Omega = \sum_{i_1<\dots<i_k} \alpha_{i_1,\dots,i_k} dx_{i_1}\wedge\dots\wedge dx_{i_k}.
 \end{equation}
 \end{theorem}
 
-For a $k$-form $\Omega$, the \emph{exterior derivative} is a $(k+1)$-form $\mathbf d \Omega$, that captures the differential changes in $\Omega$ and for a given coordinate chart $x$ is defined as
-\begin{equation}
-	\mathbf d \Omega =  \sum_j \sum_{i_1<\dots<i_k} \frac{\partial \alpha_{i_1,\dots,i_k}}{\partial x_j} dx_{i_1}\wedge\dots\wedge dx_{i_k}.
-\end{equation}
-Note that the above definition is shown to be to be chart independent and that $\mathbf d (\mathbf d \Omega) = 0$ for any $k$-form $\Omega$. We refer the reader to \cite{} for a detailed proof.
+Differential maps are often useful to transfer manifold structures from a known manifold to an unknown manifold. For example, $T_p\phi$ allows us to identify the tangent space of $\mathcal N$ at $\phi_p$ using the tangent space of $M$ at $p$. Similarly, we may use the differential maps to construct differential forms and tensors for unknown manifolds. 
 
-Another basic operator on tensors and differential forms, is the \emph{contraction} operator.
+\begin{definition}
+Let $\phi:\mathcal M \to \mathcal N$ be a smooth manifold mapping and $\Omega$ be a differential $k$-form on $N$. Then the \emph{pull back} of $\Omega$ with $\phi$, is a $k$-form on $M$ denoted by $\phi^*\Omega$ defined as
+\[
+	(\phi^*\Omega)_p(v_1,\dots,v_k) = \Omega_{\phi(p)}( T_p\phi(v_1) , \dots , T_p\phi(v_k) ),
+\]
+for any $p\in \mathcal M$ and $v_1\dots,v_k \in T_p \mathcal M$. In case $\phi$ is a diffeomorphism, the \emph{push forward} operator is denoted as $\phi_*$ and is defined by $\phi_* = (\phi^{-1})^*$.
+\end{definition}
+
+A basic operator on tensors and differential forms, is the \emph{contraction} operator.
 \begin{definition}
 	Let $\Omega$ be a differential $k$-form and $X$ be a smooth vector field on a smooth manifold $\mathcal M$. The contraction of $\Omega$ with respect to $X$ is a $(k-1)$-form defined by
 \[
@@ -147,36 +159,89 @@ Another basic operator on tensors and differential forms, is the \emph{contracti
 \end{definition}
 Note that the contraction operator is sometimes referred to as the \emph{interior product}.
 
-In the study of MOR, transformation between vector spaces emerges naturally. In a more general setting, it is beneficial to study transformations between smooth manifolds. Later in this chapter, we discuss how some manifold structures can be preserved over such transformation which lays a foundation for geometric MOR.
-
-Let $\mathcal M$ and $\mathcal N$ be an $m$ dimensional and an $n$ dimensional smooth manifolds, respectively. Furthermore, let $\phi:\mathcal M\to \mathcal N$ be a smooth mapping, i.e., if $(x,U)$ is a coordinate chart for $\mathcal M$ and $(y,V)$ is a coordinate chart for $\mathcal N$ such that $\phi(U)\cap V\neq \emptyset$, then the mapping $y\circ \phi \circ x^{-1}|_{\phi(U)\cap V}:\mathbb R^{m}\to \mathbb R^{n}$ is $C^{\infty}$. The \emph{differential map} of $\phi$ at a point $p\in \mathcal M$, denoted by $T_{p}\phi$, is a map between the tangent spaces $T_p \mathcal M$ and $T_{\phi(p)} \mathcal N$ defined as
-\begin{equation} \label{eq:2.4}
-	T_p \phi(v) = \frac{d}{dt}(\phi\circ \gamma(t))|_{t=0},
-\end{equation}
-for some tangent vector $v\in T_{p} \mathcal M$ and some curve $\gamma$ in the equivalence class of $v$. It can be shown that $T_p f$ only depends of $v$ and not the choice of the curve $\gamma$ \cite{robbin2011introduction}. The inverse function theorem \cite{rudin1976principles} indicates that if $\phi$ is a vector space isomorphism then there is a neighborhood $U$ of $p$ and a neighborhood $V$ of $\phi(p)$, such that $\phi:U\to V$ is a diffeomorphism.
-
-Differential maps are often useful to transfer manifold structures from a known manifold to an unknown manifold. For example, $T_p\phi$ allows us to identify the tangent space of $\mathcal N$ at $\phi_p$ using the tangent space of $M$ at $p$. Similarly, we may use the differential maps to construct differential forms and tensors for unknown manifolds. This can be done by the means of \emph{pull back} and \emph{push forward} of a differential form using the transformation $\phi$.
-
+There are multiple ways to generalize the notion of differentiation to the manifold setting. The challenge in defining a unique derivative operator that is consistent with the conventional derivative operator in calculus, is that a general manifold setting do not provide an algebraic method to compare points on a manifold. Differential forms, can be used to construct a relation, between tangent spaces that are in the locality of a point $p$ on a manifold. The following, is a generalization of the derivative notation to the manifold setting using differential forms.
 \begin{definition}
-Let $\phi:\mathcal M \to \mathcal N$ be a smooth manifold mapping and $\Omega$ be a differential $k$-form on $N$. Then the pull back of $\Omega$ with $\phi$, is a $k$-form on $M$ denoted by $\phi^*\Omega$ defined as
-\[
-	(\phi^*\Omega)_p(v_1,\dots,v_k) = \Omega( T_p\phi(v_1) , \dots , T_p\phi(v_k) ),
-\]
-for any $p\in \mathcal M$ and $v_1\dots,v_k \in T_p \mathcal M$. In case $\phi$ is a diffeomorphism, the push forward operator is denoted as $\phi_*$ and is defined by $\phi_* = (\phi^{-1})^*$.
+Let $\mathcal M$ be a smooth manifold and $\Omega$ be a differential $k$-form on $\mathcal M$. Given a vector field $X$ on $\mathcal M$ with the flow map $\varphi_t$, the Lie derivative of $\Omega$ with respect to $X$ is defined as
+\begin{equation}
+	\mathcal L_X \Omega = \lim_{t\to 0} \frac 1 t (\varphi^*_t \Omega - \Omega) = \frac {d}{dt} \varphi^*_t |_{t=0}.
+\end{equation}
 \end{definition}
+Note that the flow map can be viewed as a mapping $\varphi_t:\mathcal M \to \mathcal M$ and the differential map $T \varphi _t$ defines a mapping between $T_p \mathcal M$ and $T_{ \varphi_t(p) } \mathcal M$. Therefore, the Lie derivative measures infinitesimal differences in $\Omega$ when evaluated at $p$ and at $\varphi_t(p)$. The following theorem summarizes some basic properties of the Lie derivative.
+
+\begin{theorem} Suppose that $X$ is a smooth vector field defined on a smooth manifold $\mathcal M$ with $\varphi$ the flow of $X$. Furthermore, suppose that $\Omega$ is a differential $k$-form. The following statements hold:
+\begin{enumerate} [label=(\alph*)]
+\item for a smooth scalar function $f:\mathcal M \to \mathbb R$, $\mathcal L_X f = X\cdot f$, where $X \cdot f$ is the directional derivative of $f$ along $X$.
+\item (The Lie derivative formula)
+\[
+	\frac{d}{dt} \varphi^*_t \Omega = \varphi^*_t \mathcal L_X \Omega.
+\]
+\item in case $\Omega$ is a time dependent differential form, i.e. $\Omega = \Omega_t$, we have
+\[
+	\frac{d}{dt} \varphi^*_t \Omega_t = \varphi^*_t \mathcal L_X \Omega + \varphi^*_t \frac{d}{dt} \Omega_t.
+\]
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+(a) follows from the definition of the Lie derivative. To show (b), we have
+\begin{equation}
+	\frac{d}{dt} \varphi^*_t \Omega = \lim_{h\to 0} \frac 1 h( \varphi^*_{t+h} \Omega - \varphi^*_t \Omega ) = \varphi^*_t (\lim_{h\to 0} \frac 1 h (\varphi^*_{h} \Omega - \Omega) ) = \varphi^*_t \mathcal L_X \Omega,
+\end{equation}
+where the second equality is due to the fact that $\varphi_{t+h} = \varphi_t \circ \varphi_h$. To show (c), assume that vectors $v_1\dots,v_k\in T_{p}\mathcal M$ at some point $p\in \mathcal M$ are provided . We define the function $\alpha(t,s):\mathbb R^2 \to \mathbb R$ as $\alpha(t,s) = \varphi_t^*\Omega_s(v_1,\dots,v_k)$. Therefore, $\frac{d}{dt} \varphi^*_t \Omega_t|_p$ is the directional derivative of $\alpha(t,s)$ along the direction $(1,1)$. We have
+\begin{equation}
+\begin{aligned}
+	D_{(1,1)} \alpha(t,s) = \partial_t \alpha(t,s) + \partial_s  \alpha(t,s) &= \partial_t \varphi^*_t \Omega_s|_{t=s} + \varphi^*_t (\partial_s \Omega_s)|_{t=s} \\
+	&= \varphi^*_t \mathcal L_X \Omega_t + \varphi^*_t (\frac{d}{dt} \Omega_t).
+\end{aligned}
+\end{equation}
+Here, $D_{(1,1)}$ is the conventional directional derivative operator and all terms are evaluated at the point $p$. In the second equality, we used statement (b) and also the linearity of $\varphi^*$. Since the choice of the point $p$ and vectors $v_1,\dots,v_k$ is arbitrary, then the formula holds independently. What is left, is to show that $\alpha(t,s)$ is a differentiable function. Given that $\Omega_t$ is continuously differentiable, we see from above that the partial derivatives of $\alpha(t,s)$ is continuous, thus, is differentiable. 
+\end{proof}
+
+For a $k$-form $\Omega$, the \emph{exterior derivative} is a $(k+1)$-form $\mathbf d \Omega$, that captures the differential changes in $\Omega$ and for a given coordinate chart $x$ is defined as
+\begin{equation}
+	\mathbf d \Omega =  \sum_j \sum_{i_1<\dots<i_k} \frac{\partial \alpha_{i_1,\dots,i_k}}{\partial x_j} dx_j\wedge dx_{i_1}\wedge\dots\wedge dx_{i_k}.
+\end{equation}
+Note that the above definition is shown to be to be chart independent \cite{rudin1964principles}. It is checked with a straightforward calculation that for $v_0,v_1\dots,v_k \in T_p\mathcal M$ and $p\in \mathcal M$ we have
+\begin{equation}
+	\mathbf d \Omega_p(v_0,v_1,\dots,v_k) = \sum_i^k (-1)^i \nabla \Omega \cdot v_i (v_0,\dots,\bar{v_i},\dots,v_k), 
+\end{equation}
+where $\nabla \Omega \cdot v_i = \sum_j \sum_{i_1<\dots<i_k} v_i^j \partial \omega_{i_1,\dots,i_k}/\partial x_j$, $\bar{v_i}$ means that the slot for $v_i$ is empty, and $v_i^j$ is the $j$th component of $v_i$. A differential $k$-form $\Omega$ is called \emph{closed}, if $\mathbf d \Omega = 0$, and is called \emph{exact} there exist there is a differential $(k-1)$-form $\Gamma$ such that $\Omega = \mathbf d \Gamma$. The symmetry in partial derivatives implies that the exterior derivative of any differential form is closed, i.e., $\mathbf d^2 = 0$ for any differential $k$-form. However, no all differential forms are exact. We close this section by showing the sufficient condition for a differential form to be exact.
+
+\begin{theorem}
+(Poincar\'e Lemma) Let $\mathcal M$ be a smooth $n$-manifold with $\Omega$ a differential $k$-form, defined on $\mathcal M$. If $\Omega$ is closed then for any point $p\in \mathcal M$, there is a neighborhood $U$ of $p$ where $\Omega|_{U}$ is exact.
+\end{theorem}
+
+\begin{proof}
+We construct an operator $\alpha:\Lambda_k\to \lambda_{k-1}$ such that  $\mathbf d \circ \alpha + \alpha \circ \mathbf d = id$. This yields the result since, $\mathbf d^2 \Omega = 0$ and $\mathbf d( \alpha (\Omega) ) = \Omega$. Let (x,U) be a coordinate chart in the neighborhood of $x$.
+
+For the point $\mathbf X = (x_1,\dots,x_n)\in x(U)$, and vectors $v_1,\dots,v_{k-1}\in T_p \mathcal M$. We define $\alpha$ as
+\begin{equation}
+	\alpha_v(\Omega)(\mathbf x)(v_1,\dots,v_{k-1}) = \int_{0^1} t^{k-1} \Omega(tv)
+\end{equation}
+\end{proof}
+
+ 
 
 \section{Hamiltonian Systems on a Symplectic Manifold}
-It is often useful to describe small changes in a state of a system with respect to some potential, or a vector field. Hamiltonian systems are systems where the changes in the state of the system is under the influence of a \emph{Hamiltonian vector field}. Such systems appear frequently in quantum and particle physics, celestial mechanics and cosmology, fluid mechanics, and classical mechanics. Conserved quantities, e.g. the system energy, are at the core of the dynamics of these systems. Consequently, the integral curve of these systems is aligned with the Hamiltonian vector field such that these quantities are conserved.
+It is often useful to describe small changes in a state of a system with respect to some potential, or a vector field. Hamiltonian systems are systems where the changes in the state of the system is under the influence of a \emph{Hamiltonian vector field}. Such systems appear frequently in quantum physics, particle physics, celestial mechanics, cosmology, fluid mechanics, and classical mechanics. Conserved quantities, e.g. the system energy, are at the core of the dynamics of these systems. Consequently, the integral curve of these systems is aligned with the Hamiltonian vector field such that these quantities are conserved.
 
-Differential forms, are tools that allow us to align an integral with one or more vector fields. To study Hamiltonian systems, we need to study basic features of differential 2-forms.
-
-\begin{definition}
-	Let $\mathcal M$ be a smooth manifold and $p\in \mathcal M$. The differential 2-form $\Omega_p$ is called \emph{non-degenerate} if $\Omega_p(v_1,v_2)=0$, for all $v_2\in T_p \mathcal M$, implies that $v_2 = 0$. $\Omega$ is called non-degenerate, $\Omega_p$ is non-degenerate for all $p\in \mathcal M$.
-\end{definition}
-If a non-zero vector $v\in T_p \mathcal M$ is given, then $\Omega_p^{\flat}(v):=\Omega_p(v,\cdot):T_p \mathcal M \to \mathbb R$ can be viewed as a covector. Therefore, a non-degenerate $\Omega_p$ constructs an injective map $\Omega_p^{\flat}:T_p\mathcal M \to T_p^* \mathcal M$. When $\Omega_p^{\flat}$ is also surjective then it is said to be \emph{strongly non-degenerate}.
+Differential forms, are tools that allow us to align an integral curve with one or more vector fields. To study Hamiltonian systems, we need to study basic features of differential 2-forms.
 
 \begin{definition}
-	Let $\mathcal P$ be a smooth manifold and $\Omega$ be a closed, non-degenerate 2-form defined on $P$. The pair $(\mathcal P,\Omega)$ is called a \emph{symplectic manifold}.
+	Let $\mathcal M$ be a smooth manifold and $p\in \mathcal M$. The differential 2-form $\Omega_p$ is called \emph{non-degenerate} if $\Omega_p(v_1,v_2)=0$, for all $v_2\in T_p \mathcal M$, implies that $v_1 = 0$. $\Omega$ is called non-degenerate, if $\Omega_p$ is non-degenerate for all $p\in \mathcal M$.
 \end{definition}
+If a non-zero vector $v\in T_p \mathcal M$ is given, then $\Omega_p^{\flat}(v):=\Omega_p(v,\cdot):T_p \mathcal M \to \mathbb R$ can be viewed as a co-vector. Therefore, a non-degenerate $\Omega_p$ constructs an injective map $\Omega_p^{\flat}:T_p\mathcal M \to T_p^* \mathcal M$. When $\Omega_p^{\flat}$ is also surjective then it is said to be \emph{strongly non-degenerate}. 
+
+\begin{definition}
+	Let $\mathcal P$ be a smooth $m$-dimensional manifold and $\Omega$ be a closed, non-degenerate 2-form defined on $P$. The pair $(\mathcal P,\Omega)$ is called a \emph{symplectic manifold}.
+\end{definition}
+Note that the condition for $\Omega$ to be closed is indeed required to construct a well-defined symplectic manifold. In the following theorem, we will see that a closed form is required to locally approximate a symplectic manifold with a linear vector space.
+
+\begin{theorem}
+
+\end{theorem}
+
+Furthermore, we know from \Cref{theorem:2.2} that given a coordinate chart $z$ on $\mathcal P$, $\Omega$ can be locally written as $\Omega = \sum_{i,j}^{m} \alpha_{i,j} dz_{i} dz_j$.
+
+
 
 
