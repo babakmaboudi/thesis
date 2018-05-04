@@ -16,17 +16,17 @@ for a coordinate chart $x$. It is checked easily that this definition is chart i
 A tangent vector $v$ at a point $p\in \mathcal M$ is an equivalence class of curves on $\mathcal M$ that pass through $p$. The set of all tangent vectors at $p$ is denoted as $T_p\mathcal M$ and is called the tangent space of $\mathcal M$ at point $p$.
 \end{definition}
 It is well known that the $T_p\mathcal M$ forms an $m$-dimensional linear vector space \cite{robbin2011introduction}. It is shown in \cite{robbin2011introduction} that the vector space $T_p\mathcal M$ is isomorphic to the vector space of linear differential operators, directional derivatives, acting on the differentiable real-valued functions defined on an open neighborhood of $p$. Therefore, a basis for $T_p\mathcal M$ is often denoted as $\{ \partial /\partial x_i \}_{i=1}^{m}$ and a vector $v\in T_p\mathcal M$ can be written as 
-\begin{equation}
+\begin{equation} \label{eq:2.11}
 	\sum_{i=1}^m v_i \frac{\partial}{\partial x_i},
 \end{equation}
 where $v_i\in \mathbb R$ for $i = 1,\dots,m$. Note that the symbol for partial derivative is rather symbolic since the direction $x_i$ is not defined explicitly on $T_p\mathcal M$. To compute a tangent vector for a given chart $x$ and a given smooth function $f:\mathcal M \to \mathbb R$ one reads
-\begin{equation}
+\begin{equation} \label{eq:2.12}
 	\sum_{i=1}^m v_i \frac{\partial}{\partial x_i} (f) := \sum_{i=1}^m v_i \frac{\partial}{\partial x_i} (f \circ x^{-1}),
 \end{equation}
 where the partial derivatives appear on the right hand side are the conventional partial derivative operators on a Euclidean space.
 
 It is often desirable to consider the dual space to $T_p\mathcal M$, denoted by $T_p^*\mathcal M$ and referred to as the \emph{cotangent space}. The natural isomorphism between $T_p\mathcal M$ and $T_p^*\mathcal M$ indicates that the cotangent space is also an $m$-dimensional linear vector space. Given $\{ \partial /\partial x_i \}$, a basis for $T_p\mathcal M$, a dual basis for $T_p^*\mathcal M$ is the set of basis vectors $\{ dx_i \}_{i=1}^{m}$ that satisfy the following
-\begin{equation}
+\begin{equation} \label{eq:2.13}
 	dx_i(\frac{\partial}{\partial x_j}) = \delta_{i,j}, \quad i,j=1,\dots,m,
 \end{equation}
 where $\delta_{i,j}$ is the Kronecker's delta function.
@@ -68,7 +68,7 @@ Given a coordinate chart $x$, one can solve \cref{eq:2.5} for $c$. It is known f
 	The \emph{flow} of $X$ is a collection of maps $\varphi_t : \mathcal M \to \mathcal M$ such that the map $t \to \varphi_t(p)$ is an integral curve for some initial point $p\in \mathcal M$.
 \end{definition}
 Note that we have $\varphi_0 = id$, the identity map. Furthermore, that the uniqueness of integral curves implies the following important property of flows
-\begin{equation}
+\begin{equation} \label{eq:2.51}
 	\varphi_{t+s} = \varphi_t \circ \varphi_s.
 \end{equation}
 
@@ -107,7 +107,7 @@ That is multilinear.
 Therefore the Euclidean inner product is a $(0,2)$-tensor, a co-vector is a $(0,1)$-tensor, and any $k$-form is also a $(0,k)$-tensor. We denote by $\Lambda_{k}(\mathcal M)$ and $\Lambda_{k,l}(\mathcal M)$ the set of all differential $k$-forms and $(k,l)$-tensors, respectively.
 
 Given a coordinate chart $x$ and a basis $\{ e_1,\dots,e_m\}$ for $T_{p}\mathcal M$, multilinearity of a $k$-form implies that
-\begin{equation}
+\begin{equation} \label{eq:2.6}
 	\Omega(v_1,\dots,v_k) = \sum_{i_1,\dots,i_k =1}^{m} \omega_{i_1,\dots,i_k} v_{1}^{i_1}\dots v_{k}^{i_k}, 
 \end{equation}
 where $\omega_{i_1,\dots,i_k} = \Omega(e_{i_1},\dots,e_{i_k})$ and $v_{l}^{i_l}$ is the $i_l$th component of $v_l$ with respect to the coordinate chart $x$. Therefore, any $k$-form is completely described through $\Omega(e_{i_1},\dots,e_{i_k})$, for $i_1,\dots,i_k=1,\dots,m$. Simple calculation also shows a similar results for $(k,l)$-tensors \cite{Wald:106274}.
@@ -123,24 +123,25 @@ We now introduce some basic tensor operators, which allows us to construct highe
 \]
 \end{definition}
 To be able to construct differential forms from $(0,k)$-tensors, we need an operator that skew-symmetrizes tensors. The \emph{alternation operator}, is a tensor operator that achieves this and is defined as
-\begin{equation}
+\begin{equation} \label{eq:2.7}
 	\textbf{A}(\Gamma)(v_1,\dots,v_l) = \frac{1}{p!} \sum_{\pi \in S_l} \text{sgn}(\pi) \Gamma(v_{\pi(1)},\dots,v_{\pi(l)}).
 \end{equation}
 Here $\Gamma$ is a $(0,l)$-tensor, $S_l$ is the permutation group of the set $\{1,\dots,l\}$ and sgn$(\pi)$ returns $1$ if $\pi$ is an even permutation, and $-1$ if $\pi$ is an odd permutation. It is easily checked that $\textbf{A}(\Gamma)$ is skew-symmetric. Therefore, $\textbf{A}$ constructs a differential form from a $(0,l)$-tensor.
 
 Note that the tensor product of differential forms does not result a differential form, since the skew-symmetry will be lost. The \emph{wedge product} allows us to construct higher order differential forms while preserving the skew-symmetry. Let $\Omega_1$ and $\Omega_2$ be a $k_1$-form and a $k_2$ form, respectively. Then, their wedge product is a $(k_1+k_2)$-from defined as
-\begin{equation}
+\begin{equation} \label{eq:2.8}
 	\Omega_1 \wedge \Omega_2 = \frac{k_1! + k_2!}{k_1!k_2!} \mathbf{A}(\Omega_1\otimes \Omega_2).
 \end{equation}
 It is well known that the wedge product is associative, bilinear and anti-commutative \cite{marsden2013introduction}. The following theorem states that any differential $k$-form can be written as a linear combination of wedge product of co-vectors. We refer the reader to \cite{} for the complete proof.
 \begin{theorem} \label{theorem:2.2}
 Any $k$-form $\Omega$ can be written locally as
-\begin{equation}
-	\Omega = \sum_{i_1<\dots<i_k} \alpha_{i_1,\dots,i_k} dx_{i_1}\wedge\dots\wedge dx_{i_k}.
+\begin{equation} \label{eq:2.9}
+	\Omega = \sum_{i_1<\dots<i_k} \omega_{i_1,\dots,i_k} dx_{i_1}\wedge\dots\wedge dx_{i_k}.
 \end{equation}
 \end{theorem}
 
-Differential maps are often useful to transfer manifold structures from a known manifold to an unknown manifold. For example, $T_p\phi$ allows us to identify the tangent space of $\mathcal N$ at $\phi_p$ using the tangent space of $M$ at $p$. Similarly, we may use the differential maps to construct differential forms and tensors for unknown manifolds. 
+%% ADD dw = 0 implies w_i = 0 for all i
+It is easily verified that $\Omega = 0$ implies $\omega_{i_1,\dots,i_k} = 0$ for all $i_1<\dots<i_k$. Differential maps are often useful to transfer manifold structures from a known manifold to an unknown manifold. For example, $T_p\phi$ allows us to identify the tangent space of $\mathcal N$ at $\phi_p$ using the tangent space of $M$ at $p$. Similarly, we may use the differential maps to construct differential forms and tensors for unknown manifolds. 
 
 \begin{definition}
 Let $\phi:\mathcal M \to \mathcal N$ be a smooth manifold mapping and $\Omega$ be a differential $k$-form on $N$. Then the \emph{pull back} of $\Omega$ with $\phi$, is a $k$-form on $M$ denoted by $\phi^*\Omega$ defined as
@@ -162,13 +163,14 @@ Note that the contraction operator is sometimes referred to as the \emph{interio
 There are multiple ways to generalize the notion of differentiation to the manifold setting. The challenge in defining a unique derivative operator that is consistent with the conventional derivative operator in calculus, is that a general manifold setting do not provide an algebraic method to compare points on a manifold. Differential forms, can be used to construct a relation, between tangent spaces that are in the locality of a point $p$ on a manifold. The following, is a generalization of the derivative notation to the manifold setting using differential forms.
 \begin{definition}
 Let $\mathcal M$ be a smooth manifold and $\Omega$ be a differential $k$-form on $\mathcal M$. Given a vector field $X$ on $\mathcal M$ with the flow map $\varphi_t$, the Lie derivative of $\Omega$ with respect to $X$ is defined as
-\begin{equation}
+\begin{equation} \label{eq:2.10}
 	\mathcal L_X \Omega = \lim_{t\to 0} \frac 1 t (\varphi^*_t \Omega - \Omega) = \frac {d}{dt} \varphi^*_t |_{t=0}.
 \end{equation}
 \end{definition}
 Note that the flow map can be viewed as a mapping $\varphi_t:\mathcal M \to \mathcal M$ and the differential map $T \varphi _t$ defines a mapping between $T_p \mathcal M$ and $T_{ \varphi_t(p) } \mathcal M$. Therefore, the Lie derivative measures infinitesimal differences in $\Omega$ when evaluated at $p$ and at $\varphi_t(p)$. The following theorem summarizes some basic properties of the Lie derivative.
 
-\begin{theorem} Suppose that $X$ is a smooth vector field defined on a smooth manifold $\mathcal M$ with $\varphi$ the flow of $X$. Furthermore, suppose that $\Omega$ is a differential $k$-form. The following statements hold:
+\begin{theorem} \label{theorem:2.3}
+Suppose that $X$ is a smooth vector field defined on a smooth manifold $\mathcal M$ with $\varphi$ the flow of $X$. Furthermore, suppose that $\Omega$ is a differential $k$-form. The following statements hold:
 \begin{enumerate} [label=(\alph*)]
 \item for a smooth scalar function $f:\mathcal M \to \mathbb R$, $\mathcal L_X f = X\cdot f$, where $X \cdot f$ is the directional derivative of $f$ along $X$.
 \item (The Lie derivative formula)
@@ -183,11 +185,11 @@ Note that the flow map can be viewed as a mapping $\varphi_t:\mathcal M \to \mat
 \end{theorem}
 \begin{proof}
 (a) follows from the definition of the Lie derivative. To show (b), we have
-\begin{equation}
+\begin{equation} \label{eq:2.11}
 	\frac{d}{dt} \varphi^*_t \Omega = \lim_{h\to 0} \frac 1 h( \varphi^*_{t+h} \Omega - \varphi^*_t \Omega ) = \varphi^*_t (\lim_{h\to 0} \frac 1 h (\varphi^*_{h} \Omega - \Omega) ) = \varphi^*_t \mathcal L_X \Omega,
 \end{equation}
 where the second equality is due to the fact that $\varphi_{t+h} = \varphi_t \circ \varphi_h$. To show (c), assume that vectors $v_1\dots,v_k\in T_{p}\mathcal M$ at some point $p\in \mathcal M$ are provided . We define the function $\alpha(t,s):\mathbb R^2 \to \mathbb R$ as $\alpha(t,s) = \varphi_t^*\Omega_s(v_1,\dots,v_k)$. Therefore, $\frac{d}{dt} \varphi^*_t \Omega_t|_p$ is the directional derivative of $\alpha(t,s)$ along the direction $(1,1)$. We have
-\begin{equation}
+\begin{equation} \label{eq:2.12}
 \begin{aligned}
 	D_{(1,1)} \alpha(t,s) = \partial_t \alpha(t,s) + \partial_s  \alpha(t,s) &= \partial_t \varphi^*_t \Omega_s|_{t=s} + \varphi^*_t (\partial_s \Omega_s)|_{t=s} \\
 	&= \varphi^*_t \mathcal L_X \Omega_t + \varphi^*_t (\frac{d}{dt} \Omega_t).
@@ -197,27 +199,84 @@ Here, $D_{(1,1)}$ is the conventional directional derivative operator and all te
 \end{proof}
 
 For a $k$-form $\Omega$, the \emph{exterior derivative} is a $(k+1)$-form $\mathbf d \Omega$, that captures the differential changes in $\Omega$ and for a given coordinate chart $x$ is defined as
-\begin{equation}
+\begin{equation} \label{eq:2.13}
 	\mathbf d \Omega =  \sum_j \sum_{i_1<\dots<i_k} \frac{\partial \alpha_{i_1,\dots,i_k}}{\partial x_j} dx_j\wedge dx_{i_1}\wedge\dots\wedge dx_{i_k}.
 \end{equation}
 Note that the above definition is shown to be to be chart independent \cite{rudin1964principles}. It is checked with a straightforward calculation that for $v_0,v_1\dots,v_k \in T_p\mathcal M$ and $p\in \mathcal M$ we have
-\begin{equation}
-	\mathbf d \Omega_p(v_0,v_1,\dots,v_k) = \sum_i^k (-1)^i \nabla \Omega \cdot v_i (v_0,\dots,\bar{v_i},\dots,v_k), 
+\begin{equation} \label{eq:2.14}
+	\mathbf d \Omega_p(v_0,v_1,\dots,v_k) = \sum_{i=1}^k (-1)^i \nabla \Omega \cdot v_i (v_0,\dots,\mathring{v_i},\dots,v_k), 
 \end{equation}
-where $\nabla \Omega \cdot v_i = \sum_j \sum_{i_1<\dots<i_k} v_i^j \partial \omega_{i_1,\dots,i_k}/\partial x_j$, $\bar{v_i}$ means that the slot for $v_i$ is empty, and $v_i^j$ is the $j$th component of $v_i$. A differential $k$-form $\Omega$ is called \emph{closed}, if $\mathbf d \Omega = 0$, and is called \emph{exact} there exist there is a differential $(k-1)$-form $\Gamma$ such that $\Omega = \mathbf d \Gamma$. The symmetry in partial derivatives implies that the exterior derivative of any differential form is closed, i.e., $\mathbf d^2 = 0$ for any differential $k$-form. However, no all differential forms are exact. We close this section by showing the sufficient condition for a differential form to be exact.
+where $\nabla \Omega \cdot v_i = \sum_j \sum_{i_1<\dots<i_k} v_i^j \partial \omega_{i_1,\dots,i_k}/\partial x_j$, $\mathring{v_i}$ means that the vector $v_i$ is dropped out, and $v_i^j$ is the $j$th component of $v_i$. A differential $k$-form $\Omega$ is called \emph{closed}, if $\mathbf d \Omega = 0$, and is called \emph{exact} there exist there is a differential $(k-1)$-form $\Gamma$ such that $\Omega = \mathbf d \Gamma$. The symmetry in partial derivatives implies that the exterior derivative of any differential form is closed, i.e., $\mathbf d^2 = 0$ for any differential $k$-form. However, no all differential forms are exact. We close this section by showing the sufficient condition for a differential form to be exact.
 
-\begin{theorem}
-(Poincar\'e Lemma) Let $\mathcal M$ be a smooth $n$-manifold with $\Omega$ a differential $k$-form, defined on $\mathcal M$. If $\Omega$ is closed then for any point $p\in \mathcal M$, there is a neighborhood $U$ of $p$ where $\Omega|_{U}$ is exact.
+\begin{theorem} \label{theorem:2.4}
+(Poincar\'e Lemma) Let $\mathcal M$ be a smooth $n$-dimensional manifold with $\Omega$ a differential $k$-form, defined on $\mathcal M$. If $\Omega$ is closed then for any point $p\in \mathcal M$, there is a neighborhood $U$ of $p$ where $\Omega|_{U}$ is exact.
 \end{theorem}
 
 \begin{proof}
-We construct an operator $\alpha:\Lambda_k\to \lambda_{k-1}$ such that  $\mathbf d \circ \alpha + \alpha \circ \mathbf d = id$. This yields the result since, $\mathbf d^2 \Omega = 0$ and $\mathbf d( \alpha (\Omega) ) = \Omega$. Let (x,U) be a coordinate chart in the neighborhood of $x$.
+Let $(x,U)$ be a coordinate cart around $p\in \mathcal M$. Without loss of generality, we assume that $x(p)=0$ and that the image of $U$ under $x$ contains an open ball around the origin. We show that the push forward of $\Omega$ to any point on this ball is exact.
 
-For the point $\mathbf X = (x_1,\dots,x_n)\in x(U)$, and vectors $v_1,\dots,v_{k-1}\in T_p \mathcal M$. We define $\alpha$ as
-\begin{equation}
-	\alpha_v(\Omega)(\mathbf x)(v_1,\dots,v_{k-1}) = \int_{0^1} t^{k-1} \Omega(tv)
-\end{equation}
+The condition $\mathbf d \Omega = 0$ implies that
+\begin{equation*}
+	\sum_l \sum_{j_1<\dots<j_{k-1}} \frac{\partial \omega_{j_1,\dots,j_k}}{\partial x_l} dx_l\wedge dx_{j_1}\wedge \dots \wedge dx_{j_k} = 0, \quad j_1<\dots<j_k.
+\end{equation*}
+Note that the indices $l,j_1,\dots,j_k$ are not in the proper order. It is easily checked a reordering of the indices in the above expression yields
+\begin{equation*}
+	\sum_{n_1<\dots<n_{k+1}}\lambda_{n_1,\dots,n_{k+1}} dx_{n_1}\wedge \dots \wedge dx_{n_{k+1}} = 0,
+\end{equation*}
+with
+\begin{equation*}
+	\lambda_{n_1,\dots,n_{k+1}} = \sum_{m=1}^{k+1} (-1)^{m+1} \frac{\partial \omega_{n_1\dots\mathring n_m \dots n_{k+1}}}{\partial x_{n_m}},
+\end{equation*}
+which implies $\lambda_{n_1,\dots,n_{k+1}} = 0$, for all $n_1<\dots<n_{k+1}$. Here $\mathring n_m$ means that $n_m$ is omitted. Now we construct a $(k-1)$-form $\Gamma$ such that $\mathbf d \Gamma = \Omega$:
+\begin{equation*}
+	\Gamma_{(x_1,\dots,x_n)} = \left( \int_0^1 t^{k-1} \omega_{ji_1\dots,i_{k-1}}(tx_1,\dots,tx_n) x_j \ dt \right) dx_{i_1}\wedge \dots \wedge dx_{i_{k-1}}.
+\end{equation*}
+Taking the exterior derivative of $\Gamma$ gives
+\begin{equation*}
+	\mathbf d \Gamma = \left( \int_0^1 t^{k-1} \frac{\partial }{\partial x_l} \big( \omega_{ji_1\dots,i_{k-1}}(tx) x_j \big) \ dt \right) dx_l\wedge dx_{i_1}\wedge \dots \wedge dx_{i_{k-1}}.
+\end{equation*}
+Here $tx$ denotes the point $(tx_1,\dots,tx_n)$. We denote by $c_{li_1\dotsi_{k-1}}$ the coefficients in this expression. Similar to above, we can construct a reordering of the indices to obtain the coefficient of $dx_{j_1}\wedge\dots\wedge dx_{j_k}$ for $j_1<\dots<j_{k}$ as
+\begin{equation*}
+	\sum_{m=1}^{k} (-1)^{m+1} c_{j_mj_1\dots\mathring j_{m}\dots j_k}.
+\end{equation*}
+It follows
+\begin{equation*}
+\begin{aligned}
+\sum_{m=1}^{k} &(-1)^{m+1} c_{j_mj_1\dots\mathring j_{m}\dots j_k} \\
+	& = -\sum_{m=1}^k (-1)^m \int_0^1 t^{k-1} \frac{\partial}{\partial x_{j_m}}\big( \omega_{jj_1\dots\mathring j_m\dots j_k}(tx) x_j \big)\ dt \\
+	& = -\sum_{m=1}^k (-1)^m \int_0^1 t^{k-1} \big( tx_j\frac{\partial \omega_{jj_1\dots\mathring j_m\dots j_k} }{\partial x_{j_m}}(tx) + \omega_{j_mj_1\dots\mathring j_m\dots j_k}(tx)  \big)\ dt \\
+       & = \int_0^1 t^{k-1} \left( x_j t \sum_{m=1}^{k} (-1)^{m+1}\frac{\partial \omega_{jj_1\dots\mathring j_m\dots j_k}}{\partial x_{j_m}}(tx) + k \omega_{j_1\dots j_k}(tx)  \right) \ dt \\
+       & = \int_0^1 t^{k-1} \left( x_j k t \frac{\partial \omega_{j_1\dots j_k}}{\partial x_j}(tx) + kt^{k-1} \omega_{j_1\dots j_k}(tx)\right)\ dt \\
+       & = \int_0^1 \frac{\partial}{\partial t}(t^k \omega_{j_1\dots j_k}(tx) )\ dt \\
+      	& = \omega_{j_1\dots j_k}(x).
+\end{aligned}
+\end{equation*}
+Here, we used the condition $\lambda_{n_1,\dots,n_{k+1}} = 0$ and the chain rule to obtain the result.
 \end{proof}
+
+
+%\begin{proof}
+%We construct an operator $\alpha:\Lambda_k\to \Lambda_{k-1}$ such that  $\mathbf d \circ \alpha + \alpha \circ \mathbf d = id$. This yields the result since, $\mathbf d^2 \Omega = 0$ and $\mathbf d( \alpha (\Omega) ) = \Omega$. Let (x,U) be a coordinate chart in the neighborhood of $p\in U$ such that $x(p)=(x_1,\dots,x_n)$ we construct $\alpha$ as follows.
+%\begin{equation}
+%	\alpha(\Omega_p)(v_1,\dots,v_{k-1}) := \int_0^1 t^{k-1} \Omega_{tx(p)}(v_1,\dots,v_{k-1}) \ dt,
+%\end{equation}
+%for some tangent vectors $v_1,\dots,v_{k-1}$.We first compute $\mathbf d \alpha(\Omega_p)$.
+%\begin{equation}
+%\begin{aligned}
+%	\mathbf d \alpha(\Omega_p) (v_1,\dots,v_k) &= \sum_{i=1}^k (-1)^{i+1} \nabla \alpha(\Omega_p) \cdot v_i (v_0,\dots,\mathring{v_i},\dots,v_k) \\
+%	&= \sum_{i=1}^k (-1)^{i+1} \int_{0}^1 t^{k-1} \Omega_{tx(p)} (v_0,\dots,\mathring{v_i},\dots,v_k) \ dt \\
+%	& + \sum_{i=1}^k (-1)^{i+1} \int_0 ^1 t^k \nabla \Omega_{tx(p)} \cdot v_i (v_0,\dots,\mathring{v_i},\dots,v_k) \ dt.
+%\end{aligned}
+%\end{equation}
+%Here, we used the product rule. Furthermore, note that given that $\Omega$ is smooth and bounded for $t\in[0,1]$, it is allowed to interchange the derivative and the integral operator. For $\alpha(\mathbf d (\Omega))$ we have
+%\begin{equation}
+%\begin{aligned}
+%	\alpha(\mathbf d\Omega_p)(v_1,\dots,v_{k-1}) &= \int_0^1 t^{k-1} \mathbf d \Omega_{tx(p)}(v_1,\dots,v_{k-1}) \ dt \\
+%	& = \int_0^1 t^{k-1} \sum_{i=1}^{k} (-1)^{i}\nabla \Omega_{tx(p)} \cdot v_i (v_1,\dots,\mathring{v}_i,v_{k-1}) \ dt
+%\end{aligned}
+%\end{equation}
+%
+%\end{proof}
 
  
 
@@ -232,16 +291,73 @@ Differential forms, are tools that allow us to align an integral curve with one 
 If a non-zero vector $v\in T_p \mathcal M$ is given, then $\Omega_p^{\flat}(v):=\Omega_p(v,\cdot):T_p \mathcal M \to \mathbb R$ can be viewed as a co-vector. Therefore, a non-degenerate $\Omega_p$ constructs an injective map $\Omega_p^{\flat}:T_p\mathcal M \to T_p^* \mathcal M$. When $\Omega_p^{\flat}$ is also surjective then it is said to be \emph{strongly non-degenerate}. 
 
 \begin{definition}
-	Let $\mathcal P$ be a smooth $m$-dimensional manifold and $\Omega$ be a closed, non-degenerate 2-form defined on $P$. The pair $(\mathcal P,\Omega)$ is called a \emph{symplectic manifold}.
+	Let $\mathcal P$ be a smooth $m$-dimensional manifold and $\Omega$ be a closed, non-degenerate 2-form defined on $\mathcal P$. The pair $(\mathcal P,\Omega)$ is called a \emph{symplectic manifold}.
 \end{definition}
-Note that the condition for $\Omega$ to be closed is indeed required to construct a well-defined symplectic manifold. In the following theorem, we will see that a closed form is required to locally approximate a symplectic manifold with a linear vector space.
+Note that the condition for $\Omega$ to be closed is indeed required to construct a well-defined symplectic manifold. In the following theorem, we will see that a closedness of the 2-form is required to locally approximate a symplectic manifold with a symplectic linear vector space. This is especially important in the context of symplectic MOR where we approximate a high dimensional symplectic manifold with a low dimensional linear vector space.
 
-\begin{theorem}
-
+\begin{theorem} \label{theorem:2.5}
+(Darboux' Theorem) Let $\mathcal M$ be a manifold and $\Omega_1$ and $\Omega_2$ be two strongly non-degenerate and closed 2-forms defined on $\mathcal M$, such that $\Omega_1 = \Omega^2$, exactly at some $p\in \mathcal M$. Then there are neighborhoods $U$ and $V$ of $p$ such that the mapping $\varphi:U\to V$ is a diffeomorphism with $\varphi^* \Omega_2 = \Omega_1$
 \end{theorem}
 
-Furthermore, we know from \Cref{theorem:2.2} that given a coordinate chart $z$ on $\mathcal P$, $\Omega$ can be locally written as $\Omega = \sum_{i,j}^{m} \alpha_{i,j} dz_{i} dz_j$.
+\begin{proof}
+The idea is to construct a family of continuously varying 2-forms:
+\begin{equation*}
+\Omega_t = (1-t)\Omega_1 + t\Omega_2 = \Omega_1 + t \Omega,
+\end{equation*}
+where $\Omega = \Omega_2 - \Omega_1$. Now we would like to find a smooth vector field $X_t$ with the flow $\varphi_t$ such that $\frac{d}{dt} \varphi_t^*\Omega_t = 0$. We construct $U$ so small that $\Omega_t$ is strongly non-degenerate. This can be done since $\Omega_0 = \Omega_1$ and is constant at $p$, so the compactness of $[0,1]$ implies that there is an open ball around $p$ such that $\Omega_t$ is strongly non-degenerate for all $t\in [0,1]$. We have
+\begin{equation*}
+\begin{aligned}
+	\frac{d}{dt} \varphi_t^*\Omega_t &= \varphi_t^* \mathcal L_{X_t} \Omega_t + \varphi_t^* \frac{d}{dt} \Omega_t \\
+	&= \varphi_t^*( \mathbf d i_{X_t}\Omega_t + i_{X_t} \mathbf d \Omega_t ) + \varphi_t^* \Omega \\
+	&= \varphi_t^*( \mathbf d i_{X_t}\Omega_t + \Omega ).
+\end{aligned}
+\end{equation*}
+Here we used the Lie derivative formula for time dependent differential forms, Cartan's magic formula, closedness of $\Omega_t$, and the linearity of pull back operator. Since $\Omega$ is a closed form and strongly non-degenerate, we can apply the Poincar\'e lemma \ref{?} to write $\Omega = \mathbf d \Gamma$ for some 1-form $\Gamma$. Now the above expression is equal to
+\begin{equation*}
+	= \varphi_t^*( \mathbf d ( i_{X_t}\Omega_t + \Gamma ) ).
+\end{equation*}
+Therefore, it is sufficient to define $X_t$ to be the vector field associate to the relation $i_{X_t}\Omega_t = - \Gamma$. Note that the non-degeneracy of $\Omega_t$ in $U$ guarantees the uniqueness of $X_t$. Thus, $\varphi_1^* \Omega_1 = \varphi_0^* \Omega_0 = \Omega_0$
+\end{proof}
 
+\begin{corollary} \label{theorem:2.6}
+Let $(\mathcal P, \Omega)$ b a symplectic manifold. There is a local coordinate chart $(x,U)$ around each point $z\in\mathcal P$ in which $\Omega$ is constant.
+\end{corollary}
+\begin{proof}
+Take $\Omega_1 = \Omega$ and $\Omega_2 = \Omega_z$, i.e. $\Omega_2$ is a constant differential form. The rest follows from the proof of the Darboux' theorem. The constructed flow $\varphi_t$ provides a coordinate cart that transforms $\Omega$ into the constant form $\Omega_2$.
+\end{proof}
 
+\begin{corollary} \label{theorem:2.7}
+Let $(\mathcal P, \Omega)$ be a finite-dimensional symplectic manifold. Then $\mathcal P$ is even dimensional and we can find a local coordinate chard $(x,U)$ with $x=(e_1,\dots,e_n,f_1,\dots,f_n)$ around each point $z\in \mathcal P$ such that
+\begin{equation} \label{eq:2.15}
+	\Omega = de_i\wedge df_i
+\end{equation}
+\end{corollary}
+\begin{proof}
+(The symplectic Gram-Schmidt) Let $e_1\in T_z\mathcal P$ be a nonzero tangent vector. Non-degeneracy of $\Omega$ implies that there is a vector $f_1\in T_z\mathcal P$ such that $\Omega(e_1,f_1) = c_1 \neq 0$. We can swap and scale $e_1$ and $f_1$ to guarantee that $c_1 = 1$. Let $E_1 = \text{span}\{e_1,f_1\}$ and $E_2 = \{v\in T_z\mathcal P | \Omega(v,e) = 0,~ \forall e \in E_1\}$. It is easily verified that $E_1\cap E_2 = \emptyset$. Furthermore, for any $v\in T_z\mathcal P$, $v - \bar v \in E_2$ where $\bar v = -\Omega(v,f_1)e_1 + \Omega(v,e_1)f_1 \in E_1$, therefore $T_z\mathcal P = E_1 \oplus E_2$. Finally, since $\Omega$ is non-degenerate, it is also non-degenerate on $E_2$ as a subspace of $T_z\mathcal P$. Thus, we can continue inductively. Since $\mathcal P$ is finite dimensional this process ends, e.g., after $n$ steps. Furthermore, according to \ref{?}, the sequence of basis vectors $A = \{ e_1,\dots,e_n,f_1,\dots,f_n\}$ forms a basis for $T_z\mathcal P$. In this basis, $\Omega$ takes the \emph{canonical} form
+\begin{equation*}
+	\Omega(\mathbf a,\mathbf b) = a^T\mathbb J_{2n}b, \quad \mathbb J_{2n} =
+	\begin{pmatrix}
+		0_n & I_n \\
+		-I_n & 0_n
+	\end{pmatrix}.
+\end{equation*}
+Here, $a,b\in \mathbb R^{2n}$ with $a_i = dx_i(v)$ and $b_i = dx_i(u)$, $i=1,\dots,2n$ for any $u,v \in T_z\mathcal P$ which results the form in \cref{eq:2.15}.
+\end{proof}
 
-
+\begin{corollary} \label{theorem:2.8}
+Let $(\mathcal P, \Omega)$ be a symplectic manifold. There is a neighborhood $U$ around each point $z\in \mathcal P$ where $U$ is diffeomophic to a linear vector space $V$ where $\Omega$ is constant on $V$.
+\end{corollary}
+\begin{proof}
+The proof is a direct consequence of the Darboux' theorem and corollary \Cref{theorem:2.7}.
+\end{proof}
+%\begin{proof}
+%With elementary linear algebra, one can a coordinate chart $(x,U)$ in the neighborhood of $z\in \mathcal P$ such that any non-degenerate form $\Omega$ takes the \emph{canonical form}
+%\begin{equation*}
+%	\Omega(v_1,v_2) = v_1^T \mathbb J_{2n} J v_2, \quad 
+%	\mathbb J_{2n} =
+%	\begin{pmatrix}
+%		0_n & I_n \\
+%		-I_n & 0_n
+%	\end{pmatrix}.
+%\end{equation*}
+%\end{proof}
