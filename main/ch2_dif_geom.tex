@@ -1,8 +1,8 @@
-\chapter{Manifolds and Differential Forms}
+\chapter{Manifolds and Differential Forms} \label{chapter:2}
 
 In preparation for later chapters, we recall basic facts regarding differential geometry and symplectic geometry. Although the applications of MOR presented in this thesis are mostly described on a linear vector space, the theory of smooth manifold can provide a great insight into the geometric MOR. The main aim of this chapter is to introduce the concepts of ``symmetry'' and ``structure'' which play an important role in the Lagrangian and Hamiltonian mechanics. Exploiting these symmetries and structures in MOR can provide robustness and long-time stability in the reduced system.
 
-\section{Smooth Manifolds}
+\section{Smooth Manifolds} \label{section:2.1}
 Let $\mathcal M$ to be a topological Hausdorff \cite{friedman1970foundations} set. In the neighborhood $U$ of $p\in \mathcal M$, if there is a bijective map $x:U\to V\subset \mathbb R^{m}$, for some positive integer $m$, then $(x,U)$ is called a \emph{coordinate chart}. $\mathcal M$ is called a \emph{smooth manifold} if there exists a set of coordinate charts $\{(x_{\alpha},U_{\alpha})\}_{\alpha\in I}$ such that $\{U_{\alpha}\}_{\alpha\in I}$ covers $\mathcal M$ and that the mapping $x_{\alpha_2}\circ (x_{\alpha_1})^{-1}:\mathbb R^{m} \to \mathbb R^{m}$ is a $C^{\infty}$ mapping, for any $\alpha_1,\alpha_2\in I$. The integer $m$ is called the \emph{dimension} of $\mathcal M$ if $x_{\alpha}(U_{\alpha}) \subset \mathbb R^{m}$ for all $\alpha \in I$. Throughout this thesis, we assume that there exists a coordinate chart $(x,U)$ that is global, i.e., $U$ covers $\mathcal M$.
 
 Tangent vectors to a manifold allow us to describe the local dynamics of a particle moving on a smooth manifold. There are multiple ways to define tangent vectors. The most intuitive way however, uses curves defined on a smooth manifold.
@@ -80,7 +80,7 @@ Let $\mathcal M$ and $\mathcal N$ be an $m$ dimensional and an $n$ dimensional s
 \end{equation}
 for some tangent vector $v\in T_{p} \mathcal M$ and some curve $\gamma$ in the equivalence class of $v$. It can be shown that $T_p f$ only depends on $v$ and not the choice of the curve $\gamma$ \cite{robbin2011introduction}. The inverse function theorem \cite{rudin1976principles} indicates that if $\phi$ is a vector space isomorphism then there is a neighborhood $U$ of $p$ and a neighborhood $V$ of $\phi(p)$, such that $\phi:U\to V$ is a diffeomorphism.
 
-\section{Tensors and Differential Forms}
+\section{Tensors and Differential Forms} \label{section:2.2}
 Often, quantities that appear in physics are linearly dependent on the vectors and convectors that describe them. Examples of such a quantity would be the measurement of the magnetic field with linearly independent directions of measurement \cite{Wald:106274}, and the strength of resistance in dissipative fluid flows. 
 
 In the context of Hamiltonian systems and symplectic model reduction, we often require to align the flow of the system with respect to some potential. Differential forms and tensors, generalize the idea of inner-product and angle between vectors and convectors to the extent that  alignment of two vector field with respect to one another is possible.
@@ -280,7 +280,7 @@ Here, we used the condition $\lambda_{n_1,\dots,n_{k+1}} = 0$ and the chain rule
 
  
 
-\section{Hamiltonian Systems on a Symplectic Manifold}
+\section{Hamiltonian Systems on a Symplectic Manifold} \label{section:2.3}
 It is often useful to describe small changes in a state of a system with respect to some potential, or a vector field. Hamiltonian systems are systems where the changes in the state of the system is under the influence of a \emph{Hamiltonian vector field}. Such systems appear frequently in quantum physics, particle physics, celestial mechanics, cosmology, fluid mechanics, and classical mechanics. Conserved quantities, e.g. the system energy, are at the core of the dynamics of these systems. Consequently, the integral curve of these systems is aligned with the Hamiltonian vector field such that these quantities are conserved.
 
 Differential forms, are tools that allow us to align an integral curve with one or more vector fields. To study Hamiltonian systems, we need to study basic features of differential 2-forms.
@@ -333,31 +333,96 @@ Let $(\mathcal P, \Omega)$ be a finite-dimensional symplectic manifold. Then $\m
 \end{equation}
 \end{corollary}
 \begin{proof}
-(The symplectic Gram-Schmidt) Let $e_1\in T_z\mathcal P$ be a nonzero tangent vector. Non-degeneracy of $\Omega$ implies that there is a vector $f_1\in T_z\mathcal P$ such that $\Omega(e_1,f_1) = c_1 \neq 0$. We can swap and scale $e_1$ and $f_1$ to guarantee that $c_1 = 1$. Let $E_1 = \text{span}\{e_1,f_1\}$ and $E_2 = \{v\in T_z\mathcal P | \Omega(v,e) = 0,~ \forall e \in E_1\}$. It is easily verified that $E_1\cap E_2 = \emptyset$. Furthermore, for any $v\in T_z\mathcal P$, $v - \bar v \in E_2$ where $\bar v = -\Omega(v,f_1)e_1 + \Omega(v,e_1)f_1 \in E_1$, therefore $T_z\mathcal P = E_1 \oplus E_2$. Finally, since $\Omega$ is non-degenerate, it is also non-degenerate on $E_2$ as a subspace of $T_z\mathcal P$. Thus, we can continue inductively. Since $\mathcal P$ is finite dimensional this process ends, e.g., after $n$ steps. Furthermore, according to \ref{?}, the sequence of basis vectors $A = \{ e_1,\dots,e_n,f_1,\dots,f_n\}$ forms a basis for $T_z\mathcal P$. In this basis, $\Omega$ takes the \emph{canonical} form
-\begin{equation*}
-	\Omega(\mathbf a,\mathbf b) = a^T\mathbb J_{2n}b, \quad \mathbb J_{2n} =
+(The symplectic Gram-Schmidt) Suppose that $(x,U)$ is a local coordinate chart around $z$ provided by the Darboux' theorem such that $\Omega_z$ is constant, i.e., $\Omega_z = \Omega$. Let $e_1\in T_z\mathcal P$ be a nonzero tangent vector. Non-degeneracy of $\Omega$ implies that there is a vector $f_1\in T_z\mathcal P$ such that $\Omega(e_1,f_1) = c_1 \neq 0$. We can swap and scale $e_1$ and $f_1$ to guarantee that $c_1 = 1$. Let $E_1 = \text{span}\{e_1,f_1\}$ and $E_2 = \{v\in T_z\mathcal P | \Omega(v,e) = 0,~ \forall e \in E_1\}$. It is easily verified that $E_1\cap E_2 = \emptyset$. Furthermore, for any $v\in T_z\mathcal P$, $v - \bar v \in E_2$ where $\bar v = -\Omega(v,f_1)e_1 + \Omega(v,e_1)f_1 \in E_1$, therefore $T_z\mathcal P = E_1 \oplus E_2$. Finally, since $\Omega$ is non-degenerate, it is also non-degenerate on $E_2$ as a subspace of $T_z\mathcal P$. Thus, we can continue inductively. Since $\mathcal P$ is finite dimensional this process ends, e.g., after $n$ steps. Furthermore, the sequence of basis vectors $A = \{ e_1,\dots,e_n,f_1,\dots,f_n\}$ forms a basis for $T_z\mathcal P$. In this basis, $\Omega$ takes the \emph{canonical} form
+\begin{equation} \label{eq:2.141}
+	\Omega( a, b) = a^T\mathbb J_{2n}b, \quad \mathbb J_{2n} =
 	\begin{pmatrix}
 		0_n & I_n \\
 		-I_n & 0_n
 	\end{pmatrix}.
-\end{equation*}
+\end{equation}
 Here, $a,b\in \mathbb R^{2n}$ with $a_i = dx_i(v)$ and $b_i = dx_i(u)$, $i=1,\dots,2n$ for any $u,v \in T_z\mathcal P$ which results the form in \cref{eq:2.15}.
 \end{proof}
+
+Note that due to non-degeneracy of $\Omega$, vectors $f_1,\dots,f_n$ can be interpreted as co-vectors such that $\Omega^{\flat}(e_i)=f_i$, for $i=1,\dots,n$.  
 
 \begin{corollary} \label{theorem:2.8}
 Let $(\mathcal P, \Omega)$ be a symplectic manifold. There is a neighborhood $U$ around each point $z\in \mathcal P$ where $U$ is diffeomophic to a linear vector space $V$ where $\Omega$ is constant on $V$.
 \end{corollary}
 \begin{proof}
-The proof is a direct consequence of the Darboux' theorem and corollary \Cref{theorem:2.7}.
+The proof is a direct consequence of the Darboux' theorem and \Cref{theorem:2.7}.
 \end{proof}
-%\begin{proof}
-%With elementary linear algebra, one can a coordinate chart $(x,U)$ in the neighborhood of $z\in \mathcal P$ such that any non-degenerate form $\Omega$ takes the \emph{canonical form}
-%\begin{equation*}
-%	\Omega(v_1,v_2) = v_1^T \mathbb J_{2n} J v_2, \quad 
-%	\mathbb J_{2n} =
-%	\begin{pmatrix}
-%		0_n & I_n \\
-%		-I_n & 0_n
-%	\end{pmatrix}.
-%\end{equation*}
-%\end{proof}
+
+\begin{definition}
+Let $(\mathcal P_1,\Omega_1)$ and $(\mathcal P_2,\Omega_2)$ be two symplectic manifolds. The transformation $\varphi:\mathcal P_1 \to \mathcal P_2$ is called to be a \emph{symplectic transformation} if
+\begin{equation}
+	\varphi^* \Omega_2 = \Omega_1.
+\end{equation}
+\end{definition}
+
+Now we are ready to define Hamiltonian systems on a symplectic Manifold.
+
+\begin{definition}
+Let $(\mathcal P,\Omega)$ be a symplectic manifold. We refer to a vector field $X_H$ a Hamiltonian vector field, if we can find a real function $H:\mathcal P \to \mathbb R$ such that
+\begin{equation}
+	i_{X_H}\Omega = \mathbf d H.
+\end{equation}
+We call $H$ the \emph{Hamiltonian function}. In this case, the equations of evolution is given by
+\begin{equation}
+	\dot z = X_H(z),
+\end{equation}
+and is referred to as \emph{Hamilton's equation of evolution}.
+\end{definition}
+When $\mathcal P$ is $2n$-dimensional and a canonical basis is provided, Hamilton's equation take the form
+\begin{equation}
+	\frac{dq_i}{dt} = \frac{\partial H}{\partial p_i}, \quad \frac{dp_i}{dt} = - \frac{\partial H}{\partial q_i}, \quad i=1,\dots,n .
+\end{equation}
+
+The following proposition shows that the flow of a Hamiltonian vector field is a symplectic map.
+\begin{proposition}
+Let $\varphi_t$ be the flow of a Hamiltonian vector field $X_H$. Then $\varphi_t:\mathcal P \to \mathcal P$ is a symplectic transformation.
+\end{proposition}
+\begin{proof}
+We have
+\begin{equation*}
+	\frac{d}{dt} \varphi_t^* \Omega = \varphi_t^* \mathcal L_{X_H} \Omega = \varphi_t^*( i_{X_H} \mathbf d \Omega + \mathbf d i_{X_H} \Omega ) =  \varphi_t^*( i_{X_H} \mathbf d \Omega + \mathbf d^2 H ).
+\end{equation*}
+However, closedness of $\Omega$ implies $\mathbf d \Omega = 0$. Furthermore, since any exact differential form is closed, then $\mathbf d^2 \Omega = 0$. Thus, $\frac{d}{dt} \varphi_t^* \Omega = 0$ and $\varphi_t^* \Omega = \varphi_0^* \Omega = \Omega$.
+\end{proof}
+\begin{corollary}
+The Hamiltonian is conserved along the Hamiltonian flow.
+\end{corollary}
+\begin{proof}
+I follows that
+\begin{equation*}
+\begin{aligned}
+	\frac{d}{dt} H(\varphi_t(z)) = \mathbf dH\left( \frac{d}{dt} \varphi_t(z) \right) = \mathbf dH \left( X_H(z) \right) &= i_{X_H(z)} \Omega(X_H(z))\\
+	& = \Omega(X_H(z),X_H(z)) = 0.
+\end{aligned}
+\end{equation*}
+Therefore, $H\circ \varphi_t$ is constant in time.
+\end{proof}
+
+\section{Hamiltonian systems on a symplectic linear vector space} \label{section:2.4}
+In the symplectic model reduction, the flow of a Hamiltonian system is projected on a low dimensional symplectic linear vector space. Therefore, a deeper study of symplectic linear vector spaces is essential in the understanding of symplectic MOR. In this section we assume that a symplectic manifold $(\mathcal P, \Omega)$ is also a linear vector space, i.e., we identify both $\mathcal P$ and $T_z \mathcal P$ with a linear vector space $\mathcal Z$.
+
+\begin{definition}
+Let $\mathcal Z$ be a finite dimensional linear vector space with $\Omega$ a constant 2-form defined on $Z$. The pair $(\mathcal Z,\Omega)$ is called a symplectic linear vector space if $\Omega$ is non-degenerate.
+\end{definition}
+Note that \Cref{theorem:2.7} indicates that that $\mathcal Z$ is even-dimensional. Furthermore, the symplectic Gram-Schmidt process can construct a canonical basis, in which $\Omega(a,b) = a^T \mathbb J_{2n} b$, where $\mathbb J_{2n}$ is defined in (\ref{eq:2.141}) and $a,b\in \mathcal Z$. However, in a non-canonical basis, the symplectic form $\Omega$ takes the form $\Omega(a,b) = a^TJ_{2n}b$, where $J_{2n}$ is a full rank and skew-symmetric matrix. Therefore, in the presence of a canonical or a non-canonical basis, we may refer to $\Omega$ as $\mathbb J_{2n}$ or $J_{2n}$, respectively.
+
+\begin{definition} \cite{abraham1978foundations}
+Let $(\mathcal Z, \Omega)$ be a symplectic linear vector space and $\mathcal E \subset \mathcal Z$ be a subspace. The \emph{symplectic complement} of $\mathcal E$, referred to as $\mathcal E^{\perp}$, is a linear subspace defined as
+\begin{equation*}
+	\mathcal E^{\perp} = \{ a \in \mathcal Z | \Omega(a,b) = 0, \ \text{for all } b \in \mathcal E \}.
+\end{equation*}
+Furthermore, we call $\mathcal E$ an \emph{isotropic subspace} if $\mathcal E\subset \mathcal E^{\perp}$, \emph{symplectic subspace}, if $\Omega|_{\mathcal E\times \mathcal E}$ is non-degenerate. Furthermore, we call $\mathcal E$ a \emph{Lagrangian subspace}, if both $\mathcal E$ and $\mathcal E^C$ are isotropic, where $\mathcal E^C = \mathcal Z \backslash \mathcal E$.
+\end{definition}
+\begin{proposition} \cite{abraham1978foundations}
+Let $(\mathcal Z, \Omega)$ be a symplectic linear vector space and $\mathcal E\subset \mathcal F$ is a linear subspace. Then the following are equivalent:
+\begin{enumerate} [label=(\alph*)]
+\item $\mathcal E$ is a Lagrangian subspace.
+\item $\mathcal E = \mathcal E^{\perp}$.
+\item dim$(\mathcal E) = \frac 1 2 \text{dim}(\mathcal Z)$.
+\end{enumerate}
+\end{proposition}
