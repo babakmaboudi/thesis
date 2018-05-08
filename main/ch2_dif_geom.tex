@@ -379,7 +379,7 @@ When $\mathcal P$ is $2n$-dimensional and a canonical basis is provided, Hamilto
 \end{equation}
 
 The following proposition shows that the flow of a Hamiltonian vector field is a symplectic map.
-\begin{proposition}
+\begin{proposition} \label{theorem:2.9}
 Let $\varphi_t$ be the flow of a Hamiltonian vector field $X_H$. Then $\varphi_t:\mathcal P \to \mathcal P$ is a symplectic transformation.
 \end{proposition}
 \begin{proof}
@@ -389,7 +389,7 @@ We have
 \end{equation*}
 However, closedness of $\Omega$ implies $\mathbf d \Omega = 0$. Furthermore, since any exact differential form is closed, then $\mathbf d^2 \Omega = 0$. Thus, $\frac{d}{dt} \varphi_t^* \Omega = 0$ and $\varphi_t^* \Omega = \varphi_0^* \Omega = \Omega$.
 \end{proof}
-\begin{corollary}
+\begin{corollary} \label{theorem:2.10}
 The Hamiltonian is conserved along the Hamiltonian flow.
 \end{corollary}
 \begin{proof}
@@ -409,20 +409,76 @@ In the symplectic model reduction, the flow of a Hamiltonian system is projected
 \begin{definition}
 Let $\mathcal Z$ be a finite dimensional linear vector space with $\Omega$ a constant 2-form defined on $Z$. The pair $(\mathcal Z,\Omega)$ is called a symplectic linear vector space if $\Omega$ is non-degenerate.
 \end{definition}
-Note that \Cref{theorem:2.7} indicates that that $\mathcal Z$ is even-dimensional. Furthermore, the symplectic Gram-Schmidt process can construct a canonical basis, in which $\Omega(a,b) = a^T \mathbb J_{2n} b$, where $\mathbb J_{2n}$ is defined in (\ref{eq:2.141}) and $a,b\in \mathcal Z$. However, in a non-canonical basis, the symplectic form $\Omega$ takes the form $\Omega(a,b) = a^TJ_{2n}b$, where $J_{2n}$ is a full rank and skew-symmetric matrix. Therefore, in the presence of a canonical or a non-canonical basis, we may refer to $\Omega$ as $\mathbb J_{2n}$ or $J_{2n}$, respectively.
+Note that \Cref{theorem:2.7} indicates that that $\mathcal Z$ is even-dimensional. Furthermore, the symplectic Gram-Schmidt process can construct a canonical basis, in which $\Omega(a,b) = a^T \mathbb J_{2n} b$, where $\mathbb J_{2n}$ is defined in (\ref{eq:2.141}) and $a,b\in \mathcal Z$. However, in a non-canonical basis, the symplectic form $\Omega$ takes the form $\Omega(a,b) = a^TJ_{2n}b$, where $J_{2n}$ is a full rank and skew-symmetric matrix. Therefore, when the matrix form of $\Omega$ is being discussed, we may refer to $\Omega$ as $\mathbb J_{2n}$ or $J_{2n}$, respectively.
+
+A symplectic linear vector space can be equipped with an inner product to form a inner product space. However, a symplectic basis is not necessarily well-conditioned (or orthonormal) with respect to a general inner-product. The following proposition provides a natural inner product defined on a symplectic linear vector space that carries the conditioning of a canonical basis.
+
+\begin{proposition} \label{theorem:2.11}
+Let $(\mathcal Z,\Omega)$ be a $2n$-dimensional symplectic linear vector space. Furthermore, let $A = \{ e_1,\dots,e_n,f_1,\dots,f_n \}$ be a canonical basis for $\mathcal Z$ with respect to $\Omega$. Then there exists an inner product operator $<,>:\mathcal Z\times \mathcal Z \to \mathbb R$, such that $A$ is orthonormal.
+\end{proposition}
+
+\begin{proof}
+Consider the linear mapping $\Omega^{\flat}:\mathcal Z \to \mathcal Z^*$ and let $e_i^*$ and $f_i^*$ be the image of $e_i$ and $f_i$ under $\Omega^{\flat}$, respectively for $i=1,\dots,n$. Non-degeneracy of $\Omega^{\flat}$ indicates that $e_i^*$ and $f_i^*$ are unique and non-zero, and that $A^*=\{e_1^*,\dots,e_n^*,f_1^*,\dots,f_n^*\}$ forms a basis for $\mathcal Z^*$. We construct a linear map $T:\mathcal Z^* \to \mathcal Z$ by prescribing its action on the basis co-vectors of $A^*$ as
+\begin{equation*}
+	T(e_i^*) = -f_i, \quad T(f_i^*) = e_i, \quad i=1,\dots,n.
+\end{equation*}
+Note that $T$ is a bijective. Now we define the operator $<,>:\mathcal Z\times \mathcal Z \to \mathbb R$ as
+\begin{equation*}
+	<u,v> = T^{-1}_{u} (v),	
+\end{equation*}
+where $T^{-1}_{u} = T^{-1}(u) \in \mathcal Z^*$. It is straight forward to check that $<,>$ is symmetric, bilinear and positive-definite. Therefore, it defines an inner-product on $\mathcal Z$. Furthermore, we have
+\begin{equation*}
+	<e_i,e_j> = \delta_{ij},\quad <f_i,f_j> = \delta_{ij}, \quad <e_i,f_j> = 0, \quad i,j=1,\dots,n.
+\end{equation*}
+\end{proof}
+
+\begin{corollary} \label{theorem:2.12}
+When $\mathbb J_{2n}$ is the matrix form of $\Omega$, then $<,>$ construction in \Cref{theorem:2.11} is the Euclidean inner product. The canonical basis constructed with respect to $\mathbb J_{2n}$, in this case, is called an \emph{ortho-symplectic} basis.
+\end{corollary}
+
+An inner product defined in \Cref{theorem:2.11} is especially useful since one can switch between computing the 2-form $\Omega$ or the inner production $<,>$, when needed. However, when dealing with a subspace of $\mathcal Z$, further structures are required to guarantee that such inner-product exists.
 
 \begin{definition} \cite{abraham1978foundations}
 Let $(\mathcal Z, \Omega)$ be a symplectic linear vector space and $\mathcal E \subset \mathcal Z$ be a subspace. The \emph{symplectic complement} of $\mathcal E$, referred to as $\mathcal E^{\perp}$, is a linear subspace defined as
 \begin{equation*}
 	\mathcal E^{\perp} = \{ a \in \mathcal Z | \Omega(a,b) = 0, \ \text{for all } b \in \mathcal E \}.
 \end{equation*}
-Furthermore, we call $\mathcal E$ an \emph{isotropic subspace} if $\mathcal E\subset \mathcal E^{\perp}$, \emph{symplectic subspace}, if $\Omega|_{\mathcal E\times \mathcal E}$ is non-degenerate. Furthermore, we call $\mathcal E$ a \emph{Lagrangian subspace}, if both $\mathcal E$ and $\mathcal E^C$ are isotropic, where $\mathcal E^C = \mathcal Z \backslash \mathcal E$.
+Furthermore, we call $\mathcal E$ an \emph{isotropic subspace} if $\mathcal E\subset \mathcal E^{\perp}$, and a \emph{symplectic subspace} if $\Omega|_{\mathcal E\times \mathcal E}$ is non-degenerate. Furthermore, we call $\mathcal E$ a \emph{Lagrangian subspace}, if both $\mathcal E$ and $\mathcal E^C$ are isotropic, where $\mathcal E^C$ is vector space complement of $\mathcal E$\footnote{$E^{C}$ is a vector space complement of $E$ if $\mathcal{Z} = \mathcal E\oplus \mathcal E^C$. }.
 \end{definition}
-\begin{proposition} \cite{abraham1978foundations}
+\begin{proposition} \label{theorem:2.13} \cite{abraham1978foundations}
 Let $(\mathcal Z, \Omega)$ be a symplectic linear vector space and $\mathcal E\subset \mathcal F$ is a linear subspace. Then the following are equivalent:
 \begin{enumerate} [label=(\alph*)]
 \item $\mathcal E$ is a Lagrangian subspace.
 \item $\mathcal E = \mathcal E^{\perp}$.
-\item dim$(\mathcal E) = \frac 1 2 \text{dim}(\mathcal Z)$.
+\item $\mathcal E$ is isotropic and dim$(\mathcal E) = \frac 1 2 \text{dim}(\mathcal Z)$.
 \end{enumerate}
 \end{proposition}
+\begin{proof}
+We first prove that (a) implies (b). Since a Lagrangian subspace is isotropic then $\mathcal E \subset \mathcal E^{\perp}$. Let $F = E^C$ and take Take $v \in \mathcal E^{\perp}$. It is easily verified that $\mathcal Z = \mathcal E \oplus\mathcal F$. Therefore, $v = e + f$, where $e \in \mathcal E$ and $f\in \mathcal F$. Since $\mathcal E$ is isotropic then $\Omega(e,u) = 0$ for all $u \in \mathcal E$. Since $v\in \mathcal E^{\perp}$, it follows for any $u\in E$ that
+\begin{equation*}
+	0 = \Omega(v,u) = \Omega(e,u) + \Omega(f,u) = \Omega(f,u).
+\end{equation*}
+But since $\mathcal F$ is isotropic then $\Omega(f,u) = 0$ for all $u \in \mathcal F$. This implies that $\Omega(f,u) = 0$ for all $u\in\mathcal E \cup \mathcal F = \mathcal Z$. Since $\Omega$ is non-degenerate, it implies that $f=0$ and $v=e\in \mathcal E$. Therefore $\mathcal E^{\perp} \subset \mathcal E$.
+
+Now we show that (b) implies (c). Consider the mapping $\Omega^{\flat}:\mathcal Z \to \mathcal Z^*$. Note that $\mathcal E^{\perp}$ is in the kernel of $\Omega^{\flat}|_{\mathcal E} : \mathcal E \to (\mathcal Z \backslash \mathcal E^{\perp})^*$. Since $\Omega^{\flat}$ is injective, then dim$(\mathcal E) \leq \text{dim}(\mathcal Z) - \text{dim}(\mathcal E^{\perp})$. Furthermore, $\Omega^{\flat}|_{\mathcal E}$ can be viewed as a mapping from $\mathcal Z$ to $\mathcal E^{*}$ where the kernel is exactly $\mathcal E^{\perp}$. Therefore, dim$(\mathcal E) \geq \text{dim}(\text{range}(\Omega^{\flat}|_{\mathcal E})) = \text{dim}(\mathcal{Z}) - \text{dim}(\mathcal E^{\perp})$. The two inequalities implies dim$(\mathcal Z) = \text{dim}(\mathcal E) + \text{dim}(\mathcal E^{\perp})$ which together with (b) provides the result.
+
+Finally, we show that (c) implies (a). Note that from what we derived above we can conclude that dim$(\mathcal E) = \text{dim}(\mathcal E^{\perp})$. But since $\mathcal E \subset \mathcal E^{\perp}$, then $\mathcal E = \mathcal E^{\perp}$. Now we show that $\mathcal F = \mathcal E^{C}$ is isotropic. Take $f_1 \notin \mathcal E$, and define $\mathcal F_1 = \text{span}\{f_1\}$. Since $\mathcal E \cap \mathcal F_1 = \emptyset$, it follows\footnote{For subsets $E$ and $F$ we have $(E\cap F)^{\perp} = (E^{\perp \perp} \cap F^{\perp \perp})^{\perp} =( F^\perp + E^{\perp})^{\perp \perp} = F^{\perp} + E^\perp$ \cite{abraham1978foundations}.} that $\mathcal E + \mathcal F_1^{\perp} = \mathcal Z$. Therefore, we can pick $f_2\in \mathcal F_1^{\perp}$ such that $f_2\notin \mathcal E$, and define $\mathcal F_2 = \text{span}\{f_2\} + \mathcal F_1$. We continue this process inductively to construct $\mathcal F_n$ such that $\mathcal Z = \mathcal E \oplus \mathcal F_n$. It follows that 
+\begin{equation*}
+\begin{aligned}
+	\mathcal F_n = \text{span}\{f_1,\dots,f_n\} & \subset \text{span}(f_1)^{\perp} \cap \dots \cap \text{span}(f_n)^{\perp} \\
+	&= (\text{span}(f_1) + \dots + \text{span}(f_n))^{\perp} =  \mathcal F_n^{\perp}.
+\end{aligned}
+\end{equation*}
+The second step is due to the fact that each $f_i$ is taken from $\mathcal F_{i-1}^{\perp}$. Therefore $\mathcal F = \mathcal F_n$ is isotropic and this completes the proof.
+\end{proof}
+
+\Cref{theorem:2.13} suggests that a Lagrangian subspace is a maximal isotropic subspace. We are now ready to state the following theorem.
+
+\begin{theorem} \label{theorem:2.14}
+Let $(\mathcal Z, \Omega)$ be a $2n$-dimensional symplectic linear vector space. Furthermore suppose that $\mathcal X\subset \mathcal Z$ is $2k$-dimensional a linear subspace with $k<n$. If the pair $(\mathcal X,\Omega|_{\mathcal X})$ contain a Lagrangian subspace, then $(\mathcal X,\Omega|_{\mathcal X})$ is also a symplectic linear vector space.
+\end{theorem}
+\begin{proof}
+We show that $\Omega|_{\mathcal X}$ is non-degenerate on $\mathcal X$. Let $\mathcal E$ be a Lagrangian subspace of $\mathcal X$. Since $\mathcal F = \mathcal E^{C}$ and dim$(F) = \text{dim}(E) = \text{dim}(\mathcal X)/2$ then by \Cref{theorem:2.13} (c), $\mathcal F$ is also a Lagrangian subspace. Furthermore, \Cref{theorem:2.13} implies that $\mathcal E = \mathcal E^{\perp}$ and $\mathcal F = \mathcal F^{\perp}$. Now assume that there is $u\in\mathcal X$ such that $\Omega|_{\mathcal X}(u,v)=0$ for all $v\in \mathcal X$. Then $v\in \mathcal E^{\perp} = \mathcal E$ and $v\in \mathcal F^{\perp} = \mathcal F$. Therefore $v\in\mathcal E \cap \mathcal F = \{ 0 \}$.
+\end{proof}
+
+Once a Lagrangian subspace is identified in linear subspace of a symplectic linear vector space, one can induce a reduced symplectic form $\Omega|_{\mathcal X}$. This is particularly important in the context of model reduction where a low dimensional symplectic reduced vector space is constructed. The induced symplectic form $\Omega|_{\mathcal X}$ can then be used to construct an ortho-symplectic basis on the low dimensional symplectic subspace.
