@@ -505,7 +505,7 @@ Therefore,
 Since this is true for any $v_1,v_2\in \mathbb R^{2n}$, then \Cref{eq:2.20} must hold.
 \end{proof}
 When $\psi$ is a linear transformation, i.e., $\psi(z) = Az$ with $A\in \mathbb R^{2n\times 2n}$, then \Cref{eq:2.20} takes the form
-\begin{equation}
+\begin{equation} \label{eq:2.201}
 	A^T \mathbb J_{2n} A = \mathbb J_{2n}.
 \end{equation}
 In this case the matrix $A$ is referred to as a \emph{symplectic matrix}. To explain the intuition behind a symplectic transformation, we take the geometric interpretation of a symplectic transformation form \cite{hairer2006geometric}. Suppose that $f:U \to \mathbb R^{2n}$, with $U$ a compact subset of $R^{2}$, a 2 dimensional smooth surface in $\mathbb R^{2n}$. The manifold $S = f(U)$ can be viewed as the union of infinitesimal parallelograms spanned by vectors ${\partial f}/{\partial x}$ and ${\partial f}/{\partial y}$. We now define an area operator that finds the area of the surface by summing over the area of all parallelograms:
@@ -521,7 +521,7 @@ Therefore, area, defined in \Cref{eq:2.21}, is preserved under a symplectic tran
 	V = \frac{-1^{n(n-1)/2}}{n!} \underbrace{\Omega_{\mathbb J_{2n}} \wedge \dots \wedge \Omega_{\mathbb J_{2n}}}_{n \text{ times}}.
 \end{equation*}
 This differential $2n$-form is referred to as the  \emph{Liouville volume} \cite{marsden2013introduction} form and the coefficient ${-1^{n(n-1)/2}}/{n!}$ is chosen such that $V$ takes the form
-\begin{equation}
+\begin{equation}\label{eq:2.22}
 	V = de_1 \wedge \dots \wedge de_n \wedge df_1 \wedge \dots \wedge df_n. 
 \end{equation}
 in a canonical coordinate. Given vectors $v_1\dots,v_{2n}\in \mathcal Z$, the Liouville volume form computes the volume of a hyper dimensional parallelepiped spanned by $v_1\dots,v_{2n}$. The symplecticity of $\Omega_{\mathbb J_{2n}}$, implies that for a symplectic diffeomorphism $\psi:\mathbb R^{2n} \to \mathbb{R}^{2n}$, $\psi^*V = V$, and thus, a symplectic transformation preserves the volume with respect to the Liouville volume form.
@@ -529,31 +529,90 @@ in a canonical coordinate. Given vectors $v_1\dots,v_{2n}\in \mathcal Z$, the Li
 \begin{definition}
 Let $\varphi_t$ be the flow of a smooth vector field $X$ defined on $\mathbb R^{n}$. The mapping $\Phi:\mathbb R \times \mathbb R^{2n} \to \mathbb R^{2n}$ is a one step method if $\Phi_h (z_k) = z_{k+1} \approx \varphi_h(z_k)$. Furthermore, $\Phi$ is called a \emph{symplectic one step method} if $\varphi_t$ is a Hamiltonian flow and $\Phi$ is a symplectic transformation.
 \end{definition}
+
+\begin{definition}
+A one step method has order $p$ if for all smooth $\varphi_t$ we have
+\begin{equation} \label{eq:2.23}
+	\Phi_h(z_0) - \varphi_h(z_0) = \mathcal O(h^{p+1}), \quad z_0 \in \mathbb R^{2n}.
+\end{equation}
+\end{definition}
+
+\begin{definition}
+	$\Phi_h^*$ is called the \emph{adjoint} of a one step method $\Phi_h$, when it is the inverse map of $\Phi_h$ with the reversed time step $-h$, i.e.,
+\begin{equation} \label{eq:2.24}
+	\Phi_h^* = \Phi^{-1}_{-h}.
+\end{equation}
+\end{definition}
+
 Since the exact flow of a Hamiltonian system is generally unknown, we tend to approximate it with a stepping method, e.g. a one step method. The symplecticity of the Hamiltonian flow contributes to many geometrical symmetries, e.g. preservation of volume as discussed above, and corresponding dynamics. Thus, it is natural to expect a one step method to share this property in a numerical evaluation of Hamiltonian systems. Note that a general stepping schemes is not always volume preserving and can result in a qualitatively wrong approximation of a Hamiltonian flow \cite{hairer2006geometric}. On the other hand, area preservation provides symplectic time stepping schemes to have an excellent long-time behaviour \cite{hairer2006geometric,blanes2016concise}.
 
 \begin{definition}
 Let $H(q,p)$ be a smooth Hamiltonian where $q,p\in\mathbb R^{n}$ are vectors containing the coefficients of a vector in a canonical basis $A = \{ e_i,f_i\}_{i=1}^n$. The one step method
 \begin{equation}
-	p_{k+1} = p_k - h \cdot \nabla_q H(p_{k+1},q_k),\quad q_{k+1} = q_k + h \cdot \nabla_p H(p_{k+1},q_k),
+	q_{k+1} = q_k + h \cdot \nabla_p H(q_{k+1},p_k),\quad p_{k+1} = p_k - h \cdot \nabla_q H(q_{k+1},p_k)
 \end{equation}
 is called the \emph{symplectic Euler} that approximates the flow of the Hamiltonian system $\dot z = \mathbb J \nabla_z H$, with $z=(q,p)^T$. Here, $\nabla_x$ indicates the gradient operator with respect to the vector $x$.
 \end{definition}
 
 \begin{theorem} \cite{hairer2006geometric}
-The symplectic Euler methods is s symplectic one step method of order 1.
+The symplectic Euler methods is a symplectic one step method of order 1.
 \end{theorem}
 \begin{proof}
 Let $\Phi_h(q_k,p_k) = (q_{k+1},p_{k+1})$ be the one step method representing the symplectic Euler method. It follows
 \begin{equation*}
 	\begin{pmatrix}
-		I_n + h H_{qp}^T & 0 \\
-		-hH_{pp} & I	
+		I_n + h H_{pq}^T & 0 \\
+		-hH_{qq} & I	
 	\end{pmatrix}
 	\Phi'_h = 
 	\begin{pmatrix}
-		I & -h H_{qq} \\
-		0 & I+ h H_{qp}
+		I & -h H_{pp} \\
+		0 & I+ h H_{pq}
 	\end{pmatrix},
 \end{equation*}
-where $H_{yx}$ is an $n\times n$ matrix containing ${\partial^2 H }/{(\partial y_j \partial x_i)}$ in its $i$-th row and $j$-th column. It is straightforward to check that $(\Phi')^T \mathbb J_{2n} \Phi' = \mathbb J_{2n}$.
+where $H_{yx}$ is an $n\times n$ matrix containing ${\partial^2 H }/{(\partial y_j \partial x_i)}$ in its $i$-th row and $j$-th column, evaluated at $q_{k+1},p_k$. It is straightforward to check that $(\Phi')^T \mathbb J_{2n} \Phi' = \mathbb J_{2n}$. Furthermore, a simple Taylor expansion also verifies that this method is of order 1 \cite{hairer2006geometric}.
 \end{proof}
+
+The adjoint of the symplectic Euler is also a symplectic one step method of order 1 \cite{hairer2006geometric}, and is given by
+\begin{equation}
+	q_{k+1} = q_k + h \cdot \nabla_p H(q_k,p_{k+1}),\quad p_{k+1} = p_k - h \cdot \nabla_q H(q_{k},p_{k+1}).
+\end{equation}
+
+It is straightforward to show that the composition of symplectic time stepping methods is again a symplectic method. Thus, one way to construct higher order methods is to compose one step methods.
+\begin{theorem}
+The St\"ormer-verlet time stepping scheme, given by
+\begin{equation} \label{eq:2.23}
+\begin{aligned}
+	q_{k+1/2} &= q_n + \frac h 2 \cdot \nabla_pH(q_{k+1/2},p_k), \\
+	p_{k+1} &= p_k - \frac h 2\cdot (\nabla_qH(q_{k+1/2},p_k) + \nabla_qH(q_{k+1/2},p_{k+1/2}) ), \\
+	q_{k+1} &= q_{k+1/2} + \frac h 2 \cdot \nabla_pH(q_{k+1/2},p_{k+1/2}),
+\end{aligned}
+\end{equation}
+and 
+\begin{equation} \label{eq:2.24}
+\begin{aligned}
+	p_{k+1/2} &= p_n - \frac h 2 \cdot \nabla_pH(q_k,p_{k+1/2}), \\
+	q_{k+1} &= q_k + \frac h 2\cdot (\nabla_pH(q_k,p_{k+1/2}) + \nabla_pH(q_{k+1/2},p_{k+1/2}) ), \\
+	p_{k+1} &= p_{k+1/2} - \frac h 2 \cdot \nabla_pH(q_{k+1/2},p_{k+1/2}),
+\end{aligned}
+\end{equation}
+is a symplectic time stepping method of order 2.
+\end{theorem}
+\begin{proof}
+It is straightforward to check that (\ref{eq:2.23}) and (\ref{eq:2.24}) are result by composing two symplectic Euler methods with step $h/2$ as $\Phi_{h/2}\circ \Phi^*_{h/2}$ and $\Phi^*_{h/2}\circ \Phi_{h/2}$, respectively. This implies that the St\"ormer-verlet scheme is of order order 2.
+\end{proof}
+\begin{theorem}
+The implicit midpoint scheme for a Hamiltonian system is given by
+\begin{equation}
+	z_{k+1} = z_k + h \cdot J_{2n} \nabla_z H( \frac{1}{2}(z_{k+1} + z_k) ).
+\end{equation}
+is a symplectic scheme of order 2.
+\end{theorem}
+\begin{proof}
+Let $\Phi_h(z_k) = z_{k+1}$ be the one step method corresponding to he implicit midpoint rule. It follows 
+\begin{equation*}
+	(I - \frac h 2 J_{2n} \nabla^2_z H) \Phi'_h = (I + \frac{h}{2} J_{2n} \nabla^2_z H),
+\end{equation*}
+where $\nabla^2$ indicates the hessian operator. It is straight forward to show that $(\Phi'_h)^T J_{2n} \Phi'_h = J_{2n} $. Note that the implicit midpoint rule is a symmetric scheme, i.e., $\Phi^*_h = \Phi_h$. This symmetry implies that the method is of an even order \cite{hairer2006geometric}, therefore is of order 2.
+\end{proof}
+
