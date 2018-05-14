@@ -3,19 +3,19 @@
 In preparation for later chapters, we recall basic facts regarding differential geometry and symplectic geometry. Although the applications of MOR presented in this thesis are mostly described on a linear vector space, the theory of smooth manifold can provide a great insight into the geometric MOR. The main aim of this chapter is to introduce the concepts of ``symmetry'' and ``structure'' which play an important role in the Lagrangian and Hamiltonian mechanics. Exploiting these symmetries and structures in MOR can provide robustness and long-time stability in the reduced system.
 
 \section{Smooth Manifolds} \label{section:2.1}
-Let $\mathcal M$ to be a topological Hausdorff \cite{friedman1970foundations} set. In the neighborhood $U$ of $p\in \mathcal M$, if there is a bijective map $x:U\to V\subset \mathbb R^{m}$, for some positive integer $m$, then $(x,U)$ is called a \emph{coordinate chart}. $\mathcal M$ is called a \emph{smooth manifold} if there exists a set of coordinate charts $\{(x_{\alpha},U_{\alpha})\}_{\alpha\in I}$ such that $\{U_{\alpha}\}_{\alpha\in I}$ covers $\mathcal M$ and that the mapping $x_{\alpha_2}\circ (x_{\alpha_1})^{-1}:\mathbb R^{m} \to \mathbb R^{m}$ is a $C^{\infty}$ mapping, for any $\alpha_1,\alpha_2\in I$. The integer $m$ is called the \emph{dimension} of $\mathcal M$ if $x_{\alpha}(U_{\alpha}) \subset \mathbb R^{m}$ for all $\alpha \in I$. Throughout this thesis, we assume that there exists a coordinate chart $(x,U)$ that is global, i.e., $U$ covers $\mathcal M$.
+Let $\mathcal M$ be a topological Hausdorff \cite{friedman1970foundations} set. Given a bijective map $x:U\to V\subset \mathbb R^{m}$, for some positive integer $m$ and a neighborhood $U$ of $p$, the pair $(x,U)$ is called a \emph{coordinate chart}. $\mathcal M$ is called a \emph{smooth manifold} if there exists a set of coordinate charts $\{(x_{\alpha},U_{\alpha})\}_{\alpha\in I}$ such that $\{U_{\alpha}\}_{\alpha\in I}$ covers $\mathcal M$ and that the mapping $x_{\alpha_2}\circ (x_{\alpha_1})^{-1}:\mathbb R^{m} \to \mathbb R^{m}$ is a $C^{\infty}$ mapping, for any $\alpha_1,\alpha_2\in I$. The integer $m$ is called the \emph{dimension} of $\mathcal M$ if $x_{\alpha}(U_{\alpha}) \subset \mathbb R^{m}$ for all $\alpha \in I$. Throughout this thesis, we assume that there exists a coordinate chart $(x,U)$ that is global, i.e., $U$ covers $\mathcal M$.
 
-Tangent vectors to a manifold allow us to describe the local dynamics of a particle moving on a smooth manifold. There are multiple ways to define tangent vectors. The most intuitive way however, uses curves defined on a smooth manifold.
+Tangent vectors to a manifold allow us to describe the local dynamics of an object moving on a smooth manifold. There are multiple ways to define tangent vectors. The most intuitive way however, uses curves defined on a smooth manifold.
 
 A $C^{\infty}$ mapping $\gamma:\mathbb R \to \mathcal M$ is called a curve on $\mathcal M$ passing through $p\in \mathcal M$ if $\gamma(t) = p$, for some $t\in \mathbb R$. Without loss of generality, we may assume that $\gamma$ passes through $p$ at $t=0$. We define an equivalence relation between smooth curves that pass through $p$ as follows: $\gamma_1$ and $\gamma_2$, two smooth curves on $\mathcal M$, are equivalent if
 \begin{equation} \label{eq:2.1}
 	\frac{d}{dt}(x\circ \gamma_1)|_{t=0} = \frac{d}{dt}(x\circ \gamma_2)|_{t=0},
 \end{equation}
-for a coordinate chart $x$. It is checked easily that this definition is chart independent, i.e., the equivalent classes do not depend on the choice of the coordinate chart.
+for a coordinate chart $x$. It is checked easily that this definition is chart independent \cite{abraham1978foundations}, i.e., the equivalent classes do not depend on the choice of the coordinate chart.
 \begin{definition}
-A tangent vector $v$ at a point $p\in \mathcal M$ is an equivalence class of curves on $\mathcal M$ that pass through $p$. The set of all tangent vectors at $p$ is denoted as $T_p\mathcal M$ and is called the tangent space of $\mathcal M$ at point $p$.
+A tangent vector $v$ at a point $p\in \mathcal M$ is an equivalence class of curves on $\mathcal M$ that pass through $p$. The set of all tangent vectors at $p$ is denoted by $T_p\mathcal M$ and is called the tangent space of $\mathcal M$ at point $p$.
 \end{definition}
-It is well known that the $T_p\mathcal M$ forms an $m$-dimensional linear vector space \cite{robbin2011introduction}. It is shown in \cite{robbin2011introduction} that the vector space $T_p\mathcal M$ is isomorphic to the vector space of linear differential operators, directional derivatives, acting on the differentiable real-valued functions defined on an open neighborhood of $p$. Therefore, a basis for $T_p\mathcal M$ is often denoted as $\{ \partial /\partial x_i \}_{i=1}^{m}$ and a vector $v\in T_p\mathcal M$ can be written as 
+It is well known that the $T_p\mathcal M$ forms an $m$-dimensional linear vector space \cite{abraham1978foundations,robbin2011introduction}. It is shown in \cite{abraham1978foundations,robbin2011introduction} that the vector space $T_p\mathcal M$ is isomorphic to the vector space of linear differential operators, directional derivatives, acting on the differentiable real-valued functions defined on an open neighborhood of $p$. Therefore, a basis for $T_p\mathcal M$ is often denoted as $\{ \partial /\partial x_i \}_{i=1}^{m}$ and a vector $v\in T_p\mathcal M$ can be written as 
 \begin{equation} \label{eq:2.11}
 	\sum_{i=1}^m v_i \frac{\partial}{\partial x_i},
 \end{equation}
@@ -25,13 +25,13 @@ where $v_i\in \mathbb R$ for $i = 1,\dots,m$. Note that the symbol for partial d
 \end{equation}
 where the partial derivatives appear on the right hand side are the conventional partial derivative operators on a Euclidean space.
 
-It is often desirable to consider the dual space to $T_p\mathcal M$, denoted by $T_p^*\mathcal M$ and referred to as the \emph{cotangent space}. The natural isomorphism between $T_p\mathcal M$ and $T_p^*\mathcal M$ indicates that the cotangent space is also an $m$-dimensional linear vector space. Given $\{ \partial /\partial x_i \}$, a basis for $T_p\mathcal M$, a dual basis for $T_p^*\mathcal M$ is the set of basis vectors $\{ dx_i \}_{i=1}^{m}$ that satisfy the following
+The dual space to $T_p\mathcal M$ is denoted by $T_p^*\mathcal M$ and is referred to as the \emph{cotangent space}. The natural isomorphism between $T_p\mathcal M$ and $T_p^*\mathcal M$ indicates that the cotangent space is also an $m$-dimensional linear vector space. Given $\{ \partial /\partial x_i \}$, a basis for $T_p\mathcal M$, a dual basis for $T_p^*\mathcal M$ is a set of basis vectors $\{ dx_i \}_{i=1}^{m}$ that satisfy the following
 \begin{equation} \label{eq:2.13}
-	dx_i(\frac{\partial}{\partial x_j}) = \delta_{i,j}, \quad i,j=1,\dots,m,
+	dx_i(\frac{\partial}{\partial x_j}) = \delta_{ij}, \quad i,j=1,\dots,m,
 \end{equation}
-where $\delta_{i,j}$ is the Kronecker's delta function.
+where $\delta_{ij}$ is the Kronecker's delta function.
 
-To be able to define a vector field on a manifold, we need to assign a tangent vector to every point of a manifold. Such an object belongs to a structure that, informally, is obtained by glueing the tangent space $T_p\mathcal M$ to every point $p\in \mathcal M$. This structure is referred to as the \emph{tangent bundle}, denoted as $T \mathcal M$, and is defined as $T \mathcal M := \{ (p,v) | p\in \mathcal M, \ v \in T_p \mathcal M\}$.
+To be able to define a vector field on a manifold, we need to assign a tangent vector to every point on a manifold. Such an object belongs to a structure that, informally, is obtained by glueing the tangent space $T_p\mathcal M$ to every point $p\in \mathcal M$. This structure is referred to as the \emph{tangent bundle}, denoted as $T \mathcal M$, and is defined as $T \mathcal M := \{ (p,v) | p\in \mathcal M, \ v \in T_p \mathcal M\}$.
 \begin{theorem} \label{theorem:2.1}
 \cite{robbin2011introduction} The tangent bundle $T\mathcal M$ is a smooth manifold.
 \end{theorem}
@@ -54,18 +54,20 @@ where $v_1,\dots,v_m\in \mathbb R$ are components of $v$ in $\mathbb R^m$. It ca
 In a similar fashion, we may obtain a smooth manifold by gluing the cotangent space $T^*_p \mathcal M$ to the manifold $\mathcal M$ to obtain the \emph{cotangent bundle}, denoted as $T^* \mathcal M$. 
 
 \begin{definition}
-continuous injective mappings $X:\mathcal M \to T \mathcal M$ and $X^*:\mathcal M \to T^* \mathcal M$ is called a \emph{vector field} and a \emph{co-vector field} of $\mathcal M$, respectively.
+Continuous injective mappings $X:\mathcal M \to T \mathcal M$ and $X^*:\mathcal M \to T^* \mathcal M$ are called a \emph{vector field} and a \emph{co-vector field} of $\mathcal M$, respectively.
 \end{definition}
+In other words, we assign a vector from $T_p\mathcal M$ to every point $p$ on $\mathcal M$.
 
 \begin{definition}
-Suppose that $X$ is a vector field on a smooth manifold $\mathcal M$. The smooth curve $c:(a,b)\to \mathcal M$ is called an \emph{integral curve} of $X$ passing through $p$ if $(a,b)$ is an open interval of $\mathbb R$ containing $0$ such that  $c(0)=p$ satisfying
+Suppose that $X$ is a vector field on a smooth manifold $\mathcal M$. A smooth curve $c:(a,b)\to \mathcal M$, $(a,b)\subset \mathbb R$, is called an \emph{integral curve} of $X$ if
 \begin{equation} \label{eq:2.5}
-	\frac{d}{dt}c(t) = X(c(t)), \quad \forall t\in(a,b) 
+	\frac{d}{dt}c(t) = X(c(t)), \quad \forall t\in(a,b).
 \end{equation}
+Furthermore, we say that $c$ passes through $p$ if $c(t) = p$, for some $t\in(a,b)$.
 \end{definition}
 Given a coordinate chart $x$, one can solve \cref{eq:2.5} for $c$. It is known from the theory of ordinary differential equations that \cref{eq:2.5} has a unique solution \cite{teschl2012ordinary}. 
 \begin{definition}
-	The \emph{flow} of $X$ is a collection of maps $\varphi_t : \mathcal M \to \mathcal M$ such that the map $t \to \varphi_t(p)$ is an integral curve for some initial point $p\in \mathcal M$.
+	The \emph{flow} of $X$ is a collection of maps $\varphi_t : \mathbb R \times \mathcal M \to \mathcal M$ such that the map $t \to \varphi_t(p)$ is an integral curve for some initial point $p\in \mathcal M$.
 \end{definition}
 Note that we have $\varphi_0 = id$, the identity map. Furthermore, that the uniqueness of integral curves implies the following important property of flows
 \begin{equation} \label{eq:2.51}
@@ -78,7 +80,7 @@ Let $\mathcal M$ and $\mathcal N$ be an $m$ dimensional and an $n$ dimensional s
 \begin{equation} \label{eq:2.4}
 	T_p \phi(v) = \frac{d}{dt}(\phi\circ \gamma(t))|_{t=0},
 \end{equation}
-for some tangent vector $v\in T_{p} \mathcal M$ and some curve $\gamma$ in the equivalence class of $v$. It can be shown that $T_p f$ only depends on $v$ and not the choice of the curve $\gamma$ \cite{robbin2011introduction}. The inverse function theorem \cite{rudin1976principles} indicates that if $\phi$ is a vector space isomorphism then there is a neighborhood $U$ of $p$ and a neighborhood $V$ of $\phi(p)$, such that $\phi:U\to V$ is a diffeomorphism.
+for some tangent vector $v\in T_{p} \mathcal M$ and some curve $\gamma$ in the equivalence class of $v$. It can be shown that $T_p f$ only depends on $v$ and not the choice of the curve $\gamma$ \cite{robbin2011introduction}. The inverse function theorem \cite{rudin1976principles} indicates that if $T_p\phi$ is a vector space isomorphism then there is a neighborhood $U$ of $p$ and a neighborhood $V$ of $\phi(p)$, such that $\phi:U\to V$ is a diffeomorphism.
 
 \section{Tensors and Differential Forms} \label{section:2.2}
 Often, quantities that appear in physics are linearly dependent on the vectors and convectors that describe them. Examples of such a quantity would be the measurement of the magnetic field with linearly independent directions of measurement \cite{Wald:106274}, and the strength of resistance in dissipative fluid flows. 
