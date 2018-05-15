@@ -211,6 +211,15 @@ summing over $j$ and $i_1<\dots<i_k$. Note that the above definition is shown to
 \end{equation}
 where $\nabla \Omega \cdot v_i = \sum_j \sum_{i_1<\dots<i_k} v_i^j \partial \omega_{i_1,\dots,i_k}/\partial x_j$, $\mathring{v_i}$ means that the vector $v_i$ is dropped out, and $v_i^j$ is the $j$th component of $v_i$. 
 
+The following theorem expresses the Lie derivative of a differential form with respect to the exterior derivative and the contraction oprator. We state the theorem without a proof as it is legthly and out of context. We refer the reader to \cite{abraham1978foundations} for the full proof.
+
+\begin{theorem} \cite{abraham1978foundations}
+(Cartan's Magic Formula) Let $X$ be a smooth vector field and $\Omega$ be a differential $k$-form on a manifold $\mathcal M$. We have
+\begin{equation}
+	\mathcal L_X \Omega = \mathbf d i_X \Omega + i_X \mathbf d \Omega.
+\end{equation}
+\end{theorem}
+
 A differential $k$-form $\Omega$ is called \emph{closed}, if $\mathbf d \Omega = 0$, and is called \emph{exact} if there is a differential $(k-1)$-form $\Gamma$ such that $\Omega = \mathbf d \Gamma$. The symmetry in the partial derivatives of smooth functions implies that the exterior derivative of any differential form is closed, i.e., $\mathbf d^2 \Omega = 0$ for any differential $k$-form $\Omega$. However, not all differential forms are exact. We close this section by showing the sufficient condition for a differential form to be exact.
 
 \begin{theorem} \label{theorem:2.4}
