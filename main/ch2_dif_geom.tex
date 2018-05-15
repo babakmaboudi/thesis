@@ -83,9 +83,7 @@ Let $\mathcal M$ and $\mathcal N$ be an $m$ dimensional and an $n$ dimensional s
 for some tangent vector $v\in T_{p} \mathcal M$ and some curve $\gamma$ in the equivalence class of $v$. It can be shown that $T_p f$ only depends on $v$ and not the choice of the curve $\gamma$ \cite{robbin2011introduction}. The inverse function theorem \cite{rudin1976principles} indicates that if $T_p\phi$ is a vector space isomorphism then there is a neighborhood $U$ of $p$ and a neighborhood $V$ of $\phi(p)$, such that $\phi:U\to V$ is a diffeomorphism.
 
 \section{Tensors and Differential Forms} \label{section:2.2}
-Often, quantities that appear in physics are linearly dependent on the vectors and convectors that describe them. Examples of such a quantity would be the measurement of the magnetic field with linearly independent directions of measurement \cite{Wald:106274}, and the strength of resistance in dissipative fluid flows. 
-
-In the context of Hamiltonian systems and symplectic model reduction, we often require to align the flow of the system with respect to some potential. Differential forms and tensors, generalize the idea of inner-product and angle between vectors and convectors to the extent that  alignment of two vector field with respect to one another is possible.
+Often, quantities that appear in physics are linearly dependent on the vectors and convectors that describe them. Examples of such a quantity would be the measurement of the magnetic field with linearly independent directions of measurement \cite{Wald:106274}, and the strength of resistance in dissipative fluid flows. Tensors and differential forms are tools that allow us describe such objects, and also, provide us with the possibility to establish a relationship between vectors and vectors fields. This helps us, in the following chapters, to align the flow of a system with respect to some vector field, in the context of symplectic geometry. 
 
 \begin{definition}
 A \emph{$k$-form} $\Omega$ on a manifold $\mathcal M$ is a function $\Omega(p): T_p\mathcal M \times \dots \times T_p\mathcal M \ (k \text{ times}) \to \mathbb R$ such that it is multilinear
@@ -110,9 +108,9 @@ Therefore the Euclidean inner product is a $(0,2)$-tensor, a co-vector is a $(0,
 
 Given a coordinate chart $x$ and a basis $\{ e_1,\dots,e_m\}$ for $T_{p}\mathcal M$, multilinearity of a $k$-form implies that
 \begin{equation} \label{eq:2.6}
-	\Omega(v_1,\dots,v_k) = \sum_{i_1,\dots,i_k =1}^{m} \omega_{i_1,\dots,i_k} v_{1}^{i_1}\dots v_{k}^{i_k}, 
+	\Omega(v_1,\dots,v_k) = \omega_{i_1,\dots,i_k} v_{1}^{i_1}\dots v_{k}^{i_k}, \quad \text{sum over }1 \leq i_1,\dots,i_k \leq m
 \end{equation}
-where $\omega_{i_1,\dots,i_k} = \Omega(e_{i_1},\dots,e_{i_k})$ and $v_{l}^{i_l}$ is the $i_l$th component of $v_l$ with respect to the coordinate chart $x$. Therefore, any $k$-form is completely described through $\Omega(e_{i_1},\dots,e_{i_k})$, for $i_1,\dots,i_k=1,\dots,m$. Simple calculation also shows a similar results for $(k,l)$-tensors \cite{Wald:106274}.
+where $\omega_{i_1,\dots,i_k} = \Omega(e_{i_1},\dots,e_{i_k})$ and $v_{l}^{i_l}$ is the $i_l$th component of $v_l$ with respect to the coordinate chart $x$. Therefore, any $k$-form is completely described with $\Omega(e_{i_1},\dots,e_{i_k})$, for $1 \leq i_1,\dots,i_k \leq m$. Simple calculation also shows a similar results for $(k,l)$-tensors \cite{Wald:106274}.
 
 We now introduce some basic tensor operators, which allows us to construct higher order tensors and differential forms, from simpler building blocks.
 \begin{definition}
@@ -128,13 +126,16 @@ To be able to construct differential forms from $(0,k)$-tensors, we need an oper
 \begin{equation} \label{eq:2.7}
 	\textbf{A}(\Gamma)(v_1,\dots,v_l) = \frac{1}{p!} \sum_{\pi \in S_l} \text{sgn}(\pi) \Gamma(v_{\pi(1)},\dots,v_{\pi(l)}).
 \end{equation}
-Here $\Gamma$ is a $(0,l)$-tensor, $S_l$ is the permutation group of the set $\{1,\dots,l\}$ and sgn$(\pi)$ returns $1$ if $\pi$ is an even permutation, and $-1$ if $\pi$ is an odd permutation. It is easily checked that $\textbf{A}(\Gamma)$ is skew-symmetric. Therefore, $\textbf{A}$ constructs a differential form from a $(0,l)$-tensor.
+Here $\Gamma$ is a $(0,l)$-tensor, $S_l$ is the permutation group of the set $\{1,\dots,l\}$ and sgn$(\pi)$ returns $1$ if $\pi$ is an even permutation, and $-1$ if $\pi$ is an odd permutation. It is easily checked that $\textbf{A}(\Gamma)$ is skew-symmetric. Therefore, $\textbf{A}$ constructs a mapping from $\Lambda_{k,0}(\mathcal M)$ to $\Lambda_{k}(\mathcal M)$.
 
-Note that the tensor product of differential forms does not result a differential form, since the skew-symmetry will be lost. The \emph{wedge product} allows us to construct higher order differential forms while preserving the skew-symmetry. Let $\Omega_1$ and $\Omega_2$ be a $k_1$-form and a $k_2$ form, respectively. Then, their wedge product is a $(k_1+k_2)$-from defined as
+Note that a tensor product of two differential forms is not a differential form, since the skew-symmetry property will be lost. The \emph{wedge product} allows us to construct higher order differential forms while preserving the skew-symmetry. 
+\begin{definition}
+Let $\Omega_1$ and $\Omega_2$ be a $k_1$-form and a $k_2$ form, respectively. The wedge product of $\Omega_1$ and $\Omega_2$ is a $(k_1+k_2)$-from defined as
 \begin{equation} \label{eq:2.8}
 	\Omega_1 \wedge \Omega_2 = \frac{k_1! + k_2!}{k_1!k_2!} \mathbf{A}(\Omega_1\otimes \Omega_2).
 \end{equation}
-It is well known that the wedge product is associative, bilinear and anti-commutative \cite{marsden2013introduction}. The following theorem states that any differential $k$-form can be written as a linear combination of wedge product of co-vectors. We refer the reader to \cite{} for the complete proof.
+\end{definition}
+It is well known that the wedge product is associative, bilinear and anti-commutative \cite{marsden2013introduction}. The following theorem states that any differential $k$-form can be written as a linear combination of wedge product of co-vectors. We refer the reader to \cite{abraham1978foundations} for the complete proof.
 \begin{theorem} \label{theorem:2.2}
 Any $k$-form $\Omega$ can be written locally as
 \begin{equation} \label{eq:2.9}
@@ -143,17 +144,17 @@ Any $k$-form $\Omega$ can be written locally as
 \end{theorem}
 
 %% ADD dw = 0 implies w_i = 0 for all i
-It is easily verified that $\Omega = 0$ implies $\omega_{i_1,\dots,i_k} = 0$ for all $i_1<\dots<i_k$. Differential maps are often useful to transfer manifold structures from a known manifold to an unknown manifold. For example, $T_p\phi$ allows us to identify the tangent space of $\mathcal N$ at $\phi_p$ using the tangent space of $M$ at $p$. Similarly, we may use the differential maps to construct differential forms and tensors for unknown manifolds. 
+It is easily verified that $\Omega = 0$ implies $\omega_{i_1,\dots,i_k} = 0$ for all $i_1<\dots<i_k$. Differential maps are often useful to transfer manifold structures from a known manifold to an unknown manifold. For example, for a mapping $\phi:\mathcal M \to \mathcal N$, $T_p\phi$ allows us to identify the tangent space of $\mathcal N$ at $\phi(p)$ using the tangent space of $M$ at $p$. Similarly, we may use the differential maps to construct differential forms and tensors for unknown manifolds. 
 
 \begin{definition}
-Let $\phi:\mathcal M \to \mathcal N$ be a smooth manifold mapping and $\Omega$ be a differential $k$-form on $N$. Then the \emph{pull back} of $\Omega$ with $\phi$, is a $k$-form on $M$ denoted by $\phi^*\Omega$ defined as
+Let $\phi:\mathcal M \to \mathcal N$ be a smooth manifold mapping and $\Omega$ be a differential $k$-form on $N$. Then the \emph{pull-back} of $\Omega$ with $\phi$, is a $k$-form on $M$ denoted by $\phi^*\Omega$ defined as
 \[
 	(\phi^*\Omega)_p(v_1,\dots,v_k) = \Omega_{\phi(p)}( T_p\phi(v_1) , \dots , T_p\phi(v_k) ),
 \]
 for any $p\in \mathcal M$ and $v_1\dots,v_k \in T_p \mathcal M$. In case $\phi$ is a diffeomorphism, the \emph{push forward} operator is denoted as $\phi_*$ and is defined by $\phi_* = (\phi^{-1})^*$.
 \end{definition}
 
-A basic operator on tensors and differential forms, is the \emph{contraction} operator.
+Another basic operator on tensors and differential forms, is the \emph{contraction} operator.
 \begin{definition}
 	Let $\Omega$ be a differential $k$-form and $X$ be a smooth vector field on a smooth manifold $\mathcal M$. The contraction of $\Omega$ with respect to $X$ is a $(k-1)$-form defined by
 \[
@@ -162,17 +163,17 @@ A basic operator on tensors and differential forms, is the \emph{contraction} op
 \end{definition}
 Note that the contraction operator is sometimes referred to as the \emph{interior product}.
 
-There are multiple ways to generalize the notion of differentiation to the manifold setting. The challenge in defining a unique derivative operator that is consistent with the conventional derivative operator in calculus, is that a general manifold setting do not provide an algebraic method to compare points on a manifold. Differential forms, can be used to construct a relation, between tangent spaces that are in the locality of a point $p$ on a manifold. The following, is a generalization of the derivative notation to the manifold setting using differential forms.
+There are multiple ways to generalize the notion of differentiation to the manifold setting. The challenge in defining a unique derivative operator that is consistent with the conventional derivative operator in calculus, is that a general manifold setting do not provide an algebraic method to compare points on a manifold. To establish such a relation, the pull-back of a differential form can be used. The \emph{Lie derivative} of points on a smooth manifold, uses this idea to generalize the notion of differentiation to the manifold setting.
 \begin{definition}
 Let $\mathcal M$ be a smooth manifold and $\Omega$ be a differential $k$-form on $\mathcal M$. Given a vector field $X$ on $\mathcal M$ with the flow map $\varphi_t$, the Lie derivative of $\Omega$ with respect to $X$ is defined as
 \begin{equation} \label{eq:2.10}
 	\mathcal L_X \Omega = \lim_{t\to 0} \frac 1 t (\varphi^*_t \Omega - \Omega) = \frac {d}{dt} \varphi^*_t |_{t=0}.
 \end{equation}
 \end{definition}
-Note that the flow map can be viewed as a mapping $\varphi_t:\mathcal M \to \mathcal M$ and the differential map $T \varphi _t$ defines a mapping between $T_p \mathcal M$ and $T_{ \varphi_t(p) } \mathcal M$. Therefore, the Lie derivative measures infinitesimal differences in $\Omega$ when evaluated at $p$ and at $\varphi_t(p)$. The following theorem summarizes some basic properties of the Lie derivative.
+Note that the flow map can be viewed as a mapping $\varphi_t:\mathcal M \to \mathcal M$, and thus, the differential map $T_p \varphi _t$ defines a mapping from $T_p \mathcal M$ to $T_{ \varphi_t(p) } \mathcal M$. Therefore, the Lie derivative measures infinitesimal differences in $\Omega$ when evaluated at $p$ and at $\varphi_t(p)$. The following theorem summarizes some basic properties of the Lie derivative.
 
 \begin{theorem} \label{theorem:2.3}
-Suppose that $X$ is a smooth vector field defined on a smooth manifold $\mathcal M$ with $\varphi$ the flow of $X$. Furthermore, suppose that $\Omega$ is a differential $k$-form. The following statements hold:
+Suppose that $X$ is a smooth vector field defined on a smooth manifold $\mathcal M$ with $\varphi_t$ the flow of $X$. Furthermore, suppose that $\Omega$ is a differential $k$-form. The following statements hold:
 \begin{enumerate} [label=(\alph*)]
 \item for a smooth scalar function $f:\mathcal M \to \mathbb R$, $\mathcal L_X f = X\cdot f$, where $X \cdot f$ is the directional derivative of $f$ along $X$.
 \item (The Lie derivative formula)
@@ -202,26 +203,28 @@ Here, $D_{(1,1)}$ is the conventional directional derivative operator and all te
 
 For a $k$-form $\Omega$, the \emph{exterior derivative} is a $(k+1)$-form $\mathbf d \Omega$, that captures the differential changes in $\Omega$ and for a given coordinate chart $x$ is defined as
 \begin{equation} \label{eq:2.13}
-	\mathbf d \Omega =  \sum_j \sum_{i_1<\dots<i_k} \frac{\partial \alpha_{i_1,\dots,i_k}}{\partial x_j} dx_j\wedge dx_{i_1}\wedge\dots\wedge dx_{i_k}.
+	\mathbf d \Omega = \frac{\partial \alpha_{i_1,\dots,i_k}}{\partial x_j} dx_j\wedge dx_{i_1}\wedge\dots\wedge dx_{i_k},
 \end{equation}
-Note that the above definition is shown to be to be chart independent \cite{rudin1964principles}. It is checked with a straightforward calculation that for $v_0,v_1\dots,v_k \in T_p\mathcal M$ and $p\in \mathcal M$ we have
+summing over $j$ and $i_1<\dots<i_k$. Note that the above definition is shown to be to be chart independent \cite{rudin1964principles}. It is checked with a straightforward calculation that for $v_0,v_1\dots,v_k \in T_p\mathcal M$ and $p\in \mathcal M$ we have
 \begin{equation} \label{eq:2.14}
 	\mathbf d \Omega_p(v_0,v_1,\dots,v_k) = \sum_{i=1}^k (-1)^i \nabla \Omega \cdot v_i (v_0,\dots,\mathring{v_i},\dots,v_k), 
 \end{equation}
-where $\nabla \Omega \cdot v_i = \sum_j \sum_{i_1<\dots<i_k} v_i^j \partial \omega_{i_1,\dots,i_k}/\partial x_j$, $\mathring{v_i}$ means that the vector $v_i$ is dropped out, and $v_i^j$ is the $j$th component of $v_i$. A differential $k$-form $\Omega$ is called \emph{closed}, if $\mathbf d \Omega = 0$, and is called \emph{exact} there exist there is a differential $(k-1)$-form $\Gamma$ such that $\Omega = \mathbf d \Gamma$. The symmetry in partial derivatives implies that the exterior derivative of any differential form is closed, i.e., $\mathbf d^2 = 0$ for any differential $k$-form. However, no all differential forms are exact. We close this section by showing the sufficient condition for a differential form to be exact.
+where $\nabla \Omega \cdot v_i = \sum_j \sum_{i_1<\dots<i_k} v_i^j \partial \omega_{i_1,\dots,i_k}/\partial x_j$, $\mathring{v_i}$ means that the vector $v_i$ is dropped out, and $v_i^j$ is the $j$th component of $v_i$. 
+
+A differential $k$-form $\Omega$ is called \emph{closed}, if $\mathbf d \Omega = 0$, and is called \emph{exact} if there is a differential $(k-1)$-form $\Gamma$ such that $\Omega = \mathbf d \Gamma$. The symmetry in the partial derivatives of smooth functions implies that the exterior derivative of any differential form is closed, i.e., $\mathbf d^2 \Omega = 0$ for any differential $k$-form $\Omega$. However, not all differential forms are exact. We close this section by showing the sufficient condition for a differential form to be exact.
 
 \begin{theorem} \label{theorem:2.4}
 (Poincar\'e Lemma) Let $\mathcal M$ be a smooth $n$-dimensional manifold with $\Omega$ a differential $k$-form, defined on $\mathcal M$. If $\Omega$ is closed then for any point $p\in \mathcal M$, there is a neighborhood $U$ of $p$ where $\Omega|_{U}$ is exact.
 \end{theorem}
 
 \begin{proof}
-Let $(x,U)$ be a coordinate cart around $p\in \mathcal M$. Without loss of generality, we assume that $x(p)=0$ and that the image of $U$ under $x$ contains an open ball around the origin. We show that the push forward of $\Omega$ to any point on this ball is exact.
+Let $(x,U)$ be a coordinate cart around $p\in \mathcal M$. Without loss of generality, we assume that $x(p)=0$ and that the image of $U$ under $x$ contains an open ball around the origin. We show that the pull-back of $\Omega$ to any point on this ball is exact.
 
 The condition $\mathbf d \Omega = 0$ implies that
 \begin{equation*}
-	\sum_l \sum_{j_1<\dots<j_{k-1}} \frac{\partial \omega_{j_1,\dots,j_k}}{\partial x_l} dx_l\wedge dx_{j_1}\wedge \dots \wedge dx_{j_k} = 0, \quad j_1<\dots<j_k.
+	\sum_l \sum_{j_1<\dots<j_{k-1}} \frac{\partial \omega_{j_1,\dots,j_k}}{\partial x_l} dx_l\wedge dx_{j_1}\wedge \dots \wedge dx_{j_k} = 0.
 \end{equation*}
-Note that the indices $l,j_1,\dots,j_k$ are not in the proper order. It is easily checked a reordering of the indices in the above expression yields
+Note that the indices $l,j_1,\dots,j_k$ are not in the proper order. It is easily checked that a reordering of the indices in the above expression yields
 \begin{equation*}
 	\sum_{n_1<\dots<n_{k+1}}\lambda_{n_1,\dots,n_{k+1}} dx_{n_1}\wedge \dots \wedge dx_{n_{k+1}} = 0,
 \end{equation*}
@@ -229,7 +232,7 @@ with
 \begin{equation*}
 	\lambda_{n_1,\dots,n_{k+1}} = \sum_{m=1}^{k+1} (-1)^{m+1} \frac{\partial \omega_{n_1\dots\mathring n_m \dots n_{k+1}}}{\partial x_{n_m}},
 \end{equation*}
-which implies $\lambda_{n_1,\dots,n_{k+1}} = 0$, for all $n_1<\dots<n_{k+1}$. Here $\mathring n_m$ means that $n_m$ is omitted. Now we construct a $(k-1)$-form $\Gamma$ such that $\mathbf d \Gamma = \Omega$:
+which implies $\lambda_{n_1,\dots,n_{k+1}} = 0$, for all $n_1<\dots<n_{k+1}$. Here $\mathring n_m$ means that $n_m$ is omitted. Now we construct a $(k-1)$-form $\Gamma$ and we claim that $\mathbf d \Gamma = \Omega$:
 \begin{equation*}
 	\Gamma_{(x_1,\dots,x_n)} = \left( \int_0^1 t^{k-1} \omega_{ji_1\dots,i_{k-1}}(tx_1,\dots,tx_n) x_j \ dt \right) dx_{i_1}\wedge \dots \wedge dx_{i_{k-1}}.
 \end{equation*}
@@ -237,7 +240,7 @@ Taking the exterior derivative of $\Gamma$ gives
 \begin{equation*}
 	\mathbf d \Gamma = \left( \int_0^1 t^{k-1} \frac{\partial }{\partial x_l} \big( \omega_{ji_1\dots,i_{k-1}}(tx) x_j \big) \ dt \right) dx_l\wedge dx_{i_1}\wedge \dots \wedge dx_{i_{k-1}}.
 \end{equation*}
-Here $tx$ denotes the point $(tx_1,\dots,tx_n)$. We denote by $c_{li_1\dotsi_{k-1}}$ the coefficients in this expression. Similar to above, we can construct a reordering of the indices to obtain the coefficient of $dx_{j_1}\wedge\dots\wedge dx_{j_k}$ for $j_1<\dots<j_{k}$ as
+Here $tx$ denotes the point $(tx_1,\dots,tx_n)$. Let $c_{li_1\dotsi_{k-1}}$ be the coefficients in this expression. Similar to above, we can construct a reordering of the indices to obtain the coefficient of $dx_{j_1}\wedge\dots\wedge dx_{j_k}$ for $j_1<\dots<j_{k}$ as
 \begin{equation*}
 	\sum_{m=1}^{k} (-1)^{m+1} c_{j_mj_1\dots\mathring j_{m}\dots j_k}.
 \end{equation*}
@@ -250,10 +253,10 @@ It follows
        & = \int_0^1 t^{k-1} \left( x_j t \sum_{m=1}^{k} (-1)^{m+1}\frac{\partial \omega_{jj_1\dots\mathring j_m\dots j_k}}{\partial x_{j_m}}(tx) + k \omega_{j_1\dots j_k}(tx)  \right) \ dt \\
        & = \int_0^1 t^{k-1} \left( x_j k t \frac{\partial \omega_{j_1\dots j_k}}{\partial x_j}(tx) + kt^{k-1} \omega_{j_1\dots j_k}(tx)\right)\ dt \\
        & = \int_0^1 \frac{\partial}{\partial t}(t^k \omega_{j_1\dots j_k}(tx) )\ dt \\
-      	& = \omega_{j_1\dots j_k}(x).
+      	& = \omega_{j_1\dots j_k}(x),
 \end{aligned}
 \end{equation*}
-Here, we used the condition $\lambda_{n_1,\dots,n_{k+1}} = 0$ and the chain rule to obtain the result.
+which implies $\mathbf d \Gamma = \Omega$. Here, we used the condition $\lambda_{n_1,\dots,n_{k+1}} = 0$ and the chain rule to obtain the result.
 \end{proof}
 
 
@@ -298,15 +301,15 @@ If a non-zero vector $v\in T_p \mathcal M$ is given, then $\Omega_p^{\flat}(v):=
 Note that the condition for $\Omega$ to be closed is indeed required to construct a well-defined symplectic manifold. In the following theorem, we will see that a closedness of the 2-form is required to locally approximate a symplectic manifold with a symplectic linear vector space. This is especially important in the context of symplectic MOR where we approximate a high dimensional symplectic manifold with a low dimensional linear vector space.
 
 \begin{theorem} \label{theorem:2.5}
-(Darboux' Theorem) Let $\mathcal M$ be a manifold and $\Omega_1$ and $\Omega_2$ be two strongly non-degenerate and closed 2-forms defined on $\mathcal M$, such that $\Omega_1 = \Omega^2$, exactly at some $p\in \mathcal M$. Then there are neighborhoods $U$ and $V$ of $p$ such that the mapping $\varphi:U\to V$ is a diffeomorphism with $\varphi^* \Omega_2 = \Omega_1$
+(Darboux' Theorem) Let $\mathcal M$ be a manifold and $\Omega_1$ and $\Omega_2$ be two strongly non-degenerate and closed 2-forms defined on $\mathcal M$, such that $\Omega_1 = \Omega_2$, exactly at some $p\in \mathcal M$. Then there are neighborhoods $U$ and $V$ of $p$ such that the mapping $\varphi:U\to V$ is a diffeomorphism with $\varphi^* \Omega_2 = \Omega_1$
 \end{theorem}
 
 \begin{proof}
 The idea is to construct a family of continuously varying 2-forms:
 \begin{equation*}
-\Omega_t = (1-t)\Omega_1 + t\Omega_2 = \Omega_1 + t \Omega,
+\Omega_t = (1-t)\Omega_0 + t\Omega_1 = \Omega_0 + t \Omega,
 \end{equation*}
-where $\Omega = \Omega_2 - \Omega_1$. Now we would like to find a smooth vector field $X_t$ with the flow $\varphi_t$ such that $\frac{d}{dt} \varphi_t^*\Omega_t = 0$. We construct $U$ so small that $\Omega_t$ is strongly non-degenerate. This can be done since $\Omega_0 = \Omega_1$ and is constant at $p$, so the compactness of $[0,1]$ implies that there is an open ball around $p$ such that $\Omega_t$ is strongly non-degenerate for all $t\in [0,1]$. We have
+where $\Omega = \Omega_1 - \Omega_0$. Now we would like to find a smooth vector field $X_t$ with the flow $\varphi_t$ such that $\frac{d}{dt} \varphi_t^*\Omega_t = 0$. We construct $U$ so small that $\Omega_t$ is strongly non-degenerate. This can be done since $\Omega_0 = \Omega_1$ and is constant at $p$, so the compactness of $[0,1]$ implies that there is an open ball around $p$ such that $\Omega_t$ is strongly non-degenerate for all $t\in [0,1]$. We have
 \begin{equation*}
 \begin{aligned}
 	\frac{d}{dt} \varphi_t^*\Omega_t &= \varphi_t^* \mathcal L_{X_t} \Omega_t + \varphi_t^* \frac{d}{dt} \Omega_t \\
@@ -314,7 +317,7 @@ where $\Omega = \Omega_2 - \Omega_1$. Now we would like to find a smooth vector 
 	&= \varphi_t^*( \mathbf d i_{X_t}\Omega_t + \Omega ).
 \end{aligned}
 \end{equation*}
-Here we used the Lie derivative formula for time dependent differential forms, Cartan's magic formula, closedness of $\Omega_t$, and the linearity of pull back operator. Since $\Omega$ is a closed form and strongly non-degenerate, we can apply the Poincar\'e lemma \ref{?} to write $\Omega = \mathbf d \Gamma$ for some 1-form $\Gamma$. Now the above expression is equal to
+Here we used the Lie derivative formula for time dependent differential forms, Cartan's magic formula, closedness of $\Omega_t$, and the linearity of pull-back operator. Since $\Omega$ is a closed form and strongly non-degenerate, we can apply the Poincar\'e lemma \ref{theorem:2.4} to write $\Omega = \mathbf d \Gamma$ for some 1-form $\Gamma$. The above expression becomes
 \begin{equation*}
 	= \varphi_t^*( \mathbf d ( i_{X_t}\Omega_t + \Gamma ) ).
 \end{equation*}
@@ -325,7 +328,7 @@ Therefore, it is sufficient to define $X_t$ to be the vector field associate to 
 Let $(\mathcal P, \Omega)$ b a symplectic manifold. There is a local coordinate chart $(x,U)$ around each point $z\in\mathcal P$ in which $\Omega$ is constant.
 \end{corollary}
 \begin{proof}
-Take $\Omega_1 = \Omega$ and $\Omega_2 = \Omega_z$, i.e. $\Omega_2$ is a constant differential form. The rest follows from the proof of the Darboux' theorem. The constructed flow $\varphi_t$ provides a coordinate cart that transforms $\Omega$ into the constant form $\Omega_2$.
+Fix a point $z_0 \in \mathcal P$. Take $\Omega_0 = \Omega$ and $\Omega_1 = \Omega_{z_0}$, i.e. $\Omega_1$ is a constant differential form $\Omega|_{z = z0}$. The rest follows from the proof of the Darboux' theorem. The constructed flow $\varphi_t$ provides a coordinate cart that transforms $\Omega$ into the constant form $\Omega_1$.
 \end{proof}
 
 \begin{corollary} \label{theorem:2.7}
@@ -343,10 +346,10 @@ Let $(\mathcal P, \Omega)$ be a finite-dimensional symplectic manifold. Then $\m
 		-I_n & 0_n
 	\end{pmatrix}.
 \end{equation}
-Here, $a,b\in \mathbb R^{2n}$ with $a_i = dx_i(v)$ and $b_i = dx_i(u)$, $i=1,\dots,2n$ for any $u,v \in T_z\mathcal P$ which results the form in \cref{eq:2.15}.
+Here, $a,b\in \mathbb R^{2n}$ with $a_i = dx_i(v)$ and $b_i = dx_i(u)$, $i=1,\dots,2n$ for any $u,v \in T_z\mathcal P$. This is the matrix notation of the form in \cref{eq:2.15}.
 \end{proof}
 
-Note that due to non-degeneracy of $\Omega$, vectors $f_1,\dots,f_n$ can be interpreted as co-vectors such that $\Omega^{\flat}(e_i)=f_i$, for $i=1,\dots,n$.  
+Note that due to non-degeneracy of $\Omega$, vectors $f_1,\dots,f_n$ can be interpreted as co-vectors such that $\Omega^{\flat}(e_i)=f_i$, for $i=1,\dots,n$. By abusing the notation, when the co-vector property of these vectors are of interest we may denote these vectors by $f^*_1,\dots,f^*_n$.
 
 \begin{corollary} \label{theorem:2.8}
 Let $(\mathcal P, \Omega)$ be a symplectic manifold. There is a neighborhood $U$ around each point $z\in \mathcal P$ where $U$ is diffeomophic to a linear vector space $V$ where $\Omega$ is constant on $V$.
@@ -373,7 +376,7 @@ We call $H$ the \emph{Hamiltonian function}. In this case, the equations of evol
 \begin{equation} \label{eq:2.18}
 	\dot z = X_H(z),
 \end{equation}
-and is referred to as \emph{Hamilton's equation of evolution}.
+and is referred to as the \emph{Hamilton's equation of evolution}.
 \end{definition}
 When $\mathcal P$ is $2n$-dimensional and a canonical basis is provided, Hamilton's equation take the form
 \begin{equation} \label{eq:2.19}
@@ -395,7 +398,7 @@ However, closedness of $\Omega$ implies $\mathbf d \Omega = 0$. Furthermore, sin
 The Hamiltonian is conserved along the Hamiltonian flow.
 \end{corollary}
 \begin{proof}
-I follows that
+It follows that
 \begin{equation*}
 \begin{aligned}
 	\frac{d}{dt} H(\varphi_t(z)) = \mathbf dH\left( \frac{d}{dt} \varphi_t(z) \right) = \mathbf dH \left( X_H(z) \right) &= i_{X_H(z)} \Omega(X_H(z))\\
@@ -406,12 +409,12 @@ Therefore, $H\circ \varphi_t$ is constant in time.
 \end{proof}
 
 \section{Hamiltonian Systems on a Symplectic Linear Vector Space} \label{section:2.4}
-In the symplectic model reduction, the flow of a Hamiltonian system is projected on a low dimensional symplectic linear vector space. Therefore, a deeper study of symplectic linear vector spaces is essential in the understanding of symplectic MOR. In this section we assume that a symplectic manifold $(\mathcal P, \Omega)$ is also a linear vector space, i.e., we identify both $\mathcal P$ and $T_z \mathcal P$ with a linear vector space $\mathcal Z$.
+In the symplectic MOR, the flow of a Hamiltonian system is projected on a low dimensional symplectic linear vector space. Therefore, it is beneficiary to have a closer look at symplectic linear vector spaces. In this section we assume that a symplectic manifold $(\mathcal P, \Omega)$ is also a linear vector space, i.e., we identify both $\mathcal P$ and $T_z \mathcal P$ with a linear vector space $\mathcal Z$.
 
 \begin{definition}
 Let $\mathcal Z$ be a finite dimensional linear vector space with $\Omega$ a constant 2-form defined on $Z$. The pair $(\mathcal Z,\Omega)$ is called a symplectic linear vector space if $\Omega$ is non-degenerate.
 \end{definition}
-Note that \Cref{theorem:2.7} indicates that that $\mathcal Z$ is even-dimensional. Furthermore, the symplectic Gram-Schmidt process can construct a canonical basis, in which $\Omega(a,b) = a^T \mathbb J_{2n} b$, where $\mathbb J_{2n}$ is defined in (\ref{eq:2.141}) and $a,b\in \mathcal Z$. However, in a non-canonical basis, the symplectic form $\Omega$ takes the form $\Omega(a,b) = a^TJ_{2n}b$, where $J_{2n}$ is a full rank and skew-symmetric matrix. Therefore, when the matrix form of $\Omega$ is being discussed, we may refer to $\Omega$ as $\mathbb J_{2n}$ or $J_{2n}$, respectively.
+Note that \Cref{theorem:2.7} indicates that that $\mathcal Z$ is even-dimensional. Furthermore, the symplectic Gram-Schmidt process can construct a canonical basis, in which $\Omega(a,b) = a^T \mathbb J_{2n} b$, where $\mathbb J_{2n}$ is defined in (\ref{eq:2.141}) and $a,b\in \mathcal Z$. However, in a non-canonical basis, the symplectic form $\Omega$ takes the form $\Omega(a,b) = a^TJ_{2n}b$, where $J_{2n}$ is a full rank and skew-symmetric matrix. Therefore, when the matrix form of $\Omega$ is being discussed, we may refer to $\Omega$ as $\mathbb J_{2n}$ or $J_{2n}$, depending on the coordinate chart.
 
 A symplectic linear vector space can be equipped with an inner product to form a inner product space. However, a symplectic basis is not necessarily well-conditioned (or orthonormal) with respect to a general inner-product. The following proposition provides a natural inner product defined on a symplectic linear vector space that carries the conditioning of a canonical basis.
 
@@ -420,7 +423,7 @@ Let $(\mathcal Z,\Omega)$ be a $2n$-dimensional symplectic linear vector space. 
 \end{proposition}
 
 \begin{proof}
-Consider the linear mapping $\Omega^{\flat}:\mathcal Z \to \mathcal Z^*$ and let $e_i^*$ and $f_i^*$ be the image of $e_i$ and $f_i$ under $\Omega^{\flat}$, respectively for $i=1,\dots,n$. Non-degeneracy of $\Omega^{\flat}$ indicates that $e_i^*$ and $f_i^*$ are unique and non-zero, and that $A^*=\{e_1^*,\dots,e_n^*,f_1^*,\dots,f_n^*\}$ forms a basis for $\mathcal Z^*$. We construct a linear map $T:\mathcal Z^* \to \mathcal Z$ by prescribing its action on the basis co-vectors of $A^*$ as
+Consider the linear mapping $\Omega^{\flat}:\mathcal Z \to \mathcal Z^*$ and let $e_i^*$ and $f_i^*$ be the image of $e_i$ and $f_i$ under $\Omega^{\flat}$, respectively for $i=1,\dots,n$. Non-degeneracy of $\Omega^{\flat}$ indicates that $e_i^*$ and $f_i^*$ are unique and non-zero, and that $A^*=\{e_1^*,\dots,e_n^*,f_1^*,\dots,f_n^*\}$ forms a basis for $\mathcal Z^*$. We construct a linear map $T:\mathcal Z^* \to \mathcal Z$ by prescribing its action on elements of $A^*$ as
 \begin{equation*}
 	T(e_i^*) = -f_i, \quad T(f_i^*) = e_i, \quad i=1,\dots,n.
 \end{equation*}
@@ -435,17 +438,17 @@ where $T^{-1}_{u} = T^{-1}(u) \in \mathcal Z^*$. It is straight forward to check
 \end{proof}
 
 \begin{corollary} \label{theorem:2.12}
-When $\mathbb J_{2n}$ is the matrix form of $\Omega$, then $<,>$ construction in \Cref{theorem:2.11} is the Euclidean inner product. The canonical basis constructed with respect to $\mathbb J_{2n}$, in this case, is called an \emph{ortho-symplectic} basis.
+When $\mathbb J_{2n}$ is the matrix form of $\Omega$, then $<,>$ constructed in \Cref{theorem:2.11} is the Euclidean inner product. The canonical basis constructed with respect to $\mathbb J_{2n}$, in this case, is called an \emph{ortho-symplectic} basis.
 \end{corollary}
 
-An inner product defined in \Cref{theorem:2.11} is especially useful since one can switch between computing the 2-form $\Omega$ or the inner production $<,>$, when needed. However, when dealing with a subspace of $\mathcal Z$, further structures are required to guarantee that such inner-product exists.
+An inner product defined in \Cref{theorem:2.11} is especially useful since one can switch between computing the 2-form $\Omega$ and the inner production $<,>$, when needed. However, when dealing with a subspace of $\mathcal Z$, further structures are required to guarantee that such inner-product exists.
 
 \begin{definition} \cite{abraham1978foundations}
 Let $(\mathcal Z, \Omega)$ be a symplectic linear vector space and $\mathcal E \subset \mathcal Z$ be a subspace. The \emph{symplectic complement} of $\mathcal E$, referred to as $\mathcal E^{\perp}$, is a linear subspace defined as
 \begin{equation*}
 	\mathcal E^{\perp} = \{ a \in \mathcal Z | \Omega(a,b) = 0, \ \text{for all } b \in \mathcal E \}.
 \end{equation*}
-Furthermore, we call $\mathcal E$ an \emph{isotropic subspace} if $\mathcal E\subset \mathcal E^{\perp}$, and a \emph{symplectic subspace} if $\Omega|_{\mathcal E\times \mathcal E}$ is non-degenerate. Furthermore, we call $\mathcal E$ a \emph{Lagrangian subspace}, if both $\mathcal E$ and $\mathcal E^C$ are isotropic, where $\mathcal E^C$ is vector space complement of $\mathcal E$\footnote{$E^{C}$ is a vector space complement of $E$ if $\mathcal{Z} = \mathcal E\oplus \mathcal E^C$. }.
+Furthermore, we call $\mathcal E$ an \emph{isotropic subspace} if $\mathcal E\subset \mathcal E^{\perp}$, a \emph{symplectic subspace} if $\Omega|_{\mathcal E\times \mathcal E}$ is non-degenerate, and a \emph{Lagrangian subspace} if both $\mathcal E$ and $\mathcal E^C$ are isotropic, where $\mathcal E^C$ is vector space complement of $\mathcal E$\footnote{$E^{C}$ is a vector space complement of $E$ if $\mathcal{Z} = \mathcal E\oplus \mathcal E^C$. }.
 \end{definition}
 \begin{proposition} \label{theorem:2.13} \cite{abraham1978foundations}
 Let $(\mathcal Z, \Omega)$ be a symplectic linear vector space and $\mathcal E\subset \mathcal F$ is a linear subspace. Then the following are equivalent:
@@ -456,11 +459,11 @@ Let $(\mathcal Z, \Omega)$ be a symplectic linear vector space and $\mathcal E\s
 \end{enumerate}
 \end{proposition}
 \begin{proof}
-We first prove that (a) implies (b). Since a Lagrangian subspace is isotropic then $\mathcal E \subset \mathcal E^{\perp}$. Let $F = E^C$ and take Take $v \in \mathcal E^{\perp}$. It is easily verified that $\mathcal Z = \mathcal E \oplus\mathcal F$. Therefore, $v = e + f$, where $e \in \mathcal E$ and $f\in \mathcal F$. Since $\mathcal E$ is isotropic then $\Omega(e,u) = 0$ for all $u \in \mathcal E$. Since $v\in \mathcal E^{\perp}$, it follows for any $u\in E$ that
+We first prove that (a) implies (b). Since a Lagrangian subspace is isotropic then $\mathcal E \subset \mathcal E^{\perp}$. Let $F = E^C$ and take Take $v \in \mathcal E^{\perp}$. It is easily verified that $\mathcal Z = \mathcal E \oplus\mathcal F$. Therefore, $v = e + f$, where $e \in \mathcal E$ and $f\in \mathcal F$. Since $\mathcal E$ is isotropic then $\Omega(e,u) = 0$ for all $u \in \mathcal E$. As $v\in \mathcal E^{\perp}$, it follows that for any $u\in E$
 \begin{equation*}
 	0 = \Omega(v,u) = \Omega(e,u) + \Omega(f,u) = \Omega(f,u).
 \end{equation*}
-But since $\mathcal F$ is isotropic then $\Omega(f,u) = 0$ for all $u \in \mathcal F$. This implies that $\Omega(f,u) = 0$ for all $u\in\mathcal E \cup \mathcal F = \mathcal Z$. Since $\Omega$ is non-degenerate, it implies that $f=0$ and $v=e\in \mathcal E$. Therefore $\mathcal E^{\perp} \subset \mathcal E$.
+But since $\mathcal F$ is isotropic then $\Omega(f,u) = 0$ for all $u \in \mathcal F$. This implies that $\Omega(f,u) = 0$ for all $u\in\mathcal E \cup \mathcal F = \mathcal Z$. Non-degeneracy of $\Omega$ implies that $f=0$ and $v=e\in \mathcal E$. Therefore $\mathcal E^{\perp} \subset \mathcal E$.
 
 Now we show that (b) implies (c). Consider the mapping $\Omega^{\flat}:\mathcal Z \to \mathcal Z^*$. Note that $\mathcal E^{\perp}$ is in the kernel of $\Omega^{\flat}|_{\mathcal E} : \mathcal E \to (\mathcal Z \backslash \mathcal E^{\perp})^*$. Since $\Omega^{\flat}$ is injective, then dim$(\mathcal E) \leq \text{dim}(\mathcal Z) - \text{dim}(\mathcal E^{\perp})$. Furthermore, $\Omega^{\flat}|_{\mathcal E}$ can be viewed as a mapping from $\mathcal Z$ to $\mathcal E^{*}$ where the kernel is exactly $\mathcal E^{\perp}$. Therefore, dim$(\mathcal E) \geq \text{dim}(\text{range}(\Omega^{\flat}|_{\mathcal E})) = \text{dim}(\mathcal{Z}) - \text{dim}(\mathcal E^{\perp})$. The two inequalities implies dim$(\mathcal Z) = \text{dim}(\mathcal E) + \text{dim}(\mathcal E^{\perp})$ which together with (b) provides the result.
 
@@ -476,17 +479,19 @@ The second step is due to the fact that each $f_i$ is taken from $\mathcal F_{i-
 
 \Cref{theorem:2.13} suggests that a Lagrangian subspace is a maximal isotropic subspace. We are now ready to state the following theorem.
 
-\begin{theorem} \label{theorem:2.14}
-Let $(\mathcal Z, \Omega)$ be a $2n$-dimensional symplectic linear vector space. Furthermore suppose that $\mathcal X\subset \mathcal Z$ is $2k$-dimensional a linear subspace with $k<n$. If the pair $(\mathcal X,\Omega|_{\mathcal X})$ contain a Lagrangian subspace, then $(\mathcal X,\Omega|_{\mathcal X})$ is also a symplectic linear vector space.
+\begin{theorem} \label{theorem:2.14} \cite{abraham1978foundations}
+Let $(\mathcal Z, \Omega)$ be a $2n$-dimensional symplectic linear vector space. Furthermore suppose that $\mathcal X\subset \mathcal Z$ is $2k$-dimensional a linear subspace with $k<n$. If the pair $(\mathcal X,\Omega|_{\mathcal X})$ contain a Lagrangian subspace, then $(\mathcal X,\Omega|_{\mathcal X})$ is also a symplectic subspace.
 \end{theorem}
 \begin{proof}
 We show that $\Omega|_{\mathcal X}$ is non-degenerate on $\mathcal X$. Let $\mathcal E$ be a Lagrangian subspace of $\mathcal X$. Since $\mathcal F = \mathcal E^{C}$ and dim$(F) = \text{dim}(E) = \text{dim}(\mathcal X)/2$ then by \Cref{theorem:2.13} (c), $\mathcal F$ is also a Lagrangian subspace. Furthermore, \Cref{theorem:2.13} implies that $\mathcal E = \mathcal E^{\perp}$ and $\mathcal F = \mathcal F^{\perp}$. Now assume that there is $u\in\mathcal X$ such that $\Omega|_{\mathcal X}(u,v)=0$ for all $v\in \mathcal X$. Then $v\in \mathcal E^{\perp} = \mathcal E$ and $v\in \mathcal F^{\perp} = \mathcal F$. Therefore $v\in\mathcal E \cap \mathcal F = \{ 0 \}$.
 \end{proof}
 
-Once a Lagrangian subspace is identified in linear subspace of a symplectic linear vector space, one can induce a reduced symplectic form $\Omega|_{\mathcal X}$. This is particularly important in the context of model reduction where a low dimensional symplectic reduced vector space is constructed. The induced symplectic form $\Omega|_{\mathcal X}$ can then be used to construct an ortho-symplectic basis on the low dimensional symplectic subspace.
+Once a Lagrangian subspace is identified in linear subspace of a symplectic linear vector space, one can induce a reduced symplectic form $\Omega|_{\mathcal X}$. This is particularly important in the context of MOR where a low dimensional symplectic reduced vector space is constructed. The induced symplectic form $\Omega|_{\mathcal X}$ can then be used to construct an ortho-symplectic basis on the low dimensional symplectic subspace.
+
+\section{Examples of Hamiltonian Systems} Add if time permits.
 
 \section{Symplectic Integration of Hamiltonian Systems}
-In \cref{section:2.3} we saw two intrinsic feature of Hamiltonian systems: conservation of the Hamiltonian, expressed in \Cref{theorem:2.10}, and the symplecticity of the Hamiltonian flow, discussed in \Cref{theorem:2.9}. Since the exact flow of a Hamiltonian system is not always available, approximation of this flow has been a main topic of study, in terms of geometric numerical integration \cite{hairer2006geometric,blanes2016concise}. However, there are no known methods that can preserve both the conservation of the Hamiltonian and the symplecticity of the flow, for a general Hamiltonian system. \emph{Symplectic numerical integration}, is a class of methods that approximate the flow of a Hamiltonian systems while preserving the symplecticity of the flow. Although these methods tend to violated the conservation of the Hamiltonian, but robustness over long-time integration make them the method of choice in wide range of application, e.g. molecular dynamics simulation \cite{farantos2014nonlinear} and celestial mechanics, \cite{schutz2004statistical}. In this section investigate the theory behind symplectic integration and introduce some common symplectic numerical integrators. Throughout this section, we assume that $(\mathcal Z, \Omega)$ is a symplectic linear vector space (often $\mathcal Z = \mathbb R^{2n}$) with a constant $\Omega$. Furthermore, we assume a canonical coordinate system, in which $\Omega$ takes the matrix form $\mathbb J_{2n}$. We emphasize this by writing $\Omega = \Omega_{\mathbb J_{2n}}$.
+In \cref{section:2.3} we saw two intrinsic feature of Hamiltonian systems: conservation of the Hamiltonian, expressed in \Cref{theorem:2.10}, and the symplecticity of the Hamiltonian flow, discussed in \Cref{theorem:2.9}. Since the exact flow of a Hamiltonian system is not always available, approximation of this flow has been a main topic of study, in terms of geometric numerical integration \cite{hairer2006geometric,blanes2016concise}. However, there are no known methods that can preserve both the conservation of the Hamiltonian and the symplecticity of the flow, for a general Hamiltonian system. \emph{Symplectic numerical integration}, is a class of methods that approximate the flow of a Hamiltonian systems while preserving the symplecticity of the flow. Although these methods tend to violated the conservation of the Hamiltonian, but robustness over long-time integration make them the method of choice in wide range of application, e.g. molecular dynamics simulation \cite{farantos2014nonlinear} and celestial mechanics, \cite{schutz2004statistical}. In this section we investigate the theory behind symplectic integration and introduce some common symplectic numerical integrators. Throughout this section, we assume that $(\mathcal Z, \Omega)$ is a symplectic linear vector space (often $\mathcal Z = \mathbb R^{2n}$) with a constant $\Omega$. Furthermore, we assume a canonical coordinate system, in which $\Omega$ takes the matrix form $\mathbb J_{2n}$. We emphasize this by writing $\Omega = \Omega_{\mathbb J_{2n}}$.
 
 \begin{proposition}
 Let $(\mathbb R^{2n}, \Omega_{\mathbb J_{2n}})$ be a $2n$-dimensional symplectic linear vector space and let $\psi:\mathbb R^{2n} \to \mathbb R^{2n}$ be a smooth symplectic diffeomorphism, then
@@ -510,7 +515,9 @@ When $\psi$ is a linear transformation, i.e., $\psi(z) = Az$ with $A\in \mathbb 
 \begin{equation} \label{eq:2.201}
 	A^T \mathbb J_{2n} A = \mathbb J_{2n}.
 \end{equation}
-In this case the matrix $A$ is referred to as a \emph{symplectic matrix}. To explain the intuition behind a symplectic transformation, we take the geometric interpretation of a symplectic transformation form \cite{hairer2006geometric}. Suppose that $f:U \to \mathbb R^{2n}$, with $U$ a compact subset of $R^{2}$, a 2 dimensional smooth surface in $\mathbb R^{2n}$. The manifold $S = f(U)$ can be viewed as the union of infinitesimal parallelograms spanned by vectors ${\partial f}/{\partial x}$ and ${\partial f}/{\partial y}$. We now define an area operator that finds the area of the surface by summing over the area of all parallelograms:
+In this case the matrix $A$ is referred to as a \emph{symplectic matrix}.
+
+To explain the intuition behind a symplectic transformation, we take the geometric interpretation of a symplectic transformation form \cite{hairer2006geometric}. Suppose that $f:U \to \mathbb R^{2n}$, with $U$ a compact subset of $R^{2}$, a 2 dimensional smooth surface in $\mathbb R^{2n}$. The manifold $S = f(U)$ can be viewed as the union of infinitesimal parallelograms spanned by vectors ${\partial f}/{\partial x}$ and ${\partial f}/{\partial y}$. We now define an area operator that finds the area of the surface by summing over the area of all parallelograms:
 \begin{equation} \label{eq:2.21}
 	\text{Area}(M) := \int_U \Omega_{\mathbb J_{2n}}( \frac{\partial f}{\partial x} , \frac{\partial f}{\partial y} ) \ dx dy.
 \end{equation}
@@ -546,14 +553,14 @@ A one step method has order $p$ if for all smooth $\varphi_t$ we have
 \end{equation}
 \end{definition}
 
-Since the exact flow of a Hamiltonian system is generally unknown, we tend to approximate it with a stepping method, e.g. a one step method. The symplecticity of the Hamiltonian flow contributes to many geometrical symmetries, e.g. preservation of volume as discussed above, and corresponding dynamics. Thus, it is natural to expect a one step method to share this property in a numerical evaluation of Hamiltonian systems. Note that a general stepping schemes is not always volume preserving and can result in a qualitatively wrong approximation of a Hamiltonian flow \cite{hairer2006geometric}. On the other hand, area preservation provides symplectic time stepping schemes to have an excellent long-time behaviour \cite{hairer2006geometric,blanes2016concise}.
+Since the exact flow of a Hamiltonian system is generally unknown, we tend to approximate it with a stepping method, e.g. a one step method. The symplecticity of the Hamiltonian flow contributes to many geometrical symmetries, e.g. preservation of volume as discussed above, and the corresponding dynamics. Thus, it is natural to expect a one step method to share this property in a numerical evaluation of Hamiltonian systems. Note that a general stepping schemes is not always volume preserving and can result in a qualitatively wrong approximation of a Hamiltonian flow \cite{hairer2006geometric}. On the other hand, area preservation of symplectic time stepping schemes provides them with an excellent long-time behaviour \cite{hairer2006geometric,blanes2016concise}.
 
 \begin{definition}
 Let $H(q,p)$ be a smooth Hamiltonian where $q,p\in\mathbb R^{n}$ are vectors containing the coefficients of a vector in a canonical basis $A = \{ e_i,f_i\}_{i=1}^n$. The one step method
 \begin{equation}
 	q_{k+1} = q_k + h \cdot \nabla_p H(q_{k+1},p_k),\quad p_{k+1} = p_k - h \cdot \nabla_q H(q_{k+1},p_k)
 \end{equation}
-is called the \emph{symplectic Euler} that approximates the flow of the Hamiltonian system $\dot z = \mathbb J \nabla_z H$, with $z=(q,p)^T$. Here, $\nabla_x$ indicates the gradient operator with respect to the vector $x$.
+is called the \emph{symplectic Euler} scheme and approximates the flow of the Hamiltonian system $\dot z = \mathbb J \nabla_z H$, with $z=(q,p)^T$. Here, $\nabla_x$ indicates the gradient operator with respect to the vector $x$.
 \end{definition}
 
 \begin{theorem} \cite{hairer2006geometric}
@@ -590,7 +597,7 @@ The St\"ormer-verlet time stepping scheme, given by
 	q_{k+1} &= q_{k+1/2} + \frac h 2 \cdot \nabla_pH(q_{k+1/2},p_{k+1/2}),
 \end{aligned}
 \end{equation}
-and 
+or 
 \begin{equation} \label{eq:2.24}
 \begin{aligned}
 	p_{k+1/2} &= p_n - \frac h 2 \cdot \nabla_pH(q_k,p_{k+1/2}), \\
@@ -601,7 +608,7 @@ and
 is a symplectic time stepping method of order 2.
 \end{theorem}
 \begin{proof}
-It is straightforward to check that (\ref{eq:2.23}) and (\ref{eq:2.24}) are result by composing two symplectic Euler methods with step $h/2$ as $\Phi_{h/2}\circ \Phi^*_{h/2}$ and $\Phi^*_{h/2}\circ \Phi_{h/2}$, respectively. This implies that the St\"ormer-verlet scheme is of order order 2.
+It is straightforward to check that (\ref{eq:2.23}) and (\ref{eq:2.24}) are yielded by composing two symplectic Euler methods with step $h/2$ as $\Phi_{h/2}\circ \Phi^*_{h/2}$ and $\Phi^*_{h/2}\circ \Phi_{h/2}$, respectively. This implies that the St\"ormer-verlet scheme is of order order 2.
 \end{proof}
 \begin{theorem}
 The implicit midpoint scheme for a Hamiltonian system is given by
@@ -611,10 +618,10 @@ The implicit midpoint scheme for a Hamiltonian system is given by
 is a symplectic scheme of order 2.
 \end{theorem}
 \begin{proof}
-Let $\Phi_h(z_k) = z_{k+1}$ be the one step method corresponding to he implicit midpoint rule. It follows 
+Let $\Phi_h(z_k) = z_{k+1}$ be the one step method corresponding to the implicit midpoint rule. It follows 
 \begin{equation*}
 	(I - \frac h 2 J_{2n} \nabla^2_z H) \Phi'_h = (I + \frac{h}{2} J_{2n} \nabla^2_z H),
 \end{equation*}
-where $\nabla^2$ indicates the hessian operator. It is straight forward to show that $(\Phi'_h)^T J_{2n} \Phi'_h = J_{2n} $. Note that the implicit midpoint rule is a symmetric scheme, i.e., $\Phi^*_h = \Phi_h$. This symmetry implies that the method is of an even order \cite{hairer2006geometric}, therefore is of order 2.
+where $\nabla^2$ indicates the hessian operator. It is straight forward to show that $(\Phi'_h)^T J_{2n} \Phi'_h = J_{2n} $. Note that the implicit midpoint rule is a symmetric scheme, i.e., $\Phi^*_h = \Phi_h$. This symmetry implies that the method is of an even order \cite{hairer2006geometric}, therefore is at least of order 2.
 \end{proof}
 
