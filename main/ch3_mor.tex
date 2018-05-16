@@ -5,4 +5,14 @@ To cope with these limitations, \emph{reduced-order} modeling (ROM), appose to \
 
 In this chapter we summarize the fundamentals of MOR and especially RB methods. We present various conventional approaches and algorithms for linear and nonlinear problems. Since time, as a parameter, is particularly important in the context of Hamiltonian systems, we will develop this chapter with an emphasis on time-dependent problems.
 
-\section{new}
+\section{Parameterized Dynamical Systems}
+In this chapter we consider parametric dynamical systems of the type
+\begin{equation} \label{eq:3.1}
+\left\{
+\begin{aligned}
+	\frac d{dt} u(t;\mu) &= f(t,u;\mu),\\
+	u(0;\mu) &= u_0(\mu).
+\end{aligned}
+\right.
+\end{equation}
+Here $u,u_0\in \mathbb R^{n}$, $f:\mathbb R \times \mathbb R^{n} \times \mathbb P\to \mathbb R^{n}$, and $\mu \in \mathbb P$, where $\mathbb P$ is a compact subset of $\mathbb R^r$. It is well known that for a fixed $\mu$, \cref{eq:3.1} has a unique solution if $f$ is continuous with a continuous derivative \cite{rudin1976principles}. Note that for parametric PDEs, we may use the method of lines \cite{edsberg2015introduction} to obtain a dynamical system of the form (\ref{eq:3.1}).
