@@ -248,8 +248,59 @@ Thus, the computation of $X^{1/2}$ can be avoided. We summarize the computationa
 \end{algorithm}
 
 \section{The Greedy Basis Generation} \label{sec:3.3}
+for the purpose the of most efficient computation, it is important to identify time intensive high dimensional quantities and the cheaper low dimensional computations. This segregation or compartmentalization of quantities, according to their computational cost, is referred to as the \emph{offline/online} decomposition \cite{quarteroni2015reduced}. We tolerate some amount of computational complexity in the offline phase to achieve substantial computation acceleration in the online phase. In the context of RB methods, we tend restrict computations regarding the high-fidelity solution, only to the offline phase. Then we can enjoy fast computations by restricting all computations to the reduced space during the online phase.
 
-\section{The Galerkin and the Petrov-Galerkin Projection} In section \Cref{sec:3.2,sec:3.3} we discussed computational methods to construct a reduced basis $W$, and subsequently, a reduced space $\mathcal W_k$. In this section we elaborate on how to use a reduced basis to construct the reduced system (\ref{eq:3.6}).
+Assembling the snapshot matrix $S$ (\ref{eq:3.12}) requires the evaluation of the high-fidelity solution for potentially a large sample set of the parameter space $\mathbb P$. Moreover, performing an SVD decomposition on $S$ can be computationally demanding and often impractical during the offline phase. The greedy basis generation is an iterative process in which basis vectors are identified and added to the set of basis vectors, one at a time, to improve the overall accuracy of the reduced basis. As the high-fidelity solution is only evaluated once per iteration, the assembly and the SVD decomposition of $S$ is avoided, saving considerable computational cost in the offline phase. On the other hand, since \Cref{theorem:3.1} indicates that the SVD provides the best possible basis of a given size $k$, we expect that the greedy approach provides a less accurate basis, for the same size. However, the two methods often provide a basis with a comparable size and accuracy \cite{quarteroni2015reduced}.
+
+Since a key step in the greedy method is the prediction of the best possible candidate for a basis vector, the availability of an error indicator is essential. Let $W_k = [ w_i ]_{i=1}^k$ be a given orthonormal reduced basis with $\mathcal W_k$ the reduced space spanned by these vectors. Inspired by the Kolmogorov $k$-width, we may use the projection error to identify the snapshot $s$ that is worst approximated by a member of $\mathcal W_k$:
+\begin{equation} \label{eq:3.24.1}
+	s^* := \underset{s\in S}{\text{arg\ max} } \text{\ dist}(s,\mathcal W_k)
+= \underset{s\in S}{\text{arg\ max} } \| s - P_{X,\mathcal W_k}(s) \|_X \end{equation}
+$s^*$ is then a candidate for the next basis vector. Let $w_k$ be the vector obtained by orthonormalizing $s^*$ with respect to $W_k$. The next set of basis vectors are then defined as
+\begin{equation} \label{eq:3.24.2}
+	W_{k+1} = [w_i]_{i=1}^{k+1}, \quad \mathcal W_{k+1} = \text{span}(W_{k+1}). 
+\end{equation}
+Note that the choice of orthonormalization process is important in constructing a reduced basis with a low condition number. Therefore, a backward stable method is preferred. The process discussed above is referred to as the \emph{strong greedy method} \cite{quarteroni2015reduced}. The following theorem from approximation theory shows that the convergence rate of the strong greedy method, is as fast as the decay of the Kolmogorov $k$-width. 
+\begin{theorem}
+	\cite{doi:10.1137/100795772} Let $S\subset \mathbb R^{n}$ has an exponentially small Kolmogorov $n$-width $d_n(S) \leq c\cdot \exp(-\alpha n)$ with $\alpha > \log 2$. Then there is $\beta > 0$ such that the subspace $\mathcal W_k$ constructed by the strong greedy process is exponentially accurate, in the sense
+\begin{equation} \label{eq:3.24.3}
+	\| s - P_{X,\mathcal W_k}(s) \|_X \leq C\cdot \exp(-\beta k), \quad s \in S.
+\end{equation}
+\end{theorem}
+The proof for this theorem is lengthy but straight forward. Orthonormality of $\mathcal W_k$ is exploited in the proof, therefore, for cases where a non-orthonormal reduced basis is considered, additional constraints should be checked to guarantee the convergence of the method. It is worth to mention that the inequality (\ref{eq:3.24.3}) has been improved in \cite{buffa2012priori} under further assumptions on the reducibility of $S$. 
+
+The maximization (\ref{eq:3.24.1}) still contains computational inefficacies, since the high-fidelity solution $s$ needs to be evaluated for all snapshots in $S$. The \emph{weak greedy method} avoids this by finding a surrogate function $\eta:\mathbb P \to \mathbb R$ that cheaply approximates $(\ref{eq:3.24.1})$. This restricts the search for the new basis vector to only the parameter space, rather than the high-fidelity space. Let $M_k=\{\mu_i\}_{i=1}^k$ be a set of chosen parameters and $W = \{ w_i\}_{i=1}^{n_k}$ be the set of basis vectors with $\mathcal W_k$ the corresponding reduced space. Using $\eta$, the next parameter can be chosen as
+\begin{equation}
+	\mu_{k+1} := \underset{\mu \in \mathbb P}{\text{arg\ max}} \ \eta(\mu).
+\end{equation}
+We may then compute the temporal snapshots $S_{t,\mu_{k+1}} = [ u^*(t_i) ]_{i=1}^{N_t}$, where $u^*(t_i) = u(t_i,\mu_{k+1})$. We eliminate the common subspace between the span space of $S_{t,\mu_{k+1}}$ and $\mathcal W_k$ by computing the error vectors 
+\begin{equation}
+	E_{\mu_{k+1}} = \left[ u^*(t_i) - P_{X,\mathcal W_k} (u^*(t_i)) \right]_{i=1}^{N_t}.
+\end{equation}
+We can then add the truncated, according to some given tolerance $\delta$, POD basis vectors of $E_{\mu_{k+1}}$ $\{w^{\mu_{k+1}}_i\}_{i=1}^{n_{m+1}}$ to the previously computed basis vectors
+\begin{equation}
+	W_{k+1} = W_{k} \cup \{w^{\mu_{k+1}}_i\}_{i=1}^{m_{k+1}}, \quad \mathcal W_{k+1} = \text{span}(W_{k+1}), \quad n_{k+1} = n_k + m_{k+1}.
+\end{equation}
+This approach to construct a reduced basis is referred to as the \emph{POD-greedy} method \cite{haasdonk2008reduced}. Given a proper error indicator function $\eta$, the \emph{POD-greedy} method can also provide an exponentially accurate reduced space \cite{haasdonk2008reduced,haasdonk2013convergence}. We summarize the POD-greedy method in \Cref{alg:3.3.1} and refer the reader to \cite{hesthaven2015certified,haasdonk2013convergence} for further details.
+
+\begin{algorithm} 
+	\caption{the POD-greedy for extending a reduced basis} \label{alg:3.3.1}
+	\textbf{Input:} parameter space $\mathbb P$, reduced basis $W_k$ of size $n_k$, truncation tolerance $\delta$.
+	\begin{algorithmic} [1]
+		\State find $\mu^* := \underset{\mu \in \mathbb P}{\text{arg\ max}} \ \eta(\mu)$.
+		\State compute temporal snapshots $S_{t,\mu^*}$.
+		\State compute the error vectors $E_{\mu^*}$.
+		\State $W_{k+1} \leftarrow W_{k} \cup POD(E_{\mu^*},\delta)$.
+		\State $n_{k+1} \leftarrow n_k + m_{k+1}$.
+	\end{algorithmic}
+	\vspace{0.5cm}
+	\textbf{Output:} reduced basis $W$.
+\end{algorithm}
+
+
+
+
+\section{The Galerkin and the Petrov-Galerkin Projection} In section \Cref{sec:3.2,sec:3.3} we discussed computational methods to construct a reduced basis $W_k$, and subsequently, a reduced space $\mathcal W_k$. In this section we elaborate on how to use a reduced basis to construct the reduced system (\ref{eq:3.6}).
 
 Let $W$ be an orthonormal basis for a reduced space $\mathcal W_k$. We assume $u(t;\mu)$, solution to \Cref{eq:3.1}, can be well approximate in this basis as $u \approx \tilde u = W v$, where $v\in \mathbb R^{k}$ is the expansion coefficients of $\tilde u$ in the basis $W$. Substituting this in 
 \Cref{eq:3.1} results in
@@ -282,90 +333,95 @@ Orthogonal projection operators, such as $P_{I,\mathcal W_k}$ and $P_{X,\mathcal
 	v(0;\mu) &= U^T u_0(\mu).
 	\end{aligned}
 	\right.
-\end{equation}
-Note that for the purpose the of most efficient computation, it is important to identify time intensive high dimensional quantities and the cheaper low dimensional computations. This segregation or compartmentalization of quantities, according to their computational cost, is referred to as the \emph{offline/online} decomposition \cite{quarteroni2015reduced}. We tolerate some amount of computational complexity in the offline phase to achieve substantial computation acceleration in the online phase. In the context of RB methods, we tend restrict computations regarding the high-fidelity solution, only to the offline phase. Then we can enjoy fast computations by restricting all computations to the reduced space during the online phase.
-
+\end{equation} 
 Although reduced systems in \Cref{eq:3.26,eq:3.27,eq:3.28} are of a low order, however evaluation of $f(t,Wv;\mu)$ should be performed in the high-fidelity space, for a general $f$. In the following section we discuss how we can avoid this bottleneck. 
 
 \section{Efficient Evaluation of Non-Linear Terms}
 
-In this section we discuss the efficiency of evaluating nonlinear terms in the context of projection based reduced models. Suppose that the right hand side in (\ref{eq:MoOr:1}) is of the form $\mathbf f(t,\mathbf x , \omega) = L\mathbf x + \mathbf g(t,\mathbf x ,\omega)$, where $L\in \mathbb R^{n\times n}$ reflects the linear part, and $\mathbf g$ is a nonlinear function. Now assume that a $k$-dimensional reduced basis $V$ is provided. The reduced system takes the form
-\begin{equation} \label{eq:MoOr:8}
-	\frac{d}{dt} \mathbf y = \underbrace{(W^TV)^{-1} L V}_{\tilde L} \mathbf{y} + \underbrace{(W^TV)^{-1} \mathbf g(t,V\mathbf y,\omega)}_{\tilde N (\mathbf y)}.
+In this section we discuss the efficiency of evaluating nonlinear terms in the context of projection based reduced models. Suppose that the right hand side in (\ref{eq:3.1}) is of the form $f(t, u ; \mu) = L(\mu) u + g(t,u ; \mu)$, where $L\in \mathbb P \times \mathbb R^{n\times n}$ reflects the linear part, and $g$ is a nonlinear function. Now assume that a $m$-dimensional reduced basis $W \in \mathbb R^{n\times k}$ is provided. The reduced system using a Petrov-Galerkin projection takes the form
+\begin{equation} \label{eq:3.29}
+	\frac{d}{dt} v= \underbrace{ U^T L W}_{\tilde L} v + \underbrace{ U^T g(t,Wv;\mu)}_{ h (t,v;\mu)}.
 \end{equation}
-Here, $\tilde L$ is a $k\times k$ matrix which can be computed before time integration of the reduced system. However, the evaluation of $\tilde N (\mathbf y)$ has a complexity that depends on $n$, the size of the original system. Suppose that the evaluation of $\mathbf g$ with $n$ components has the complexity $\alpha(n)$, for some function $\alpha$. Then the complexity of evaluating $\tilde N(\mathbf y)$ is $\mathcal{O}(\alpha(n) + 4nk)$ which consists of 2 matrix-vector operations and the evaluation of the nonlinear function, i.e. the evaluation of the nonlinear terms can be as expensive as solving the original system.
+Here, $\tilde L$ is a $k\times k$ matrix which can be computed in the offline phase. However, the evaluation of $ h (t,v;\mu)$ has a complexity that depends on $n$, the size of the original system. Suppose that the evaluation of $g$ with $n$ components has the complexity $\alpha(n)$, for some function $\alpha$. Then the complexity of evaluating $h$ is $\mathcal{O}(\alpha(n) + 4nk)$ which consists of 2 matrix-vector operations and the evaluation of the nonlinear function, i.e. the evaluation of the nonlinear terms can be as expensive as solving the original system.
 
-To overcome this bottleneck we take an approach similar to that of Section \ref{chap:MoOr.PrOr:1} \cite{Chaturantabut:2010cz,Barrault:2004kz}. Assume that the manifold $\mathcal M_{\mathbf g} = \{ \mathbf g(t,\mathbf x , \omega)| t\in \mathbb R, \mathbf x \in \mathbb R , \omega \in \Gamma\}$ is of a low dimension and that $\mathbf g$ can be approximated by a linear subspace of dimension $m\ll n$, spanned by the basis $\{ u_1 , \dots , u_m \}$, i.e.
-\begin{equation} \label{eq:MoOr:10}
-	\mathbf g(t,\mathbf x,\omega) \approx U \mathbf c(t,\mathbf x,\omega).
+To overcome this bottleneck we take a reduced basis approach \cite{doi:10.1137/090766498,barrault2004empirical}. Assume that the manifold $\mathcal M_{g} = \{ g(t,u;\mu)| t\in [0,T], u \in \mathbb R^n , \mu \in \mathbb P\}$ is of a low dimension and that $g$ can be approximated by a linear subspace of dimension $m\ll n$, spanned by the basis $\{ y_i \}_{i=1}^m$, i.e.
+\begin{equation} \label{eq:3.30}
+	g \approx Yc.
 \end{equation}
-Here $U$ contains basis vectors $u_i$ and $\mathbf c$ is the vector of coefficients. Now suppose $p_1,\dots,p_m$ are $m$ indices from $\{1,\dots,n\}$ and define an $n\times m$ matrix
+Here $Y\in \mathbb R^{n\times m}$ contains basis vectors $y_i$ and $c\in \mathbb R^{m}$ is the vector of coefficients. Now suppose $p_1,\dots,p_m$ are $m$ indices from $\{1,\dots,n\}$ and define an $n\times m$ real matrix
 \begin{equation} \label{eq:MoOr:11}
-	P = [e_{p_1},\dots,e_{p_m}],
+P := [e_{p_1},\dots,e_{p_m}],
 \end{equation}
-where $e_{p_i}$ is the $p_i$-th column of the identity matrix $I_n$. Multiplying $P$ with $\mathbf g$ selects components $p_1,\dots,p_m$ of $\mathbf g$. If we assume that $P^TU$ is non-singular, the coefficient vector $\mathbf c$ can be uniquely determined from
-\begin{equation} \label{eq:MoOr:12}
-	P^T \mathbf g = (P^TU)\mathbf c.
+where $e_{p_i}$ is the $p_i$-th column of the identity matrix $I_n$. Multiplying $P^T$ with $g$ selects components $p_1,\dots,p_m$ of $g$. If we assume that $P^TU$ is non-singular, the coefficient vector $c$ can be uniquely determined from
+\begin{equation} \label{eq:3.31}
+	P^T \tilde g = (P^T Y) c.
 \end{equation}
-Finally the approximation of $\mathbf g$ is determined by
-\begin{equation} \label{eq:MoOr:13}
-	\mathbf g(t,\mathbf x,\omega) \approx U \mathbf c(t,\mathbf x,\omega) = U (P^TU)^{-1} P^T \mathbf g(t,\mathbf x,\omega),
+Here, the tilde sign emphasis that $\tilde g$ is an approximation to $g$. Finally it yields 
+\begin{equation} \label{eq:3.32}
+	g(t,u;\mu) \approx Y(\mu) c(t,u) = Y (P^TY)^{-1} P^T g(t,u;\mu),
 \end{equation}
-which is referred to as the \emph{Discrete Empirical Interpolation} (DEIM) approximation \cite{Chaturantabut:2010cz}. Applying DEIM to the reduced system (\ref{eq:MoOr:5}) yields
-\begin{equation} \label{eq:MoOr:14}
-	\frac{d}{dt} \mathbf y = \tilde L \mathbf y + (W^TV)^{-1} U(P^TU)^{-1}P^T \mathbf g(t,V\mathbf y , \omega).
+which is referred to as the \emph{Empirical Interpolation} (EIM) approximation \cite{barrault2004empirical}. Applying EIM to the reduced system (\ref{eq:3.29}) yields
+\begin{equation} \label{eq:3.33}
+	\frac{d}{dt} u = \tilde L u + U^T Y (P^TY)^{-1} P^T g(t,u;\mu).
 \end{equation}
-Note that the matrix $(WV)^{-1} U(P^TU)^{-1}$ can be computed offline and since $\mathbf g$ is evaluated only at $m$ of its components, the evaluation of the nonlinear term in (\ref{eq:MoOr:14}) does not depend on $n$.
+Note that the matrix $U^T Y (P^TY)^{-1}$ can be computed offline and since $g$ is evaluated only at $m$ of its components, the evaluation of the nonlinear term in (\ref{eq:3.33}) does not depend on $n$.
 
-To obtain the projection basis $U$, the POD can be applied to the ensemble of samples of the nonlinear term $\mathbf g(t_i,\mathbf x, \omega_j)$ with $i=1,\dots,m$ and $j=1,\dots,n$. There is no additional cost associated with computing the nonlinear snapshots, since they are generated when computing the trajectory snapshot matrix $S$. The interpolating indices $p_1,\dots,p_m$ can be constructed as follows. Given the projection basis $U = \{u_1,\dots,u_m\}$, the first interpolation index $p_1$ is chosen according to the component of $u_1$ with the largest magnitude. The rest of the interpolation indices, $p_2,\dots,p_m$ correspond to the component of the largest magnitude of the residual vector $\mathbf r = u_l - U \mathbf c$. It is shown in \cite{Chaturantabut:2010cz} that if the residual vector is a nonzero vector in each iteration then $P^TU$ is non-singular and (\ref{eq:MoOr:13}) is well defined. 
+To obtain the projection basis $U$, the POD can be applied to the matrix $S_g$ that contains the snapshots of the nonlinear term $g$
+\begin{equation} \label{eq:3.34}
+	S_g = [g(t_i,u;\mu_j)],\quad 1\leq i \leq N_t,\quad 1 \leq j \leq N_{\mathbb P}.
+\end{equation}
+Note that there is no additional cost associated with computing these snapshots, since they are generated when computing the trajectory snapshot matrix $S$. The interpolating indices $p_1,\dots,p_m$ can be constructed as follows. Given the projection basis $Y = \{y_1,\dots,y_m\}$, the first interpolation index $p_1$ is chosen according to the component of $u_1$ with the largest magnitude. The rest of the interpolation indices, $p_2,\dots,p_m$ correspond to the component of the largest magnitude of the residual vector $\mathbf r = y_l - Y c$. It is shown in \cite{doi:10.1137/090766498} that if the residual vector is a nonzero vector in each iteration then $P^TU$ is non-singular and thus the reduced system (\ref{eq:3.33}) is well defined. The application of POD in generating a basis for the nonlinear term together with the greedy selection of interpolating indices is referred to as the \emph{Discrete Empirical Interpolation Method} (DEIM). We summarized the process of selecting interpolating indices for DEIM in \Cref{alg:3.4}.
 
 \begin{algorithm} 
-\caption{Discrete Empirical Interpolation Method}
+\caption{Discrete Empirical Interpolation Method} \label{alg:3.4}
 {\bf Input:}  Basis vectors $\{u_1,\dots , u_m\}\subset \mathbb R^n$
 \begin{algorithmic} [1]
-\State pick $p_1$ to be the index of the largest component of $u_1$.
-\State $U \leftarrow [u_1]$
-\State $P \leftarrow [p_1]$
-\State \textbf{for} $i\leftarrow 2$ \textbf{to} $m$
-\State \hspace{0.5cm} solve $(P^TU)\mathbf c = P^T u_i$ for $\mathbf c$
-\State \hspace{0.5cm} $\mathbf r \leftarrow u_i - U\mathbf c$
-\State \hspace{0.5cm} pick $p_i$ to be the index of the largest component of $\mathbf r$
-\State \hspace{0.5cm} $U \leftarrow [u_1,\dots,u_i]$
-\State \hspace{0.5cm} $P \leftarrow [p_1,\dots,p_i]$
-\State \textbf{end for}
+	\State pick $p_1$ to be the index of the largest component of $u_1$.
+	\State $U \leftarrow [u_1]$.
+	\State $P \leftarrow [p_1]$.
+	\State \textbf{for} $i\leftarrow 2$ \textbf{to} $m$
+		\State \hspace{0.5cm} solve $(P^TU)\mathbf c = P^T u_i$ for $\mathbf c$.
+		\State \hspace{0.5cm} $\mathbf r \leftarrow u_i - U\mathbf c$.
+		\State \hspace{0.5cm} pick $p_i$ to be the index of the largest component of $\mathbf r$.
+		\State \hspace{0.5cm} $U \leftarrow [u_1,\dots,u_i]$.
+		\State \hspace{0.5cm} $P \leftarrow [p_1,\dots,p_i]$.
+	\State \textbf{end for}
 \end{algorithmic}
 \vspace{0.5cm}
-{\bf Output:} Interpolating indices $\{p_1,\dots,p_m\}$
+{\bf Output:} Interpolating indices $\{p_1,\dots,p_m\}$.
 \end{algorithm}
 
 
-The numerical solution of (\ref{eq:MoOr:8}) may involve the computation of the Jacobian of the nonlinear function $\mathbf g(t,\mathbf x, \omega)$ with respect to the reduced state variable $\mathbf y$
-\begin{equation} \label{eq:MoOr:9}
-	\mathbf J_{\mathbf y}(\mathbf g) = (W^TV)^{-1} \mathbf J_{\mathbf x}(\mathbf g) V,
+The numerical integration of (\ref{eq:3.33}) may involve the computation of the Jacobian of the nonlinear function $g(t, u; \mu)$ with respect to the reduced state variable $\mathbf v$
+\begin{equation} \label{eq:3.35}
+	\mathcal J_{ v}(g) = U^T \mathcal J_{u} (g) W,
 \end{equation}
-where $\mathbf J_\alpha(\mathbf g)$ is the Jacobian matrix of $\mathbf g$ with respect to the variable $\alpha$. The complexity of (\ref{eq:MoOr:9}) is $\mathcal{O}(\alpha(n) +2n^2k+2nk^2+2nk)$, comprising several matrix-vector multiplications and an evaluation of the Jacobian which depends on the size of the original system. Approximating the Jacobian in (\ref{eq:MoOr:9}) is usually both problem and discretization dependent. Often the nonlinear function $\mathbf g$ is evaluated component-wise i.e.
-\begin{equation} \label{eq:MoOr:15}
-	\mathbf g(\mathbf x) =
+where $\mathcal J_\alpha(g)$ is the Jacobian matrix of $g$ with respect to the variable $\alpha = u,v$. The complexity of (\ref{eq:3.35}) is $\mathcal{O}(\alpha(n) +2n^2k+2nk^2+2nk)$, comprising several matrix-vector multiplications and an evaluation of the Jacobian which depends on the size of the original system. Approximating the Jacobian in (\ref{eq:3.35}) is usually both problem and discretization dependent. Often the nonlinear function $g$ is evaluated component-wise i.e.
+\begin{equation} \label{eq:3.36}
+	\mathbf g(u) =
 	\begin{pmatrix}
-		g_1(x_1,\dots,x_n) \\
-		g_2(x_1,\dots,x_n) \\
+		g_1(u_1,\dots,u_n) \\
+		g_2(u_1,\dots,u_n) \\
 		\vdots \\
-		g_n(x_1,\dots,x_n)
+		g_n(u_1,\dots,u_n)
 	\end{pmatrix}
 	=
 	\begin{pmatrix}
-		g_1(x_1) \\
-		g_2(x_2) \\
+		g_1(u_1) \\
+		g_2(u_2) \\
 		\vdots \\
-		g_n(x_n)
+		g_n(u_n)
 	\end{pmatrix}.
 \end{equation}
-In such cases the interpolating index matrix $P$ and the nonlinear function $\mathbf g$ commute, i.e.,
-\begin{equation} \label{eq:MoOr:16}
-	\tilde N(\mathbf y) \approx (W^TV)^{-1} U(P^TU)^{-1}P^T \mathbf g(V\mathbf y) = (W^TV)^{-1} U(P^TU)^{-1}\mathbf g(P^TV\mathbf y)
+In such cases the interpolating index matrix $P$ and the nonlinear function $ g$ commute, i.e.,
+\begin{equation} \label{eq:3.37}
+	h (v) \approx U^T Y(P^TY)^{-1}P^T g(Wv) = U^T Y(P^TY)^{-1} \mathring g(P^TW v)
 \end{equation}
-If we now take the Jacobian of the approximate function we recover
-\begin{equation}
-	\mathbf J_{\mathbf y}(\mathbf g) = \underbrace{ (W^TV)^{-1} U(P^TU)^{-1} }_{k\times m} \underbrace{ \mathbf J_{\mathbf x}(\mathbf g(P^T V \mathbf y) ) }_{m\times m} \underbrace{P^T V}_{m\times k}.
+Here, $\mathring g$ indicates that the elements of $g$ that are not in the index set $P$ are omitted. If we now take the Jacobian of the approximate function we recover
+\begin{equation} \label{eq:3.38}
+	\mathcal J_{v}(g) = U^T Y(P^TY)^{-1} \mathcal J_{u}( \mathring g(P^T W v) ) P^T W.
 \end{equation}
-The matrix $(WV)^{-1} U(P^TU)^{-1}$ can be computed offline and the Jacobian is evaluated only for $m\times m$ components. Hence the overall complexity of computing the Jacobian is now independent of $n$. We refer the reader to \cite{Barrault:2004kz,Chaturantabut:2010cz} for more detail.
+The matrices $U^T Y(P^TY)^{-1} \in \mathbb R^{k\times m}$ and $P^TW \in \mathbb R^{m\times k}$ can be computed offline and the Jacobian is evaluated only for $m\times m$ components. Hence the overall complexity of computing the Jacobian is now independent of $n$. We refer the reader to \cite{doi:10.1137/090766498,barrault2004empirical,quarteroni2015reduced,hesthaven2015certified} for more detail.
+
+\section{Example: Burger's Equation}
+if time permits
