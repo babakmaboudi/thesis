@@ -25,9 +25,9 @@ The solution manifold is a set of all solutions to \cref{eq:3.1} under the varia
 	\mathcal M_{u} = \{ u(t;\mu) | t \in [0,T] , \mu \in \mathbb P \}.
 \end{equation}
 \end{definition}
-Note that the solution manifold is not always smooth. A main assumption in an RB method is that $\mathcal M_{u}$ has a low dimensional representation. This allows us to chose a few number of basis vectors $W = \{ w_1,\dots,w_k\}$, with $k\ll n$, where $\mathcal W = \text{span}(W)$ represents $\mathcal M_{u}$ with a small error. $W$ is often referred to as the \emph{reduced basis}. To understand when does a low dimensional reduced basis exist and to quantify the error incur in approximation, we need to introduce the notion of the \emph{Kolmogorov $n$-width} \cite{pinkus1985n}.
+Note that the solution manifold is not always smooth. A main assumption in an RB method is that $\mathcal M_{u}$ has a low dimensional representation. This allows us to chose a few number of basis vectors $W = \{ w_1,\dots,w_k\}$, with $k\ll n$, where $\mathcal W = \text{span}(W)$ represents $\mathcal M_{u}$ with a small error. $W$ is often referred to as the \emph{reduced basis}. To understand when does a low dimensional reduced basis exist and to quantify the error incur in approximation, we need to introduce the notion of the \emph{Kolmogorov $n$-width} \cite{Kolmogoroff:1936fj,pinkus1985n}.
 
-\begin{definition}
+\begin{definition} \label{def:3.1}
 Let $\mathcal W$ be a subset of a Banach space $\mathcal X$. The distance of a point $x\in \mathcal X$ form $\mathcal Y$ is given by
 \begin{equation}  \label{eq:3.3}
 	\text{dist}(x,\mathcal W) := \inf_{w\in \mathcal W} \| x-w \|.
@@ -35,7 +35,7 @@ Let $\mathcal W$ be a subset of a Banach space $\mathcal X$. The distance of a p
 where $\|\cdot\|$ is the norm defined on $\mathcal X$.
 \end{definition}
 We can also look at $\text{dist}(x,\mathcal W)$ as a measure on how well we can approximate $x$ with elements in $\mathcal W$.
-\begin{definition}
+\begin{definition} \label{def:3.2}
 Let $\mathcal S$ be a compact subset of a Banach space $\mathcal X$. The Kolmogorov $n$-width of $S$ is defined as
 \begin{equation} \label{eq:3.4}
 	d_n(\mathcal S) = \inf_{\mathcal W_n} \ \sup_{s\in \mathcal S} \ \text{dist}(s, \mathcal W_n),
@@ -294,13 +294,14 @@ This approach to construct a reduced basis is referred to as the \emph{POD-greed
 		\State $n_{k+1} \leftarrow n_k + m_{k+1}$.
 	\end{algorithmic}
 	\vspace{0.5cm}
-	\textbf{Output:} reduced basis $W$.
+	\textbf{Output:} reduced basis $W_{k+1}$.
 \end{algorithm}
 
 
 
 
-\section{The Galerkin and the Petrov-Galerkin Projection} In section \Cref{sec:3.2,sec:3.3} we discussed computational methods to construct a reduced basis $W_k$, and subsequently, a reduced space $\mathcal W_k$. In this section we elaborate on how to use a reduced basis to construct the reduced system (\ref{eq:3.6}).
+\section{The Galerkin and the Petrov-Galerkin Projection} \label{sec:3.4}
+In section \Cref{sec:3.2,sec:3.3} we discussed computational methods to construct a reduced basis $W_k$, and subsequently, a reduced space $\mathcal W_k$. In this section we elaborate on how to use a reduced basis to construct the reduced system (\ref{eq:3.6}).
 
 Let $W$ be an orthonormal basis for a reduced space $\mathcal W_k$. We assume $u(t;\mu)$, solution to \Cref{eq:3.1}, can be well approximate in this basis as $u \approx \tilde u = W v$, where $v\in \mathbb R^{k}$ is the expansion coefficients of $\tilde u$ in the basis $W$. Substituting this in 
 \Cref{eq:3.1} results in
@@ -336,8 +337,7 @@ Orthogonal projection operators, such as $P_{I,\mathcal W_k}$ and $P_{X,\mathcal
 \end{equation} 
 Although reduced systems in \Cref{eq:3.26,eq:3.27,eq:3.28} are of a low order, however evaluation of $f(t,Wv;\mu)$ should be performed in the high-fidelity space, for a general $f$. In the following section we discuss how we can avoid this bottleneck. 
 
-\section{Efficient Evaluation of Non-Linear Terms}
-
+\section{Efficient Evaluation of Non-Linear Terms} \label{sec:3.5}
 In this section we discuss the efficiency of evaluating nonlinear terms in the context of projection based reduced models. Suppose that the right hand side in (\ref{eq:3.1}) is of the form $f(t, u ; \mu) = L(\mu) u + g(t,u ; \mu)$, where $L\in \mathbb P \times \mathbb R^{n\times n}$ reflects the linear part, and $g$ is a nonlinear function. Now assume that a $m$-dimensional reduced basis $W \in \mathbb R^{n\times k}$ is provided. The reduced system using a Petrov-Galerkin projection takes the form
 \begin{equation} \label{eq:3.29}
 	\frac{d}{dt} v= \underbrace{ U^T L W}_{\tilde L} v + \underbrace{ U^T g(t,Wv;\mu)}_{ h (t,v;\mu)}.
