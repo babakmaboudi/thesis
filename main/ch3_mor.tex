@@ -1,7 +1,7 @@
 \chapter{Model Order Reduction} \label{chapter:3}
-Mathematical simulation is now evermore important in engineering, science, and related domains, thanks to expeditious advances in computational sciences and rapid growth in computational capacities over the past decades. Numerical evaluation of partial differential equations lies at the core of these disciplines which accommodates design, optimization, and prediction of inputs and outputs of interest. However, the exceeding need for accuracy, and the complexity of multi-physical new applications makes conventional approaches for solving large scale systems of partial differential equations impractical. 
+Mathematical simulation is now evermore important in engineering, science, and related domains, thanks to expeditious advances in computational sciences and rapid growth in computational capacities over the past decades. Numerical evaluation of partial differential equations (PDEs) lies at the core of these disciplines which accommodates design, optimization, and prediction of inputs and outputs of interest. However, the exceeding need for accuracy, and the complexity of multi-physical new applications makes conventional approaches for solving large scale systems of partial differential equations impractical. 
 
-To cope with these limitations, \emph{reduced-order} modeling (ROM), appose to \emph{full-order} or \emph{high-fidelity} modelling, has been an area of active research for the past decade. These methods eliminate the redundant physical or computation dimensions of the full-order differential equation to construct a low dimensional reduced-order system. This approximation in return significantly accelerates the evaluation of the system. Reduced basis (RB) methods, are among the most successful ROMs and is vastly used in academia and industry. RB methods, seek a low dimensional reduced subspace that accurately represents the full-order solution. Confining the system on this subspace, using a projection, can then accelerate the evaluation of the system. These methods are particularly successful in reducing the computational complexity of \emph{parametric PDEs} or multi-query systems, where a system of differential equations needs to be evaluated for a large number of input parameters.
+To cope with these limitations, \emph{reduced-order} modeling (ROM), appose to \emph{full-order} or \emph{high-fidelity} modelling, has been an area of active research for the past decade. These methods eliminate the redundant physical or computation dimensions of the full-order differential equation to construct a low dimensional reduced-order system. This approximation in return significantly accelerates the evaluation of the system of PDEs. Reduced basis (RB) methods, are among the most successful ROMs and are vastly used in academia and industry. RB methods, seek a low dimensional reduced subspace that accurately represents the full-order solution. Confining the system to this subspace, using a projection, can then accelerate the evaluation of the system. These methods are particularly successful in reducing the computational complexity of \emph{parametric PDEs} or multi-query systems, where a system of differential equations needs to be evaluated for a large number of input parameters.
 
 In this chapter we summarize the fundamentals of MOR and especially RB methods. We present various conventional approaches and algorithms for linear and nonlinear problems. Since time, as a parameter, is particularly important in the context of Hamiltonian systems, we will develop this chapter with an emphasis on time-dependent problems.
 
@@ -15,9 +15,9 @@ In this chapter we consider parametric dynamical systems of the type
 \end{aligned}
 \right.
 \end{equation}
-Here $u,u_0\in \mathbb R^{n}$, $f:\mathbb R \times \mathbb R^{n} \times \mathbb P\to \mathbb R^{n}$ is a smooth linear or nonlinear function, and $\mu \in \mathbb P$, where $\mathbb P$ is a compact subset of $\mathbb R^r$. It is well known that for a fixed $\mu$, \cref{eq:3.1} has a unique solution if $f$ is continuous with a continuous derivative \cite{rudin1976principles}. Note that for parametric PDEs, we may use the method of lines \cite{edsberg2015introduction} to obtain a dynamical system of the form (\ref{eq:3.1}).
+Here $u,u_0\in \mathbb R^{n}$, $f:\mathbb R \times \mathbb R^{n} \times \mathbb P\to \mathbb R^{n}$ is a smooth linear or nonlinear function, and $\mu \in \mathbb P$, where $\mathbb P$ is a compact subset of $\mathbb R^d$. It is well known that for a fixed $\mu$, \cref{eq:3.1} has a unique solution if $f$ is continuous with a continuous derivative \cite{rudin1976principles}. Note that for parametric PDEs, we may use the method of lines \cite{edsberg2015introduction} to obtain a dynamical system of the form (\ref{eq:3.1}).
 
-To obtain a numerical evaluation of the solution to \cref{eq:3.1} for a fixed $\mu$, we may use some time integration method, e.g. the Runge-Kutta methods \cite{edsberg2015introduction}. This provides us with an approximate solution $\tilde u(t_i) \approx u(t_i)$ for time instances $i = 1 , \dots , N_t$. Throughout this chapter we assume that the $\tilde u$ can be chosen arbitrary close to $u$, and by abusing the notation, we may omit the ``tilde'' sign. In the MOR community, $u$ is often referred to as the \emph{full-order} or the \emph{high-fidelity} solution \cite{hesthaven2015certified,quarteroni2015reduced}. 
+To obtain a numerical evaluation of the solution to \cref{eq:3.1} for a fixed $\mu$, we may use some time integration method, e.g. the Runge-Kutta methods \cite{edsberg2015introduction}. This provides us with an approximate solution $\tilde u(t_i) \approx u(t_i)$ for time instances $i = 1 , \dots , N_t$. Throughout this chapter we assume that the $\tilde u$ can be chosen arbitrary close to $u$, and by abusing the notation, we may omit the ``tilde'' sign. In the MOR literature, $u$ is often referred to as the \emph{full-order} or the \emph{high-fidelity} solution \cite{hesthaven2015certified,quarteroni2015reduced}. 
 
 \begin{definition}
 The solution manifold is a set of all solutions to \cref{eq:3.1} under the variation of the parameter vector $\mu$, i.e.
@@ -25,7 +25,7 @@ The solution manifold is a set of all solutions to \cref{eq:3.1} under the varia
 	\mathcal M_{u} = \{ u(t;\mu) | t \in [0,T] , \mu \in \mathbb P \}.
 \end{equation}
 \end{definition}
-Note that the solution manifold is not always smooth. A main assumption in an RB method is that $\mathcal M_{u}$ has a low dimensional representation. This allows us to chose a few number of basis vectors $W = \{ w_1,\dots,w_k\}$, with $k\ll n$, where $\mathcal W = \text{span}(W)$ represents $\mathcal M_{u}$ with a small error. $W$ is often referred to as the \emph{reduced basis}. To understand when does a low dimensional reduced basis exist and to quantify the error incur in approximation, we need to introduce the notion of the \emph{Kolmogorov $n$-width} \cite{Kolmogoroff:1936fj,pinkus1985n}.
+Note that the solution manifold is not always smooth. A main assumption in an RB method is that $\mathcal M_{u}$ has a low dimensional representation. This allows us to chose a few number of basis vectors $W = \{ w_1,\dots,w_k\}$, with $k\ll n$, where $\mathcal W = \text{span}(W)$ represents $\mathcal M_{u}$ with a small error. $W$ is often referred to as the \emph{reduced basis}. To understand when does a low dimensional reduced basis exist and to quantify the incurred error in approximation, we need to introduce the notion of the \emph{Kolmogorov $n$-width} \cite{Kolmogoroff:1936fj,pinkus1985n}.
 
 \begin{definition} \label{def:3.1}
 Let $\mathcal W$ be a subset of a Banach space $\mathcal X$. The distance of a point $x\in \mathcal X$ form $\mathcal Y$ is given by
@@ -48,7 +48,7 @@ As in an RB method tends to approximate $\mathcal M_u$ with a low dimensional su
 \begin{equation} \label{eq:3.5}
 	\frac{\sum_{i=1}^k d_i(\mathcal M_u) }{\sum_{i=1}^n d_i(\mathcal M_u) } < \delta,
 \end{equation}
-for some small tolerance $\delta$. Therefore, it is desirable that the above sequence has an exponential decay, in which case $\mathcal M_u$ is referred to as \emph{reducible}. Note that in general, the dimension $k$ must be chosen small enough to guarantee computational gain. Once the subspace $\mathcal W_k$ is chosen we can construct the projection operator $P_{<,>,\mathcal W_k}$ to write the reduced-order system
+for some small tolerance $\delta$. Therefore, it is desirable that the above sequence has an exponential decay, in which case $\mathcal M_u$ is referred to as \emph{reducible}. Note that in general, the dimension $k$ must be chosen small enough to guarantee computational gain. Once the subspace $\mathcal W_k$ is chosen, we can construct the projection operator $P_{<,>,\mathcal W_k}$ to write the reduced-order system
 \begin{equation} \label{eq:3.6}
 \left\{
 \begin{aligned}
@@ -62,21 +62,21 @@ Note that in this thesis, we assume that the projection operator $P_{<,>,\mathca
 In the following sections we summarize numerical methods for choosing the proper dimension $k$, finding the reduced space $\mathcal W_k$, constructing the projection operator $P_{<,>,\mathcal W_k}$ and also efficient ways to construct and integrate the reduced system (\ref{eq:3.6}).
 
 \section{Proper Orthogonal Decomposition} \label{sec:3.2}
-to numerically evaluate $\mathcal Y_k$, we first discretize the solution manifold $\mathcal M_{u}$ into a point cloud $\mathcal M_{u}^{\Delta}$ defined as
+To numerically evaluate $\mathcal W_k$, we first discretize the solution manifold $\mathcal M_{u}$ into a point cloud $\mathcal M_{u}^{\Delta}$ defined as
 \begin{equation} \label{eq:3.7}
 	\mathcal M_{u}^{\Delta} : = \{ u(t_i;\mu) |  1\leq i \leq N_t \text{ and } \mu \in \mathbb P^{\Delta} \},
 \end{equation}
 where $\mathbb P^{\Delta} = \{ \mu_{1} , \dots , \mu_{N_{\mathbb P}} \}$ is a finite set representing $\mathbb P$. Note that the choice of $\mathbb P^{\Delta}$ is generally not trivial and is often problem dependent. We refer the reader to \cite{quarteroni2015reduced} for more information on discretizing the parameter space.
 
-Each member of $\mathcal M_{u}^{\Delta}$ is a vector in $\mathbb R^{n}$ and is commonly referred to a \emph{snapshot}. Suppose that we can find $k$ basis vectors $w_1,\dots,w_k\in \mathbb R^{n}$, orthonormal with respect to some inner product operator $<\cdot,\cdot>$, and with a span space $\mathcal W$ which approximately represent the span$(\mathcal M_u^\Delta)$. As discussed in \Cref{sec:3.1}, the projection error of approximating a member of $\mathcal M_{u}^{\Delta}$ with an element of $\mathcal Y_k$ is given by
+Each member of $\mathcal M_{u}^{\Delta}$ is a vector in $\mathbb R^{n}$ and is commonly referred to as a \emph{snapshot}. Suppose that we can find $k$ basis vectors $w_1,\dots,w_k\in \mathbb R^{n}$, orthonormal with respect to some inner product operator $<\cdot,\cdot>$, and with a span space $\mathcal W_k$ which approximately represent the span$(\mathcal M_u^\Delta)$. As discussed in \Cref{sec:3.1}, the projection error of approximating a member of $\mathcal M_{u}^{\Delta}$ with an element of $\mathcal W_k$ is given by
 \begin{equation} \label{eq:3.8}
-	e_{\mathcal W_k}(s) = \| s - P_{<,>,\mathcal W_k}(s) \|, \quad s\in \mathcal M_u^{\Delta},
+	e_{\mathcal W_k}(s) := \| s - P_{<,>,\mathcal W_k}(s) \|, \quad s\in \mathcal M_u^{\Delta},
 \end{equation}
 where $\| \cdot \|$ is the norm associated with $<\cdot,\cdot>$ and $P_{<,>,\mathcal W_k}$ is the orthogonal projection operator given by
 \begin{equation} \label{eq:3.9}
 	P_{<,>,\mathcal W_k}(s) = \sum_{i=1}^k <s,w_i> w_i.
 \end{equation}
-The \emph{proper orthogonal decomposition} method is then finding the $\mathcal W_k$ (for a fixed $k$) that minimizes the collective projection error, and corresponds to the minimization problem
+The \emph{proper orthogonal decomposition} method is then finding $\mathcal W_k$ (for a fixed $k$) that minimizes the collective projection error, corresponding to the minimization problem
 \begin{equation} \label{eq:3.10}
 \begin{aligned}
 &  \underset{\mathcal W_k}{\text{minimize}}
@@ -85,7 +85,7 @@ The \emph{proper orthogonal decomposition} method is then finding the $\mathcal 
 & & <w_i,w_j> = \delta_{i,j}, \quad 1\leq i,j \leq k.
 \end{aligned}
 \end{equation}
-This formulation is comparable with the discrete version of the Kolmogorov $k$-width. 
+This formulation is comparable with the discrete version of the Kolmogorov $n$-width. 
 \subsection{Euclidean Inner Product}When $<\cdot,\cdot>$ is the classical Euclidean inner product, i.e. $<a,b> = a^Tb$ for $a,b\in \mathbb R^{n}$, then we can rewrite the projection operator in (\ref{eq:3.9}) as
 \begin{equation}
 	P_{I,\mathcal W_k} (s) = WW^T s.
@@ -158,7 +158,7 @@ It is easily verified that $\tilde S = U_1 \Sigma_1 V_1^T = U \tilde \Sigma V^T$
 \end{equation}
 Therefore, minimizing $\| S - \tilde S \|_F$ for a rank $k$ matrix $\tilde S$ is equivalent to minimizing $\| S - U_1U_1^T S \|_F$ for all $U_1$ such that $U_1^T U_1 = I_k$.
 \end{proof}
-As the minimization (\ref{eq:3.13}) is closely related to the Kolmogorov $k$-width of $\mathcal M_u$, \Cref{theorem:3.1} suggests that the decay of the singular values of $S$ is an indicator for the decay of the Kolmogorov $n$-width of $\mathcal M_u$. This is a numerical approach to understand reducibility of $\mathcal M_u$. \Cref{alg:3.1} summarizes POD for generating an orthonormal basis with respect to the Euclidean inner product.
+As the minimization (\ref{eq:3.13}) is closely related to the Kolmogorov $n$-width of $\mathcal M_u$, \Cref{theorem:3.1} suggests that the decay of the singular values of $S$ is an indicator for the decay of the Kolmogorov $n$-width of $\mathcal M_u$. This is a numerical approach to understand reducibility of $\mathcal M_u$. \Cref{alg:3.1} summarizes POD for generating an orthonormal basis with respect to the Euclidean inner product.
 
 \begin{algorithm} 
 	\caption{POD for constructing an orthonormal reduced basis with respect to the Euclidean inner product} \label{alg:3.1}
@@ -228,7 +228,7 @@ For large scale problems, computing the square root of $X$ could be computationa
 \begin{equation} \label{eq:3.23}
 	S^TXS v_i = \bar S^T \bar S v_i = \sigma_i \bar S^T v_i^T = \sigma_i^2 u_i. 
 \end{equation}
-Here we used properties of an SVD decomposition \cite{trefethen97}. This suggests that $\{\sigma_i^2\}_{i=1}^{n}$ and $\{v_i\}_{i=1}^n$ are the eigenvalues ands eigenvectors of $S^TXS$, respectively. Matrix $G:=S^TXS$ is commonly referred to as the \emph{Gramian matrix}. To obtain the POD basis we can then write
+Here we used the properties of an SVD decomposition \cite{trefethen97}. This suggests that $\{\sigma_i^2\}_{i=1}^{n}$ and $\{v_i\}_{i=1}^n$ are the eigenvalues ands eigenvectors of $S^TXS$, respectively. The matrix $G:=S^TXS$ is commonly referred to as the \emph{Gramian matrix}. To obtain the POD basis we can then write
 \begin{equation} \label{eq:3.24}
 	w_i = X^{-1/2} u_i = \sigma_i^{-1} X^{-1/2} \bar S v_i = \sigma_i^{-1} S v_i.
 \end{equation}
@@ -250,9 +250,9 @@ Thus, the computation of $X^{1/2}$ can be avoided. We summarize the computationa
 \section{The Greedy Basis Generation} \label{sec:3.3}
 for the purpose the of most efficient computation, it is important to identify time intensive high dimensional quantities and the cheaper low dimensional computations. This segregation or compartmentalization of quantities, according to their computational cost, is referred to as the \emph{offline/online} decomposition \cite{quarteroni2015reduced}. We tolerate some amount of computational complexity in the offline phase to achieve substantial computation acceleration in the online phase. In the context of RB methods, we tend restrict computations regarding the high-fidelity solution, only to the offline phase. Then we can enjoy fast computations by restricting all computations to the reduced space during the online phase.
 
-Assembling the snapshot matrix $S$ (\ref{eq:3.12}) requires the evaluation of the high-fidelity solution for potentially a large sample set of the parameter space $\mathbb P$. Moreover, performing an SVD decomposition on $S$ can be computationally demanding and often impractical during the offline phase. The greedy basis generation is an iterative process in which basis vectors are identified and added to the set of basis vectors, one at a time, to improve the overall accuracy of the reduced basis. As the high-fidelity solution is only evaluated once per iteration, the assembly and the SVD decomposition of $S$ is avoided, saving considerable computational cost in the offline phase. On the other hand, since \Cref{theorem:3.1} indicates that the SVD provides the best possible basis of a given size $k$, we expect that the greedy approach provides a less accurate basis, for the same size. However, the two methods often provide a basis with a comparable size and accuracy \cite{quarteroni2015reduced}.
+Assembling the snapshot matrix $S$ (\ref{eq:3.12}) requires the evaluation of the high-fidelity solution for potentially a large sample set of the parameter space $\mathbb P$. Moreover, performing an SVD decomposition on $S$ can be computationally demanding and often impractical during the offline phase. The greedy basis generation is an iterative process in which basis vectors are identified and added, one at a time, to improve the overall accuracy of the reduced basis. As the high-fidelity solution is only evaluated once per iteration, the assembly and the SVD decomposition of $S$ is avoided, saving considerable computational cost in the offline phase. On the other hand, since \Cref{theorem:3.1} indicates that the SVD provides the best possible basis of a given size $k$, we expect that the greedy approach provides a less accurate basis, for the same size. However, the two methods often provide a basis with a comparable size and accuracy \cite{quarteroni2015reduced}.
 
-Since a key step in the greedy method is the prediction of the best possible candidate for a basis vector, the availability of an error indicator is essential. Let $W_k = [ w_i ]_{i=1}^k$ be a given orthonormal reduced basis with $\mathcal W_k$ the reduced space spanned by these vectors. Inspired by the Kolmogorov $k$-width, we may use the projection error to identify the snapshot $s$ that is worst approximated by a member of $\mathcal W_k$:
+Since a key step in a greedy method is the prediction of the best possible candidate for a basis vector, the availability of an error indicator is essential. Let $W_k = [ w_i ]_{i=1}^k$ be a given orthonormal reduced basis with $\mathcal W_k$ the reduced space spanned by these vectors. Inspired by the Kolmogorov $n$-width, we may use the projection error to identify the snapshot $s$ that is worst approximated by a member of $\mathcal W_k$:
 \begin{equation} \label{eq:3.24.1}
 	s^* := \underset{s\in S}{\text{arg\ max} } \text{\ dist}(s,\mathcal W_k)
 = \underset{s\in S}{\text{arg\ max} } \| s - P_{X,\mathcal W_k}(s) \|_X \end{equation}
@@ -260,7 +260,7 @@ $s^*$ is then a candidate for the next basis vector. Let $w_k$ be the vector obt
 \begin{equation} \label{eq:3.24.2}
 	W_{k+1} = [w_i]_{i=1}^{k+1}, \quad \mathcal W_{k+1} = \text{span}(W_{k+1}). 
 \end{equation}
-Note that the choice of orthonormalization process is important in constructing a reduced basis with a low condition number. Therefore, a backward stable method is preferred. The process discussed above is referred to as the \emph{strong greedy method} \cite{quarteroni2015reduced}. The following theorem from approximation theory shows that the convergence rate of the strong greedy method, is as fast as the decay of the Kolmogorov $k$-width. 
+Note that the choice of an orthonormalization process is important in constructing a reduced basis with a low condition number. Therefore, a backward stable method is preferred. The process discussed above is referred to as the \emph{strong greedy method} \cite{quarteroni2015reduced}. The following theorem from approximation theory shows that the convergence rate of the strong greedy method, is as fast as the decay of the Kolmogorov $k$-width. 
 \begin{theorem}
 	\cite{doi:10.1137/100795772} Let $S\subset \mathbb R^{n}$ has an exponentially small Kolmogorov $n$-width $d_n(S) \leq c\cdot \exp(-\alpha n)$ with $\alpha > \log 2$. Then there is $\beta > 0$ such that the subspace $\mathcal W_k$ constructed by the strong greedy process is exponentially accurate, in the sense
 \begin{equation} \label{eq:3.24.3}
@@ -277,7 +277,7 @@ We may then compute the temporal snapshots $S_{t,\mu_{k+1}} = [ u^*(t_i) ]_{i=1}
 \begin{equation}
 	E_{\mu_{k+1}} = \left[ u^*(t_i) - P_{X,\mathcal W_k} (u^*(t_i)) \right]_{i=1}^{N_t}.
 \end{equation}
-We can then add the truncated, according to some given tolerance $\delta$, POD basis vectors of $E_{\mu_{k+1}}$ $\{w^{\mu_{k+1}}_i\}_{i=1}^{n_{m+1}}$ to the previously computed basis vectors
+We can then add the truncated, according to some given tolerance $\delta$, POD basis vectors of $E_{\mu_{k+1}}$, e.g. vectors $\{w^{\mu_{k+1}}_i\}_{i=1}^{n_{m+1}}$, to the previously computed basis vectors
 \begin{equation}
 	W_{k+1} = W_{k} \cup \{w^{\mu_{k+1}}_i\}_{i=1}^{m_{k+1}}, \quad \mathcal W_{k+1} = \text{span}(W_{k+1}), \quad n_{k+1} = n_k + m_{k+1}.
 \end{equation}
@@ -301,14 +301,14 @@ This approach to construct a reduced basis is referred to as the \emph{POD-greed
 
 
 \section{The Galerkin and the Petrov-Galerkin Projection} \label{sec:3.4}
-In section \Cref{sec:3.2,sec:3.3} we discussed computational methods to construct a reduced basis $W_k$, and subsequently, a reduced space $\mathcal W_k$. In this section we elaborate on how to use a reduced basis to construct the reduced system (\ref{eq:3.6}).
+In section \Cref{sec:3.2,sec:3.3} we discussed computational methods to construct a reduced basis $W_k$, and subsequently, a reduced space $\mathcal W_k$. In this section we elaborate on how to use a reduced basis to construct a reduced system such as in (\ref{eq:3.6}).
 
-Let $W$ be an orthonormal basis for a reduced space $\mathcal W_k$. We assume $u(t;\mu)$, solution to \Cref{eq:3.1}, can be well approximate in this basis as $u \approx \tilde u = W v$, where $v\in \mathbb R^{k}$ is the expansion coefficients of $\tilde u$ in the basis $W$. Substituting this in 
+Let $W$ be an orthonormal basis for a reduced space $\mathcal W_k$. We assume $u(t;\mu)$, the solution to \Cref{eq:3.1}, can be well approximate in this basis as $u \approx \tilde u = W v$, where $v\in \mathbb R^{k}$ is the expansion coefficients of $\tilde u$ in the basis $W$. Substituting this in 
 \Cref{eq:3.1} results in
 \begin{equation} \label{eq:3.25}
-	W \frac{d}{dt} v(t;\mu) = f(t,Wv;\mu) + r(t,u;\mu).
+	W \frac{d}{dt} v(t;\mu) = f(t,Wv;\mu) + r(t,u;\mu),
 \end{equation}
-Now we can use the properties of the projection operator $P_{I,\mathcal W_k} = WW^T$ to eliminate $W$ from the left hand side. Assuming $r$ is orthogonal to $W$ yields,
+and $r$ is the error in this approximation. Now, we can use the properties of the projection operator $P_{I,\mathcal W_k} = WW^T$ to eliminate $W$ from the left hand side. Assuming $r$ is orthogonal to $W$ yields,
 \begin{equation} \label{eq:3.26}
 	\left\{
 	\begin{aligned}
@@ -326,7 +326,7 @@ Here we used the fact that $W^TW = I_k$. Furthermore, if we instead use the proj
 	\end{aligned}
 	\right.
 \end{equation}
-Orthogonal projection operators, such as $P_{I,\mathcal W_k}$ and $P_{X,\mathcal W}$ are called a \emph{Galerkin} projection. However, one can construct a non-orthogonal projection $\Pi = WU^T$ by finding $U\in \mathbb R^{n\times k}$ such that $U^TW = I_k$ \cite{hesthaven2015certified,quarteroni2015reduced,doi:10.1137/1.9780898718713}. Such projection is called a \emph{Petrov-Galerkin} projection. Assuming $r$, in \Cref{eq:3.25}, is orthogonal to $U$, $\Pi$ results the reduced system
+Orthogonal projection operators, such as $P_{I,\mathcal W_k}$ and $P_{X,\mathcal W}$ are called a \emph{Galerkin} projection. However, one can construct a non-orthogonal projection $\Pi = WU^T$ by finding $U\in \mathbb R^{n\times k}$ such that $U^TW = I_k$ \cite{hesthaven2015certified,quarteroni2015reduced,doi:10.1137/1.9780898718713}. Such a projection is called a \emph{Petrov-Galerkin} projection. Assuming $r$, in \Cref{eq:3.25}, is orthogonal to $U$, $\Pi$ results the reduced system
 \begin{equation} \label{eq:3.28}
 	\left\{
 	\begin{aligned}
@@ -335,10 +335,10 @@ Orthogonal projection operators, such as $P_{I,\mathcal W_k}$ and $P_{X,\mathcal
 	\end{aligned}
 	\right.
 \end{equation} 
-Although reduced systems in \Cref{eq:3.26,eq:3.27,eq:3.28} are of a low order, however evaluation of $f(t,Wv;\mu)$ should be performed in the high-fidelity space, for a general $f$. In the following section we discuss how we can avoid this bottleneck. 
+Although reduced systems in \Cref{eq:3.26,eq:3.27,eq:3.28} are of a lower order compared to the high-fidelity system, however, the evaluation of $f(t,Wv;\mu)$ should be performed in the high-fidelity space, for a general $f$. In the following section we discuss how we can avoid this bottleneck. 
 
-\section{Efficient Evaluation of Non-Linear Terms} \label{sec:3.5}
-In this section we discuss the efficiency of evaluating nonlinear terms in the context of projection based reduced models. Suppose that the right hand side in (\ref{eq:3.1}) is of the form $f(t, u ; \mu) = L(\mu) u + g(t,u ; \mu)$, where $L\in \mathbb P \times \mathbb R^{n\times n}$ reflects the linear part, and $g$ is a nonlinear function. Now assume that a $m$-dimensional reduced basis $W \in \mathbb R^{n\times k}$ is provided. The reduced system using a Petrov-Galerkin projection takes the form
+\section{Efficient Evaluation of the Non-Linear Terms} \label{sec:3.5}
+In this section we discuss the efficiency of evaluating nonlinear terms in the context of projection based reduced models. Suppose that the right hand side in (\ref{eq:3.1}) is of the form $f(t, u ; \mu) = L(\mu) u + g(t,u ; \mu)$, where $L\in \mathbb P \times \mathbb R^{n\times n}$ reflects the linear part, and $g$ is a nonlinear function. Now assume that a $k$-dimensional reduced basis $W \in \mathbb R^{n\times k}$ is provided. The reduced system using a Petrov-Galerkin projection takes the form
 \begin{equation} \label{eq:3.29}
 	\frac{d}{dt} v= \underbrace{ U^T L W}_{\tilde L} v + \underbrace{ U^T g(t,Wv;\mu)}_{ h (t,v;\mu)}.
 \end{equation}
