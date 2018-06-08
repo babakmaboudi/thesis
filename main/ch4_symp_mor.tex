@@ -37,7 +37,7 @@ This constructs a mapping $\phi:\mathcal A \to \mathcal Z$ given by $\phi(y) = A
 \begin{equation} \label{p1.eq:SyMo:1.3}
 	\tilde \Omega = \phi^*\Omega = A^T \mathbb J_{2n} A = \mathbb J_{2k}.
 \end{equation}
-Note that in \cref{eq:2.201} a linear symplectic transformation was a square matrix, however, here $A$ is a rectangular matrix. Since $\tilde \Omega$ is a symplectic differential form, $(\mathcal A, \tilde \Omega)$ forms a symplectic linear vector space. Furthermore since the matrix form of $\tilde \Omega$ is $\mathbb J_{2k}$ it We can construct a projection operator (similar to the projection used in the symplectic Gram-Schmidt process \Cref{theorem:2.7}) as
+Note that in \cref{eq:2.201} a linear symplectic transformation was a square matrix, however, here $A$ is a rectangular matrix. Since $\tilde \Omega$ is a symplectic differential form, $(\mathcal A, \tilde \Omega)$ forms a symplectic linear vector space. Furthermore since the matrix form of $\tilde \Omega$ is $\mathbb J_{2k}$ it We can construct a projection operator (similar to the projection used in the symplectic Gram-Schmidt (GS) process \Cref{theorem:2.7}) as
 \begin{equation} \label{p1.eq:SyMo:1.4}
 	P^{\text{symp}}_{\mathcal A}(z) = -\Omega(z,\tilde f_1)\tilde e_1 + \Omega(z,\tilde e_1) \tilde f_1, \quad z\in \mathcal Z.
 \end{equation}
@@ -189,7 +189,7 @@ One can easily check that (\ref{p1.eq:SyMo:12}) is satisfied since the matrix of
 
 \section{The Greedy Approach to Symplectic Basis Generation} \label{p1.sec:Symo.PrSy:3} We discussed the greedy generation of a reduced basis in \Cref{sec:3.3}. This this section we generalize the method to construct a symplectic basis.This method adds the two best possible basis vectors to the symplectic basis to enhance overall accuracy. In contrast to the cotangent lift and the complex SVD methods, the greedy approach does not require the symplectic basis to have a specific structure. This typically results in a more compact basis and/or more accurate reduced systems. For parametric problems, the greedy approach only requires one numerical solution to be computed per iteration hence saving substantial computational cost in the offline stage. 
 
-The orthonormalization step is an essential step in most greedy approaches for basis generation in the context of model reduction \cite{hesthaven2015certified,quarteroni2015reduced}. However common orthonormalization processes, e.g. the QR method, destroy the symplectic structure of the original system \cite{bunse1986matrix}. Here we use a variation of the QR method known as the SR \cite{Salam2014} method which is based on the symplectic Gram-Schmidt method introduced in \Cref{theorem:2.7}.
+The orthonormalization step is an essential step in most greedy approaches for basis generation in the context of model reduction \cite{hesthaven2015certified,quarteroni2015reduced}. However common orthonormalization processes, e.g. the QR method, destroy the symplectic structure of the original system \cite{bunse1986matrix}. Here we use a variation of the QR method known as the SR \cite{Salam2014} method which is based on the symplectic GS method introduced in \Cref{theorem:2.7}.
 
 As discussed in \Cref{section:2.4}, any finite dimensional symplectic linear vector space can be equipped with a canonical basis. Furthermore, \Cref{theorem:2.7} and \Cref{theorem:2.11} provides an iterative process for constructing an ortho-symplectic basis \cite{Salam2014}. To briefly describe the SR method, suppose $E=\{ e_i, T^{-1}(e_i) \}_{i=1}^{k}$ is a given ortho-symplectic basis with respect to the Euclidean inner product, where $T$ is the transformation defined in \Cref{theorem:2.11}. For the Euclidean inner product, it is easily verified that $T^{-1}(e_{k+1}) =  \mathbb J_{2n}^T e_{k+1}$. Furthermore, let $A_{2k}$ is the matrix that contains these vectors in its columns. Let $z$ be a given vector such that $z\not \in \mathcal A$, the span space of $E$. We first remove the contribution of $E$ form $z$ to obtain
 \begin{equation} \label{p1.eq:SyMo:14.1}
@@ -230,10 +230,10 @@ We summarize the greedy algorithm for the generation of a symplectic basis in \C
 
 \begin{algorithm} 
 	\caption{the symplectic greedy for extending a symplectic reduced basis} \label{alg:4.1}
-	\textbf{Input:} parameter space $\mathbb P$, error indicator function $\eta$ , symplectic reduced basis $A_{2k}$ of size $n_k$.
+	\textbf{Input:} parameter space $\mathbb P$, error indicator function $\eta$ , symplectic reduced basis $A_{2k}$.
 	\begin{algorithmic} [1]
 		\State find $\mu^* := \underset{\mu \in \mathbb P}{\text{arg\ max}} \ \eta(\mu)$.
-		\State compute temporal snapshots $S_{t,\mu^*}$.
+		\State compute the temporal snapshots $S_{t,\mu^*}$.
 		\State Find the snapshot with maximum projection error
 		\[
 			z := \underset{s\in S_{t,\mu_{k+1}}}{\text{arg\ max }} \| s - A_{2k}{A_{2k}}^+s \|_2.

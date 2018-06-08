@@ -86,7 +86,8 @@ The \emph{proper orthogonal decomposition} method is then finding $\mathcal W_k$
 \end{aligned}
 \end{equation}
 This formulation is comparable with the discrete version of the Kolmogorov $n$-width. 
-\subsection{Euclidean Inner Product}When $<\cdot,\cdot>$ is the classical Euclidean inner product, i.e. $<a,b> = a^Tb$ for $a,b\in \mathbb R^{n}$, then we can rewrite the projection operator in (\ref{eq:3.9}) as
+\subsection{Euclidean Inner Product} \label{sec:3.2.1}
+When $<\cdot,\cdot>$ is the classical Euclidean inner product, i.e. $<a,b> = a^Tb$ for $a,b\in \mathbb R^{n}$, then we can rewrite the projection operator in (\ref{eq:3.9}) as
 \begin{equation}
 	P_{I,\mathcal W_k} (s) = WW^T s.
 \end{equation}
@@ -175,7 +176,7 @@ As the minimization (\ref{eq:3.13}) is closely related to the Kolmogorov $n$-wid
 	\textbf{Output:} reduced basis $W$.
 \end{algorithm}
 
-\subsection{Non-Euclidean Inner Product}
+\subsection{Non-Euclidean Inner Product} \label{sec:3.2.2}
 Now suppose that $<,>$ is a non-Euclidean inner product. One can associate such an inner product with a symmetric and positive definite matrix $X$ (and denote $<,>_X$) such that $<a,b>_X = a^TXb$ for all $a,b\in \mathbb R^n$. Given an orthonormal basis $W = [w_i]_{i=1}^k$ with respect to this inner product, it is easy to verify that the orthogonal projection onto $\mathcal W_k = \text{span}(W)$ is given by
 \begin{equation} \label{eq:3.19}
 	P_{X,\mathcal W_k}(s) = WW^TXs, \quad s\in \mathbb R^{n}.
@@ -247,7 +248,7 @@ Thus, the computation of $X^{1/2}$ can be avoided. We summarize the computationa
 	\textbf{Output:} reduced basis $W$.
 \end{algorithm}
 
-\section{The Greedy Basis Generation} \label{sec:3.3}
+\section{The Greedy Basis Generation} \label{sec:3.3} 
 for the purpose the of most efficient computation, it is important to identify time intensive high dimensional quantities and the cheaper low dimensional computations. This segregation or compartmentalization of quantities, according to their computational cost, is referred to as the \emph{offline/online} decomposition \cite{quarteroni2015reduced}. We tolerate some amount of computational complexity in the offline phase to achieve substantial computation acceleration in the online phase. In the context of RB methods, we tend restrict computations regarding the high-fidelity solution, only to the offline phase. Then we can enjoy fast computations by restricting all computations to the reduced space during the online phase.
 
 Assembling the snapshot matrix $S$ (\ref{eq:3.12}) requires the evaluation of the high-fidelity solution for potentially a large sample set of the parameter space $\mathbb P$. Moreover, performing an SVD decomposition on $S$ can be computationally demanding and often impractical during the offline phase. The greedy basis generation is an iterative process in which basis vectors are identified and added, one at a time, to improve the overall accuracy of the reduced basis. As the high-fidelity solution is only evaluated once per iteration, the assembly and the SVD decomposition of $S$ is avoided, saving considerable computational cost in the offline phase. On the other hand, since \Cref{theorem:3.1} indicates that the SVD provides the best possible basis of a given size $k$, we expect that the greedy approach provides a less accurate basis, for the same size. However, the two methods often provide a basis with a comparable size and accuracy \cite{quarteroni2015reduced}.
