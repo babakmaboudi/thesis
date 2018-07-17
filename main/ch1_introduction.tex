@@ -1,3 +1,26 @@
 \addcontentsline{toc}{chapter}{Introduction}
-\chapter*{Introduction}
-The introduction is added here\dots
+\chapter{Introduction}
+Mathematical modeling and scientific computing is, now, an inseparable part of engineering and science, thanks to advances in computational technology. Models expressed as partial differential equations (PDEs) can be found in a wide range of disciplines from social sciences, biology, cosmology, modern and classical physics, and engineering to industrial applications. The overwhelming success of such models, in approximately describing the nature, has encouraged the development of complex mathematical models in order to attain higher accuracy. The complexity of many modern applications, however, is computationally prohibitive with classical approaches. The curse of dimensionality for multi-dimensional parameter sets, i.e. the exponential growth in computational costs in higher dimensions, is an example of computational inefficiency that inhibits such approaches.
+
+Reduced order modeling (ROM), apposed to high-fidelity modeling, has emerged as a successful attempt to reduce the intrinsic computational inefficiencies of modern applications. ROM aims to accurately represent the high-fidelity model with a few degrees of freedom, by exploiting empirical or physical structures in data. Confining the model to only these degrees of freedom can, then, significantly reduce the computational costs. Although these methods do not eliminate the need for high-fidelity modeling, however, they significantly accelerate the evaluation of outputs of interest when repeated computation of the high-fidelity model is required.
+
+%Reduced basis (RB) methods, are a class of techniques for ROM, which restricts the high-fidelity model to a subspace with a, relatively, low dimension. Representing the high-fidelity model in this subspace, using a projection operator, reduces the system size of the system of algebraic equations that describe the model. 
+
+Recognition of patterns in data, in general, makes ROM comparable with machine learning techniques, e.g. in computer science and statistics developed during the past decades. However, the deterministic nature of PDEs together with the control in the choice of data generation process, gives ROM a distinctive take on artificial intelligence. 
+
+This difference, between ROM and conventional machine learning techniques, becomes more apparent with time-dependent problems. Time-symmetries of high-fidelity models are lost in the ensembling of data, which sometimes, result in an ill-represented ROM. Although this inaccuracy in representation is less evident for parabolic PDEs, ROM of hyperbolic PDEs, where symmetries are a fundamental feature, remains a challenge.
+
+The main aim of this thesis is to find ROM techniques that capture time-symmetries in a system of PDEs. Conservation of such symmetries, not only results in a robust ROM, but also it helps with a construction of a meaningful reduced order model. Time, as a parameter, plays a crucial role in the existence and the conservation of symmetries. Therefore, this thesis puts a particular emphasis on the treatment of the time variable by studying systems that depend on no, or otherwise very small number of other parameters. This might, at first glance, sounds counter intuitive in the context ROM. However, isolation of time can provide a remarkable insight into the theory of ROM, and even into mathematical modeling. Nevertheless, The main results of this paper can naturally be extended to the parameter setting while gaining all the benefits from conservation of symmetries.
+
+In what is left of this chapter, we discuss the difficulties involving treating time as a parameter in the context of ROM, and then, we briefly discuss the content of the thesis.
+
+\section{Space and Time in ROM}
+Reduced basis (RB) methods are among the most popular ROM techniques. These methods has been successful in reducing the computational complexity of large scale systems of partial differential equations, and has been used in many disciplines in engineering and science and widely applied in industry. 
+
+RB methods, is based on the assumption that a state of a solution to a system of PDEs can be well approximated by a few degrees of freedom, chosen from a low-dimensional subspace. A projection operator, often of a linear type, is then constructed, to confine the state of the system to this subspace. This constructs a new system of partial differential equations that now is described only by a few independent variables. In principle, this system can be evaluated at an accelerated rate, compared to the high-fidelity system.
+
+In the context of finite element methods, where a solution to PDE is described as a linear combination of basis functions, RB methods can be visually represented. Consider the equations governing a 1-dimensional wave in a periodic domain.
+\begin{equation}
+	\frac{\partial }{\partial t^2} u(t,x) + \frac{\partial }{\partial x^2} u(t,x) = 0, \quad x\in[0,1],
+\end{equation}
+together with some initial condition $u(t,x) = u_0(x)$. Finite element discretization requires $u$ to be a linear combination of a total of $n$ basis functions $u_i$, $i=1,\dots,n$.
