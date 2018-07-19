@@ -1,5 +1,5 @@
-\addcontentsline{toc}{chapter}{Introduction}
-\chapter*{Introduction}
+%\addcontentsline{toc}{chapter}{Introduction}
+\chapter{Introduction}
 Mathematical modeling and scientific computing is, now, an inseparable part of engineering and science, thanks to advances in computational science and technology. Models expressed as partial differential equations (PDEs) can be found in a wide range of disciplines from social sciences, biology, cosmology, modern and classical physics, and engineering to industrial applications. The overwhelming success of such models, in approximately describing the nature, has encouraged the development of complex mathematical models in order to attain higher accuracy. The complexity of many modern applications, however, is computationally prohibitive with classical approaches. The curse of dimensionality for multi-dimensional parameter sets, i.e. the exponential growth in computational costs in higher dimensions, is an example of a computational inefficiency that inhibits such approaches.
 
 Reduced order modeling (ROM), apposed to high-fidelity modeling, has emerged as a successful attempt to reduce the intrinsic computational inefficiencies of modern applications \cite{hesthaven2015certified,quarteroni2015reduced,doi:10.1137/1.9781611974829,doi:10.1137/1.9780898718713}. ROM aims to accurately represent a high-dimensional model with a few degrees of freedom, by exploiting empirical or physical structures in data. Confining the model to only these degrees of freedom can, then, significantly reduce the computational costs. Although these methods do not eliminate the need for high-fidelity modeling, however, they significantly accelerate the evaluation of outputs of interest when repeated computation of the high-fidelity model is required \cite{hesthaven2015certified}.
@@ -14,7 +14,7 @@ The main aim of this thesis is to find ROM techniques that capture time-symmetri
 
 In what is left of this chapter, we discuss the difficulties involving treating time as a parameter in the context of ROM, and then, we briefly discuss the content of the thesis.
 
-\section*{Space and Time in ROM}
+\section{Space and Time in ROM}
 Reduced basis (RB) methods are among the most popular ROM techniques. These methods have been successful in reducing the computational complexity of large scale systems of partial differential equations, and have been used in many disciplines in engineering and science and widely applied in industry. Many applications of RB methods can be found in \cite{hesthaven2015certified,quarteroni2015reduced,doi:10.1137/1.9781611974829,doi:10.1137/1.9780898718713} and many references therein.
 
 RB methods, is based on the assumption that a state of a solution to a system of PDEs can be well approximated by a few degrees of freedom, chosen from a low-dimensional subspace. A projection operator, often of a linear type, is then constructed, to confine the state of the system to this subspace. This constructs a new system of partial differential equations that now is described only by a few independent variables. In principle, this system can be evaluated at an accelerated rate, compared to the high-fidelity system.
@@ -86,7 +86,7 @@ Nonlinear invariants and symmetries, such as those discussed above, are a fundam
 
 The main aim of this thesis is to seek RB techniques that construct a reduced phase space that captures the symmetries of the high-fidelity system of PDEs. This ensures conservation of some nonlinear invariants and, subsequently, well-approximation of the overall dynamics in the reduced system. Hamiltonian systems, as systems that are driven by symmetries, are studied intensively from MOR view point. We then develop methods that preserve symmetries of a fluid flow.
 
-\section*{Overview of The Thesis}
+\section{Overview of The Thesis}
 The overall goal of this thesis is to investigate RB techniques that can preserve nonlinear invariants, symmetries, and conservation laws. Furthermore, it aims to understand the stability and robustness properties of these methods compared to conventional RB techniques. This thesis mainly focuses on the MOR of time-dependent and, in particular, hyperbolic PDEs. A particular emphasis is put on model order reduction of Hamiltonian systems to fully understand the role of time in structure-preserving MOR. The main results are then generalized to construct a MOR method for fluid flow.
 
 \Cref{chapter:2} surveys the background on smooth manifolds and Hamiltonian systems. We introduce the concept of geometrical symmetry and how it relates to the dynamics of a time-dependent differential equations. We also briefly introduce methods for conserving these symmetries in a numerical evaluation.
@@ -100,3 +100,5 @@ In \Cref{chapter:5} we couple the symplectic model order reduction with a weight
 \Cref{chapter:6} presents symplectic MOR in the context of dissipative Hamiltonian system. It is discussed how a canonical extension of dissipative Hamiltonian system yields a closed an conservative system. An application of a symplectic MOR on an extended system can help with a correct evolution of the Hamiltonian. Performance of this method is illustrated through simulations of dissipative Hamiltonian and port-Hamiltonian systems.
 
 A conservative model reduction of fluid flow is presented \Cref{chapter:7}. It is explained in this chapter how the skew-symmetry of differential operators in fluid flow can help recover conservation of quadratic invariants, e.g. energy, at the level of reduced system. It is discussed how this give rise to a physically meaningful reduced system with quadratic invariants with respect to reduced variables. Stability properties of the method is illustrated through various numerical experiments of incompressible and compressible fluid.
+
+\lipsum[1]
