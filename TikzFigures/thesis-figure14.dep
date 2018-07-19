@@ -1,0 +1,8 @@
+TikzFigures/paper-figure14.pdf: ./data/Compressible_Euler/1D/error/error_75.txt
+TikzFigures/paper-figure14.pdf: ./data/Compressible_Euler/1D/error/error_126.txt
+TikzFigures/paper-figure14.pdf: ./data/Compressible_Euler/1D/error/error_177.txt
+TikzFigures/paper-figure14.pdf: ./data/Compressible_Euler/1D/error/error_225.txt
+TikzFigures/paper-figure14.pdf: ./data/Compressible_Euler/1D/error/error_276.txt
+TikzFigures/paper-figure14.pdf: ./data/Compressible_Euler/1D/error/error_327.txt
+TikzFigures/paper-figure14.pdf: ./data/Compressible_Euler/1D/error/error_375.txt
+TikzFigures/paper-figure14.pdf: ./data/Compressible_Euler/1D/error/error_426.txt

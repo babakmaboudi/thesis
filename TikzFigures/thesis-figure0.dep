@@ -1,0 +1,3 @@
+TikzFigures/paper-figure0.pdf: ./data/Incompressible_Euler/Energy_compare_formulations/energy_skew_symmetric.txt
+TikzFigures/paper-figure0.pdf: ./data/Incompressible_Euler/Energy_compare_formulations/energy_divergence.txt
+TikzFigures/paper-figure0.pdf: ./data/Incompressible_Euler/Energy_compare_formulations/energy_convective.txt

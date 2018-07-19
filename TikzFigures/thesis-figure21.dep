@@ -1,0 +1,2 @@
+TikzFigures/paper-figure21.pdf: ./data/Compressible_Euler/1D/Singular_values/sv.txt
+TikzFigures/paper-figure21.pdf: ./data/Compressible_Euler/1D/Singular_values/sv_DEIM.txt

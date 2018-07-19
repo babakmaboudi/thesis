@@ -1,0 +1,5 @@
+TikzFigures/paper-figure5.pdf: ./data/Compressible_Euler/KH/conserved_quantities/mass_red_200.txt
+TikzFigures/paper-figure5.pdf: ./data/Compressible_Euler/KH/conserved_quantities/mass_red_300.txt
+TikzFigures/paper-figure5.pdf: ./data/Compressible_Euler/KH/conserved_quantities/mass_red_400.txt
+TikzFigures/paper-figure5.pdf: ./data/Compressible_Euler/KH/conserved_quantities/mass_red_500.txt
+TikzFigures/paper-figure5.pdf: ./data/Compressible_Euler/KH/conserved_quantities/mass_red_600.txt

@@ -1,0 +1,8 @@
+TikzFigures/paper-figure2.pdf: ./data/Incompressible_Euler/Approximation_Error/err_5.txt
+TikzFigures/paper-figure2.pdf: ./data/Incompressible_Euler/Approximation_Error/err_8.txt
+TikzFigures/paper-figure2.pdf: ./data/Incompressible_Euler/Approximation_Error/err_11.txt
+TikzFigures/paper-figure2.pdf: ./data/Incompressible_Euler/Approximation_Error/err_14.txt
+TikzFigures/paper-figure2.pdf: ./data/Incompressible_Euler/Approximation_Error/err_23.txt
+TikzFigures/paper-figure2.pdf: ./data/Incompressible_Euler/Approximation_Error/err_26.txt
+TikzFigures/paper-figure2.pdf: ./data/Incompressible_Euler/Approximation_Error/err_29.txt
+TikzFigures/paper-figure2.pdf: ./data/Incompressible_Euler/Approximation_Error/err_35.txt

@@ -1,0 +1,2 @@
+TikzFigures/paper-figure22.pdf: ./data/Compressible_Euler/1D/error_DEIM/error_DEIM.txt
+TikzFigures/paper-figure22.pdf: ./data/Compressible_Euler/1D/error_DEIM/error_POD.txt

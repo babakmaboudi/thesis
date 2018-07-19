@@ -1,0 +1,3 @@
+TikzFigures/paper-figure27.pdf: ./data/Combustor/error_200.txt
+TikzFigures/paper-figure27.pdf: ./data/Combustor/error_300.txt
+TikzFigures/paper-figure27.pdf: ./data/Combustor/error_400.txt

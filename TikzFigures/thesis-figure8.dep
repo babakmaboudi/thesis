@@ -1,0 +1,6 @@
+TikzFigures/paper-figure8.pdf: ./data/Compressible_Euler/1D/convective_data/mass_102_1.txt
+TikzFigures/paper-figure8.pdf: ./data/Compressible_Euler/1D/convective_data/mass_201_1.txt
+TikzFigures/paper-figure8.pdf: ./data/Compressible_Euler/1D/divergence_data/mass_102_1.txt
+TikzFigures/paper-figure8.pdf: ./data/Compressible_Euler/1D/divergence_data/mass_201_1.txt
+TikzFigures/paper-figure8.pdf: ./data/Compressible_Euler/1D/skew_symm_data/mass_102_1.txt
+TikzFigures/paper-figure8.pdf: ./data/Compressible_Euler/1D/skew_symm_data/mass_201_1.txt

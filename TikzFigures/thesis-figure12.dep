@@ -1,0 +1,6 @@
+TikzFigures/paper-figure12.pdf: ./data/Compressible_Euler/1D/convective_data/energy_102_1.txt
+TikzFigures/paper-figure12.pdf: ./data/Compressible_Euler/1D/convective_data/energy_201_1.txt
+TikzFigures/paper-figure12.pdf: ./data/Compressible_Euler/1D/divergence_data/energy_102_1.txt
+TikzFigures/paper-figure12.pdf: ./data/Compressible_Euler/1D/divergence_data/energy_201_1.txt
+TikzFigures/paper-figure12.pdf: ./data/Compressible_Euler/1D/skew_symm_data/energy_102_1.txt
+TikzFigures/paper-figure12.pdf: ./data/Compressible_Euler/1D/skew_symm_data/energy_201_1.txt

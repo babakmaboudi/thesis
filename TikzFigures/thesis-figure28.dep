@@ -1,0 +1,2 @@
+TikzFigures/paper-figure28.pdf: ./data/Combustor/full.txt
+TikzFigures/paper-figure28.pdf: ./data/Combustor/red.txt

@@ -1,0 +1,8 @@
+TikzFigures/paper-figure3.pdf: ./data/Incompressible_Euler/Energy_conservation/ene_full_5.txt
+TikzFigures/paper-figure3.pdf: ./data/Incompressible_Euler/Energy_conservation/ene_full_8.txt
+TikzFigures/paper-figure3.pdf: ./data/Incompressible_Euler/Energy_conservation/ene_full_11.txt
+TikzFigures/paper-figure3.pdf: ./data/Incompressible_Euler/Energy_conservation/ene_full_14.txt
+TikzFigures/paper-figure3.pdf: ./data/Incompressible_Euler/Energy_conservation/ene_full_23.txt
+TikzFigures/paper-figure3.pdf: ./data/Incompressible_Euler/Energy_conservation/ene_full_26.txt
+TikzFigures/paper-figure3.pdf: ./data/Incompressible_Euler/Energy_conservation/ene_full_29.txt
+TikzFigures/paper-figure3.pdf: ./data/Incompressible_Euler/Energy_conservation/ene_full_35.txt

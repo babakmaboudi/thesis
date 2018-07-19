@@ -1,0 +1,7 @@
+TikzFigures/paper-figure17.pdf: ./data/Compressible_Euler/1D/Snapshots/density_exact_1000.txt
+TikzFigures/paper-figure17.pdf: ./data/Compressible_Euler/1D/Snapshots/density_approx_unstable_24_1000.txt
+TikzFigures/paper-figure17.pdf: ./data/Compressible_Euler/1D/Snapshots/density_approx_unstable_102_1000.txt
+TikzFigures/paper-figure17.pdf: ./data/Compressible_Euler/1D/Snapshots/density_approx_unstable_201_1000.txt
+TikzFigures/paper-figure17.pdf: ./data/Compressible_Euler/1D/Snapshots/density_approx_24_1000.txt
+TikzFigures/paper-figure17.pdf: ./data/Compressible_Euler/1D/Snapshots/density_approx_102_1000.txt
+TikzFigures/paper-figure17.pdf: ./data/Compressible_Euler/1D/Snapshots/density_approx_201_1000.txt

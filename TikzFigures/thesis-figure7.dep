@@ -1,0 +1,5 @@
+TikzFigures/paper-figure7.pdf: ./data/Compressible_Euler/KH/conserved_quantities/energy_red_200.txt
+TikzFigures/paper-figure7.pdf: ./data/Compressible_Euler/KH/conserved_quantities/energy_red_300.txt
+TikzFigures/paper-figure7.pdf: ./data/Compressible_Euler/KH/conserved_quantities/energy_red_400.txt
+TikzFigures/paper-figure7.pdf: ./data/Compressible_Euler/KH/conserved_quantities/energy_red_500.txt
+TikzFigures/paper-figure7.pdf: ./data/Compressible_Euler/KH/conserved_quantities/energy_red_600.txt

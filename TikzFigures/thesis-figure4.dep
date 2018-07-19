@@ -1,0 +1,5 @@
+TikzFigures/paper-figure4.pdf: ./data/Compressible_Euler/KH/error/error_200.txt
+TikzFigures/paper-figure4.pdf: ./data/Compressible_Euler/KH/error/error_300.txt
+TikzFigures/paper-figure4.pdf: ./data/Compressible_Euler/KH/error/error_400.txt
+TikzFigures/paper-figure4.pdf: ./data/Compressible_Euler/KH/error/error_500.txt
+TikzFigures/paper-figure4.pdf: ./data/Compressible_Euler/KH/error/error_600.txt

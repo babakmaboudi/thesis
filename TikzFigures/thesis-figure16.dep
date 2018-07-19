@@ -1,0 +1,7 @@
+TikzFigures/paper-figure16.pdf: ./data/Compressible_Euler/1D/Snapshots/pressure_exact_300.txt
+TikzFigures/paper-figure16.pdf: ./data/Compressible_Euler/1D/Snapshots/pressure_approx_unstable_24_300.txt
+TikzFigures/paper-figure16.pdf: ./data/Compressible_Euler/1D/Snapshots/pressure_approx_unstable_102_300.txt
+TikzFigures/paper-figure16.pdf: ./data/Compressible_Euler/1D/Snapshots/pressure_approx_unstable_201_300.txt
+TikzFigures/paper-figure16.pdf: ./data/Compressible_Euler/1D/Snapshots/pressure_approx_24_300.txt
+TikzFigures/paper-figure16.pdf: ./data/Compressible_Euler/1D/Snapshots/pressure_approx_102_300.txt
+TikzFigures/paper-figure16.pdf: ./data/Compressible_Euler/1D/Snapshots/pressure_approx_201_300.txt
