@@ -1,0 +1,66 @@
+\BOOKMARK [0][-]{chapter*.1}{Abstract \(English/Fran\347ais/Deutsch\)}{}% 1
+\BOOKMARK [0][-]{chapter.1}{Introduction}{}% 2
+\BOOKMARK [1][-]{section.1.1}{Space and Time in ROM}{chapter.1}% 3
+\BOOKMARK [1][-]{section.1.2}{Overview of The Thesis}{chapter.1}% 4
+\BOOKMARK [0][-]{chapter.2}{Symplectic Geometry and Hamiltonian systems}{}% 5
+\BOOKMARK [1][-]{section.2.1}{Smooth Manifolds}{chapter.2}% 6
+\BOOKMARK [1][-]{section.2.2}{Tensors and Differential Forms}{chapter.2}% 7
+\BOOKMARK [1][-]{section.2.3}{Hamiltonian Systems on a Symplectic Manifold}{chapter.2}% 8
+\BOOKMARK [1][-]{section.2.4}{Hamiltonian Systems on a Symplectic Linear Vector Space}{chapter.2}% 9
+\BOOKMARK [1][-]{section.2.5}{Symplectic Integration of Hamiltonian Systems}{chapter.2}% 10
+\BOOKMARK [0][-]{chapter.3}{Model Order Reduction}{}% 11
+\BOOKMARK [1][-]{section.3.1}{Solution Manifold and Reduced Basis Methods}{chapter.3}% 12
+\BOOKMARK [1][-]{section.3.2}{Proper Orthogonal Decomposition}{chapter.3}% 13
+\BOOKMARK [2][-]{subsection.3.2.1}{Euclidean Inner Product}{section.3.2}% 14
+\BOOKMARK [2][-]{subsection.3.2.2}{Non-Euclidean Inner Product}{section.3.2}% 15
+\BOOKMARK [1][-]{section.3.3}{The Greedy Basis Generation}{chapter.3}% 16
+\BOOKMARK [1][-]{section.3.4}{The Galerkin and the Petrov-Galerkin Projection}{chapter.3}% 17
+\BOOKMARK [1][-]{section.3.5}{Efficient Evaluation of the Non-Linear Terms}{chapter.3}% 18
+\BOOKMARK [0][-]{chapter.4}{Symplectic Model Order Reduction}{}% 19
+\BOOKMARK [1][-]{section.4.1}{Symplectic Galerkin Projection}{chapter.4}% 20
+\BOOKMARK [1][-]{section.4.2}{Proper Symplectic Decomposition}{chapter.4}% 21
+\BOOKMARK [2][-]{subsection.4.2.1}{SVD Based Methods for Symplectic Basis Generation}{section.4.2}% 22
+\BOOKMARK [1][-]{section.4.3}{The Greedy Approach to Symplectic Basis Generation}{chapter.4}% 23
+\BOOKMARK [1][-]{section.4.4}{Convergence of the Greedy Method}{chapter.4}% 24
+\BOOKMARK [1][-]{section.4.5}{Symplectic Discrete Empirical Interpolation Method \(SDEIM\)}{chapter.4}% 25
+\BOOKMARK [1][-]{section.4.6}{Numerical Results}{chapter.4}% 26
+\BOOKMARK [2][-]{subsection.4.6.1}{Parametric Linear Wave Equation}{section.4.6}% 27
+\BOOKMARK [2][-]{subsection.4.6.2}{Nonlinear Schr\366dinger Equation}{section.4.6}% 28
+\BOOKMARK [2][-]{subsection.4.6.3}{Numerical Convergence}{section.4.6}% 29
+\BOOKMARK [1][-]{section.4.7}{Conclusion}{chapter.4}% 30
+\BOOKMARK [0][-]{chapter.5}{Symplectic Model Order Reduction With a Weighted Inner Product}{}% 31
+\BOOKMARK [1][-]{section.5.1}{Generalization of the Symplectic Galerkin Projection}{chapter.5}% 32
+\BOOKMARK [1][-]{section.5.2}{Proper Symplectic Decomposition Revisited}{chapter.5}% 33
+\BOOKMARK [1][-]{section.5.3}{Stability Conservation}{chapter.5}% 34
+\BOOKMARK [1][-]{section.5.4}{Greedy Generation of a J2n-Symplectic Basis}{chapter.5}% 35
+\BOOKMARK [1][-]{section.5.5}{Efficient Evaluation of Nonlinear Terms}{chapter.5}% 36
+\BOOKMARK [1][-]{section.5.6}{Numerical Results}{chapter.5}% 37
+\BOOKMARK [2][-]{subsection.5.6.1}{The Elastic Beam Equation}{section.5.6}% 38
+\BOOKMARK [2][-]{subsection.5.6.2}{Elastic Beam With Cavity}{section.5.6}% 39
+\BOOKMARK [2][-]{subsection.5.6.3}{The sine-Gordon equation}{section.5.6}% 40
+\BOOKMARK [1][-]{section.5.7}{Conclusion}{chapter.5}% 41
+\BOOKMARK [0][-]{chapter.6}{Symplectic Model Order Reduction of Dissipative Hamiltonian Systems}{}% 42
+\BOOKMARK [1][-]{section.6.1}{Dissipative Hamiltonian Systems and Hamiltonian Extensions}{chapter.6}% 43
+\BOOKMARK [1][-]{section.6.2}{The Reduced Dissipative Hamiltonian Method}{chapter.6}% 44
+\BOOKMARK [1][-]{section.6.3}{Numerical Results}{chapter.6}% 45
+\BOOKMARK [2][-]{subsection.6.3.1}{Dissipative wave equation}{section.6.3}% 46
+\BOOKMARK [2][-]{subsection.6.3.2}{The sine-Gordon equation}{section.6.3}% 47
+\BOOKMARK [2][-]{subsection.6.3.3}{Port-Hamiltonian Systems}{section.6.3}% 48
+\BOOKMARK [1][-]{section.6.4}{Conclusion}{chapter.6}% 49
+\BOOKMARK [0][-]{chapter.7}{Conservative Model Order Reductin of Fluid Flow}{}% 50
+\BOOKMARK [1][-]{section.7.1}{Skew Symmetric and Centered Schemes for Fluid Flows}{chapter.7}% 51
+\BOOKMARK [2][-]{subsection.7.1.1}{Conservation Laws}{section.7.1}% 52
+\BOOKMARK [2][-]{subsection.7.1.2}{Incompressible Fluid}{section.7.1}% 53
+\BOOKMARK [2][-]{subsection.7.1.3}{Compressible Fluid}{section.7.1}% 54
+\BOOKMARK [2][-]{subsection.7.1.4}{Time integration}{section.7.1}% 55
+\BOOKMARK [1][-]{section.7.2}{Model Order Reduction of Fluid Flow}{chapter.7}% 56
+\BOOKMARK [2][-]{subsection.7.2.1}{Assembling Nonlinear Terms and Time Integration}{section.7.2}% 57
+\BOOKMARK [1][-]{section.7.3}{Numerical Experiments}{chapter.7}% 58
+\BOOKMARK [2][-]{subsection.7.3.1}{Vortex Merging}{section.7.3}% 59
+\BOOKMARK [2][-]{subsection.7.3.2}{2D Kelvin-Helmholtz instability}{section.7.3}% 60
+\BOOKMARK [2][-]{subsection.7.3.3}{1D Shock problem}{section.7.3}% 61
+\BOOKMARK [2][-]{subsection.7.3.4}{Continuous Variable Resonance Combustor}{section.7.3}% 62
+\BOOKMARK [1][-]{section.7.4}{Conclusions}{chapter.7}% 63
+\BOOKMARK [0][-]{chapter.8}{Conclusions}{}% 64
+\BOOKMARK [0][-]{chapter*.35}{Bibliography}{}% 65
+\BOOKMARK [0][-]{section*.36}{Curriculum Vitae}{}% 66

@@ -1,0 +1,662 @@
+\begin{thebibliography}{100}
+
+\bibitem{abraham1978foundations}
+R.~Abraham and J.~E. Marsden.
+\newblock {\em Foundations of mechanics}, volume~36.
+
+\bibitem{doi:10.1137/17M1111991}
+B.~M. Afkham and J.~S. Hesthaven.
+\newblock Structure preserving model reduction of parametric hamiltonian
+  systems.
+\newblock {\em SIAM Journal on Scientific Computing}, 39(6):A2616--A2644, 2017.
+
+\bibitem{Amsallem:2014ef}
+D.~Amsallem and C.~Farhat.
+\newblock {On the stability of reduced-order linearized computational fluid
+  dynamics models based on POD and Galerkin projection: descriptor vs
+  non-descriptor forms}.
+\newblock In {\em Reduced order methods for modeling and computational
+  reduction}, pages 215--233. Springer, Cham, 2014.
+
+\bibitem{doi:10.1137/1.9780898718713}
+A.~Antoulas.
+\newblock {\em Approximation of Large-Scale Dynamical Systems}.
+\newblock Society for Industrial and Applied Mathematics, 2005.
+
+\bibitem{atwell2001proper}
+J.~A. Atwell and B.~B. King.
+\newblock Proper orthogonal decomposition for reduced basis feedback
+  controllers for parabolic equations.
+\newblock {\em Mathematical and computer modelling}, 33(1-3):1--19, 2001.
+
+\bibitem{ballarin2015supremizer}
+F.~Ballarin, A.~Manzoni, A.~Quarteroni, and G.~Rozza.
+\newblock {Supremizer stabilization of POD--Galerkin approximation of
+  parametrized steady incompressible Navier--Stokes equations}.
+\newblock {\em International Journal for Numerical Methods in Engineering},
+  102(5):1136--1161, 2015.
+
+\bibitem{barrault2004empirical}
+M.~Barrault, Y.~Maday, N.~C. Nguyen, and A.~T. Patera.
+\newblock An ‘empirical interpolation’method: application to efficient
+  reduced-basis discretization of partial differential equations.
+\newblock {\em Comptes Rendus Mathematique}, 339(9):667--672, 2004.
+
+\bibitem{beattie2011structure}
+C.~Beattie and S.~Gugercin.
+\newblock Structure-preserving model reduction for nonlinear port-{Hamiltonian}
+  systems.
+\newblock In {\em Decision and Control and European Control Conference
+  (CDC-ECC), 2011 50th IEEE Conference on}, pages 6564--6569. IEEE, 2011.
+
+\bibitem{doi:10.1137/110836742}
+P.~Benner and T.~Breiten.
+\newblock Interpolation-based {$\mathcal H_2$}-model reduction of bilinear
+  control systems.
+\newblock {\em SIAM Journal on Matrix Analysis and Applications},
+  33(3):859--885, 2012.
+
+\bibitem{Benner:2000ww}
+P.~Benner, R.~Byers, H.~Fa{\ss}bender, V.~Mehrmann, and D.~Watkins.
+\newblock {Cholesky-like factorizations of skew-symmetric matrices}.
+\newblock {\em Electronic Transactions on Numerical Analysis}, 11:85--93
+  (electronic), 2000.
+
+\bibitem{Benner2018}
+P.~Benner and P.~Goyal.
+\newblock {\em An Iterative Model Reduction Scheme forÂ Quadratic-Bilinear
+  Descriptor Systems with an Application to Navier--Stokes Equations}, pages
+  1--19.
+\newblock Springer International Publishing, Cham, 2018.
+
+\bibitem{benner1997new}
+P.~Benner, V.~Mehrmann, and H.~Xu.
+\newblock A new method for computing the stable invariant subspace of a real
+  hamiltonian matrix.
+\newblock {\em Journal of computational and applied mathematics}, 86(1):17--43,
+  1997.
+
+\bibitem{doi:10.1137/1.9781611974829}
+P.~Benner, M.~Ohlberger, A.~Cohen, and K.~Willcox.
+\newblock {\em Model Reduction and Approximation}.
+\newblock Society for Industrial and Applied Mathematics, Philadelphia, PA,
+  2017.
+
+\bibitem{bhatia2002stability}
+N.~Bhatia and G.~Szeg{\"o}.
+\newblock {\em Stability Theory of Dynamical Systems}.
+\newblock Classics in Mathematics. Springer Berlin Heidelberg, 2002.
+
+\bibitem{doi:10.1137/100795772}
+P.~Binev, A.~Cohen, W.~Dahmen, R.~DeVore, G.~Petrova, and P.~Wojtaszczyk.
+\newblock Convergence rates for greedy algorithms in reduced basis methods.
+\newblock {\em SIAM Journal on Mathematical Analysis}, 43(3):1457--1472, 2011.
+
+\bibitem{blaisdell1991numerical}
+G.~A. Blaisdell.
+\newblock {\em Numerical Simulations of Compressible Homogeneous Turbulence}.
+\newblock PhD thesis, Stanford University, 1991.
+
+\bibitem{blanes2016concise}
+S.~Blanes and F.~Casas.
+\newblock {\em A concise introduction to geometric numerical integration},
+  volume~23.
+\newblock CRC Press, 2016.
+
+\bibitem{buffa2012priori}
+A.~Buffa, Y.~Maday, A.~T. Patera, C.~Prud’homme, and G.~Turinici.
+\newblock A priori convergence of the greedy algorithm for the parametrized
+  reduced basis method.
+\newblock {\em ESAIM: Mathematical Modelling and Numerical Analysis},
+  46(3):595--603, 2012.
+
+\bibitem{bunse1986matrix}
+A.~Bunse-Gerstner.
+\newblock Matrix factorizations for symplectic qr-like methods.
+\newblock {\em Linear Algebra and its Applications}, 83:49--77, 1986.
+
+\bibitem{1711.11550}
+K.~Carlberg, Y.~Choi, and S.~Sargsyan.
+\newblock Conservative model reduction for finite-volume models, 2017.
+
+\bibitem{carlberg2018conservative}
+K.~Carlberg, Y.~Choi, and S.~Sargsyan.
+\newblock Conservative model reduction for finite-volume models.
+\newblock {\em Journal of Computational Physics}, 371:280--314, 2018.
+
+\bibitem{carlberg2012efficient}
+K.~Carlberg, R.~Tuminaro, and P.~Boggs.
+\newblock Efficient structure-preserving model reduction for nonlinear
+  mechanical systems with application to structural dynamics.
+\newblock In {\em 53rd AIAA/ASME/ASCE/AHS/ASC Structures, Structural Dynamics
+  and Materials Conference 20th AIAA/ASME/AHS Adaptive Structures Conference
+  14th AIAA}, page 1969.
+
+\bibitem{doi:10.1137/140959602}
+K.~Carlberg, R.~Tuminaro, and P.~Boggs.
+\newblock Preserving lagrangian structure in nonlinear model reduction with
+  application to structural dynamics.
+\newblock {\em SIAM Journal on Scientific Computing}, 37(2):B153--B184, 2015.
+
+\bibitem{HHS}
+S.~Chandrasekhar.
+\newblock Hydrodynamic and hydromagnetic stability.
+\newblock 2013.
+
+\bibitem{doi:10.1137/15M1055085}
+S.~Chaturantabut, C.~Beattie, and S.~Gugercin.
+\newblock Structure-preserving model reduction for nonlinear port-hamiltonian
+  systems.
+\newblock {\em SIAM Journal on Scientific Computing}, 38(5):B837--B865, 2016.
+
+\bibitem{doi:10.1137/090766498}
+S.~Chaturantabut and D.~C. Sorensen.
+\newblock Nonlinear model reduction via discrete empirical interpolation.
+\newblock {\em SIAM Journal on Scientific Computing}, 32(5):2737--2764, 2010.
+
+\bibitem{corduneanu1991integral}
+C.~Corduneanu.
+\newblock {\em Integral equations and applications}, volume 148.
+\newblock Cambridge University Press Cambridge, 1991.
+
+\bibitem{cuong2005certified}
+N.~N. Cuong, K.~Veroy, and A.~T. Patera.
+\newblock Certified real-time solution of parametrized partial differential
+  equations.
+\newblock In {\em Handbook of Materials Modeling}, pages 1529--1564. Springer,
+  2005.
+
+\bibitem{DEPARIS20094359}
+S.~Deparis and G.~Rozza.
+\newblock Reduced basis method for multi-parameter-dependent steady
+  {Navier–Stokes} equations: Applications to natural convection in a cavity.
+\newblock {\em Journal of Computational Physics}, 228(12):4359 -- 4378, 2009.
+
+\bibitem{desjardins2008high}
+O.~Desjardins, G.~Blanquart, G.~Balarac, and H.~Pitsch.
+\newblock High order conservative finite difference scheme for variable density
+  low mach number turbulent flows.
+\newblock {\em Journal of Computational Physics}, 227(15):7125--7159, 2008.
+
+\bibitem{filaments_vort2}
+D.~G. Dritschel and N.~J. Zabusky.
+\newblock On the nature of vortex interactions and models in unforced nearly
+  inviscid two dimensional turbulence.
+\newblock {\em Physics of Fluids}, 8(5):1252--1256, 1996.
+
+\bibitem{edsberg2015introduction}
+L.~Edsberg.
+\newblock {\em Introduction to computation and modeling for differential
+  equations}.
+\newblock John Wiley \& Sons, 2015.
+
+\bibitem{faou2012geometric}
+E.~Faou.
+\newblock {\em Geometric Numerical Integration and Schr{\"o}dinger Equations}.
+\newblock Zurich lectures in advanced mathematics. European Mathematical
+  Society, 2012.
+
+\bibitem{farantos2014nonlinear}
+S.~C. Farantos.
+\newblock {\em Nonlinear Hamiltonian Mechanics Applied to Molecular Dynamics:
+  Theory and Computational Methods for Understanding Molecular Spectroscopy and
+  Chemical Reactions}.
+\newblock Springer, 2014.
+
+\bibitem{farhat2015structure}
+C.~Farhat, T.~Chapman, and P.~Avery.
+\newblock Structure-preserving, stability, and accuracy properties of the
+  energy-conserving sampling and weighting method for the hyper reduction of
+  nonlinear finite element dynamic models.
+\newblock {\em International Journal for Numerical Methods in Engineering},
+  102(5):1077--1110, 2015.
+
+\bibitem{BhattEtAl18}
+J.~Fehr, D.~Grunert, A.~Bhatt, and B.~Haasdonk.
+\newblock A sensitivity study of error estimation in elastic multibody systems.
+\newblock In A.~Kugi, editor, {\em Proceedings 9th Vienna International
+  Conference on Mathematical Modelling, MATHMOD 2018}, 2018.
+
+\bibitem{doi:10.1137/16M1095202}
+F.~Feppon and P.~F.~J. Lermusiaux.
+\newblock A geometric approach to dynamical model order reduction.
+\newblock {\em SIAM Journal on Matrix Analysis and Applications},
+  39(1):510--538, 2018.
+
+\bibitem{figotin2005spectral}
+A.~Figotin and J.~H. Schenker.
+\newblock Spectral theory of time dispersive and dissipative systems.
+\newblock {\em Journal of statistical physics}, 118(1-2):199--263, 2005.
+
+\bibitem{figotin2007hamiltonian}
+A.~Figotin and J.~H. Schenker.
+\newblock Hamiltonian structure for dispersive and dissipative dynamical
+  systems.
+\newblock {\em Journal of Statistical Physics}, 128(4):969--1056, 2007.
+
+\bibitem{frezzotti2017numerical}
+M.~L. Frezzotti, S.~D{'}Alessandro, B.~Favini, and F.~Nasuti.
+\newblock Numerical issues in modeling combustion instability by quasi-1{D}
+  euler equations.
+\newblock {\em International Journal of Spray and Combustion Dynamics},
+  9(4):349--366, 2017.
+
+\bibitem{frezzotti2015determination}
+M.~L. Frezzotti, F.~Nasuti, C.~Huang, C.~Merkle, and W.~E. Anderson.
+\newblock Determination of heat release response function from {2D} hybrid
+  {RANS-LES} data for the {CVRC} combustor.
+\newblock In {\em 51st AIAA/SAE/ASEE Joint Propulsion Conference}, page 3841,
+  2015.
+
+\bibitem{frezzotti2018quasi}
+M.~L. Frezzotti, F.~Nasuti, C.~Huang, C.~L. Merkle, and W.~E. Anderson.
+\newblock Quasi-{1D} modeling of heat release for the study of longitudinal
+  combustion instability.
+\newblock {\em Aerospace Science and Technology}, 75:261--270, 2018.
+
+\bibitem{friedman1970foundations}
+A.~Friedman.
+\newblock {\em Foundations of Modern Analysis}.
+\newblock Dover Books on Mathematics Series. Dover, 1970.
+
+\bibitem{garby2013simulations}
+R.~Garby.
+\newblock {\em Simulations of flame stabilization and stability in
+  high-pressure propulsion systems}.
+\newblock PhD thesis, INPT, 2013.
+
+\bibitem{gugercin2012structure}
+S.~Gugercin, R.~V. Polyuga, C.~Beattie, and A.~Van Der~Schaft.
+\newblock Structure-preserving tangential interpolation for model reduction of
+  port-{Hamiltonian} systems.
+\newblock {\em Automatica}, 48(9):1963--1974, 2012.
+
+\bibitem{haasdonk2013convergence}
+B.~Haasdonk.
+\newblock Convergence rates of the pod--greedy method.
+\newblock {\em ESAIM: Mathematical Modelling and Numerical Analysis},
+  47(3):859--873, 2013.
+
+\bibitem{Haasdonk2017}
+B.~Haasdonk.
+\newblock Reduced basis methods for parametrized {PDE}s -- a tutorial
+  introduction for stationary and instationary problems.
+\newblock In P.~Benner, A.~Cohen, M.~Ohlberger, and K.~Willcox, editors, {\em
+  Model Reduction and Approximation: Theory and Algorithms}, pages 65--136.
+  SIAM, Philadelphia, 2017.
+
+\bibitem{haasdonk2008reduced}
+B.~Haasdonk and M.~Ohlberger.
+\newblock Reduced basis method for finite volume approximations of parametrized
+  linear evolution equations.
+\newblock {\em ESAIM: Mathematical Modelling and Numerical Analysis},
+  42(2):277--302, 2008.
+
+\bibitem{HaasdonkOhlberger11}
+B.~Haasdonk and M.~Ohlberger.
+\newblock Efficient reduced models and a-posteriori error estimation for
+  parametrized dynamical systems by offline/online decomposition.
+\newblock {\em Mathematical and Computer Modelling of Dynamical Systems},
+  17(2):145--161, 2011.
+
+\bibitem{hairer2006geometric}
+E.~Hairer, C.~Lubich, and G.~Wanner.
+\newblock {\em Geometric numerical integration: structure-preserving algorithms
+  for ordinary differential equations}, volume~31.
+\newblock Springer, 2006.
+
+\bibitem{hesthaven2015certified}
+J.~Hesthaven, G.~Rozza, and B.~Stamm.
+\newblock {\em Certified Reduced Basis Methods for Parametrized Partial
+  Differential Equations}.
+\newblock SpringerBriefs in Mathematics. Springer International Publishing,
+  2015.
+
+\bibitem{honein2005numerical}
+A.~E. Honein.
+\newblock {\em Numerical aspects of compressible turbulence simulations}.
+\newblock 2005.
+
+\bibitem{honein2004higher}
+A.~E. Honein and P.~Moin.
+\newblock Higher entropy conservation and numerical stability of compressible
+  turbulence simulations.
+\newblock {\em Journal of Computational Physics}, 201(2):531--545, 2004.
+
+\bibitem{ito1998reduced}
+K.~Ito and S.~Ravindran.
+\newblock A reduced basis method for control problems governed by pdes.
+\newblock In {\em Control and estimation of distributed parameter systems},
+  pages 153--168. Springer, 1998.
+
+\bibitem{ito1998reduced2}
+K.~Ito and S.~Ravindran.
+\newblock A reduced-order method for simulation and control of fluid flows.
+\newblock {\em Journal of computational physics}, 143(2):403--425, 1998.
+
+\bibitem{ito2001reduced}
+K.~Ito and S.~S. Ravindran.
+\newblock Reduced basis method for optimal control of unsteady viscous flows.
+\newblock {\em International Journal of Computational Fluid Dynamics},
+  15(2):97--113, 2001.
+
+\bibitem{jerri1999introduction}
+A.~Jerri.
+\newblock {\em Introduction to Integral Equations with Applications}.
+\newblock A Wiley-Interscience publication. Wiley, 1999.
+
+\bibitem{jiang1996efficient}
+G.-S. Jiang and C.-W. Shu.
+\newblock Efficient implementation of weighted {ENO} schemes.
+\newblock {\em Journal of Computational Physics}, 126(1):202--228, 1996.
+
+\bibitem{kalashnikova2014stabilization}
+I.~Kalashnikova, B.~van Bloemen~Waanders, S.~Arunajatesan, and M.~Barone.
+\newblock Stabilization of projection-based reduced order models for linear
+  time-invariant systems via optimization-based eigenvalue reassignment.
+\newblock {\em Computer Methods in Applied Mechanics and Engineering},
+  272:251--270, 2014.
+
+\bibitem{doi:10.1137/050628519}
+M.~Karow, D.~Kressner, and F.~Tisseur.
+\newblock Structured eigenvalue condition numbers.
+\newblock {\em SIAM Journal on Matrix Analysis and Applications},
+  28(4):1052--1068, 2006.
+
+\bibitem{filaments_vort}
+N.-R. Kevlahan and M.~Farge.
+\newblock Vorticity filaments in two-dimensional turbulence: creation,
+  stability and effect.
+\newblock {\em Journal of Fluid Mechanics}, 346:49--76, 1997.
+
+\bibitem{Kolmogoroff:1936fj}
+A.~Kolmogoroff.
+\newblock {\"Uber die beste Ann\"aherung von Funktionen einer gegebenen
+  Funktionenklasse}.
+\newblock {\em Annals of Mathematics. Second Series}, 37(1):107--110, 1936.
+
+\bibitem{doi:10.1137/S0036142900382612}
+K.~Kunisch and S.~Volkwein.
+\newblock Galerkin proper orthogonal decomposition methods for a general
+  equation in fluid dynamics.
+\newblock {\em SIAM Journal on Numerical Analysis}, 40(2):492--515, 2002.
+
+\bibitem{lall2003structure}
+S.~Lall, P.~Krysl, and J.~E. Marsden.
+\newblock Structure-preserving model reduction for mechanical systems.
+\newblock {\em Physica D: Nonlinear Phenomena}, 184(1-4):304--318, 2003.
+
+\bibitem{lamb:1900}
+H.~Lamb.
+\newblock On a peculiarity of the wave-system due to the free vibrations of a
+  nucleus in an extended medium.
+\newblock {\em Proc. Lond. Math. Soc. XXXII}, pages 208--211, 1900.
+
+\bibitem{langtangen2017solving}
+H.~Langtangen and A.~Logg.
+\newblock {\em Solving PDEs in Python: The FEniCS Tutorial I}.
+\newblock Simula SpringerBriefs on Computing. Springer International
+  Publishing, 2017.
+
+\bibitem{Markovsky:2011:LRA:2103589}
+I.~Markovsky.
+\newblock {\em Low Rank Approximation: Algorithms, Implementation,
+  Applications}.
+\newblock Springer Publishing Company, Incorporated, 2011.
+
+\bibitem{marsden2013introduction}
+J.~E. Marsden and T.~S. Ratiu.
+\newblock {\em Introduction to mechanics and symmetry: a basic exposition of
+  classical mechanical systems}, volume~17.
+\newblock Springer Science \& Business Media, 2013.
+
+\bibitem{doi:10.1137/110850773}
+V.~Mehrmann and F.~Poloni.
+\newblock Doubling algorithms with permuted lagrangian graph bases.
+\newblock {\em SIAM Journal on Matrix Analysis and Applications},
+  33(3):780--805, 2012.
+
+\bibitem{mehrmann2016inverse}
+V.~Mehrmann and F.~Poloni.
+\newblock An inverse-free adi algorithm for computing lagrangian invariant
+  subspaces.
+\newblock {\em Numerical Linear Algebra with Applications}, 23(1):147--168,
+  2016.
+
+\bibitem{doi:10.1137/S1064827500366434}
+V.~Mehrmann and D.~Watkins.
+\newblock Structure-preserving methods for computing eigenpairs of large sparse
+  skew-hamiltonian/hamiltonian pencils.
+\newblock {\em SIAM Journal on Scientific Computing}, 22(6):1905--1925, 2001.
+
+\bibitem{Misumi2015}
+T.~Misumi, M.~Nitta, and N.~Sakai.
+\newblock Resurgence in sine-{Gordon} quantum mechanics: exact agreement
+  between multi-instantons and uniform wkb.
+\newblock {\em Journal of High Energy Physics}, 2015(9):157, Sep 2015.
+
+\bibitem{machinelearning}
+K.~S. Mohamed.
+\newblock {\em Machine Learning for Model Order Reduction}.
+\newblock Springer, 2018.
+
+\bibitem{morinishi2010skew}
+Y.~Morinishi.
+\newblock Skew-symmetric form of convective terms and fully conservative finite
+  difference schemes for variable density low-mach number flows.
+\newblock {\em Journal of Computational Physics}, 229(2):276--300, 2010.
+
+\bibitem{morinishi1998fully}
+Y.~Morinishi, T.~S. Lund, O.~V. Vasilyev, and P.~Moin.
+\newblock Fully conservative higher order finite difference schemes for
+  incompressible flow.
+\newblock {\em Journal of computational physics}, 143(1):90--124, 1998.
+
+\bibitem{morinishi2003dns}
+Y.~Morinishi, S.~Tamano, and K.~Nakabayashi.
+\newblock A dns algorithm using b-spline collocation method for compressible
+  turbulent channel flow.
+\newblock {\em Computers \& fluids}, 32(5):751--776, 2003.
+
+\bibitem{doi:10.1137/140967787}
+E.~Musharbash, F.~Nobile, and T.~Zhou.
+\newblock Error analysis of the dynamically orthogonal approximation of time
+  dependent random pdes.
+\newblock {\em SIAM Journal on Scientific Computing}, 37(2):A776--A810, 2015.
+
+\bibitem{negri2015efficient}
+F.~Negri, A.~Manzoni, and D.~Amsallem.
+\newblock Efficient model reduction of parametrized systems by matrix discrete
+  empirical interpolation.
+\newblock {\em Journal of Computational Physics}, 303:431--454, 2015.
+
+\bibitem{peng2016geometric}
+L.~Peng and K.~Mohseni.
+\newblock Geometric model reduction of forced and dissipative hamiltonian
+  systems.
+\newblock In {\em Decision and Control (CDC), 2016 IEEE 55th Conference on},
+  pages 7465--7470. IEEE, 2016.
+
+\bibitem{doi:10.1137/140978922}
+L.~Peng and K.~Mohseni.
+\newblock Symplectic model reduction of hamiltonian systems.
+\newblock {\em SIAM Journal on Scientific Computing}, 38(1):A1--A27, 2016.
+
+\bibitem{doi:10.1137/0910047}
+J.~S. Peterson.
+\newblock The reduced basis method for incompressible viscous flow
+  calculations.
+\newblock {\em SIAM Journal on Scientific and Statistical Computing},
+  10(4):777--786, 1989.
+
+\bibitem{pinkus1985n}
+A.~Pinkus.
+\newblock {\em N-widths in approximation theory}.
+\newblock Ergebnisse der Mathematik und ihrer Grenzgebiete. Springer, 1985.
+
+\bibitem{polyuga2010structure}
+R.~V. Polyuga and A.~Van~der Schaft.
+\newblock Structure preserving model reduction of port-hamiltonian systems by
+  moment matching at infinity.
+\newblock {\em Automatica}, 46(4):665--672, 2010.
+
+\bibitem{prajna2003pod}
+S.~Prajna.
+\newblock Pod model reduction with stability guarantee.
+\newblock In {\em Decision and Control, 2003. Proceedings. 42nd IEEE Conference
+  on}, volume~5, pages 5254--5258. IEEE, 2003.
+
+\bibitem{quarteroni2015reduced}
+A.~Quarteroni, A.~Manzoni, and F.~Negri.
+\newblock {\em Reduced Basis Methods for Partial Differential Equations: An
+  Introduction}.
+\newblock UNITEXT. Springer International Publishing, 2015.
+
+\bibitem{doi:10.1137/S1064827500374716}
+S.~S. Ravindran.
+\newblock Adaptive reduced-order controllers for a thermal flow system using
+  proper orthogonal decomposition.
+\newblock {\em SIAM Journal on Scientific Computing}, 23(6):1924--1942, 2002.
+
+\bibitem{reiss2014conservative}
+J.~Reiss and J.~Sesterhenn.
+\newblock A conservative, skew-symmetric finite difference scheme for the
+  compressible navier--stokes equations.
+\newblock {\em Computers \& Fluids}, 101:208--219, 2014.
+
+\bibitem{Ripamonti:2017}
+N.~Ripamonti.
+\newblock {Energy-preserving model reduction of fluid flows}.
+\newblock Master's thesis, EPFL, 2017.
+
+\bibitem{robbin2011introduction}
+J.~W. Robbin and D.~A. Salamon.
+\newblock Introduction to differential geometry.
+\newblock 2018.
+
+\bibitem{rozza2005reduced}
+G.~Rozza.
+\newblock Reduced-basis methods for elliptic equations in sub-domains with a
+  posteriori error bounds and adaptivity.
+\newblock {\em Applied Numerical Mathematics}, 55(4):403--424, 2005.
+
+\bibitem{rudin1976principles}
+W.~Rudin.
+\newblock {\em Principles of Mathematical Analysis}.
+\newblock International series in pure and applied mathematics. McGraw-Hill,
+  1976.
+
+\bibitem{rudin1964principles}
+W.~Rudin et~al.
+\newblock {\em Principles of mathematical analysis}, volume~3.
+\newblock McGraw-hill New York, 1964.
+
+\bibitem{RuinerEtAl12}
+T.~Ruiner, J.~Fehr, B.~Haasdonk, and P.~Eberhard.
+\newblock A-posteriori error estimation for second order mechanical systems.
+\newblock {\em Acta Mechanica Sinica}, 28(3):854--862, 2012.
+
+\bibitem{Salam2014}
+A.~Salam and E.~Al-Aidarous.
+\newblock Equivalence between modified symplectic gram-schmidt and householder
+  sr algorithms.
+\newblock {\em BIT Numerical Mathematics}, 54(1):283--302, 2014.
+
+\bibitem{schutz2004statistical}
+B.~Schutz, B.~Tapley, and G.~H. Born.
+\newblock {\em Statistical orbit determination}.
+\newblock Academic Press, 2004.
+
+\bibitem{sen2006natural}
+S.~Sen, K.~Veroy, D.~Huynh, S.~Deparis, N.~C. Nguyen, and A.~T. Patera.
+\newblock “natural norm” a posteriori error estimators for reduced basis
+  approximations.
+\newblock {\em Journal of Computational Physics}, 217(1):37--62, 2006.
+
+\bibitem{sjogreen2010skew}
+B.~Sj{\"o}green and H.~Yee.
+\newblock On skew-symmetric splitting and entropy conservation schemes for the
+  euler equations.
+\newblock In {\em Numerical Mathematics and Advanced Applications 2009}, pages
+  817--827. Springer, 2010.
+
+\bibitem{smith2008computational}
+R.~Smith, M.~Ellis, G.~Xia, V.~Sankaran, W.~Anderson, and C.~Merkle.
+\newblock Computational investigation of acoustics and instabilities in a
+  longitudinal-mode rocket combustor.
+\newblock {\em AIAA Journal}, 46(11):2659--2673, 2008.
+
+\bibitem{tadmor1984skew}
+E.~Tadmor.
+\newblock Skew-selfadjoint form for systems of conservation laws.
+\newblock {\em Journal of Mathematical Analysis and Applications},
+  103(2):428--442, 1984.
+
+\bibitem{teschl2012ordinary}
+G.~Teschl.
+\newblock {\em Ordinary differential equations and dynamical systems}, volume
+  140.
+\newblock American Mathematical Society Providence, 2012.
+
+\bibitem{thompson1992fourier}
+W.~J. Thompson.
+\newblock Fourier series and the gibbs phenomenon.
+\newblock {\em American journal of physics}, 60(5):425--429, 1992.
+
+\bibitem{trefethen97}
+L.~N. Trefethen and D.~Bau.
+\newblock {\em Numerical Linear Algebra}.
+\newblock SIAM, 1997.
+
+\bibitem{vanderSchaft:1996es}
+A.~van~der Schaft.
+\newblock {\em {L$_{2}$-gain and passivity techniques in nonlinear control}},
+  volume 218 of {\em Lecture Notes in Control and Information Sciences}.
+\newblock Springer-Verlag London, Ltd., London, 1996.
+
+\bibitem{vanderSchaft:2014:PST:2693645.2693646}
+A.~van~der Schaft and D.~Jeltsema.
+\newblock Port-hamiltonian systems theory: An introductory overview.
+\newblock {\em Found. Trends Syst. Control}, 1(2-3):173--378, June 2014.
+
+\bibitem{Wald:106274}
+R.~M. Wald.
+\newblock {\em {General relativity}}.
+\newblock Chicago Univ. Press, Chicago, IL, 1984.
+
+\bibitem{Wang:255719}
+Q.~Wang, J.~S. Hesthaven, and D.~Ray.
+\newblock Non-intrusive reduced order modeling of unsteady flows using
+  artificial neural networks with application to a combustion problem.
+\newblock {\em Journal of computational physics}, 2018.
+
+\bibitem{watkins2004hamiltonian}
+D.~S. Watkins.
+\newblock On hamiltonian and symplectic lanczos processes.
+\newblock {\em Linear algebra and its applications}, 385:23--45, 2004.
+
+\bibitem{Willems:1972ek}
+J.~C. Willems.
+\newblock {Dissipative dynamical systems. II. Linear systems with quadratic
+  supply rates}.
+\newblock {\em Archive for Rational Mechanics and Analysis}, 45:352--393, 1972.
+
+\bibitem{xu2003svd}
+H.~Xu.
+\newblock An svd-like matrix decomposition and its applications.
+\newblock {\em Linear algebra and its applications}, 368:1--24, 2003.
+
+\bibitem{artificial_dissipation}
+J.~Yu and J.~S. Hesthaven.
+\newblock A comparative study of shock capturing models for the discontinuous
+  galerkin method.
+\newblock {\em No. EPFL-ARTICLE-231188.}, 2017.
+
+\bibitem{yu2008combustion}
+Y.~Yu, S.~Koeglmeier, J.~Sisco, and W.~Anderson.
+\newblock Combustion instability of gaseous fuels in a continuously variable
+  resonance chamber ({CVRC}).
+\newblock In {\em 44th AIAA/ASME/SAE/ASEE Joint Propulsion Conference \&
+  Exhibit}, page 4657, 2008.
+
+\end{thebibliography}
