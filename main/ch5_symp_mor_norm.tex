@@ -18,7 +18,7 @@ In this chapter, we seek to combine a classical MOR method, derived with respect
 
 The error analysis of methods for solving partial differential equations often requires the use of a weighted inner product. This is particularly important when dealing with Hamiltonian systems, where the system energy induces a norm that is fundamental to the dynamics of the system. Furthermore, as we discussed in \Cref{sec:3.2}, the projection operator associated to an RB method is closely related to the inner-product defined on the high-fidelity space. We saw how a Galerkin projection operator can be constructed using a general inner-product in \Cref{sec:3.2.2}. However, the symplectic Galerkin projection introduced in \Cref{chapter:4} is only compatible with the Euclidean inner-product.
 
-Recall the formulation of a Hamiltonian system defined on a $2n$-dimensional symplectic linear vector space $(\mathcal Z,\Omega )$ with a canonical basis $Z=\{e_i,f_i\}_{i=1}^n$
+Recall the formulation of a Hamiltonian system defined on a $2n$-dimensional symplectic linear vector space $(\mathcal Z,\Omega )$ with a canonical basis $Z = \{ e_i , f_i \}_{i=1}^{n}$
 \begin{equation} \label{p1.eq:nommor.0}
 	\left\{
 	\begin{aligned}
@@ -27,16 +27,38 @@ Recall the formulation of a Hamiltonian system defined on a $2n$-dimensional sym
 	\end{aligned}
 	\right.
 \end{equation}
-Here, $H: \mathcal Z \to \mathbb R$ is the Hamiltonian and $z$ is the coefficient vectors in the basis of $Z$. Suppose that $\mathcal Z$ is equipped with an inner-product $<\cdot,\cdot>_X : \mathcal Z \times \mathcal Z \to \mathbb R$ such that $<a,b>_X = a^TXb$, for all $a,b\in\mathcal Z$ and some symmetric and positive-definite matrix $X$. Note that $Z$ is not in general orthonormal with respect to $<,>_X$. As the matrix form of $\Omega$ is $\mathbb J_{2n}$, \Cref{theorem:2.12} implies that $Z$ is orthonormal with respect to the Euclidean inner product. Now consider the basis, $\tilde Z = \{ X^{-1/2}e_i,X^{-1/2}f_i \}_{i=1}^{n}$. It easily verified that $\tilde Z$ is orthonormal with respect to $<,>_{X}$, and also symplectic with respect to the symplectic form $\Omega_{J_{2n}}(a,b) = a^T J_{2n} b $, with $J_{2n} = X^{1/2} \mathbb J_{2n}X^{1/2}$. In this basis, the Hamiltonian system \eqref{p1.eq:nommor.0} takes the form
+Here, $H: \mathcal Z \to \mathbb R$ is the Hamiltonian and $z\in \mathcal Z$ is the state vector. Suppose that $\mathcal Z$ is equipped with an inner-product $<\cdot,\cdot>_X : \mathcal Z \times \mathcal Z \to \mathbb R$ such that $<a,b>_X = a^TXb$, for all $a,b\in\mathcal Z$ and some symmetric and positive-definite matrix $X$. Note that $Z$ is not in general orthonormal with respect to $<,>_X$. As the matrix form of $\Omega$ is $\mathbb J_{2n}$, \Cref{theorem:2.12} implies that $Z$ is orthonormal with respect to the Euclidean inner product. Note that $z\in \mathcal Z$ implies that we can find $\alpha_i,\alpha'_i \in \mathbb R$, for $i=1,\dots,n$, such that $z = \alpha_i e_i + \alpha'_i f_i$. We have
+\begin{equation}
+	z = \alpha_i e_i + \alpha'_i f_i = \alpha_i X^{1/2} X^{-1/2}e_i + X^{1/2} X^{-1/2} \alpha'_i f_i.
+\end{equation}
+By defining basis vectors $\tilde e_i = X^{-1/2}e_i$, $\tilde e_i = X^{-1/2}f_i$, and basis $\tilde Z = \{ \tilde e_i , \tilde f_i \}_{i=1}^{n}$ with $\tilde z$ the state of a vector in this basis, we recover
+\begin{equation}
+	z = X^{1/2}\left( \alpha_i \tilde e_i + \alpha'_i \tilde f_i \right) = X^{1/2} \tilde z.
+\end{equation}
+We verify that $\tilde Z$ forms an orthonormal basis with respect to $<\cdot,\cdot>_X$
+\begin{equation}
+	<\tilde e_i, \tilde f_j>_X = \tilde e_i^T X \tilde f_j = e_i^T X^{-1/2} X X^{-1/2} f_j = e_i^T f_j = 0.
+\end{equation}
+Here we used the orthonormality of $Z$. Similarly we can show that $<\tilde e_i, \tilde e_j>_X = \delta_{ij}$ and $<\tilde f_i, \tilde f_j>_X = \delta_{ij}$, for $i=1,\dots,n$. Furthermore, we can verify that $\tilde Z$ is a symplectic basis with respect to the symplectic form $\Omega_{J_{2n}}(a,b) = a^T J_{2n} b $, with $J_{2n} = X^{1/2} \mathbb J_{2n}X^{1/2}$.
+\begin{equation}
+	\Omega_{J_{2n}}(\tilde e_i,\tilde f_j) = \tilde e_i^T J_{2n} \tilde f_j = e_i^T X^{-1/2} X^{1/2} \mathbb J_{2n} X^{1/2} X^{-1/2} f_j = e_i^T \mathbb J_{2n} f_j = \Omega_{\mathbb J_{2n}} = \delta_{ij}.
+\end{equation}
+Here we used symplecticity of $Z$ with respect to $\mathbb J_{2n}$. Similarly we can verify that $\Omega_{J_{2n}}(\tilde e_i,\tilde e_j) = \Omega_{J_{2n}}(\tilde f_i,\tilde f_j) = 0$, for $i=1,\dots,n$. Using the state transformation $z = X^{1/2} \tilde z$, the Hamiltonian system \eqref{p1.eq:nommor.0} takes the form \footnote{substituting $z = X^{1/2}\tilde z$ in \eqref{p1.eq:nommor.0} yields
+\[
+\begin{aligned}
+	&\frac{d}{dt} X^{1/2}\tilde z = \mathbb J_{2n} \nabla_z H(X^{1/2}\tilde z) = \mathbb - J^{(-1)}_{2n} X^{-1/2} \nabla_{\tilde z} H(X^{1/2}\tilde z) \\
+	&\qquad \Longrightarrow \frac{d}{dt} \tilde z = X^{-1/2} J^{(-1)}_{2n} X^{-1/2} \nabla_{\tilde z} (-H(X^{1/2}\tilde z))
+\end{aligned}
+\]}
 \begin{equation} \label{p1.eq:nommor.0.1}
 	\left\{
 	\begin{aligned}
-		\frac d {dt} \tilde z &= J^{-1}_{2n} \nabla_{\tilde z} H(X^{1/2}\tilde{z}), \\
-		\tilde z(0) &= z_0.
+		\frac d {dt} \tilde z &= J^{-1}_{2n} \nabla_{\tilde z} H_X(\tilde{z}), \\
+		\tilde z(0) &= X^{-1/2}z_0.
 	\end{aligned}
 	\right.	
 \end{equation}
-where $\tilde z$ is the expansion coefficients of $z$ in the basis of $\tilde Z$, and $J_{2n}^{-1} = X^{-1/2} \mathbb J_{2n}^T X^{-1/2}$. 
+where $H_X = -H(X^{1/2}\tilde z)$.
 
 \begin{definition}
 A matrix $\tilde A\in \mathbb R^{2n\times 2k}$ is called \emph{$J_{2n}$-symplectic}, if it transforms $J_{2n}$ into the standard symplectic matrix $\mathbb J_{2k}$, i.e.,
@@ -66,7 +88,9 @@ Let $\tilde A\in \mathbb R^{2n\times 2k}$ be a $J_{2n}$-symplectic basis where $
 It is straightforward to show all statements using the definition of a symplectic basis.
 \end{proof}
 
-Note that the fundamental difference between \Cref{p1.theorem:1} and \Cref{thm:2} is that in the generalized setting $(\tilde A^+)^T \neq \tilde A$. However, we still recover this property in the sense of statement (c). In this chapter, we indicate a non-standard symplectic matrix/transformation/subspace with ``\textasciitilde'' overscript. We are now ready to motivate the choice of the basis $\tilde Z$ in \eqref{p1.eq:nommor.0.1}.
+Note that the fundamental in \Cref{p1.theorem:1} we recover $(\tilde A^+)^T \neq \tilde A$ when $A$ is ortho-symplectic with respect to the Euclidean inner-product. However, when $\tilde A$ is orthonormal with respect to $<,>_X$ this property does not hold. This is particularly important when constructing a basis for nonlinear terms in \Cref{sec:normmor.3}.
+
+In this chapter, we indicate a non-standard symplectic matrix/transformation/subspace with ``\textasciitilde'' overscript. We are now ready to motivate the choice of the basis $\tilde Z$ in \eqref{p1.eq:nommor.0.1}.
 
 \begin{lemma} \label{thm:2.1}
 A full rank $J_{2n}$-symplectic linear transformation $\tilde A \in \mathbb R^{2n\times 2n}$ transforms \eqref{p1.eq:nommor.0.1} into the standard Hamiltonian form. 

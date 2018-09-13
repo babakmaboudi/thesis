@@ -35,13 +35,13 @@
 \contentsline {section}{\numberline {5.1}Generalization of the Symplectic Galerkin Projection}{68}{section.5.1}
 \contentsline {section}{\numberline {5.2}Proper Symplectic Decomposition Revisited}{72}{section.5.2}
 \contentsline {section}{\numberline {5.3}Stability Conservation}{73}{section.5.3}
-\contentsline {section}{\numberline {5.4}Greedy Generation of a $J_{2n}$-Symplectic Basis}{73}{section.5.4}
-\contentsline {section}{\numberline {5.5}Efficient Evaluation of Nonlinear Terms}{75}{section.5.5}
-\contentsline {section}{\numberline {5.6}Numerical Results}{77}{section.5.6}
+\contentsline {section}{\numberline {5.4}Greedy Generation of a $J_{2n}$-Symplectic Basis}{74}{section.5.4}
+\contentsline {section}{\numberline {5.5}Efficient Evaluation of Nonlinear Terms}{77}{section.5.5}
+\contentsline {section}{\numberline {5.6}Numerical Results}{78}{section.5.6}
 \contentsline {subsection}{\numberline {5.6.1}The Elastic Beam Equation}{78}{subsection.5.6.1}
-\contentsline {subsection}{\numberline {5.6.2}Elastic Beam With Cavity}{81}{subsection.5.6.2}
-\contentsline {subsection}{\numberline {5.6.3}The sine-Gordon equation}{83}{subsection.5.6.3}
-\contentsline {section}{\numberline {5.7}Conclusion}{87}{section.5.7}
+\contentsline {subsection}{\numberline {5.6.2}Elastic Beam With Cavity}{82}{subsection.5.6.2}
+\contentsline {subsection}{\numberline {5.6.3}The sine-Gordon equation}{84}{subsection.5.6.3}
+\contentsline {section}{\numberline {5.7}Conclusion}{88}{section.5.7}
 \contentsline {chapter}{\numberline {6}Symplectic Model Order Reduction of Dissipative Hamiltonian Systems}{89}{chapter.6}
 \contentsline {section}{\numberline {6.1}Dissipative Hamiltonian Systems and Hamiltonian Extensions}{90}{section.6.1}
 \contentsline {section}{\numberline {6.2}The Reduced Dissipative Hamiltonian Method}{93}{section.6.2}
