@@ -206,6 +206,8 @@ We claim that $y_e = \mathbb J_{2k}^T A^T X \mathbb J_2n z_0$ is a stable equili
 	\nabla^2 \tilde W = A^T X \nabla^2 H X A
 \end{equation}
 is a positive definite matrix. Finally, since the reduced system is a Hamiltonian system, \Cref{theorem:2.10} implies that any trajectory $\varphi_t$ of \eqref{p1.eq:nommor.0.10} satisfies $\frac{d}{dt} \tilde W(\varphi_t) = 0$. Therefore $\tilde W$ is a Lyapunov function for \eqref{p1.eq:nommor.0.10} and $y_e$ is a stable equilibrium point for \eqref{p1.eq:nommor.0.10}, in the Lyapunov sense.
+
+Similar derivations confirms the theorem when $-H$ is a candidate Lyapunov function.
 \end{proof}
 
 A reduced basis that is constructed accurate enough that satisfy the conditions in \Cref{theorem:ch5.1}, guarantees to preserve the stability of the stable equilibrium points, and therefore, preserves the overall dynamics of the high-fidelity system.
@@ -294,32 +296,42 @@ where $P_{X,A}^{\text{symp}}$ is defined in \eqref{p1.eq:nommor.0.11}. Alternati
 It was discussed in \Cref{p1.sec:SyMo.PrSy:4} that under natural assumptions on the solution manifold of a Hamiltonian system, the symplectic greedy method for symplectic basis generation converges exponentially fast. We expect the generalized greedy method, equipped with the error function (\ref{eq:normmor.14}), to converge as fast, since the $X$-norm is topologically equivalent to the standard Euclidean norm \cite{friedman1970foundations}, for a full rank matrix $X$.
 
 \section{Efficient Evaluation of Nonlinear Terms} \label{sec:normmor.3}
-As discussed previously, the evaluation of the nonlinear term in \eqref{p1.eq:nommor.0.11} retains a computational complexity proportional to the size of the full order system \eqref{p1.eq:nommor.0}. To overcome this, we take an approach similar to that in \Cref{sec:3.6}. The DEIM approximation of the nonlinear term in \eqref{p1.eq:nommor.0.11}, with a Hamiltonian of the form $\nabla_z H(z) = L + g(z)$ yields
+As discussed previously, the evaluation of the nonlinear term in \eqref{p1.eq:nommor.0.11} retains a computational complexity proportional to the size of the full order system \eqref{p1.eq:nommor.0}. To overcome this, we take an approach similar to that in \Cref{sec:3.6}. \edit{Let $H(z) = H_1(z) + H_2(z)$ such that $\nabla_z H_1(z) = Lz$, for some $L\in \mathbb R^{2n\times 2n}$ and $\nabla_z H_2(z) = g(z)$, where $g:\mathbb R^{2n} \to \mathbb R^{2n}$ is a vector valued function. We use a $J_{2n}$-symplectic reduced basis $\tilde A$ to construct a reduced Hamiltonian system from \eqref{p1.eq:nommor.0.1} as
+\begin{equation}
+\begin{aligned}
+	\dot y &= \tilde A^+ X^{-1/2} \mathbb J_{2n} \nabla_z H_1(z) + \tilde A^+ X^{-1/2} \mathbb J_{2n} \nabla_z H_2(z) \\
+	&= \tilde A^+ X^{-1/2} \mathbb J_{2n} X^{-1/2} (\tilde A^+)^T \nabla_y H_1(X^{1/2} \tilde Ay) + \tilde A^+ X^{-1/2} \mathbb J_{2n} \nabla_z H_2(z) \\
+	&= - \mathbb J_{2k} A^T X L X A y + \tilde A^+ X^{-1/2} \mathbb J_{2n} g(z).
+\end{aligned}
+\end{equation}
+Here we used $\nabla_y H_1(X^{1/2}\tilde Ay) = A^T X L X A y$. The matrix $L_r := A^T X L X A$ can be computed in the offline phase. To accelerate the evaluation of the nonlinear term, we apply the DEIM on $g(z)$ to obtain
+
 \begin{equation} \label{eq:normmor.15}
-	\dot y = \mathbb J_{2k} A^TXLXAy + \mathbb J_{2k}^T A^T \mathbb J_{2n} X \mathbb J_{2n} U (P^TU)^{-1} P^T \nabla_z g(XAy).
+	\dot y = -\mathbb J_{2k} A^TXLXAy + \tilde A^+ X^{-1/2} \mathbb J_{2n} U (P^TU)^{-1} P^T g(XAy).
 \end{equation}
-Here $U$ is a basis for the nonlinear snapshots, and $P$ is the interpolating index matrix (see \Cref{sec:3.5,sec:3.6}). For a general choice of $U$, the reduced system \eqref{eq:normmor.15} does not maintain a Hamiltonian form. Since $ \tilde A^+ \tilde A = ( \mathbb J_{2k}^T A^T X \mathbb J_{2n}) X A = I_{2k}$, the chain rule applied to (\ref{eq:normmor.15}) yields
+Here $U$ is a basis for the nonlinear snapshots, and $P$ is the interpolating index matrix (see \Cref{sec:3.5,sec:3.6}). For a general choice of $U$, the reduced system \eqref{eq:normmor.15} does not maintain a Hamiltonian form. Note that $g(z) = \nabla_z H_2(z) = X^{-1/2}(\tilde A^+)^T \nabla_y H_2 ( X^{1/2} \tilde A y  )$. Substituting this into \eqref{eq:normmor.15} yields
 \begin{equation} \label{eq:normmor.16}
-	\dot y = \mathbb J_{2k} A^TXLXAy + \mathbb J_{2k}^T A^T \mathbb J_{2n} X \mathbb J_{2n} U (P^TU)^{-1} P^T (\mathbb J_{2k}^T A^T X \mathbb J_{2n} X)^T \nabla_y g(XAy).
+	\dot y = -\mathbb J_{2k} L_ry + \tilde A^+ X^{-1/2} \mathbb J_{2n} U (P^TU)^{-1} P^T X^{-1/2}(\tilde A^+)^T \nabla_y H_2 ( X^{1/2} \tilde A y  ).
 \end{equation}
-Freedom in the choice of the basis $U$ allows us to require $U = (\mathbb J_{2k}^T A^T \mathbb J_{2n} X)^T = X^{1/2} (\tilde A^+)^T$ which reduces the expression in (\ref{eq:normmor.16}) to
+Freedom in the choice of the basis $U$ allows us to require $U = X^{-1/2} (\tilde A^+)^T$ which reduces the expression in (\ref{eq:normmor.16}) to
 \begin{equation} \label{eq:normmor.17}
-	\dot y = \mathbb J_{2k} A^TLAy + \mathbb J_{2k} \nabla_y g(XAy),
+	\dot y = - \mathbb J_{2k} L_ry - \mathbb J_{2k} \nabla_y H_2 ( X^{1/2} \tilde A y  ).
 \end{equation}
-To recover the Hamiltonian structure. The reduced system yields
+This is a Hamiltonian function identified by the reduced Hamiltonian $\tilde H = -\frac 1 2 y^T L_r y - H_2(X^{1/2} \tilde A y)$. The reduced system yields
 \begin{equation} \label{eq:normmor.18}
 \left\{
 \begin{aligned}
-	\dot y(t) &= \mathbb J_{2k} A^TXLXAy + \mathbb J_{2k} ( P^TX \mathbb J_{2n} X A \mathbb J_{2k})^{-1} P^T \nabla_z f(z), \\
-	y(0) &= \mathbb J_{2k}^T A^T X \mathbb J_{2n} X z_0.
+	\dot y(t) &= - \mathbb J_{2k} L_ry - \mathbb J_{2k} ( P^T \mathbb J_{2n}^T XA \mathbb J_{2k}  )^{-1} P^T g(z), \\
+	y(0) &= \mathbb J_{2k}^T A^T X \mathbb J_{2n} z_0.
 \end{aligned}
 \right.
 \end{equation}
-Let us now discuss how to ensure that $X^{1/2} (\tilde A^+)^T$ is a basis for the nonlinear snapshots. Note that if $z \in \text{colspan}\left(X^{1/2} (\tilde A^+)^T\right)$ then $X^{-1/2} z \in \text{colspan}\left(( \tilde A^+)^T \right)$. Therefore, it is sufficient to require $(\tilde A^+)^T$ to be a basis for $X^{-1/2}S_{t,\mu}$, the nonlinear snapshots. \Cref{thm:2} suggests that $(\tilde A^+)^T$ is a $J_{2n}^{-1}$-symplectic basis and that the transformation between $\tilde A$ and $(\tilde A^+)^T $ does not affect the symplectic feature of the bases. Consequently, from $\tilde A$ we may recover $(\tilde A^+)^T$ and enrich it with the nonlinear snapshots $\{ X^{-1/2} s \}_{s\in S_{g}}$. Once $(\tilde A^+)^T$ represents the nonlinear term with the desired accuracy, we may compute $\tilde A= \left( \left( ( \tilde A^+ )^T \right)^+ \right)^T$ to obtain the reduced basis for (\ref{eq:normmor.18}). \Cref{thm:2} implies that $(\tilde A^+)^T$ is ortho-normal with respect to the $X^{-1}$-norm. This affects the ortho-normalization process. We note that greedy approaches to basis generation do not generally result in a minimal basis in the $L^{2}$ norm.
+}
+Let us now discuss how to ensure that $X^{-1/2} (\tilde A^+)^T$ is a basis for the nonlinear snapshots. Note that if $z \in \text{colspan}\left(X^{-1/2} (\tilde A^+)^T\right)$ then $X^{1/2} z \in \text{colspan}\left(( \tilde A^+)^T \right)$. Therefore, it is sufficient to require $(\tilde A^+)^T$ to be a basis for $X^{1/2}S_{t,\mu}$, the nonlinear snapshots. \Cref{thm:2} suggests that $(\tilde A^+)^T$ is a $J_{2n}^{-1}$-symplectic basis and that the transformation between $\tilde A$ and $(\tilde A^+)^T $ does not affect the symplectic feature of the bases. Consequently, from $\tilde A$ we may recover $(\tilde A^+)^T$ and enrich it with the nonlinear snapshots $\{ X^{1/2} s \}_{s\in S_{g}}$. Once $(\tilde A^+)^T$ represents the nonlinear term with the desired accuracy, we may compute $\tilde A= \left( \left( ( \tilde A^+ )^T \right)^+ \right)^T$ to obtain the reduced basis for (\ref{eq:normmor.18}). \Cref{thm:2} implies that $(\tilde A^+)^T$ is ortho-normal with respect to the $X^{-1}$-norm. This affects the ortho-normalization process. We note that greedy approaches to basis generation do not generally result in a minimal basis in the $L^{2}$ norm, but rather an optimal one in the $L^{\infty}$ norm.
 
-As discussed in \Cref{sec:normmor.2} it is desirable to eliminate the computation of $X^{\pm 1/2}$ or $X^{-1}$. Having $z \in \text{colspan}\left(X^{1/2} (\tilde A^+)^T\right)$ implies that $X^{-1} z \in \text{colspan}(\mathbb J_{2n}^T X A \mathbb J_{2k})$. Note that \Cref{alg:5.1} constructs a $\mathbb J_{2n}$-symplectic matrix $XA$ and $\mathbb J_{2n}^T X A \mathbb J_{2k}$ is the symplectic inverse of $XA$ with respect to the standard symplectic matrix $\mathbb J_{2n}$. Given $e$ as a candidate for enriching $X^{1/2} (\tilde A^+)^T$ we may instead enrich $\mathbb J_{2n}^T X A \mathbb J_{2k}$ with $\hat e$, which solves $X \hat e = e$.
+As discussed in \Cref{sec:normmor.2} it is desirable to eliminate the computation of $X^{\pm 1/2}$. Having $z \in \text{colspan}\left(X^{-1/2} (\tilde A^+)^T\right)$ implies that $z \in \text{colspan}(\mathbb J_{2n}^T X A \mathbb J_{2k})$. Note that \Cref{alg:5.1} constructs a $\mathbb J_{2n}$-symplectic matrix $XA$ and $\mathbb J_{2n}^T X A \mathbb J_{2k}$ is the symplectic inverse of $XA$ with respect to the standard symplectic matrix $\mathbb J_{2n}$. Given $e$ as a candidate for enriching $X^{-1/2} (\tilde A^+)^T$ we may instead enrich $\mathbb J_{2n}^T X A \mathbb J_{2k}$ with $e$. This process eliminates the computation of $X^{\pm 1/2}$. We summarize the process of generating a basis for the nonlinear terms in \Cref{alg:5.2}.
 
-Since  $\mathbb J_{2n}^T X A \mathbb J_{2k}$ is $\mathbb J_{2n}$-symplectic, the projection operator onto the column span of $\mathbb J_{2n}^T X A \mathbb J_{2n}$ can be constructed as $P^{\text{symp}}_{I,\mathbb J_{2n}^T X A \mathbb J_{2k}}=\mathbb J_{2n}^T X A \mathbb J_{2k}A^TX$. Given a nonlinear snapshot $z$, we may need to project the vector $X^{-1}z$ onto colspan$(\mathbb J_{2n}^T X A \mathbb J_{2n})$. However, $P^{\text{symp}}_{I,\mathbb J_{2n}^T X A \mathbb J_{2k}}(X^{-1}z)=\mathbb J_{2n}^T X A \mathbb J_{2n}A^Tz$ and thus, the matrix $X^{-1}$ does not appear explicitly. This process eliminates the computation of $X^{\pm 1/2}$ and $X^{-1}$. We summarize the process of generating a basis for the nonlinear terms in \Cref{alg:5.2}.
+%Since  $\mathbb J_{2n}^T X A \mathbb J_{2k}$ is $\mathbb J_{2n}$-symplectic, the projection operator onto the column span of $\mathbb J_{2n}^T X A \mathbb J_{2n}$ can be constructed as $P^{\text{symp}}_{I,\mathbb J_{2n}^T X A \mathbb J_{2k}}=\mathbb J_{2n}^T X A \mathbb J_{2k}A^TX$. Given a nonlinear snapshot $z$, we may need to project the vector $X^{-1}z$ onto colspan$(\mathbb J_{2n}^T X A \mathbb J_{2n})$. However, $P^{\text{symp}}_{I,\mathbb J_{2n}^T X A \mathbb J_{2k}}(X^{-1}z)=\mathbb J_{2n}^T X A \mathbb J_{2n}A^Tz$ and thus, the matrix $X^{-1}$ does not appear explicitly. This process eliminates the computation of $X^{\pm 1/2}$ and $X^{-1}$. We summarize the process of generating a basis for the nonlinear terms in \Cref{alg:5.2}.
 
 
 \begin{algorithm} 
@@ -330,8 +342,8 @@ Since  $\mathbb J_{2n}^T X A \mathbb J_{2k}$ is $\mathbb J_{2n}$-symplectic, the
 		\State compute $(B^+)^T = \mathbb J_{2n}^T B \mathbb J_{2k} = [e_1,\dots ,e_{k} , \mathbb J_{2n}^Te_1,\dots, \mathbb J_{2n}^Te_{k}]$.
 		\While{ $\| s - P_{I,(B^+)^T}^{\text{symp}} (s) \|_2 > \delta$ for any $s \in S_g$ }
 			\State $s^* := \underset{s\in \mathcal S_g}{\text{arg\ max }} \| s - P_{I,(B^+)^T}^{\text{symp}} (s)  \|_2$.
-			\State solve $Xe = s^*$ for $e$.
-			\State $\mathbb J_{2n}$-orthogonalize $e$ to obtain $e_{k+1}$.
+%			\State solve $Xe = s^*$ for $e$.
+			\State $\mathbb J_{2n}$-orthogonalize $s^*$ to obtain $e_{k+1}$.
 			\State assemble $(B^+)^T = [e_1,\dots ,e_{k+1} , \mathbb J_{2n}^Te_1,\dots, \mathbb J_{2n}^Te_{k+1}]$.
 		\EndWhile
 		\State set $XA = \left( \left (B^+)^T \right)^+ \right)^T$.
