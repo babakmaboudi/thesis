@@ -1,0 +1,67 @@
+This is BibTeX, Version 0.99d (TeX Live 2017)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: thesis.aux
+A level-1 auxiliary file: head/abstracts.aux
+A level-1 auxiliary file: main/ch1_introduction.aux
+A level-1 auxiliary file: main/ch2_dif_geom.aux
+A level-1 auxiliary file: main/ch3_mor.aux
+A level-1 auxiliary file: main/ch4_symp_mor.aux
+A level-1 auxiliary file: main/ch5_symp_mor_norm.aux
+A level-1 auxiliary file: main/ch6_symp_mor_diss.aux
+A level-1 auxiliary file: main/ch7_beyond.aux
+A level-1 auxiliary file: main/ch8_conc.aux
+A level-1 auxiliary file: tail/biblio.aux
+The style file: abbrv.bst
+A level-1 auxiliary file: tail/cv.aux
+Database file #1: tail/bibliography.bib
+Warning--I didn't find a database entry for "strang09"
+Warning--empty publisher in abraham1978foundations
+Warning--empty year in abraham1978foundations
+Warning--can't use both author and editor fields in Benner2018
+Warning--can't use both author and editor fields in doi:10.1137/1.9781611974829
+Warning--empty year in carlberg2012efficient
+Warning--empty journal in HHS
+Warning--empty publisher in honein2005numerical
+Warning--empty journal in robbin2011introduction
+You've used 111 entries,
+            2118 wiz_defined-function locations,
+            1138 strings with 23570 characters,
+and the built_in function-call counts, 36506 in all, are:
+= -- 3636
+> -- 1582
+< -- 22
++ -- 637
+- -- 511
+* -- 2554
+:= -- 6061
+add.period$ -- 348
+call.type$ -- 111
+change.case$ -- 555
+chr.to.int$ -- 0
+cite$ -- 119
+duplicate$ -- 1396
+empty$ -- 2948
+format.name$ -- 511
+if$ -- 7643
+int.to.chr$ -- 0
+int.to.str$ -- 111
+missing$ -- 135
+newline$ -- 556
+num.names$ -- 226
+pop$ -- 593
+preamble$ -- 1
+purify$ -- 474
+quote$ -- 0
+skip$ -- 943
+stack$ -- 0
+substring$ -- 2481
+swap$ -- 246
+text.length$ -- 22
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 388
+warning$ -- 8
+while$ -- 363
+width$ -- 114
+write$ -- 1211
+(There were 9 warnings)

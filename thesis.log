@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.4.4)  12 SEP 2018 09:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.4.4)  17 SEP 2018 17:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1386,7 +1386,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 (/usr/local/texlive/2017/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-<images/epfl.pdf, id=267, 574.94798pt x 275.429pt>
+<images/epfl.pdf, id=268, 574.94798pt x 275.429pt>
 File: images/epfl.pdf Graphic file (type pdf)
  <use images/epfl.pdf>
 Package pdftex.def Info: images/epfl.pdf used on input line 14.
@@ -1509,61 +1509,6 @@ Overfull \hbox (0.43774pt too wide) detected at line 66
  (./main/ch1_introduction.tex
 Chapter 1.
 
-LaTeX Warning: Citation `hesthaven2015certified' on page 1 undefined on input l
-ine 5.
-
-
-LaTeX Warning: Citation `quarteroni2015reduced' on page 1 undefined on input li
-ne 5.
-
-
-LaTeX Warning: Citation `doi:10.1137/1.9781611974829' on page 1 undefined on in
-put line 5.
-
-
-LaTeX Warning: Citation `doi:10.1137/1.9780898718713' on page 1 undefined on in
-put line 5.
-
-
-LaTeX Warning: Citation `hesthaven2015certified' on page 1 undefined on input l
-ine 5.
-
-
-LaTeX Warning: Citation `machinelearning' on page 1 undefined on input line 9.
-
-
-LaTeX Warning: Citation `doi:10.1137/1.9780898718713' on page 1 undefined on in
-put line 11.
-
-
-LaTeX Warning: Citation `doi:10.1137/17M1111991' on page 1 undefined on input l
-ine 11.
-
-
-LaTeX Warning: Citation `kalashnikova2014stabilization' on page 1 undefined on 
-input line 11.
-
-
-LaTeX Warning: Citation `farhat2015structure' on page 1 undefined on input line
- 11.
-
-
-LaTeX Warning: Citation `doi:10.1137/110836742' on page 1 undefined on input li
-ne 11.
-
-
-LaTeX Warning: Citation `doi:10.1137/140959602' on page 1 undefined on input li
-ne 11.
-
-
-LaTeX Warning: Citation `beattie2011structure' on page 1 undefined on input lin
-e 11.
-
-
-LaTeX Warning: Citation `doi:10.1137/140978922' on page 1 undefined on input li
-ne 11.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [1
@@ -1571,23 +1516,6 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 ]
-
-LaTeX Warning: Citation `hesthaven2015certified' on page 2 undefined on input l
-ine 18.
-
-
-LaTeX Warning: Citation `quarteroni2015reduced' on page 2 undefined on input li
-ne 18.
-
-
-LaTeX Warning: Citation `doi:10.1137/1.9781611974829' on page 2 undefined on in
-put line 18.
-
-
-LaTeX Warning: Citation `doi:10.1137/1.9780898718713' on page 2 undefined on in
-put line 18.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [2]
@@ -1602,7 +1530,7 @@ verted-to.pdf ./images/intro/hat.eps>
 (epstopdf)             \includegraphics on input line 37.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/intro/hat-eps-converted-to.pdf, id=394, 562.1pt x 421.575pt>
+<./images/intro/hat-eps-converted-to.pdf, id=425, 562.1pt x 421.575pt>
 File: ./images/intro/hat-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./images/intro/hat-eps-converted-to.pdf>
@@ -1620,7 +1548,7 @@ verted-to.pdf ./images/intro/pod.eps>
 (epstopdf)             \includegraphics on input line 40.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/intro/pod-eps-converted-to.pdf, id=395, 562.1pt x 421.575pt>
+<./images/intro/pod-eps-converted-to.pdf, id=426, 562.1pt x 421.575pt>
 File: ./images/intro/pod-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./images/intro/pod-eps-converted-to.pdf>
@@ -1643,7 +1571,7 @@ nverted-to.pdf ./images/intro/orig.eps>
 (epstopdf)             \includegraphics on input line 64.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/intro/orig-eps-converted-to.pdf, id=426, 562.1pt x 421.575pt>
+<./images/intro/orig-eps-converted-to.pdf, id=457, 562.1pt x 421.575pt>
 File: ./images/intro/orig-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./images/intro/orig-eps-converted-to.pdf>
@@ -1662,7 +1590,7 @@ onverted-to.pdf ./images/intro/trans.eps>
 (epstopdf)             \includegraphics on input line 67.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/intro/trans-eps-converted-to.pdf, id=427, 562.1pt x 421.575pt>
+<./images/intro/trans-eps-converted-to.pdf, id=458, 562.1pt x 421.575pt>
 File: ./images/intro/trans-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./images/intro/trans-eps-converted-to.pdf>
@@ -1680,7 +1608,7 @@ nverted-to.pdf ./images/intro/symp.eps>
 (epstopdf)             \includegraphics on input line 70.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/intro/symp-eps-converted-to.pdf, id=428, 562.1pt x 421.575pt>
+<./images/intro/symp-eps-converted-to.pdf, id=459, 562.1pt x 421.575pt>
 File: ./images/intro/symp-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./images/intro/symp-eps-converted-to.pdf>
@@ -1711,10 +1639,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 1--1
  []
 
 
-LaTeX Warning: Citation `friedman1970foundations' on page 7 undefined on input 
-line 6.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [7
@@ -1722,48 +1646,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 ]
-
-LaTeX Warning: Citation `abraham1978foundations' on page 8 undefined on input l
-ine 14.
-
-
-LaTeX Warning: Citation `abraham1978foundations' on page 8 undefined on input l
-ine 18.
-
-
-LaTeX Warning: Citation `robbin2011introduction' on page 8 undefined on input l
-ine 18.
-
-
-LaTeX Warning: Citation `abraham1978foundations' on page 8 undefined on input l
-ine 18.
-
-
-LaTeX Warning: Citation `robbin2011introduction' on page 8 undefined on input l
-ine 18.
-
-
-LaTeX Warning: Citation `robbin2011introduction' on page 8 undefined on input l
-ine 36.
-
-[8]
-
-LaTeX Warning: Citation `teschl2012ordinary' on page 9 undefined on input line 
-68.
-
-[9]
-
-LaTeX Warning: Citation `robbin2011introduction' on page 10 undefined on input 
-line 83.
-
-
-LaTeX Warning: Citation `rudin1976principles' on page 10 undefined on input lin
-e 83.
-
-
-LaTeX Warning: Citation `Wald:106274' on page 10 undefined on input line 86.
-
-
+[8] [9]
 Overfull \hbox (26.05255pt too wide) in paragraph at lines 89--90
 []\T1/put/b/n/10.95 Definition 2.5. []\T1/put/m/it/10.95 (-20) A $\OML/cmm/m/it
 /10.95 k$\T1/put/m/n/10.95 (-20) -form $\OT1/cmr/m/n/10.95 
@@ -1775,35 +1658,10 @@ $ \T1/put/m/it/10.95 (-20) on a man-i-fold $\OMS/cmsy/m/n/10.95 M$ \T1/put/m/it
  []
 
 [10]
-
-LaTeX Warning: Citation `Wald:106274' on page 11 undefined on input line 112.
-
-
-LaTeX Warning: Citation `marsden2013introduction' on page 11 undefined on input
- line 137.
-
-
-LaTeX Warning: Citation `abraham1978foundations' on page 11 undefined on input 
-line 137.
-
-
 Underfull \vbox (badness 4582) has occurred while \output is active []
 
  [11]
-[12] [13]
-
-LaTeX Warning: Citation `rudin1964principles' on page 14 undefined on input lin
-e 207.
-
-
-LaTeX Warning: Citation `abraham1978foundations' on page 14 undefined on input 
-line 213.
-
-
-LaTeX Warning: Citation `abraham1978foundations' on page 14 undefined on input 
-line 215.
-
-[14]
+[12] [13] [14]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [15]
@@ -1815,87 +1673,13 @@ it/10.95 (-20) with $\OML/cmm/m/it/10.95 x \OT1/cmr/m/n/10.95 = (\OML/cmm/m/it/
 10.95 e[]; [] ; e[]; f[]; [] ; f[]\OT1/cmr/m/n/10.95 )$
  []
 
-[18] [19] [20]
-
-LaTeX Warning: Citation `abraham1978foundations' on page 21 undefined on input 
-line 454.
-
-
-LaTeX Warning: Citation `abraham1978foundations' on page 21 undefined on input 
-line 461.
-
-[21]
-
-LaTeX Warning: Citation `abraham1978foundations' on page 22 undefined on input 
-line 478.
-
-
-LaTeX Warning: Citation `abraham1978foundations' on page 22 undefined on input 
-line 490.
-
-
-LaTeX Warning: Citation `hairer2006geometric' on page 22 undefined on input lin
-e 500.
-
-
-LaTeX Warning: Citation `blanes2016concise' on page 22 undefined on input line 
-500.
-
-
-LaTeX Warning: Citation `farantos2014nonlinear' on page 22 undefined on input l
-ine 500.
-
-
-LaTeX Warning: Citation `schutz2004statistical' on page 22 undefined on input l
-ine 500.
-
-[22]
-
-LaTeX Warning: Citation `hairer2006geometric' on page 23 undefined on input lin
-e 526.
-
-[23]
-
-LaTeX Warning: Citation `marsden2013introduction' on page 24 undefined on input
- line 538.
-
-
-LaTeX Warning: Citation `hairer2006geometric' on page 24 undefined on input lin
-e 562.
-
-
-LaTeX Warning: Citation `hairer2006geometric' on page 24 undefined on input lin
-e 562.
-
-
-LaTeX Warning: Citation `blanes2016concise' on page 24 undefined on input line 
-562.
-
-
+[18] [19] [20] [21] [22] [23]
 Underfull \vbox (badness 1946) has occurred while \output is active []
 
  [24]
-
-LaTeX Warning: Citation `hairer2006geometric' on page 25 undefined on input lin
-e 572.
-
-
-LaTeX Warning: Citation `hairer2006geometric' on page 25 undefined on input lin
-e 588.
-
-
-LaTeX Warning: Citation `hairer2006geometric' on page 25 undefined on input lin
-e 591.
-
-
 Underfull \vbox (badness 1205) has occurred while \output is active []
 
  [25]
-
-LaTeX Warning: Citation `hairer2006geometric' on page 26 undefined on input lin
-e 631.
-
-
 Overfull \hbox (7.45363pt too wide) in paragraph at lines 630--632
 \T1/put/m/n/10.95 (-20) where $\OMS/cmsy/m/n/10.95 r[]$ \T1/put/m/n/10.95 (-20)
  in-di-cates the Hes-sian op-er-a-tor. It is straight for-ward to show that $\O
@@ -1915,241 +1699,33 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 ]
-
-LaTeX Warning: Citation `rudin1976principles' on page 28 undefined on input lin
-e 18.
-
-
-LaTeX Warning: Citation `edsberg2015introduction' on page 28 undefined on input
- line 18.
-
-
-LaTeX Warning: Citation `edsberg2015introduction' on page 28 undefined on input
- line 20.
-
-
-LaTeX Warning: Citation `hesthaven2015certified' on page 28 undefined on input 
-line 20.
-
-
-LaTeX Warning: Citation `quarteroni2015reduced' on page 28 undefined on input l
-ine 20.
-
-
-LaTeX Warning: Citation `Kolmogoroff:1936fj' on page 28 undefined on input line
- 28.
-
-
-LaTeX Warning: Citation `pinkus1985n' on page 28 undefined on input line 28.
-
-[28]
-
-LaTeX Warning: Citation `doi:10.1137/140967787' on page 29 undefined on input l
-ine 60.
-
-
-LaTeX Warning: Citation `doi:10.1137/16M1095202' on page 29 undefined on input 
-line 60.
-
-
-LaTeX Warning: Citation `doi:10.1137/140978922' on page 29 undefined on input l
-ine 60.
-
-
-LaTeX Warning: Citation `doi:10.1137/17M1111991' on page 29 undefined on input 
-line 60.
-
-[29]
-
-LaTeX Warning: Citation `quarteroni2015reduced' on page 30 undefined on input l
-ine 69.
-
-
+[28] [29]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [30]
-
-LaTeX Warning: Citation `trefethen97' on page 31 undefined on input line 107.
-
-
-LaTeX Warning: Citation `trefethen97' on page 31 undefined on input line 116.
-
-
-LaTeX Warning: Citation `Markovsky:2011:LRA:2103589' on page 31 undefined on in
-put line 116.
-
-
-LaTeX Warning: Citation `Markovsky:2011:LRA:2103589' on page 31 undefined on in
-put line 118.
-
-
-LaTeX Warning: Citation `doi:10.1137/1.9780898718713' on page 31 undefined on i
-nput line 144.
-
 [31]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
 put line 165.
  [32]
-
-LaTeX Warning: Citation `trefethen97' on page 33 undefined on input line 232.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [33]
-
-LaTeX Warning: Citation `quarteroni2015reduced' on page 34 undefined on input l
-ine 252.
-
-
-LaTeX Warning: Citation `quarteroni2015reduced' on page 34 undefined on input l
-ine 254.
-
 [34]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Warning: Citation `quarteroni2015reduced' on page 35 undefined on input l
-ine 264.
-
-
-LaTeX Warning: Citation `doi:10.1137/100795772' on page 35 undefined on input l
-ine 266.
-
-
-LaTeX Warning: Citation `buffa2012priori' on page 35 undefined on input line 27
-1.
-
-[35]
-
-LaTeX Warning: Citation `haasdonk2008reduced' on page 36 undefined on input lin
-e 285.
-
-
-LaTeX Warning: Citation `haasdonk2008reduced' on page 36 undefined on input lin
-e 285.
-
-
-LaTeX Warning: Citation `haasdonk2013convergence' on page 36 undefined on input
- line 285.
-
-
-LaTeX Warning: Citation `hesthaven2015certified' on page 36 undefined on input 
-line 285.
-
-
-LaTeX Warning: Citation `haasdonk2013convergence' on page 36 undefined on input
- line 285.
-
+ [35]
 [36]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [37]
-
-LaTeX Warning: Citation `doi:10.1137/090766498' on page 38 undefined on input l
-ine 348.
-
-
-LaTeX Warning: Citation `barrault2004empirical' on page 38 undefined on input l
-ine 348.
-
-
-LaTeX Warning: Citation `barrault2004empirical' on page 38 undefined on input l
-ine 364.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [38]
-
-LaTeX Warning: Citation `doi:10.1137/090766498' on page 39 undefined on input l
-ine 376.
-
-[39]
-
-LaTeX Warning: Citation `doi:10.1137/090766498' on page 40 undefined on input l
-ine 427.
-
-
-LaTeX Warning: Citation `barrault2004empirical' on page 40 undefined on input l
-ine 427.
-
-
-LaTeX Warning: Citation `quarteroni2015reduced' on page 40 undefined on input l
-ine 427.
-
-
-LaTeX Warning: Citation `hesthaven2015certified' on page 40 undefined on input 
-line 427.
-
-) [40]
+[39]) [40]
 \openout2 = `main/ch4_symp_mor.aux'.
 
  (./main/ch4_symp_mor.tex
 Chapter 4.
-
-LaTeX Warning: Citation `doi:10.1137/S0036142900382612' on page 41 undefined on
- input line 5.
-
-
-LaTeX Warning: Citation `atwell2001proper' on page 41 undefined on input line 5
-.
-
-
-LaTeX Warning: Citation `doi:10.1137/S1064827500374716' on page 41 undefined on
- input line 5.
-
-
-LaTeX Warning: Citation `ito1998reduced' on page 41 undefined on input line 5.
-
-
-LaTeX Warning: Citation `ito1998reduced2' on page 41 undefined on input line 5.
-
-
-
-LaTeX Warning: Citation `ito2001reduced' on page 41 undefined on input line 5.
-
-
-LaTeX Warning: Citation `doi:10.1137/0910047' on page 41 undefined on input lin
-e 5.
-
-
-LaTeX Warning: Citation `cuong2005certified' on page 41 undefined on input line
- 5.
-
-
-LaTeX Warning: Citation `rozza2005reduced' on page 41 undefined on input line 5
-.
-
-
-LaTeX Warning: Citation `hesthaven2015certified' on page 41 undefined on input 
-line 5.
-
-
-LaTeX Warning: Citation `prajna2003pod' on page 41 undefined on input line 7.
-
-
-LaTeX Warning: Citation `lall2003structure' on page 41 undefined on input line 
-9.
-
-
-LaTeX Warning: Citation `doi:10.1137/140959602' on page 41 undefined on input l
-ine 9.
-
-
-LaTeX Warning: Citation `doi:10.1137/15M1055085' on page 41 undefined on input 
-line 9.
-
-
-LaTeX Warning: Citation `polyuga2010structure' on page 41 undefined on input li
-ne 9.
-
-
-LaTeX Warning: Citation `doi:10.1137/140978922' on page 41 undefined on input l
-ine 9.
-
-
-LaTeX Warning: Citation `quarteroni2015reduced' on page 41 undefined on input l
-ine 9.
-
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -2158,161 +1734,22 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 ]
-
-LaTeX Warning: Citation `doi:10.1137/050628519' on page 42 undefined on input l
-ine 11.
-
-
-LaTeX Warning: Citation `doi:10.1137/090766498' on page 42 undefined on input l
-ine 11.
-
-
-LaTeX Warning: Citation `barrault2004empirical' on page 42 undefined on input l
-ine 11.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [42]
-
-LaTeX Warning: Citation `doi:10.1137/140978922' on page 43 undefined on input l
-ine 50.
-
-[43] [44]
-
-LaTeX Warning: Citation `bhatia2002stability' on page 45 undefined on input lin
-e 106.
-
-
-LaTeX Warning: Citation `bhatia2002stability' on page 45 undefined on input lin
-e 109.
-
-
-LaTeX Warning: Citation `bhatia2002stability' on page 45 undefined on input lin
-e 109.
-
-
-LaTeX Warning: Citation `bhatia2002stability' on page 45 undefined on input lin
-e 110.
-
-
-LaTeX Warning: Citation `abraham1978foundations' on page 45 undefined on input 
-line 113.
-
-[45]
-
-LaTeX Warning: Citation `doi:10.1137/050628519' on page 46 undefined on input l
-ine 143.
-
-
-LaTeX Warning: Citation `doi:10.1137/140978922' on page 46 undefined on input l
-ine 145.
-
-
-LaTeX Warning: Citation `Benner:2000ww' on page 46 undefined on input line 147.
-
-
-
-LaTeX Warning: Citation `benner1997new' on page 46 undefined on input line 147.
-
-
-
-LaTeX Warning: Citation `watkins2004hamiltonian' on page 46 undefined on input 
-line 147.
-
-
-LaTeX Warning: Citation `bunse1986matrix' on page 46 undefined on input line 14
-7.
-
-
-LaTeX Warning: Citation `benner1997new' on page 46 undefined on input line 147.
-
-
-
-LaTeX Warning: Citation `xu2003svd' on page 46 undefined on input line 147.
-
-
-LaTeX Warning: Citation `mehrmann2016inverse' on page 46 undefined on input lin
-e 147.
-
-
-LaTeX Warning: Citation `doi:10.1137/110850773' on page 46 undefined on input l
-ine 147.
-
-[46]
-
-LaTeX Warning: Citation `doi:10.1137/140978922' on page 47 undefined on input l
-ine 149.
-
-
-LaTeX Warning: Citation `doi:10.1137/140978922' on page 47 undefined on input l
-ine 164.
-
-
-LaTeX Warning: Citation `marsden2013introduction' on page 47 undefined on input
- line 179.
-
-
-LaTeX Warning: Citation `doi:10.1137/140978922' on page 47 undefined on input l
-ine 187.
-
-
+[43] [44] [45] [46]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [47]
-
-LaTeX Warning: Citation `hesthaven2015certified' on page 48 undefined on input 
-line 192.
-
-
-LaTeX Warning: Citation `quarteroni2015reduced' on page 48 undefined on input l
-ine 192.
-
-
-LaTeX Warning: Citation `bunse1986matrix' on page 48 undefined on input line 19
-2.
-
-
-LaTeX Warning: Citation `Salam2014' on page 48 undefined on input line 192.
-
-
-LaTeX Warning: Citation `Salam2014' on page 48 undefined on input line 194.
-
-
-LaTeX Warning: Citation `doi:10.1137/S1064827500366434' on page 48 undefined on
- input line 203.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [48]
-
-LaTeX Warning: Citation `hesthaven2015certified' on page 49 undefined on input 
-line 205.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [49]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [50]
-
-LaTeX Warning: Citation `quarteroni2015reduced' on page 51 undefined on input l
-ine 265.
-
-
-LaTeX Warning: Citation `hesthaven2015certified' on page 51 undefined on input 
-line 265.
-
-
-LaTeX Warning: Citation `Kolmogoroff:1936fj' on page 51 undefined on input line
- 267.
-
-
-LaTeX Warning: Citation `pinkus1985n' on page 51 undefined on input line 267.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [51]
@@ -2320,11 +1757,6 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [52]
 [53]
-
-LaTeX Warning: Citation `Ripamonti:2017' on page 54 undefined on input line 378
-.
-
-
 Overfull \hbox (23.97058pt too wide) in paragraph at lines 380--380
 |[]\T1/put/b/n/14.4 Symplectic Dis-crete Em-pir-i-cal In-ter-po-la-tion Method 
 (SDEIM)| 
@@ -2343,15 +1775,6 @@ File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 File: mt-euf.cfg 2006/07/03 v1.1 microtype config. file: AMS Euler Fraktur (RS)
 
 )
-
-LaTeX Warning: Citation `carlberg2012efficient' on page 55 undefined on input l
-ine 423.
-
-
-LaTeX Warning: Citation `negri2015efficient' on page 55 undefined on input line
- 423.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [55]
@@ -2373,7 +1796,7 @@ eps>
 (epstopdf)             \includegraphics on input line 513.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/paper1/wave/solution/solution_t0-eps-converted-to.pdf, id=1083, 578.1
+<./images/paper1/wave/solution/solution_t0-eps-converted-to.pdf, id=1292, 578.1
 6pt x 433.62pt>
 File: ./images/paper1/wave/solution/solution_t0-eps-converted-to.pdf Graphic fi
 le (type pdf)
@@ -2396,7 +1819,7 @@ eps>
 (epstopdf)             \includegraphics on input line 517.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/paper1/wave/solution/solution_t1-eps-converted-to.pdf, id=1084, 578.1
+<./images/paper1/wave/solution/solution_t1-eps-converted-to.pdf, id=1293, 578.1
 6pt x 433.62pt>
 File: ./images/paper1/wave/solution/solution_t1-eps-converted-to.pdf Graphic fi
 le (type pdf)
@@ -2419,7 +1842,7 @@ eps>
 (epstopdf)             \includegraphics on input line 520.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/paper1/wave/solution/solution_t2-eps-converted-to.pdf, id=1085, 578.1
+<./images/paper1/wave/solution/solution_t2-eps-converted-to.pdf, id=1294, 578.1
 6pt x 433.62pt>
 File: ./images/paper1/wave/solution/solution_t2-eps-converted-to.pdf Graphic fi
 le (type pdf)
@@ -2440,7 +1863,7 @@ o.pdf>
 (epstopdf)             \includegraphics on input line 529.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/paper1/wave/error-eps-converted-to.pdf, id=1086, 706.64pt x 417.56pt>
+<./images/paper1/wave/error-eps-converted-to.pdf, id=1295, 706.64pt x 417.56pt>
 File: ./images/paper1/wave/error-eps-converted-to.pdf Graphic file (type pdf)
 <use ./images/paper1/wave/error-eps-converted-to.pdf>
 Package pdftex.def Info: ./images/paper1/wave/error-eps-converted-to.pdf used o
@@ -2458,7 +1881,7 @@ tonian-eps-converted-to.pdf ./images/paper1/wave/hamiltonian.eps>
 (epstopdf)             \includegraphics on input line 533.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/paper1/wave/hamiltonian-eps-converted-to.pdf, id=1087, 702.625pt x 41
+<./images/paper1/wave/hamiltonian-eps-converted-to.pdf, id=1296, 702.625pt x 41
 7.56pt>
 File: ./images/paper1/wave/hamiltonian-eps-converted-to.pdf Graphic file (type 
 pdf)
@@ -2469,24 +1892,10 @@ used on input line 533.
  [58 <./images/paper1/wave/solution/solution_t0-eps-converted-to.pdf> <./images
 /paper1/wave/solution/solution_t1-eps-converted-to.pdf> <./images/paper1/wave/s
 olution/solution_t2-eps-converted-to.pdf>]
-
-LaTeX Warning: Citation `hesthaven2015certified' on page 59 undefined on input 
-line 550.
-
-
-LaTeX Warning: Citation `quarteroni2015reduced' on page 59 undefined on input l
-ine 550.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [59 <./images/paper1/wave/error-eps-converted-to.pdf> <./images/paper1/wave/ha
 miltonian-eps-converted-to.pdf>]
-
-LaTeX Warning: Citation `faou2012geometric' on page 60 undefined on input line 
-565.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [60]
@@ -2505,7 +1914,7 @@ n/solution_t0.eps>
 (epstopdf)             \includegraphics on input line 634.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/paper1/schrodinger/solution/solution_t0-eps-converted-to.pdf, id=1187
+<./images/paper1/schrodinger/solution/solution_t0-eps-converted-to.pdf, id=1399
 , 578.16pt x 433.62pt>
 File: ./images/paper1/schrodinger/solution/solution_t0-eps-converted-to.pdf Gra
 phic file (type pdf)
@@ -2528,8 +1937,8 @@ on/solution_t10.eps>
 (epstopdf)             \includegraphics on input line 638.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/paper1/schrodinger/solution/solution_t10-eps-converted-to.pdf, id=118
-8, 578.16pt x 433.62pt>
+<./images/paper1/schrodinger/solution/solution_t10-eps-converted-to.pdf, id=140
+0, 578.16pt x 433.62pt>
 File: ./images/paper1/schrodinger/solution/solution_t10-eps-converted-to.pdf Gr
 aphic file (type pdf)
 
@@ -2551,8 +1960,8 @@ on/solution_t20.eps>
 (epstopdf)             \includegraphics on input line 641.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/paper1/schrodinger/solution/solution_t20-eps-converted-to.pdf, id=118
-9, 578.16pt x 433.62pt>
+<./images/paper1/schrodinger/solution/solution_t20-eps-converted-to.pdf, id=140
+1, 578.16pt x 433.62pt>
 File: ./images/paper1/schrodinger/solution/solution_t20-eps-converted-to.pdf Gr
 aphic file (type pdf)
 
@@ -2572,7 +1981,7 @@ r/error-eps-converted-to.pdf ./images/paper1/schrodinger/error.eps>
 (epstopdf)             \includegraphics on input line 650.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/paper1/schrodinger/error-eps-converted-to.pdf, id=1190, 699.61375pt x
+<./images/paper1/schrodinger/error-eps-converted-to.pdf, id=1402, 699.61375pt x
  417.56pt>
 File: ./images/paper1/schrodinger/error-eps-converted-to.pdf Graphic file (type
  pdf)
@@ -2594,7 +2003,7 @@ r/hamiltonian-eps-converted-to.pdf ./images/paper1/schrodinger/hamiltonian.eps>
 (epstopdf)             \includegraphics on input line 654.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/paper1/schrodinger/hamiltonian-eps-converted-to.pdf, id=1191, 689.576
+<./images/paper1/schrodinger/hamiltonian-eps-converted-to.pdf, id=1403, 689.576
 25pt x 417.56pt>
 File: ./images/paper1/schrodinger/hamiltonian-eps-converted-to.pdf Graphic file
  (type pdf)
@@ -2622,7 +2031,7 @@ rgence-eps-converted-to.pdf ./images/paper1/wave/convergence.eps>
 (epstopdf)             \includegraphics on input line 683.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/paper1/wave/convergence-eps-converted-to.pdf, id=1266, 575.14874pt x 
+<./images/paper1/wave/convergence-eps-converted-to.pdf, id=1478, 575.14874pt x 
 335.2525pt>
 File: ./images/paper1/wave/convergence-eps-converted-to.pdf Graphic file (type 
 pdf)
@@ -2644,7 +2053,7 @@ r/convergence-eps-converted-to.pdf ./images/paper1/schrodinger/convergence.eps>
 (epstopdf)             \includegraphics on input line 687.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/paper1/schrodinger/convergence-eps-converted-to.pdf, id=1267, 575.148
+<./images/paper1/schrodinger/convergence-eps-converted-to.pdf, id=1479, 575.148
 74pt x 335.2525pt>
 File: ./images/paper1/schrodinger/convergence-eps-converted-to.pdf Graphic file
  (type pdf)
@@ -2672,108 +2081,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 1--1
  []
 
 
-LaTeX Warning: Citation `hesthaven2015certified' on page 67 undefined on input 
-line 3.
-
-
-LaTeX Warning: Citation `Haasdonk2017' on page 67 undefined on input line 3.
-
-
-LaTeX Warning: Citation `ito1998reduced' on page 67 undefined on input line 5.
-
-
-LaTeX Warning: Citation `ito2001reduced' on page 67 undefined on input line 5.
-
-
-LaTeX Warning: Citation `Amsallem:2014ef' on page 67 undefined on input line 5.
-
-
-
-LaTeX Warning: Citation `doi:10.1137/17M1111991' on page 67 undefined on input 
-line 7.
-
-
-LaTeX Warning: Citation `kalashnikova2014stabilization' on page 67 undefined on
- input line 7.
-
-
-LaTeX Warning: Citation `farhat2015structure' on page 67 undefined on input lin
-e 7.
-
-
-LaTeX Warning: Citation `doi:10.1137/110836742' on page 67 undefined on input l
-ine 7.
-
-
-LaTeX Warning: Citation `doi:10.1137/140959602' on page 67 undefined on input l
-ine 7.
-
-
-LaTeX Warning: Citation `beattie2011structure' on page 67 undefined on input li
-ne 7.
-
-
-LaTeX Warning: Citation `doi:10.1137/140978922' on page 67 undefined on input l
-ine 7.
-
-
-LaTeX Warning: Citation `polyuga2010structure' on page 67 undefined on input li
-ne 7.
-
-
-LaTeX Warning: Citation `gugercin2012structure' on page 67 undefined on input l
-ine 7.
-
-
-LaTeX Warning: Citation `farhat2015structure' on page 67 undefined on input lin
-e 7.
-
-
-LaTeX Warning: Citation `ballarin2015supremizer' on page 67 undefined on input 
-line 7.
-
-
-LaTeX Warning: Citation `1711.11550' on page 67 undefined on input line 7.
-
-
-LaTeX Warning: Citation `HaasdonkOhlberger11' on page 67 undefined on input lin
-e 9.
-
-
-LaTeX Warning: Citation `RuinerEtAl12' on page 67 undefined on input line 9.
-
-
-LaTeX Warning: Citation `BhattEtAl18' on page 67 undefined on input line 9.
-
-
-LaTeX Warning: Citation `doi:10.1137/140959602' on page 67 undefined on input l
-ine 11.
-
-
-LaTeX Warning: Citation `doi:10.1137/140978922' on page 67 undefined on input l
-ine 11.
-
-
-LaTeX Warning: Citation `doi:10.1137/17M1111991' on page 67 undefined on input 
-line 11.
-
-
-LaTeX Warning: Citation `doi:10.1137/140978922' on page 67 undefined on input l
-ine 11.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [67]
-
-LaTeX Warning: Citation `sen2006natural' on page 68 undefined on input line 13.
-
-
-
-LaTeX Warning: Citation `doi:10.1137/050628519' on page 68 undefined on input l
-ine 15.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [68]
@@ -2792,14 +2102,6 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [72]
 
-LaTeX Warning: Citation `bhatia2002stability' on page 73 undefined on input lin
-e 163.
-
-
-LaTeX Warning: Citation `doi:10.1137/17M1111991' on page 73 undefined on input 
-line 169.
-
-
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 172.
 
@@ -2812,15 +2114,6 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 172.
 
 [73]
-
-LaTeX Warning: Citation `doi:10.1137/S1064827500366434' on page 74 undefined on
- input line 183.
-
-
-LaTeX Warning: Citation `doi:10.1137/050628519' on page 74 undefined on input l
-ine 185.
-
-
 Overfull \hbox (2.25874pt too wide) in paragraph at lines 187--188
 []\T1/put/b/n/10.95 Theorem 5.5. []\T1/put/m/it/10.95 (-20) The ba-sis gen-er-a
 ted by the greedy method for con-struct-ing a $\OML/cmm/m/it/10.95 J[]$\T1/put/
@@ -2828,27 +2121,17 @@ m/it/10.95 (-20) -symplectic
  []
 
 [74]
-
-LaTeX Warning: Citation `friedman1970foundations' on page 75 undefined on input
- line 252.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [75]
-[76] [77]
-
-LaTeX Warning: Citation `langtangen2017solving' on page 78 undefined on input l
-ine 328.
-
-<./images/paper2/beam3d.png, id=1476, 2055.68pt x 1156.32pt>
+[76] [77] <./images/paper2/beam3d.png, id=1729, 2055.68pt x 1156.32pt>
 File: ./images/paper2/beam3d.png Graphic file (type png)
 
 <use ./images/paper2/beam3d.png>
 Package pdftex.def Info: ./images/paper2/beam3d.png used on input line 332.
 (pdftex.def)             Requested size: 187.95763pt x 105.72284pt.
 
-<./images/paper2/beam2d.png, id=1477, 2055.68pt x 1156.32pt>
+<./images/paper2/beam2d.png, id=1730, 2055.68pt x 1156.32pt>
 File: ./images/paper2/beam2d.png Graphic file (type png)
 
 <use ./images/paper2/beam2d.png>
@@ -2859,11 +2142,6 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [78 <./images/paper2/beam3d.png (PNG copy)> <./images/paper2/beam2d.png (PNG c
 opy)>]
-
-LaTeX Warning: Citation `langtangen2017solving' on page 79 undefined on input l
-ine 391.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [79]
@@ -2879,7 +2157,7 @@ lars-eps-converted-to.pdf ./images/paper2/beam/singulars.eps>
 (epstopdf)             \includegraphics on input line 411.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/paper2/beam/singulars-eps-converted-to.pdf, id=1507, 578.16pt x 325.2
+<./images/paper2/beam/singulars-eps-converted-to.pdf, id=1763, 578.16pt x 325.2
 15pt>
 File: ./images/paper2/beam/singulars-eps-converted-to.pdf Graphic file (type pd
 f)
@@ -2899,7 +2177,7 @@ y-eps-converted-to.pdf ./images/paper2/beam/energy.eps>
 (epstopdf)             \includegraphics on input line 411.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/paper2/beam/energy-eps-converted-to.pdf, id=1508, 578.16pt x 325.215p
+<./images/paper2/beam/energy-eps-converted-to.pdf, id=1764, 578.16pt x 325.215p
 t>
 File: ./images/paper2/beam/energy-eps-converted-to.pdf Graphic file (type pdf)
  <use ./images/paper2/beam/energy-eps-converted-to.pdf>
@@ -2918,7 +2196,7 @@ rm-eps-converted-to.pdf ./images/paper2/beam/l2_norm.eps>
 (epstopdf)             \includegraphics on input line 413.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/paper2/beam/l2_norm-eps-converted-to.pdf, id=1509, 578.16pt x 325.215
+<./images/paper2/beam/l2_norm-eps-converted-to.pdf, id=1765, 578.16pt x 325.215
 pt>
 File: ./images/paper2/beam/l2_norm-eps-converted-to.pdf Graphic file (type pdf)
 
@@ -2938,7 +2216,7 @@ y_norm-eps-converted-to.pdf ./images/paper2/beam/energy_norm.eps>
 (epstopdf)             \includegraphics on input line 413.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/paper2/beam/energy_norm-eps-converted-to.pdf, id=1510, 578.16pt x 325
+<./images/paper2/beam/energy_norm-eps-converted-to.pdf, id=1766, 578.16pt x 325
 .215pt>
 File: ./images/paper2/beam/energy_norm-eps-converted-to.pdf Graphic file (type 
 pdf)
@@ -2947,11 +2225,6 @@ Package pdftex.def Info: ./images/paper2/beam/energy_norm-eps-converted-to.pdf
 used on input line 413.
 (pdftex.def)             Requested size: 187.95763pt x 105.72339pt.
  [80]
-
-LaTeX Warning: Citation `DEPARIS20094359' on page 81 undefined on input line 43
-3.
-
-
 Underfull \vbox (badness 3386) has occurred while \output is active []
 
  [81 <./images/paper2/beam/singulars-eps-converted-to.pdf> <./images/paper2/bea
@@ -2970,7 +2243,7 @@ ed/singulars-eps-converted-to.pdf ./images/paper2/beam_cracked/singulars.eps>
 (epstopdf)             \includegraphics on input line 453.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/paper2/beam_cracked/singulars-eps-converted-to.pdf, id=1589, 578.16pt
+<./images/paper2/beam_cracked/singulars-eps-converted-to.pdf, id=1846, 578.16pt
  x 325.215pt>
 File: ./images/paper2/beam_cracked/singulars-eps-converted-to.pdf Graphic file 
 (type pdf)
@@ -2991,7 +2264,7 @@ ed/energy-eps-converted-to.pdf ./images/paper2/beam_cracked/energy.eps>
 (epstopdf)             \includegraphics on input line 453.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/paper2/beam_cracked/energy-eps-converted-to.pdf, id=1590, 578.16pt x 
+<./images/paper2/beam_cracked/energy-eps-converted-to.pdf, id=1847, 578.16pt x 
 325.215pt>
 File: ./images/paper2/beam_cracked/energy-eps-converted-to.pdf Graphic file (ty
 pe pdf)
@@ -3011,7 +2284,7 @@ ed/l2-eps-converted-to.pdf ./images/paper2/beam_cracked/l2.eps>
 (epstopdf)             \includegraphics on input line 455.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/paper2/beam_cracked/l2-eps-converted-to.pdf, id=1591, 578.16pt x 325.
+<./images/paper2/beam_cracked/l2-eps-converted-to.pdf, id=1848, 578.16pt x 325.
 215pt>
 File: ./images/paper2/beam_cracked/l2-eps-converted-to.pdf Graphic file (type p
 df)
@@ -3033,7 +2306,7 @@ s>
 (epstopdf)             \includegraphics on input line 455.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/paper2/beam_cracked/energy_norm-eps-converted-to.pdf, id=1592, 578.16
+<./images/paper2/beam_cracked/energy_norm-eps-converted-to.pdf, id=1849, 578.16
 pt x 325.215pt>
 File: ./images/paper2/beam_cracked/energy_norm-eps-converted-to.pdf Graphic fil
 e (type pdf)
@@ -3046,13 +2319,6 @@ Package pdftex.def Info: ./images/paper2/beam_cracked/energy_norm-eps-converted
 per2/beam_cracked/energy-eps-converted-to.pdf> <./images/paper2/beam_cracked/l2
 -eps-converted-to.pdf> <./images/paper2/beam_cracked/energy_norm-eps-converted-
 to.pdf>]
-
-LaTeX Warning: Citation `Misumi2015' on page 83 undefined on input line 470.
-
-
-LaTeX Warning: Citation `Misumi2015' on page 83 undefined on input line 485.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [83]
@@ -3068,7 +2334,7 @@ lars-eps-converted-to.pdf ./images/paper2/sine/singulars.eps>
 (epstopdf)             \includegraphics on input line 528.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/paper2/sine/singulars-eps-converted-to.pdf, id=1685, 578.16pt x 325.2
+<./images/paper2/sine/singulars-eps-converted-to.pdf, id=1946, 578.16pt x 325.2
 15pt>
 File: ./images/paper2/sine/singulars-eps-converted-to.pdf Graphic file (type pd
 f)
@@ -3088,7 +2354,7 @@ y-eps-converted-to.pdf ./images/paper2/sine/energy.eps>
 (epstopdf)             \includegraphics on input line 528.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/paper2/sine/energy-eps-converted-to.pdf, id=1686, 578.16pt x 325.215p
+<./images/paper2/sine/energy-eps-converted-to.pdf, id=1947, 578.16pt x 325.215p
 t>
 File: ./images/paper2/sine/energy-eps-converted-to.pdf Graphic file (type pdf)
  <use ./images/paper2/sine/energy-eps-converted-to.pdf>
@@ -3107,7 +2373,7 @@ s-converted-to.pdf ./images/paper2/sine/l2.eps>
 (epstopdf)             \includegraphics on input line 530.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/paper2/sine/l2-eps-converted-to.pdf, id=1687, 578.16pt x 325.215pt>
+<./images/paper2/sine/l2-eps-converted-to.pdf, id=1948, 578.16pt x 325.215pt>
 File: ./images/paper2/sine/l2-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./images/paper2/sine/l2-eps-converted-to.pdf>
@@ -3126,7 +2392,7 @@ y_norm-eps-converted-to.pdf ./images/paper2/sine/energy_norm.eps>
 (epstopdf)             \includegraphics on input line 530.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/paper2/sine/energy_norm-eps-converted-to.pdf, id=1688, 578.16pt x 325
+<./images/paper2/sine/energy_norm-eps-converted-to.pdf, id=1949, 578.16pt x 325
 .215pt>
 File: ./images/paper2/sine/energy_norm-eps-converted-to.pdf Graphic file (type 
 pdf)
@@ -3134,16 +2400,7 @@ pdf)
 Package pdftex.def Info: ./images/paper2/sine/energy_norm-eps-converted-to.pdf 
 used on input line 530.
 (pdftex.def)             Requested size: 187.95763pt x 105.72339pt.
-
-
-LaTeX Warning: Citation `doi:10.1137/140978922' on page 84 undefined on input l
-ine 538.
-
-
-LaTeX Warning: Citation `doi:10.1137/140978922' on page 84 undefined on input l
-ine 540.
-
-[84]
+ [84]
 Package epstopdf Info: Source file: <./images/paper2/sine/nonlinear/l2.eps>
 (epstopdf)                    date: 2018-03-19 17:00:34
 (epstopdf)                    size: 219372 bytes
@@ -3156,7 +2413,7 @@ near/l2-eps-converted-to.pdf ./images/paper2/sine/nonlinear/l2.eps>
 (epstopdf)             \includegraphics on input line 546.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/paper2/sine/nonlinear/l2-eps-converted-to.pdf, id=1701, 578.16pt x 32
+<./images/paper2/sine/nonlinear/l2-eps-converted-to.pdf, id=1963, 578.16pt x 32
 5.215pt>
 File: ./images/paper2/sine/nonlinear/l2-eps-converted-to.pdf Graphic file (type
  pdf)
@@ -3178,7 +2435,7 @@ m.eps>
 (epstopdf)             \includegraphics on input line 546.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/paper2/sine/nonlinear/energy_norm-eps-converted-to.pdf, id=1702, 578.
+<./images/paper2/sine/nonlinear/energy_norm-eps-converted-to.pdf, id=1964, 578.
 16pt x 325.215pt>
 File: ./images/paper2/sine/nonlinear/energy_norm-eps-converted-to.pdf Graphic f
 ile (type pdf)
@@ -3200,7 +2457,7 @@ near/energy-eps-converted-to.pdf ./images/paper2/sine/nonlinear/energy.eps>
 (epstopdf)             \includegraphics on input line 550.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/paper2/sine/nonlinear/energy-eps-converted-to.pdf, id=1703, 578.16pt 
+<./images/paper2/sine/nonlinear/energy-eps-converted-to.pdf, id=1965, 578.16pt 
 x 325.215pt>
 File: ./images/paper2/sine/nonlinear/energy-eps-converted-to.pdf Graphic file (
 type pdf)
@@ -3237,82 +2494,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 1--1
  []
 
 
-LaTeX Warning: Citation `vanderSchaft:2014:PST:2693645.2693646' on page 89 unde
-fined on input line 5.
-
-
-LaTeX Warning: Citation `doi:10.1137/140978922' on page 89 undefined on input l
-ine 5.
-
-
-LaTeX Warning: Citation `peng2016geometric' on page 89 undefined on input line 
-7.
-
-
-LaTeX Warning: Citation `polyuga2010structure' on page 89 undefined on input li
-ne 9.
-
-
-LaTeX Warning: Citation `beattie2011structure' on page 89 undefined on input li
-ne 9.
-
-
-LaTeX Warning: Citation `doi:10.1137/15M1055085' on page 89 undefined on input 
-line 9.
-
-
-LaTeX Warning: Citation `figotin2007hamiltonian' on page 89 undefined on input 
-line 11.
-
-
-LaTeX Warning: Citation `figotin2005spectral' on page 89 undefined on input lin
-e 11.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [89]
-
-LaTeX Warning: Citation `figotin2007hamiltonian' on page 90 undefined on input 
-line 20.
-
-
-LaTeX Warning: Citation `jerri1999introduction' on page 90 undefined on input l
-ine 29.
-
-
-LaTeX Warning: Citation `corduneanu1991integral' on page 90 undefined on input 
-line 29.
-
-
-LaTeX Warning: Citation `figotin2007hamiltonian' on page 90 undefined on input 
-line 33.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [90]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Warning: Citation `figotin2007hamiltonian' on page 91 undefined on input 
-line 57.
-
-
-LaTeX Warning: Citation `figotin2005spectral' on page 91 undefined on input lin
-e 57.
-
-
-LaTeX Warning: Citation `figotin2007hamiltonian' on page 91 undefined on input 
-line 64.
-
-
-LaTeX Warning: Citation `figotin2007hamiltonian' on page 91 undefined on input 
-line 74.
-
-[91]
-
-LaTeX Warning: Citation `lamb:1900' on page 92 undefined on input line 100.
-
-
+ [91]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [92]
@@ -3329,43 +2519,13 @@ Overfull \hbox (3.22903pt too wide) in paragraph at lines 153--155
  []
 
 
-Underfull \vbox (badness 1107) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [94]
-
-LaTeX Warning: Citation `peng2016geometric' on page 95 undefined on input line 
-178.
-
-
-LaTeX Warning: Citation `polyuga2010structure' on page 95 undefined on input li
-ne 178.
-
-
-LaTeX Warning: Citation `beattie2011structure' on page 95 undefined on input li
-ne 178.
-
-
-LaTeX Warning: Citation `hairer2006geometric' on page 95 undefined on input lin
-e 178.
-
-
-LaTeX Warning: Citation `figotin2007hamiltonian' on page 95 undefined on input 
-line 184.
-
-
-LaTeX Warning: Citation `figotin2005spectral' on page 95 undefined on input lin
-e 184.
-
 [95]
+Underfull \vbox (badness 6893) has occurred while \output is active []
 
-LaTeX Warning: Citation `bhatia2002stability' on page 96 undefined on input lin
-e 195.
-
-
-LaTeX Warning: Citation `bhatia2002stability' on page 96 undefined on input lin
-e 195.
-
-[96]
+ [96]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [97]
@@ -3381,7 +2541,7 @@ ion-eps-converted-to.pdf ./images/paper3/wave/solution.eps>
 (epstopdf)             \includegraphics on input line 287.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/paper3/wave/solution-eps-converted-to.pdf, id=1987, 462.72874pt x 347
+<./images/paper3/wave/solution-eps-converted-to.pdf, id=2282, 462.72874pt x 347
 .2975pt>
 File: ./images/paper3/wave/solution-eps-converted-to.pdf Graphic file (type pdf
 )
@@ -3401,7 +2561,7 @@ lar-eps-converted-to.pdf ./images/paper3/wave/singular.eps>
 (epstopdf)             \includegraphics on input line 288.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/paper3/wave/singular-eps-converted-to.pdf, id=1988, 462.72874pt x 347
+<./images/paper3/wave/singular-eps-converted-to.pdf, id=2283, 462.72874pt x 347
 .2975pt>
 File: ./images/paper3/wave/singular-eps-converted-to.pdf Graphic file (type pdf
 )
@@ -3421,7 +2581,7 @@ o.pdf>
 (epstopdf)             \includegraphics on input line 290.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/paper3/wave/error-eps-converted-to.pdf, id=1989, 578.16pt x 337.26pt>
+<./images/paper3/wave/error-eps-converted-to.pdf, id=2284, 578.16pt x 337.26pt>
 File: ./images/paper3/wave/error-eps-converted-to.pdf Graphic file (type pdf)
 <use ./images/paper3/wave/error-eps-converted-to.pdf>
 Package pdftex.def Info: ./images/paper3/wave/error-eps-converted-to.pdf used o
@@ -3439,7 +2599,7 @@ y-eps-converted-to.pdf ./images/paper3/wave/energy.eps>
 (epstopdf)             \includegraphics on input line 291.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/paper3/wave/energy-eps-converted-to.pdf, id=1990, 584.1825pt x 337.26
+<./images/paper3/wave/energy-eps-converted-to.pdf, id=2285, 584.1825pt x 337.26
 pt>
 File: ./images/paper3/wave/energy-eps-converted-to.pdf Graphic file (type pdf)
  <use ./images/paper3/wave/energy-eps-converted-to.pdf>
@@ -3459,7 +2619,7 @@ y_conserved-eps-converted-to.pdf ./images/paper3/wave/energy_conserved.eps>
 (epstopdf)             \includegraphics on input line 293.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/paper3/wave/energy_conserved-eps-converted-to.pdf, id=1991, 732.7375p
+<./images/paper3/wave/energy_conserved-eps-converted-to.pdf, id=2286, 732.7375p
 t x 342.27875pt>
 File: ./images/paper3/wave/energy_conserved-eps-converted-to.pdf Graphic file (
 type pdf)
@@ -3480,7 +2640,7 @@ _homo-eps-converted-to.pdf ./images/paper3/wave/error_homo.eps>
 (epstopdf)             \includegraphics on input line 294.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/paper3/wave/error_homo-eps-converted-to.pdf, id=1992, 699.61375pt x 4
+<./images/paper3/wave/error_homo-eps-converted-to.pdf, id=2287, 699.61375pt x 4
 17.56pt>
 File: ./images/paper3/wave/error_homo-eps-converted-to.pdf Graphic file (type p
 df)
@@ -3493,41 +2653,17 @@ Overfull \hbox (44.88559pt too wide) in paragraph at lines 286--297
 [][] 
  []
 
-
-LaTeX Warning: Citation `peng2016geometric' on page 98 undefined on input line 
-302.
-
-
-LaTeX Warning: Citation `peng2016geometric' on page 98 undefined on input line 
-302.
-
-
-LaTeX Warning: Citation `doi:10.1137/17M1111991' on page 98 undefined on input 
-line 302.
-
-
-LaTeX Warning: Citation `hesthaven2015certified' on page 98 undefined on input 
-line 304.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [98]
-[99 <./images/paper3/wave/solution-eps-converted-to.pdf> <./images/paper3/wave/
-singular-eps-converted-to.pdf> <./images/paper3/wave/error-eps-converted-to.pdf
-> <./images/paper3/wave/energy-eps-converted-to.pdf> <./images/paper3/wave/ener
-gy_conserved-eps-converted-to.pdf> <./images/paper3/wave/error_homo-eps-convert
-ed-to.pdf>]
+[98] [99 <./images/paper3/wave/solution-eps-converted-to.pdf> <./images/paper3/
+wave/singular-eps-converted-to.pdf> <./images/paper3/wave/error-eps-converted-t
+o.pdf> <./images/paper3/wave/energy-eps-converted-to.pdf> <./images/paper3/wave
+/energy_conserved-eps-converted-to.pdf> <./images/paper3/wave/error_homo-eps-co
+nverted-to.pdf>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [100]
 
 LaTeX Warning: Reference `chap:SyMo.PrSy:2' on page 1 undefined on input line 3
 65.
-
-
-LaTeX Warning: Citation `doi:10.1137/140978922' on page 101 undefined on input 
-line 365.
 
 Package epstopdf Info: Source file: <./images/paper3/wave_nonlin/error_nonlin.e
 ps>
@@ -3543,7 +2679,7 @@ s>
 (epstopdf)             \includegraphics on input line 370.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/paper3/wave_nonlin/error_nonlin-eps-converted-to.pdf, id=2090, 699.61
+<./images/paper3/wave_nonlin/error_nonlin-eps-converted-to.pdf, id=2387, 699.61
 375pt x 417.56pt>
 File: ./images/paper3/wave_nonlin/error_nonlin-eps-converted-to.pdf Graphic fil
 e (type pdf)
@@ -3566,7 +2702,7 @@ eps>
 (epstopdf)             \includegraphics on input line 371.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/paper3/wave_nonlin/energy_nonlin-eps-converted-to.pdf, id=2091, 699.6
+<./images/paper3/wave_nonlin/energy_nonlin-eps-converted-to.pdf, id=2388, 699.6
 1375pt x 417.56pt>
 File: ./images/paper3/wave_nonlin/energy_nonlin-eps-converted-to.pdf Graphic fi
 le (type pdf)
@@ -3580,12 +2716,7 @@ Overfull \hbox (24.0pt too wide) in paragraph at lines 369--374
 [][] 
  []
 
-[101 <./images/paper3/wave_nonlin/error_nonlin-eps-converted-to.pdf> <./images/
-paper3/wave_nonlin/energy_nonlin-eps-converted-to.pdf>]
-
-LaTeX Warning: Citation `vanderSchaft:2014:PST:2693645.2693646' on page 102 und
-efined on input line 384.
-
+[101]
 Package epstopdf Info: Source file: <./images/paper3/porthamil/circuit.eps>
 (epstopdf)                    date: 2018-06-18 09:26:16
 (epstopdf)                    size: 364313 bytes
@@ -3598,7 +2729,7 @@ circuit-eps-converted-to.pdf ./images/paper3/porthamil/circuit.eps>
 (epstopdf)             \includegraphics on input line 387.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/paper3/porthamil/circuit-eps-converted-to.pdf, id=2123, 422.57875pt x
+<./images/paper3/porthamil/circuit-eps-converted-to.pdf, id=2403, 422.57875pt x
  84.315pt>
 File: ./images/paper3/porthamil/circuit-eps-converted-to.pdf Graphic file (type
  pdf)
@@ -3607,29 +2738,13 @@ Package pdftex.def Info: ./images/paper3/porthamil/circuit-eps-converted-to.pdf
  used on input line 387.
 (pdftex.def)             Requested size: 292.37924pt x 58.33821pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 7308) has occurred while \output is active []
 
- [102 <./images/paper3/porthamil/circuit-eps-converted-to.pdf>]
+ [102 <./images/paper3/wave_nonlin/error_nonlin-eps-converted-to.pdf> <./images
+/paper3/wave_nonlin/energy_nonlin-eps-converted-to.pdf>]
+Underfull \vbox (badness 2600) has occurred while \output is active []
 
-LaTeX Warning: Citation `vanderSchaft:1996es' on page 103 undefined on input li
-ne 402.
-
-
-LaTeX Warning: Citation `Willems:1972ek' on page 103 undefined on input line 40
-2.
-
-
-LaTeX Warning: Citation `hairer2006geometric' on page 103 undefined on input li
-ne 419.
-
-
-LaTeX Warning: Citation `polyuga2010structure' on page 103 undefined on input l
-ine 425.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [103]
+ [103 <./images/paper3/porthamil/circuit-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <./images/paper3/porthamil/error_capac.eps>
 
 (epstopdf)                    date: 2018-06-18 09:26:16
@@ -3643,7 +2758,7 @@ error_capac-eps-converted-to.pdf ./images/paper3/porthamil/error_capac.eps>
 (epstopdf)             \includegraphics on input line 429.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/paper3/porthamil/error_capac-eps-converted-to.pdf, id=2183, 652.4375p
+<./images/paper3/porthamil/error_capac-eps-converted-to.pdf, id=2490, 652.4375p
 t x 417.56pt>
 File: ./images/paper3/porthamil/error_capac-eps-converted-to.pdf Graphic file (
 type pdf)
@@ -3663,7 +2778,7 @@ error_flux-eps-converted-to.pdf ./images/paper3/porthamil/error_flux.eps>
 (epstopdf)             \includegraphics on input line 430.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/paper3/porthamil/error_flux-eps-converted-to.pdf, id=2184, 652.4375pt
+<./images/paper3/porthamil/error_flux-eps-converted-to.pdf, id=2491, 652.4375pt
  x 417.56pt>
 File: ./images/paper3/porthamil/error_flux-eps-converted-to.pdf Graphic file (t
 ype pdf)
@@ -3683,7 +2798,7 @@ error1-eps-converted-to.pdf ./images/paper3/porthamil/error1.eps>
 (epstopdf)             \includegraphics on input line 432.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/paper3/porthamil/error1-eps-converted-to.pdf, id=2185, 652.4375pt x 4
+<./images/paper3/porthamil/error1-eps-converted-to.pdf, id=2492, 652.4375pt x 4
 17.56pt>
 File: ./images/paper3/porthamil/error1-eps-converted-to.pdf Graphic file (type 
 pdf)
@@ -3696,16 +2811,16 @@ Overfull \hbox (24.0pt too wide) in paragraph at lines 428--435
 [][] 
  []
 
-[104 <./images/paper3/porthamil/error_capac-eps-converted-to.pdf> <./images/pap
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [104]
+[105 <./images/paper3/porthamil/error_capac-eps-converted-to.pdf> <./images/pap
 er3/porthamil/error_flux-eps-converted-to.pdf> <./images/paper3/porthamil/error
-1-eps-converted-to.pdf>]) [105]
+1-eps-converted-to.pdf>]) [106]
 \openout2 = `main/ch7_beyond.aux'.
 
- (./main/ch7_beyond.tex [106
-
-
-
-]
+ (./main/ch7_beyond.tex
 Chapter 7.
 
 Underfull \hbox (badness 10000) in paragraph at lines 1--1
@@ -3713,184 +2828,44 @@ Underfull \hbox (badness 10000) in paragraph at lines 1--1
  []
 
 
-LaTeX Warning: Citation `carlberg2018conservative' on page 107 undefined on inp
-ut line 5.
-
-
-LaTeX Warning: Citation `carlberg2018conservative' on page 107 undefined on inp
-ut line 5.
-
-
-LaTeX Warning: Citation `morinishi2010skew' on page 107 undefined on input line
- 7.
-
-
-LaTeX Warning: Citation `morinishi1998fully' on page 107 undefined on input lin
-e 7.
-
-
-LaTeX Warning: Citation `desjardins2008high' on page 107 undefined on input lin
-e 7.
-
-
-LaTeX Warning: Citation `tadmor1984skew' on page 107 undefined on input line 7.
-
-
-
-LaTeX Warning: Citation `reiss2014conservative' on page 107 undefined on input 
-line 7.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [107]
-
-LaTeX Warning: Citation `morinishi2010skew' on page 108 undefined on input line
- 15.
+ [107
 
 
-LaTeX Warning: Citation `morinishi1998fully' on page 108 undefined on input lin
-e 15.
 
-
-LaTeX Warning: Citation `tadmor1984skew' on page 108 undefined on input line 15
-.
-
-
-LaTeX Warning: Citation `reiss2014conservative' on page 108 undefined on input 
-line 15.
-
-
+]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [108]
-
-LaTeX Warning: Citation `morinishi2010skew' on page 109 undefined on input line
- 52.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [109]
-
-LaTeX Warning: Citation `morinishi2010skew' on page 110 undefined on input line
- 56.
-
-
-LaTeX Warning: Citation `reiss2014conservative' on page 110 undefined on input 
-line 56.
-
-
-LaTeX Warning: Citation `blaisdell1991numerical' on page 110 undefined on input
- line 56.
-
-
-LaTeX Warning: Citation `morinishi2003dns' on page 110 undefined on input line 
-56.
-
-
-LaTeX Warning: Citation `morinishi2010skew' on page 110 undefined on input line
- 60.
-
-
-LaTeX Warning: Citation `blaisdell1991numerical' on page 110 undefined on input
- line 60.
-
-
-LaTeX Warning: Citation `morinishi2003dns' on page 110 undefined on input line 
-60.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [110]
-
-LaTeX Warning: Citation `morinishi1998fully' on page 111 undefined on input lin
-e 107.
-
-
-LaTeX Warning: Citation `desjardins2008high' on page 111 undefined on input lin
-e 107.
-
-
 Underfull \vbox (badness 1983) has occurred while \output is active []
 
  [111]
-
-LaTeX Warning: Citation `reiss2014conservative' on page 112 undefined on input 
-line 120.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [112]
-
-LaTeX Warning: Citation `sjogreen2010skew' on page 113 undefined on input line 
-172.
-
-
-LaTeX Warning: Citation `honein2004higher' on page 113 undefined on input line 
-172.
-
-
-LaTeX Warning: Citation `honein2005numerical' on page 113 undefined on input li
-ne 172.
-
-
-LaTeX Warning: Citation `reiss2014conservative' on page 113 undefined on input 
-line 175.
-
-
-LaTeX Warning: Citation `morinishi2010skew' on page 113 undefined on input line
- 175.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [113]
-
-LaTeX Warning: Citation `reiss2014conservative' on page 114 undefined on input 
-line 189.
-
-
-LaTeX Warning: Citation `hairer2006geometric' on page 114 undefined on input li
-ne 189.
-
-
-LaTeX Warning: Citation `reiss2014conservative' on page 114 undefined on input 
-line 189.
-
-
-LaTeX Warning: Citation `morinishi2010skew' on page 114 undefined on input line
- 189.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [114]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [115]
-
-LaTeX Warning: Citation `Benner2018' on page 116 undefined on input line 246.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [116]
-
-LaTeX Warning: Citation `filaments_vort2' on page 117 undefined on input line 2
-71.
-
-
-LaTeX Warning: Citation `filaments_vort' on page 117 undefined on input line 27
-1.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [117]
-<./TikzFigures/thesis-figure0.pdf, id=2394, 155.1938pt x 108.14302pt>
+<./TikzFigures/thesis-figure0.pdf, id=2748, 155.1938pt x 108.14302pt>
 File: ./TikzFigures/thesis-figure0.pdf Graphic file (type pdf)
 
 <use ./TikzFigures/thesis-figure0.pdf>
@@ -3898,7 +2873,7 @@ Package pdftex.def Info: ./TikzFigures/thesis-figure0.pdf used on input line 29
 6.
 (pdftex.def)             Requested size: 171.25298pt x 119.33719pt.
 
-<./TikzFigures/thesis-figure1.pdf, id=2395, 172.43623pt x 108.99219pt>
+<./TikzFigures/thesis-figure1.pdf, id=2749, 172.43623pt x 108.99219pt>
 File: ./TikzFigures/thesis-figure1.pdf Graphic file (type pdf)
 
 <use ./TikzFigures/thesis-figure1.pdf>
@@ -3909,7 +2884,7 @@ Package pdftex.def Info: ./TikzFigures/thesis-figure1.pdf used on input line 29
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [118 <./TikzFigures/thesis-figure0.pdf> <./TikzFigures/thesis-figure1.pdf>]
-<data/Incompressible_Euler/Snapshots/red_17_2.png, id=2445, 1506.1068pt x 1506.
+<data/Incompressible_Euler/Snapshots/red_17_2.png, id=2801, 1506.1068pt x 1506.
 1068pt>
 File: data/Incompressible_Euler/Snapshots/red_17_2.png Graphic file (type png)
  <use data/Incompressible_Euler/Snapshots/red_17_2.png>
@@ -3917,7 +2892,7 @@ Package pdftex.def Info: data/Incompressible_Euler/Snapshots/red_17_2.png used
 on input line 311.
 (pdftex.def)             Requested size: 90.3625pt x 90.3625pt.
 
-<data/Incompressible_Euler/Snapshots/red_35_2.png, id=2446, 1506.1068pt x 1506.
+<data/Incompressible_Euler/Snapshots/red_35_2.png, id=2802, 1506.1068pt x 1506.
 1068pt>
 File: data/Incompressible_Euler/Snapshots/red_35_2.png Graphic file (type png)
  <use data/Incompressible_Euler/Snapshots/red_35_2.png>
@@ -3925,7 +2900,7 @@ Package pdftex.def Info: data/Incompressible_Euler/Snapshots/red_35_2.png used
 on input line 312.
 (pdftex.def)             Requested size: 90.3625pt x 90.3625pt.
 
-<data/Incompressible_Euler/Snapshots/Full_2.png, id=2447, 2182.554pt x 1506.106
+<data/Incompressible_Euler/Snapshots/Full_2.png, id=2803, 2182.554pt x 1506.106
 8pt>
 File: data/Incompressible_Euler/Snapshots/Full_2.png Graphic file (type png)
  <use data/Incompressible_Euler/Snapshots/Full_2.png>
@@ -3933,7 +2908,7 @@ Package pdftex.def Info: data/Incompressible_Euler/Snapshots/Full_2.png used on
  input line 313.
 (pdftex.def)             Requested size: 130.94759pt x 90.3625pt.
 
-<data/Incompressible_Euler/Snapshots/red_17_3.png, id=2448, 1506.1068pt x 1506.
+<data/Incompressible_Euler/Snapshots/red_17_3.png, id=2804, 1506.1068pt x 1506.
 1068pt>
 File: data/Incompressible_Euler/Snapshots/red_17_3.png Graphic file (type png)
  <use data/Incompressible_Euler/Snapshots/red_17_3.png>
@@ -3941,7 +2916,7 @@ Package pdftex.def Info: data/Incompressible_Euler/Snapshots/red_17_3.png used
 on input line 315.
 (pdftex.def)             Requested size: 90.3625pt x 90.3625pt.
 
-<data/Incompressible_Euler/Snapshots/red_35_3.png, id=2449, 1506.1068pt x 1506.
+<data/Incompressible_Euler/Snapshots/red_35_3.png, id=2805, 1506.1068pt x 1506.
 1068pt>
 File: data/Incompressible_Euler/Snapshots/red_35_3.png Graphic file (type png)
  <use data/Incompressible_Euler/Snapshots/red_35_3.png>
@@ -3949,7 +2924,7 @@ Package pdftex.def Info: data/Incompressible_Euler/Snapshots/red_35_3.png used
 on input line 316.
 (pdftex.def)             Requested size: 90.3625pt x 90.3625pt.
 
-<data/Incompressible_Euler/Snapshots/Full_3.png, id=2450, 2182.554pt x 1506.106
+<data/Incompressible_Euler/Snapshots/Full_3.png, id=2806, 2182.554pt x 1506.106
 8pt>
 File: data/Incompressible_Euler/Snapshots/Full_3.png Graphic file (type png)
  <use data/Incompressible_Euler/Snapshots/Full_3.png>
@@ -3957,7 +2932,7 @@ Package pdftex.def Info: data/Incompressible_Euler/Snapshots/Full_3.png used on
  input line 317.
 (pdftex.def)             Requested size: 130.94759pt x 90.3625pt.
 
-<data/Incompressible_Euler/Snapshots/red_17_4.png, id=2451, 1506.1068pt x 1506.
+<data/Incompressible_Euler/Snapshots/red_17_4.png, id=2807, 1506.1068pt x 1506.
 1068pt>
 File: data/Incompressible_Euler/Snapshots/red_17_4.png Graphic file (type png)
  <use data/Incompressible_Euler/Snapshots/red_17_4.png>
@@ -3965,7 +2940,7 @@ Package pdftex.def Info: data/Incompressible_Euler/Snapshots/red_17_4.png used
 on input line 319.
 (pdftex.def)             Requested size: 90.3625pt x 90.3625pt.
 
-<data/Incompressible_Euler/Snapshots/red_35_4.png, id=2452, 1506.1068pt x 1506.
+<data/Incompressible_Euler/Snapshots/red_35_4.png, id=2808, 1506.1068pt x 1506.
 1068pt>
 File: data/Incompressible_Euler/Snapshots/red_35_4.png Graphic file (type png)
  <use data/Incompressible_Euler/Snapshots/red_35_4.png>
@@ -3973,7 +2948,7 @@ Package pdftex.def Info: data/Incompressible_Euler/Snapshots/red_35_4.png used
 on input line 320.
 (pdftex.def)             Requested size: 90.3625pt x 90.3625pt.
 
-<data/Incompressible_Euler/Snapshots/Full_4.png, id=2453, 2182.554pt x 1506.106
+<data/Incompressible_Euler/Snapshots/Full_4.png, id=2809, 2182.554pt x 1506.106
 8pt>
 File: data/Incompressible_Euler/Snapshots/Full_4.png Graphic file (type png)
  <use data/Incompressible_Euler/Snapshots/Full_4.png>
@@ -3981,7 +2956,7 @@ Package pdftex.def Info: data/Incompressible_Euler/Snapshots/Full_4.png used on
  input line 321.
 (pdftex.def)             Requested size: 130.94759pt x 90.3625pt.
 
-<data/Incompressible_Euler/Snapshots/red_17_5.png, id=2454, 1506.1068pt x 1506.
+<data/Incompressible_Euler/Snapshots/red_17_5.png, id=2810, 1506.1068pt x 1506.
 1068pt>
 File: data/Incompressible_Euler/Snapshots/red_17_5.png Graphic file (type png)
  <use data/Incompressible_Euler/Snapshots/red_17_5.png>
@@ -3989,7 +2964,7 @@ Package pdftex.def Info: data/Incompressible_Euler/Snapshots/red_17_5.png used
 on input line 323.
 (pdftex.def)             Requested size: 90.3625pt x 90.3625pt.
 
-<data/Incompressible_Euler/Snapshots/red_35_5.png, id=2455, 1506.1068pt x 1506.
+<data/Incompressible_Euler/Snapshots/red_35_5.png, id=2811, 1506.1068pt x 1506.
 1068pt>
 File: data/Incompressible_Euler/Snapshots/red_35_5.png Graphic file (type png)
  <use data/Incompressible_Euler/Snapshots/red_35_5.png>
@@ -3997,7 +2972,7 @@ Package pdftex.def Info: data/Incompressible_Euler/Snapshots/red_35_5.png used
 on input line 324.
 (pdftex.def)             Requested size: 90.3625pt x 90.3625pt.
 
-<data/Incompressible_Euler/Snapshots/Full_5.png, id=2456, 2182.554pt x 1506.106
+<data/Incompressible_Euler/Snapshots/Full_5.png, id=2812, 2182.554pt x 1506.106
 8pt>
 File: data/Incompressible_Euler/Snapshots/Full_5.png Graphic file (type png)
  <use data/Incompressible_Euler/Snapshots/Full_5.png>
@@ -4016,7 +2991,7 @@ _Euler/Snapshots/red_35_4.png> <./data/Incompressible_Euler/Snapshots/Full_4.pn
 g> <./data/Incompressible_Euler/Snapshots/red_17_5.png> <./data/Incompressible_
 Euler/Snapshots/red_35_5.png> <./data/Incompressible_Euler/Snapshots/Full_5.png
 >]
-<./TikzFigures/thesis-figure2.pdf, id=2466, 163.69255pt x 107.83687pt>
+<./TikzFigures/thesis-figure2.pdf, id=2821, 163.69255pt x 107.83687pt>
 File: ./TikzFigures/thesis-figure2.pdf Graphic file (type pdf)
 
 <use ./TikzFigures/thesis-figure2.pdf>
@@ -4024,23 +2999,15 @@ Package pdftex.def Info: ./TikzFigures/thesis-figure2.pdf used on input line 34
 6.
 (pdftex.def)             Requested size: 171.25298pt x 112.82065pt.
 
-<./TikzFigures/thesis-figure3.pdf, id=2467, 187.10904pt x 107.83588pt>
+<./TikzFigures/thesis-figure3.pdf, id=2822, 187.10904pt x 107.83588pt>
 File: ./TikzFigures/thesis-figure3.pdf Graphic file (type pdf)
 
 <use ./TikzFigures/thesis-figure3.pdf>
 Package pdftex.def Info: ./TikzFigures/thesis-figure3.pdf used on input line 34
 9.
 (pdftex.def)             Requested size: 187.95763pt x 108.33252pt.
-
-
-LaTeX Warning: Citation `HHS' on page 120 undefined on input line 377.
-
-[120 <./TikzFigures/thesis-figure2.pdf> <./TikzFigures/thesis-figure3.pdf>]
-
-LaTeX Warning: Citation `artificial_dissipation' on page 121 undefined on input
- line 379.
-
-<./TikzFigures/thesis-figure4.pdf, id=2516, 193.12651pt x 104.08687pt>
+ [120 <./TikzFigures/thesis-figure2.pdf> <./TikzFigures/thesis-figure3.pdf>]
+<./TikzFigures/thesis-figure4.pdf, id=2873, 193.12651pt x 104.08687pt>
 File: ./TikzFigures/thesis-figure4.pdf Graphic file (type pdf)
 
 <use ./TikzFigures/thesis-figure4.pdf>
@@ -4048,7 +3015,7 @@ Package pdftex.def Info: ./TikzFigures/thesis-figure4.pdf used on input line 38
 7.
 (pdftex.def)             Requested size: 208.84323pt x 112.55664pt.
 
-<./TikzFigures/thesis-figure5.pdf, id=2519, 156.41336pt x 104.08687pt>
+<./TikzFigures/thesis-figure5.pdf, id=2876, 156.41336pt x 104.08687pt>
 File: ./TikzFigures/thesis-figure5.pdf Graphic file (type pdf)
 
 <use ./TikzFigures/thesis-figure5.pdf>
@@ -4056,7 +3023,7 @@ Package pdftex.def Info: ./TikzFigures/thesis-figure5.pdf used on input line 39
 8.
 (pdftex.def)             Requested size: 187.95763pt x 125.08305pt.
 
-<./TikzFigures/thesis-figure6.pdf, id=2520, 156.41336pt x 104.08687pt>
+<./TikzFigures/thesis-figure6.pdf, id=2877, 156.41336pt x 104.08687pt>
 File: ./TikzFigures/thesis-figure6.pdf Graphic file (type pdf)
 
 <use ./TikzFigures/thesis-figure6.pdf>
@@ -4064,7 +3031,7 @@ Package pdftex.def Info: ./TikzFigures/thesis-figure6.pdf used on input line 40
 1.
 (pdftex.def)             Requested size: 187.95763pt x 125.08305pt.
 
-<./TikzFigures/thesis-figure7.pdf, id=2521, 157.99225pt x 108.59471pt>
+<./TikzFigures/thesis-figure7.pdf, id=2878, 157.99225pt x 108.59471pt>
 File: ./TikzFigures/thesis-figure7.pdf Graphic file (type pdf)
 
 <use ./TikzFigures/thesis-figure7.pdf>
@@ -4072,7 +3039,7 @@ Package pdftex.def Info: ./TikzFigures/thesis-figure7.pdf used on input line 40
 4.
 (pdftex.def)             Requested size: 187.95763pt x 129.19615pt.
 
-<data/Compressible_Euler/KH/Snapshots/density_200_307.png, id=2528, 807.015pt x
+<data/Compressible_Euler/KH/Snapshots/density_200_307.png, id=2885, 807.015pt x
  807.015pt>
 File: data/Compressible_Euler/KH/Snapshots/density_200_307.png Graphic file (ty
 pe png)
@@ -4081,7 +3048,7 @@ Package pdftex.def Info: data/Compressible_Euler/KH/Snapshots/density_200_307.p
 ng used on input line 414.
 (pdftex.def)             Requested size: 92.81093pt x 92.81093pt.
 
-<data/Compressible_Euler/KH/Snapshots/density_500_307.png, id=2529, 807.015pt x
+<data/Compressible_Euler/KH/Snapshots/density_500_307.png, id=2886, 807.015pt x
  807.015pt>
 File: data/Compressible_Euler/KH/Snapshots/density_500_307.png Graphic file (ty
 pe png)
@@ -4090,7 +3057,7 @@ Package pdftex.def Info: data/Compressible_Euler/KH/Snapshots/density_500_307.p
 ng used on input line 415.
 (pdftex.def)             Requested size: 92.81093pt x 92.81093pt.
 
-<data/Compressible_Euler/KH/Snapshots/density_exact_307.png, id=2530, 1077.0237
+<data/Compressible_Euler/KH/Snapshots/density_exact_307.png, id=2887, 1077.0237
 4pt x 807.015pt>
 File: data/Compressible_Euler/KH/Snapshots/density_exact_307.png Graphic file (
 type png)
@@ -4105,7 +3072,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 414--417
  []
 
 
-<data/Compressible_Euler/KH/Snapshots/density_200_461.png, id=2531, 807.015pt x
+<data/Compressible_Euler/KH/Snapshots/density_200_461.png, id=2888, 807.015pt x
  807.015pt>
 File: data/Compressible_Euler/KH/Snapshots/density_200_461.png Graphic file (ty
 pe png)
@@ -4114,7 +3081,7 @@ Package pdftex.def Info: data/Compressible_Euler/KH/Snapshots/density_200_461.p
 ng used on input line 418.
 (pdftex.def)             Requested size: 92.81093pt x 92.81093pt.
 
-<data/Compressible_Euler/KH/Snapshots/density_500_461.png, id=2532, 807.015pt x
+<data/Compressible_Euler/KH/Snapshots/density_500_461.png, id=2889, 807.015pt x
  807.015pt>
 File: data/Compressible_Euler/KH/Snapshots/density_500_461.png Graphic file (ty
 pe png)
@@ -4123,7 +3090,7 @@ Package pdftex.def Info: data/Compressible_Euler/KH/Snapshots/density_500_461.p
 ng used on input line 419.
 (pdftex.def)             Requested size: 92.81093pt x 92.81093pt.
 
-<data/Compressible_Euler/KH/Snapshots/density_exact_461.png, id=2533, 1077.0237
+<data/Compressible_Euler/KH/Snapshots/density_exact_461.png, id=2890, 1077.0237
 4pt x 807.015pt>
 File: data/Compressible_Euler/KH/Snapshots/density_exact_461.png Graphic file (
 type png)
@@ -4138,7 +3105,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 418--421
  []
 
 
-<data/Compressible_Euler/KH/Snapshots/density_200_614.png, id=2534, 807.015pt x
+<data/Compressible_Euler/KH/Snapshots/density_200_614.png, id=2891, 807.015pt x
  807.015pt>
 File: data/Compressible_Euler/KH/Snapshots/density_200_614.png Graphic file (ty
 pe png)
@@ -4147,7 +3114,7 @@ Package pdftex.def Info: data/Compressible_Euler/KH/Snapshots/density_200_614.p
 ng used on input line 422.
 (pdftex.def)             Requested size: 92.81093pt x 92.81093pt.
 
-<data/Compressible_Euler/KH/Snapshots/density_500_614.png, id=2535, 807.015pt x
+<data/Compressible_Euler/KH/Snapshots/density_500_614.png, id=2892, 807.015pt x
  807.015pt>
 File: data/Compressible_Euler/KH/Snapshots/density_500_614.png Graphic file (ty
 pe png)
@@ -4156,7 +3123,7 @@ Package pdftex.def Info: data/Compressible_Euler/KH/Snapshots/density_500_614.p
 ng used on input line 423.
 (pdftex.def)             Requested size: 92.81093pt x 92.81093pt.
 
-<data/Compressible_Euler/KH/Snapshots/density_exact_614.png, id=2536, 1077.0237
+<data/Compressible_Euler/KH/Snapshots/density_exact_614.png, id=2893, 1077.0237
 4pt x 807.015pt>
 File: data/Compressible_Euler/KH/Snapshots/density_exact_614.png Graphic file (
 type png)
@@ -4171,7 +3138,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 422--425
  []
 
 
-<data/Compressible_Euler/KH/Snapshots/density_200_768.png, id=2537, 807.015pt x
+<data/Compressible_Euler/KH/Snapshots/density_200_768.png, id=2894, 807.015pt x
  807.015pt>
 File: data/Compressible_Euler/KH/Snapshots/density_200_768.png Graphic file (ty
 pe png)
@@ -4180,7 +3147,7 @@ Package pdftex.def Info: data/Compressible_Euler/KH/Snapshots/density_200_768.p
 ng used on input line 426.
 (pdftex.def)             Requested size: 92.81093pt x 92.81093pt.
 
-<data/Compressible_Euler/KH/Snapshots/density_500_768.png, id=2538, 807.015pt x
+<data/Compressible_Euler/KH/Snapshots/density_500_768.png, id=2895, 807.015pt x
  807.015pt>
 File: data/Compressible_Euler/KH/Snapshots/density_500_768.png Graphic file (ty
 pe png)
@@ -4189,7 +3156,7 @@ Package pdftex.def Info: data/Compressible_Euler/KH/Snapshots/density_500_768.p
 ng used on input line 427.
 (pdftex.def)             Requested size: 92.81093pt x 92.81093pt.
 
-<data/Compressible_Euler/KH/Snapshots/density_exact_768.png, id=2539, 1077.0237
+<data/Compressible_Euler/KH/Snapshots/density_exact_768.png, id=2896, 1077.0237
 4pt x 807.015pt>
 File: data/Compressible_Euler/KH/Snapshots/density_exact_768.png Graphic file (
 type png)
@@ -4219,11 +3186,7 @@ ta/Compressible_Euler/KH/Snapshots/density_500_614.png> <./data/Compressible_Eu
 ler/KH/Snapshots/density_exact_614.png> <./data/Compressible_Euler/KH/Snapshots
 /density_200_768.png> <./data/Compressible_Euler/KH/Snapshots/density_500_768.p
 ng> <./data/Compressible_Euler/KH/Snapshots/density_exact_768.png>]
-
-LaTeX Warning: Citation `thompson1992fourier' on page 124 undefined on input li
-ne 452.
-
-<./TikzFigures/thesis-figure8.pdf, id=2640, 151.02824pt x 109.45692pt>
+<./TikzFigures/thesis-figure8.pdf, id=3000, 151.02824pt x 109.45692pt>
 File: ./TikzFigures/thesis-figure8.pdf Graphic file (type pdf)
 
 <use ./TikzFigures/thesis-figure8.pdf>
@@ -4231,7 +3194,7 @@ Package pdftex.def Info: ./TikzFigures/thesis-figure8.pdf used on input line 46
 1.
 (pdftex.def)             Requested size: 167.07202pt x 121.09276pt.
 
-<./TikzFigures/thesis-figure9.pdf, id=2641, 173.3697pt x 106.86626pt>
+<./TikzFigures/thesis-figure9.pdf, id=3001, 173.3697pt x 106.86626pt>
 File: ./TikzFigures/thesis-figure9.pdf Graphic file (type pdf)
 
 <use ./TikzFigures/thesis-figure9.pdf>
@@ -4239,7 +3202,7 @@ Package pdftex.def Info: ./TikzFigures/thesis-figure9.pdf used on input line 46
 4.
 (pdftex.def)             Requested size: 187.95763pt x 115.86388pt.
 
-<./TikzFigures/thesis-figure10.pdf, id=2642, 151.02824pt x 109.45894pt>
+<./TikzFigures/thesis-figure10.pdf, id=3002, 151.02824pt x 109.45894pt>
 File: ./TikzFigures/thesis-figure10.pdf Graphic file (type pdf)
 
 <use ./TikzFigures/thesis-figure10.pdf>
@@ -4247,7 +3210,7 @@ Package pdftex.def Info: ./TikzFigures/thesis-figure10.pdf used on input line 4
 67.
 (pdftex.def)             Requested size: 167.07202pt x 121.09499pt.
 
-<./TikzFigures/thesis-figure11.pdf, id=2643, 173.3697pt x 105.43289pt>
+<./TikzFigures/thesis-figure11.pdf, id=3003, 173.3697pt x 105.43289pt>
 File: ./TikzFigures/thesis-figure11.pdf Graphic file (type pdf)
 
 <use ./TikzFigures/thesis-figure11.pdf>
@@ -4255,7 +3218,7 @@ Package pdftex.def Info: ./TikzFigures/thesis-figure11.pdf used on input line 4
 70.
 (pdftex.def)             Requested size: 187.95763pt x 114.30983pt.
 
-<./TikzFigures/thesis-figure12.pdf, id=2644, 152.60612pt x 109.57137pt>
+<./TikzFigures/thesis-figure12.pdf, id=3004, 152.60612pt x 109.57137pt>
 File: ./TikzFigures/thesis-figure12.pdf Graphic file (type pdf)
 
 <use ./TikzFigures/thesis-figure12.pdf>
@@ -4263,7 +3226,7 @@ Package pdftex.def Info: ./TikzFigures/thesis-figure12.pdf used on input line 4
 73.
 (pdftex.def)             Requested size: 167.07202pt x 119.9671pt.
 
-<./TikzFigures/thesis-figure13.pdf, id=2645, 169.51932pt x 107.43538pt>
+<./TikzFigures/thesis-figure13.pdf, id=3005, 169.51932pt x 107.43538pt>
 File: ./TikzFigures/thesis-figure13.pdf Graphic file (type pdf)
 
 <use ./TikzFigures/thesis-figure13.pdf>
@@ -4274,7 +3237,7 @@ Package pdftex.def Info: ./TikzFigures/thesis-figure13.pdf used on input line 4
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./TikzFigures/thesis-figure14.pdf, id=2646, 193.12451pt x 106.2108pt>
+<./TikzFigures/thesis-figure14.pdf, id=3006, 193.12451pt x 106.2108pt>
 File: ./TikzFigures/thesis-figure14.pdf Graphic file (type pdf)
 
 <use ./TikzFigures/thesis-figure14.pdf>
@@ -4285,7 +3248,7 @@ Package pdftex.def Info: ./TikzFigures/thesis-figure14.pdf used on input line 4
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./TikzFigures/thesis-figure15.pdf, id=2647, 154.1479pt x 108.09485pt>
+<./TikzFigures/thesis-figure15.pdf, id=3007, 154.1479pt x 108.09485pt>
 File: ./TikzFigures/thesis-figure15.pdf Graphic file (type pdf)
 
 <use ./TikzFigures/thesis-figure15.pdf>
@@ -4293,7 +3256,7 @@ Package pdftex.def Info: ./TikzFigures/thesis-figure15.pdf used on input line 4
 93.
 (pdftex.def)             Requested size: 187.95763pt x 131.80788pt.
 
-<./TikzFigures/thesis-figure16.pdf, id=2648, 156.68338pt x 106.44167pt>
+<./TikzFigures/thesis-figure16.pdf, id=3008, 156.68338pt x 106.44167pt>
 File: ./TikzFigures/thesis-figure16.pdf Graphic file (type pdf)
 
 <use ./TikzFigures/thesis-figure16.pdf>
@@ -4301,7 +3264,7 @@ Package pdftex.def Info: ./TikzFigures/thesis-figure16.pdf used on input line 4
 96.
 (pdftex.def)             Requested size: 187.95763pt x 127.69524pt.
 
-<./TikzFigures/thesis-figure17.pdf, id=2649, 154.1479pt x 106.43965pt>
+<./TikzFigures/thesis-figure17.pdf, id=3009, 154.1479pt x 106.43965pt>
 File: ./TikzFigures/thesis-figure17.pdf Graphic file (type pdf)
 
 <use ./TikzFigures/thesis-figure17.pdf>
@@ -4309,7 +3272,7 @@ Package pdftex.def Info: ./TikzFigures/thesis-figure17.pdf used on input line 4
 99.
 (pdftex.def)             Requested size: 187.95763pt x 129.78957pt.
 
-<./TikzFigures/thesis-figure18.pdf, id=2650, 152.6232pt x 106.44267pt>
+<./TikzFigures/thesis-figure18.pdf, id=3010, 152.6232pt x 106.44267pt>
 File: ./TikzFigures/thesis-figure18.pdf Graphic file (type pdf)
 
 <use ./TikzFigures/thesis-figure18.pdf>
@@ -4317,7 +3280,7 @@ Package pdftex.def Info: ./TikzFigures/thesis-figure18.pdf used on input line 5
 02.
 (pdftex.def)             Requested size: 187.95763pt x 131.09586pt.
 
-<./TikzFigures/thesis-figure19.pdf, id=2651, 154.1479pt x 106.44066pt>
+<./TikzFigures/thesis-figure19.pdf, id=3011, 154.1479pt x 106.44066pt>
 File: ./TikzFigures/thesis-figure19.pdf Graphic file (type pdf)
 
 <use ./TikzFigures/thesis-figure19.pdf>
@@ -4325,7 +3288,7 @@ Package pdftex.def Info: ./TikzFigures/thesis-figure19.pdf used on input line 5
 05.
 (pdftex.def)             Requested size: 187.95763pt x 129.79082pt.
 
-<./TikzFigures/thesis-figure20.pdf, id=2652, 152.6232pt x 106.44267pt>
+<./TikzFigures/thesis-figure20.pdf, id=3012, 152.6232pt x 106.44267pt>
 File: ./TikzFigures/thesis-figure20.pdf Graphic file (type pdf)
 
 <use ./TikzFigures/thesis-figure20.pdf>
@@ -4336,7 +3299,7 @@ Package pdftex.def Info: ./TikzFigures/thesis-figure20.pdf used on input line 5
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./TikzFigures/thesis-figure21.pdf, id=2653, 162.5523pt x 109.23811pt>
+<./TikzFigures/thesis-figure21.pdf, id=3013, 162.5523pt x 109.23811pt>
 File: ./TikzFigures/thesis-figure21.pdf Graphic file (type pdf)
 
 <use ./TikzFigures/thesis-figure21.pdf>
@@ -4347,7 +3310,7 @@ Package pdftex.def Info: ./TikzFigures/thesis-figure21.pdf used on input line 5
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./TikzFigures/thesis-figure22.pdf, id=2654, 160.42836pt x 117.97374pt>
+<./TikzFigures/thesis-figure22.pdf, id=3014, 160.42836pt x 117.97374pt>
 File: ./TikzFigures/thesis-figure22.pdf Graphic file (type pdf)
 
 <use ./TikzFigures/thesis-figure22.pdf>
@@ -4355,7 +3318,7 @@ Package pdftex.def Info: ./TikzFigures/thesis-figure22.pdf used on input line 5
 25.
 (pdftex.def)             Requested size: 187.95763pt x 138.22131pt.
 
-<./TikzFigures/thesis-figure23.pdf, id=2655, 151.24605pt x 118.7878pt>
+<./TikzFigures/thesis-figure23.pdf, id=3015, 151.24605pt x 118.7878pt>
 File: ./TikzFigures/thesis-figure23.pdf Graphic file (type pdf)
 
 <use ./TikzFigures/thesis-figure23.pdf>
@@ -4367,41 +3330,19 @@ Package pdftex.def Info: ./TikzFigures/thesis-figure23.pdf used on input line 5
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-LaTeX Warning: Citation `yu2008combustion' on page 124 undefined on input line 
-536.
-
-
-LaTeX Warning: Citation `garby2013simulations' on page 124 undefined on input l
-ine 536.
-
-
-LaTeX Warning: Citation `smith2008computational' on page 124 undefined on input
- line 536.
-
-
-LaTeX Warning: Citation `frezzotti2015determination' on page 124 undefined on i
-nput line 536.
-
-
-LaTeX Warning: Citation `frezzotti2017numerical' on page 124 undefined on input
- line 536.
-
-
-LaTeX Warning: Citation `frezzotti2018quasi' on page 124 undefined on input lin
-e 536.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [124]
-<./TikzFigures/thesis-figure24.pdf, id=2671, 334.63521pt x 102.81813pt>
+<./TikzFigures/thesis-figure24.pdf, id=3044, 334.63521pt x 102.81813pt>
 File: ./TikzFigures/thesis-figure24.pdf Graphic file (type pdf)
 
 <use ./TikzFigures/thesis-figure24.pdf>
 Package pdftex.def Info: ./TikzFigures/thesis-figure24.pdf used on input line 5
 45.
 (pdftex.def)             Requested size: 375.91525pt x 115.5038pt.
-
+ [125 <./TikzFigures/thesis-figure8.pdf> <./TikzFigures/thesis-figure9.pdf> <./
+TikzFigures/thesis-figure10.pdf> <./TikzFigures/thesis-figure11.pdf> <./TikzFig
+ures/thesis-figure12.pdf> <./TikzFigures/thesis-figure13.pdf>]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -4414,19 +3355,15 @@ Overfull \hbox (0.54742pt too wide) in paragraph at lines 554--569
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [125 <./TikzFigures/thesis-figure8.pdf> <./TikzFigures/thesis-figure9.pdf> <./
-TikzFigures/thesis-figure10.pdf> <./TikzFigures/thesis-figure11.pdf> <./TikzFig
-ures/thesis-figure12.pdf> <./TikzFigures/thesis-figure13.pdf>]
-Underfull \vbox (badness 1019) has occurred while \output is active []
+Underfull \vbox (badness 1527) has occurred while \output is active []
 
  [126 <./TikzFigures/thesis-figure14.pdf>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Overfull \vbox (3.42099pt too high) has occurred while \output is active []
 
- [127 <./TikzFigures/thesis-figure15.pdf> <./TikzFigures/thesis-figure16.pdf> <
-./TikzFigures/thesis-figure17.pdf> <./TikzFigures/thesis-figure18.pdf> <./TikzF
-igures/thesis-figure19.pdf> <./TikzFigures/thesis-figure20.pdf>]
+
+[127 <./TikzFigures/thesis-figure15.pdf> <./TikzFigures/thesis-figure16.pdf> <.
+/TikzFigures/thesis-figure17.pdf> <./TikzFigures/thesis-figure18.pdf> <./TikzFi
+gures/thesis-figure19.pdf> <./TikzFigures/thesis-figure20.pdf>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [128 <./TikzFigures/thesis-figure21.pdf> <./TikzFigures/thesis-figure22.pdf> <
@@ -4434,31 +3371,10 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [129]
-
-LaTeX Warning: Citation `frezzotti2017numerical' on page 130 undefined on input
- line 660.
-
-
-LaTeX Warning: Citation `frezzotti2018quasi' on page 130 undefined on input lin
-e 660.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [130]
-
-LaTeX Warning: Citation `Wang:255719' on page 131 undefined on input line 684.
-
-
-LaTeX Warning: Citation `sjogreen2010skew' on page 131 undefined on input line 
-690.
-
-[131]
-
-LaTeX Warning: Citation `jiang1996efficient' on page 132 undefined on input lin
-e 707.
-
-<./TikzFigures/thesis-figure25.pdf, id=2973, 144.60324pt x 112.58963pt>
+[131] <./TikzFigures/thesis-figure25.pdf, id=3352, 144.60324pt x 112.58963pt>
 File: ./TikzFigures/thesis-figure25.pdf Graphic file (type pdf)
 
 <use ./TikzFigures/thesis-figure25.pdf>
@@ -4466,7 +3382,7 @@ Package pdftex.def Info: ./TikzFigures/thesis-figure25.pdf used on input line 7
 13.
 (pdftex.def)             Requested size: 187.95763pt x 146.35445pt.
 
-<./TikzFigures/thesis-figure26.pdf, id=2974, 151.83125pt x 115.62799pt>
+<./TikzFigures/thesis-figure26.pdf, id=3353, 151.83125pt x 115.62799pt>
 File: ./TikzFigures/thesis-figure26.pdf Graphic file (type pdf)
 
 <use ./TikzFigures/thesis-figure26.pdf>
@@ -4474,7 +3390,7 @@ Package pdftex.def Info: ./TikzFigures/thesis-figure26.pdf used on input line 7
 16.
 (pdftex.def)             Requested size: 187.95763pt x 143.14255pt.
 
-<./TikzFigures/thesis-figure27.pdf, id=2975, 152.4907pt x 108.89883pt>
+<./TikzFigures/thesis-figure27.pdf, id=3354, 152.4907pt x 108.89883pt>
 File: ./TikzFigures/thesis-figure27.pdf Graphic file (type pdf)
 
 <use ./TikzFigures/thesis-figure27.pdf>
@@ -4482,7 +3398,7 @@ Package pdftex.def Info: ./TikzFigures/thesis-figure27.pdf used on input line 7
 19.
 (pdftex.def)             Requested size: 187.95763pt x 134.23055pt.
 
-<./TikzFigures/thesis-figure28.pdf, id=2976, 156.73958pt x 113.57832pt>
+<./TikzFigures/thesis-figure28.pdf, id=3355, 156.73958pt x 113.57832pt>
 File: ./TikzFigures/thesis-figure28.pdf Graphic file (type pdf)
 
 <use ./TikzFigures/thesis-figure28.pdf>
@@ -4500,31 +3416,37 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 No file main/ch8_conc.tex.
 \openout2 = `tail/biblio.aux'.
 
-(./tail/biblio.tex
-No file thesis.bbl.
-)
+(./tail/biblio.tex (./thesis.bbl [134
+
+
+
+
+
+] [135] [136] [137] [138] [139] [140]
+Underfull \hbox (badness 1565) in paragraph at lines 468--472
+[]\T1/put/m/n/10.95 (+20) F. Ne-gri, A. Man-zoni, and D. Am-sallem.  Ef-fi-cien
+t model re-duc-tion of
+ []
+
+[141] [142])) [143]
 \openout2 = `tail/cv.aux'.
 
- (./tail/cv.tex [134
+ (./tail/cv.tex [144
 
 
 
-
-
-
-
-] <tail/cv.pdf, id=3065, 597.23125pt x 845.1575pt>
+]
+<tail/cv.pdf, id=3489, 597.23125pt x 845.1575pt>
+File: tail/cv.pdf Graphic file (type pdf)
+ <use tail/cv.pdf>
+Package pdftex.def Info: tail/cv.pdf used on input line 5.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
 File: tail/cv.pdf Graphic file (type pdf)
 
 <use tail/cv.pdf>
 Package pdftex.def Info: tail/cv.pdf used on input line 5.
 (pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
-File: tail/cv.pdf Graphic file (type pdf)
- <use tail/cv.pdf>
-Package pdftex.def Info: tail/cv.pdf used on input line 5.
-(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
-
-<tail/cv.pdf, id=3068, page=1, 597.23125pt x 845.1575pt>
+ <tail/cv.pdf, id=3492, page=1, 597.23125pt x 845.1575pt>
 File: tail/cv.pdf Graphic file (type pdf)
 
 <use tail/cv.pdf, page 1>
@@ -4547,8 +3469,8 @@ File: tail/cv.pdf Graphic file (type pdf)
  <use tail/cv.pdf, page 1>
 Package pdftex.def Info: tail/cv.pdf, page1 used on input line 5.
 (pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
- [135 <./tail/cv.pdf>]
-<tail/cv.pdf, id=3081, page=2, 597.23125pt x 845.1575pt>
+ [145 <./tail/cv.pdf>]
+<tail/cv.pdf, id=3505, page=2, 597.23125pt x 845.1575pt>
 File: tail/cv.pdf Graphic file (type pdf)
 
 <use tail/cv.pdf, page 2>
@@ -4563,7 +3485,7 @@ File: tail/cv.pdf Graphic file (type pdf)
 Package pdftex.def Info: tail/cv.pdf, page2 used on input line 5.
 (pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
 
-[136 <./tail/cv.pdf>])
+[146 <./tail/cv.pdf>])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 62.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 62.
  (./thesis.aux (./head/abstracts.aux)
@@ -4574,7 +3496,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 62.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 62.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 62.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 70D9C24244F69E9FB52F32291464837D;5112.
+(rerunfilecheck)             Checksum: 32D793C0FFB13D263B65CAFED2995B1F;5112.
 
 
 LaTeX Warning: There were undefined references.
@@ -4585,11 +3507,11 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 62.
  ) 
 Here is how much of TeX's memory you used:
- 28238 strings out of 492995
- 515830 string characters out of 6132705
- 745163 words of memory out of 5000000
- 30126 multiletter control sequences out of 15000+600000
- 160188 words of font info for 291 fonts, out of 8000000 for 9000
+ 28378 strings out of 492995
+ 518753 string characters out of 6132705
+ 749750 words of memory out of 5000000
+ 30131 multiletter control sequences out of 15000+600000
+ 155489 words of font info for 297 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,18n,77p,1609b,1317s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/t
@@ -4627,10 +3549,10 @@ sr/local/texlive/2017/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/local/te
 xlive/2017/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2017
 /texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2017/texmf-dis
 t/fonts/type1/urw/times/utmri8a.pfb>
-Output written on thesis.pdf (144 pages, 6334738 bytes).
+Output written on thesis.pdf (154 pages, 6377814 bytes).
 PDF statistics:
- 3320 PDF objects out of 3580 (max. 8388607)
- 2971 compressed objects within 30 object streams
- 687 named destinations out of 1000 (max. 500000)
- 38434 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 3769 PDF objects out of 4296 (max. 8388607)
+ 3405 compressed objects within 35 object streams
+ 809 named destinations out of 1000 (max. 500000)
+ 37922 words of extra memory for PDF output out of 42996 (max. 10000000)
 

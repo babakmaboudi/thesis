@@ -46,10 +46,10 @@
 \contentsline {section}{\numberline {6.1}Dissipative Hamiltonian Systems and Hamiltonian Extensions}{90}{section.6.1}
 \contentsline {section}{\numberline {6.2}The Reduced Dissipative Hamiltonian Method}{93}{section.6.2}
 \contentsline {section}{\numberline {6.3}Numerical Results}{96}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1}Dissipative wave equation}{96}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.1}Dissipative wave equation}{97}{subsection.6.3.1}
 \contentsline {subsection}{\numberline {6.3.2}The sine-Gordon equation}{100}{subsection.6.3.2}
 \contentsline {subsection}{\numberline {6.3.3}Port-Hamiltonian Systems}{102}{subsection.6.3.3}
-\contentsline {section}{\numberline {6.4}Conclusion}{105}{section.6.4}
+\contentsline {section}{\numberline {6.4}Conclusion}{106}{section.6.4}
 \contentsline {chapter}{\numberline {7}Conservative Model Order Reductin of Fluid Flow}{107}{chapter.7}
 \contentsline {section}{\numberline {7.1}Skew Symmetric and Centered Schemes for Fluid Flows}{108}{section.7.1}
 \contentsline {subsection}{\numberline {7.1.1}Conservation Laws}{108}{subsection.7.1.1}
@@ -64,5 +64,5 @@
 \contentsline {subsection}{\numberline {7.3.3}1D Shock problem}{121}{subsection.7.3.3}
 \contentsline {subsection}{\numberline {7.3.4}Continuous Variable Resonance Combustor}{124}{subsection.7.3.4}
 \contentsline {section}{\numberline {7.4}Conclusions}{133}{section.7.4}
-\contentsline {chapter}{Bibliography}{134}{section.7.4}
-\contentsline {chapter}{Curriculum Vitae}{135}{section*.35}
+\contentsline {chapter}{Bibliography}{143}{chapter*.35}
+\contentsline {chapter}{Curriculum Vitae}{145}{section*.36}
