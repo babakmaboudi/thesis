@@ -46,14 +46,17 @@ It is easily verified that $P^{\text{symp}}_{\mathcal A}$ is idempotent, i.e., t
 	P^{\text{symp}}_{\mathcal A} = A \mathbb J_{2k}^T A^T \mathbb J_{2n}.
 \end{equation}
 The matrix $A^+ := \mathbb J_{2k}^T A^T \mathbb J_{2n}$ is known as the \emph{symplectic inverse} of $A$ in canonical coordinates. We summarize the properties of $A^+$ in the following proposition.
+\edit{
 \begin{proposition} \label{p1.theorem:1}
 \cite{doi:10.1137/140978922} Let $A\in \mathbb R^{2n\times 2k}$ be a symplectic matrix in a canonical coordinate system. With this notation the symplectic projection takes the form $P^{\text{symp}}_{\mathcal A} = AA^+$.The symplectic inverse of $A$ satisfies the following
 \begin{enumerate} [label=(\alph*)]
-\item $(A^+)^T = A$ and therefore is a symplectic matrix.
 \item $A^+A = I$.
+\item $\left(\left(\left(A^+\right)^T\right)^+\right)^T = A$.
+\item $(A^+)^T$ is a symplectic matrix.
+\item If $A$ is ortho-symplectic then $(A^+)^T = A$.
 \end{enumerate}
 \end{proposition}
-
+}
 \begin{proof}
 The proof follows immediately from symplecticity of $A$.
 \end{proof}

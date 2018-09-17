@@ -27,11 +27,12 @@ Recall the formulation of a Hamiltonian system defined on a $2n$-dimensional sym
 	\end{aligned}
 	\right.
 \end{equation}
-Here, $H: \mathcal Z \to \mathbb R$ is the Hamiltonian and $z\in \mathcal Z$ is the state vector. Suppose that $\mathcal Z$ is equipped with an inner-product $<\cdot,\cdot>_X : \mathcal Z \times \mathcal Z \to \mathbb R$ such that $<a,b>_X = a^TXb$, for all $a,b\in\mathcal Z$ and some symmetric and positive-definite matrix $X$. Note that $Z$ is not in general orthonormal with respect to $<,>_X$. As the matrix form of $\Omega$ is $\mathbb J_{2n}$, \Cref{theorem:2.12} implies that $Z$ is orthonormal with respect to the Euclidean inner product. Note that $z\in \mathcal Z$ implies that we can find $\alpha_i,\alpha'_i \in \mathbb R$, for $i=1,\dots,n$, such that $z = \alpha_i e_i + \alpha'_i f_i$. We have
+Here, $H: \mathcal Z \to \mathbb R$ is the Hamiltonian and \edit{$z\in \mathcal Z$ is the state vector.} Suppose that $\mathcal Z$ is equipped with an inner-product $<\cdot,\cdot>_X : \mathcal Z \times \mathcal Z \to \mathbb R$ such that $<a,b>_X = a^TXb$, for all $a,b\in\mathcal Z$ and some symmetric and positive-definite matrix $X$. $Z$ is not in general orthonormal with respect to $<,>_X$. As the matrix form of $\Omega$ is $\mathbb J_{2n}$, \Cref{theorem:2.12} implies that $Z$ is orthonormal with respect to the Euclidean inner product. Note that $z\in \mathcal Z$ implies that we can find $\alpha_i,\alpha'_i \in \mathbb R$, for $i=1,\dots,n$, such that $z = \alpha_i e_i + \alpha'_i f_i$. It yields
 \begin{equation}
 	z = \alpha_i e_i + \alpha'_i f_i = \alpha_i X^{1/2} X^{-1/2}e_i + X^{1/2} X^{-1/2} \alpha'_i f_i.
 \end{equation}
-By defining basis vectors $\tilde e_i = X^{-1/2}e_i$, $\tilde e_i = X^{-1/2}f_i$, and basis $\tilde Z = \{ \tilde e_i , \tilde f_i \}_{i=1}^{n}$ with $\tilde z$ the state of a vector in this basis, we recover
+\edit{
+By defining basis vectors $\tilde e_i = X^{-1/2}e_i$, $\tilde e_i = X^{-1/2}f_i$, and $\tilde Z = \{ \tilde e_i , \tilde f_i \}_{i=1}^{n}$ with $\tilde z$ a state of a vector in this basis, we recover
 \begin{equation}
 	z = X^{1/2}\left( \alpha_i \tilde e_i + \alpha'_i \tilde f_i \right) = X^{1/2} \tilde z.
 \end{equation}
@@ -39,15 +40,15 @@ We verify that $\tilde Z$ forms an orthonormal basis with respect to $<\cdot,\cd
 \begin{equation}
 	<\tilde e_i, \tilde f_j>_X = \tilde e_i^T X \tilde f_j = e_i^T X^{-1/2} X X^{-1/2} f_j = e_i^T f_j = 0.
 \end{equation}
-Here we used the orthonormality of $Z$. Similarly we can show that $<\tilde e_i, \tilde e_j>_X = \delta_{ij}$ and $<\tilde f_i, \tilde f_j>_X = \delta_{ij}$, for $i=1,\dots,n$. Furthermore, we can verify that $\tilde Z$ is a symplectic basis with respect to the symplectic form $\Omega_{J_{2n}}(a,b) = a^T J_{2n} b $, with $J_{2n} = X^{1/2} \mathbb J_{2n}X^{1/2}$.
+Here we used the orthonormality of $Z$. Similarly we can show that $<\tilde e_i, \tilde e_j>_X = \delta_{ij}$ and $<\tilde f_i, \tilde f_j>_X = \delta_{ij}$, for $i=1,\dots,n$. Furthermore, we can verify that $\tilde Z$ is a symplectic basis with respect to the symplectic form $\Omega_{J_{2n}}(a,b) = a^T J_{2n} b $, with $J_{2n} = X^{1/2} \mathbb J_{2n}X^{1/2}$
 \begin{equation}
-	\Omega_{J_{2n}}(\tilde e_i,\tilde f_j) = \tilde e_i^T J_{2n} \tilde f_j = e_i^T X^{-1/2} X^{1/2} \mathbb J_{2n} X^{1/2} X^{-1/2} f_j = e_i^T \mathbb J_{2n} f_j = \Omega_{\mathbb J_{2n}} = \delta_{ij}.
+	\Omega_{J_{2n}}(\tilde e_i,\tilde f_j) = \tilde e_i^T J_{2n} \tilde f_j = e_i^T X^{-1/2} X^{1/2} \mathbb J_{2n} X^{1/2} X^{-1/2} f_j = e_i^T \mathbb J_{2n} f_j  = \delta_{ij}.
 \end{equation}
-Here we used symplecticity of $Z$ with respect to $\mathbb J_{2n}$. Similarly we can verify that $\Omega_{J_{2n}}(\tilde e_i,\tilde e_j) = \Omega_{J_{2n}}(\tilde f_i,\tilde f_j) = 0$, for $i=1,\dots,n$. Using the state transformation $z = X^{1/2} \tilde z$, the Hamiltonian system \eqref{p1.eq:nommor.0} takes the form \footnote{substituting $z = X^{1/2}\tilde z$ in \eqref{p1.eq:nommor.0} yields
+Here we used symplecticity \footnote{$\Omega_{\mathbb J_{2n}}(e_i,f_i) = e_i^T \mathbb J_{2n} f_j$} of $Z$ with respect to $\mathbb J_{2n}$. Similarly we can verify that $\Omega_{J_{2n}}(\tilde e_i,\tilde e_j) = \Omega_{J_{2n}}(\tilde f_i,\tilde f_j) = 0$, for $i=1,\dots,n$. Using the state transformation $z = X^{1/2} \tilde z$, the Hamiltonian system \eqref{p1.eq:nommor.0} takes the form \footnote{substituting $z = X^{1/2}\tilde z$ in \eqref{p1.eq:nommor.0} yields
 \[
 \begin{aligned}
-	&\frac{d}{dt} X^{1/2}\tilde z = \mathbb J_{2n} \nabla_z H(X^{1/2}\tilde z) = \mathbb - J^{(-1)}_{2n} X^{-1/2} \nabla_{\tilde z} H(X^{1/2}\tilde z) \\
-	&\qquad \Longrightarrow \frac{d}{dt} \tilde z = X^{-1/2} J^{(-1)}_{2n} X^{-1/2} \nabla_{\tilde z} (-H(X^{1/2}\tilde z))
+	&\frac{d}{dt} X^{1/2}\tilde z = \mathbb J_{2n} \nabla_z H(X^{1/2}\tilde z) = - \mathbb J^{-1}_{2n} X^{-1/2} \nabla_{\tilde z} H(X^{1/2}\tilde z) \\
+	&\qquad \Longrightarrow \frac{d}{dt} \tilde z = X^{-1/2} J^{-1}_{2n} X^{-1/2} \nabla_{\tilde z} (-H(X^{1/2}\tilde z))
 \end{aligned}
 \]}
 \begin{equation} \label{p1.eq:nommor.0.1}
@@ -59,7 +60,7 @@ Here we used symplecticity of $Z$ with respect to $\mathbb J_{2n}$. Similarly we
 	\right.	
 \end{equation}
 where $H_X = -H(X^{1/2}\tilde z)$.
-
+}
 \begin{definition}
 A matrix $\tilde A\in \mathbb R^{2n\times 2k}$ is called \emph{$J_{2n}$-symplectic}, if it transforms $J_{2n}$ into the standard symplectic matrix $\mathbb J_{2k}$, i.e.,
 \begin{equation} \label{p1.eq:nommor.0.3}
@@ -88,7 +89,9 @@ Let $\tilde A\in \mathbb R^{2n\times 2k}$ be a $J_{2n}$-symplectic basis where $
 It is straightforward to show all statements using the definition of a symplectic basis.
 \end{proof}
 
-Note that the fundamental in \Cref{p1.theorem:1} we recover $(\tilde A^+)^T \neq \tilde A$ when $A$ is ortho-symplectic with respect to the Euclidean inner-product. However, when $\tilde A$ is orthonormal with respect to $<,>_X$ this property does not hold. This is particularly important when constructing a basis for nonlinear terms in \Cref{sec:normmor.3}.
+\edit{
+Note statement (d) in \Cref{p1.theorem:1} does not hold in the generalized setting, i.e., when $\tilde A$ is orthonormal with respect to $<,>_X$, $(\tilde A^+)^T \neq \tilde A$. This is particularly important when constructing a basis for nonlinear terms in \Cref{sec:normmor.3}.
+}
 
 In this chapter, we indicate a non-standard symplectic matrix/transformation/subspace with ``\textasciitilde'' overscript. We are now ready to motivate the choice of the basis $\tilde Z$ in \eqref{p1.eq:nommor.0.1}.
 
@@ -97,13 +100,13 @@ A full rank $J_{2n}$-symplectic linear transformation $\tilde A \in \mathbb R^{2
 \end{lemma}
 
 \begin{proof}
-Let $\tilde A\in \mathbb R^{2n\times 2n}$ be a $J_{2n}$-symplectic mapping. We define the change of coordinates $\tilde z = \tilde Ay$. Note that since $\tilde A$ is a square matrix, we can indeed require this relation to be an equality. This transforms \eqref{p1.eq:nommor.0.1} into
+Let $\tilde A\in \mathbb R^{2n\times 2n}$ be a $J_{2n}$-symplectic mapping. We define the state transformation $\tilde z = \tilde Ay$. Note that since $\tilde A$ is a square matrix, we can indeed require this relation to be an equality. This transforms \eqref{p1.eq:nommor.0.1} into
 \begin{equation} \label{p1.eq:nommor.0.5}
-	\frac{d}{dt} y = \tilde A^+ J_{2n}^{-1} (\tilde A^+)^T \nabla_y H(X^{1/2}\tilde Ay).
+	\frac{d}{dt} y = \tilde A^+ J_{2n}^{-1} (\tilde A^+)^T \nabla_y H_X(\tilde Ay).
 \end{equation}
 However, \Cref{thm:2.1} indicates that $(\tilde A^+)^T$ is $J_{2n}^{-1}$-symplectic, thus,
 \begin{equation} \label{p1.eq:nommor.0.6}
-	\frac{d}{dt} y = \mathbb J_{2n} \nabla_y H(X^{1/2}\tilde Ay).
+	\frac{d}{dt} y = \mathbb J_{2n} \nabla_y H_X(\tilde Ay).
 \end{equation}
 \end{proof}
 Note that even though \eqref{p1.eq:nommor.0} and \eqref{p1.eq:nommor.0.6} are both in the standard form, they are not identical. Furthermore, the form of \eqref{p1.eq:nommor.0.1} is preferred from the MOR standpoint, since an orthonormal basis with respect to $<,>_X$ can be constructed such that it preserves the Hamiltonian form (\Cref{thm:2.1}). 
@@ -114,13 +117,13 @@ Suppose that a $2k$-dimensional linear vector space $\tilde{ \mathcal A}_{2k}$, 
 \end{equation}
 We require $\tilde A_{2k}$ be a $J_{2n}$-symplectic basis and approximate a solution to \eqref{p1.eq:nommor.0.1} as $\tilde z \approx \tilde A_{2k} y$ to write
 \begin{equation} \label{p1.eq:nommor.0.8}
-	\tilde A_{2k} \frac d {dt} y = J^{-1}_{2n} (\tilde A_{2k}^+)^T \nabla_{y} H(X^{1/2}\tilde A_{2k}y) + J^{-1}_{2n} r(z).
+	\tilde A_{2k} \frac d {dt} y = J^{-1}_{2n} (\tilde A_{2k}^+)^T \nabla_{y} H_X(\tilde A_{2k}y) + J^{-1}_{2n} r(z).
 \end{equation}
 Assuming that the error vector $r$ is symplectically orthogonal to $\tilde A_{2k}$ and using \Cref{thm:2.1}, we recover
 \begin{equation}
 	\left\{
 	\begin{aligned}
-		\frac d {dt} y &= \mathbb J_{2k} \nabla_{y} H(X^{1/2}\tilde A_{2k} y), \\
+		\frac d {dt} y &= \mathbb J_{2k} \nabla_{y} H_X(\tilde A_{2k} y), \\
 		y(0) &= \tilde A_{2k}^+ \tilde z_0.
 	\end{aligned}
 	\right.	
@@ -130,15 +133,17 @@ The projection operator that projects members of $\tilde Z$ onto $\tilde {\mathc
 	P_{X,\tilde A_{2k}}^{\text{symp}}(\tilde z) = \tilde A_{2k} \tilde A_{2k}^+ \tilde z.
 \end{equation}
 Finally, as the final goal is to approximate $z$, the solution to \eqref{p1.eq:nommor.0}, we write
+\edit{
 \begin{equation} \label{p1.eq:nommor.0.10}
 	\left\{
 	\begin{aligned}
 		\frac{d}{dt} y &= \mathbb J_{2k} \nabla_y \tilde H(y), \\
-		y(0) &= \mathbb J_{2n}^T A^T X \mathbb J_{2n} X z_0.
+		y(0) &= \mathbb J_{2n}^T A^T X \mathbb J_{2n} z_0.
 	\end{aligned}
 	\right.	
 \end{equation}
-Where $A_{2k} = X^{1/2} \tilde A_{2k}$ and $\tilde H(y) = H(XA_{2k}y)$ is the reduced Hamiltonian. Accordingly, the projection operator $P_{X,A_{2k}}^\text{symp}:\mathcal Z\to \mathcal A_{2k}$ can be written as
+}
+Where $A_{2k} = X^{-1/2} \tilde A_{2k}$ and $\tilde H(y) = -H(XA_{2k}y)$ is the reduced Hamiltonian. Accordingly, the projection operator $P_{X,A_{2k}}^\text{symp}:\mathcal Z\to \mathcal A_{2k}$ can be written as
 \begin{equation} \label{p1.eq:nommor.0.11}
 	P_{X,A_{2k}}^\text{symp}(z) = X^{-1/2} \tilde A_{2k} \tilde A_{2k}^+ X^{1/2} z = A_{2k} \mathbb J_{2k}^T A_{2k}^T X \mathbb J_{2n} X z.
 \end{equation}
@@ -179,19 +184,32 @@ Here $\tilde S = X^{1/2} S$, $\tilde A = X^{1/2} A$ and $\tilde A^+ = \mathbb J_
 where $P^\text{symp}_{X,\tilde A} = \tilde A \tilde A^+$ is the symplectic projection with respect to the $X$-norm onto $\mathcal A$, the column span of $A$. At first glance, the minimization (\ref{eq:normmor.5}) looks similar to (\ref{p1.eq:SyMo:8}). However, since $\tilde A$ is $J_{2n}$-symplectic, and the projection operator depends on $X$, we need to seek an alternative approach to find a near optimal solution to (\ref{eq:normmor.5}). 
 
 Direct approaches for solving (\ref{eq:normmor.5}) are impractical. Furthermore, there are no known SVD-type methods to solve (\ref{eq:normmor.5}). However, the greedy generation of the symplectic basis can be generalized to generate a near optimal basis $\tilde A$. The generalized greedy method is discussed in \Cref{sec:normmor.2}.
-
+\edit{
 \section{Stability Conservation} 
-We discussed in \Cref{p1.sec:SyMo:1} that a Hamiltonian reduced system, constructed by the projection $P^{\text{symp}}_{I,A}$, preserves the stability of stable equilibrium points of \eqref{p1.eq:SyMo:4}, and therefore, preserves the overall dynamics. In this section, we establish that the stability of the equilibrium points is also conserved using the projection operator $P^{\text{symp}}_{X,\tilde A}$. We recall the Lyapunov stability condition.
+We discussed in \Cref{p1.sec:SyMo:1} that a Hamiltonian reduced system, constructed by the projection $P^{\text{symp}}_{I,A}$, preserves the stability of stable equilibrium points of \eqref{p1.eq:SyMo:4}, and therefore, preserves the overall dynamics. In this section, we establish that the stability of the equilibrium points is also conserved using the projection operator $P^{\text{symp}}_{X,\tilde A}$. %Recall the Lyapunov stability condition in \Cref{p1.proposition:SyMo:1}.
+		
+%Consider a dynamical system with a Lyapunov stable equilibrium point $z_e$ with a smooth Lyapunov function $W\in C^2$ where $z_e$ is a strict local minimum of $W$. Smoothness of $W$ implies that there is a bounded open neighborhood $S$ of an equilibrium point $z_e$ such that $\inf_{z\in \partial S} W(z)=c<\infty$, $W(z) < c$ and $W(z_e)<W(z)$, for any $z\in S$ \footnote{We can always consider a small ball $B\subset S$ centered at $z_e$, such that $W(z) < \partial S$, for all $z\in B$. We then restrict $S$ to only $B$ so that $W(z) < c$ for any $z\in S$.}.
 
-\begin{proposition} \label{prop:new1}
-\cite{bhatia2002stability} An equilibrium point $z_e\in \mathbb R^{2n}$ is Lyapunov stable if there exists a scalar function $W:\mathbb R^{2n} \to \mathbb R$ such that $\nabla W(z_e) = 0$, $\nabla^2 W(z_e)$ is positive definite, and that for any trajectory $z(t)$ defined in the neighborhood of $z_e$, we have $\frac{d}{dt} W(z(t))\leq 0$. Here $\nabla^2 W$ is the Hessian matrix of $W$, and $W$ is commonly referred to as a Lyapunov function.
-\end{proposition}
-
-Note that the proof of \Cref{p1.theorem:SyMo:1} only requires the conservation of the Hamiltonian and the positive definiteness of the Hamiltonian $H$. Since the reduced system in the generalized setting is also a Hamiltonian system, the proof naturally generalizes. We state this in the following theorem.
-
-\begin{theorem}
-\cite{doi:10.1137/17M1111991} Consider a Hamiltonian system of the form \eqref{p1.eq:nommor.0} together with the reduced system \eqref{p1.eq:nommor.0.10}. Suppose that $z_e$ is an equilibrium point for \eqref{p1.eq:nommor.0} and that $y_e = \mathbb J_{2k}^T A^T X \mathbb J_{2n} X z_e$. If $H$ (or $-H$) is a Lyapunov function satisfying \Cref{prop:new1}, then $z_e$ and $y_e$ are Lyapunov stable equilibrium points for \eqref{p1.eq:nommor.0} and \eqref{p1.eq:nommor.0.10}, respectively.
+\begin{theorem} \label{theorem:ch5.1}
+\cite{doi:10.1137/17M1111991} Consider a Hamiltonian system of the form \eqref{p1.eq:nommor.0} with a Hamiltonian $H\in C^{2}$  together with the reduced system \eqref{p1.eq:nommor.0.10}. Suppose that $z_e$ is a strict local minimum of $H$. Furthermore, suppose that $H$ (or $-H$) is a Lyapunov function satisfying \Cref{p1.proposition:SyMo:1}. If $\text{Range}(XA)\cap S \neq \emptyset$, then the reduced system \eqref{p1.eq:nommor.0.10} has a stable equilibrium point in $\text{Range}(XA)\cap S$.
 \end{theorem}
+
+\begin{proof}
+Assume that $H$ satisfies the conditions in \Cref{p1.proposition:SyMo:1} for a Lyapunov function. Since $z_e$ is a local minimum of $H$, smoothness of $H$ implies that $\nabla_z H(z_e) = 0$, and threfore $z_e$ is a Lyapunov stable point for \eqref{p1.eq:nommor.0}. Furthermore, since $z_e$ is a strict local minimum, we can find an open ball $S$ of $z_e$ such that $H(z_e)< H(z)$, for any $z \in \overline S$ and $z\neq z_e$, where $\overline S$ is the closure of $B$. Note that $\overline S$ is bounded. Define $c := \inf_{z\in \partial S} H(z)$, where $\partial S$ is the boundary of $S$. Without loss of generality\footnote{If there is a $z\in S$ such that $H(z) = c$ we can consider a smaller ball $S_2$ of $z_e$ such that $z$ lies on the boundary of $S_2$. We can continue this process to find a small enough open ball around $z_e$. The process stops since $z_e$ is a strict local minimum.} we may assume that $H(z)<c$, for all $z\in S$.
+
+Let $S_A = \text{Range}(XA)\cap S$. Since Range$(XA)$ is a linear vector space, then $S_A$ is an open set. Furthermore, for any $z\in S_A$, $H(z) < c$. 
+		
+We now show that $H|_{S_A}$ attains its minimum inside $S_A$. Let $c_{\text{min}} = \inf_{z\in S_A} H(z)$. $c_{min}$ exists since $H$ has a minimum on $S$. We can find a sequence $\{ H(z_i) \}_{i=1}^\infty$, with $z_i\in S_A$, such that $H(z_i)\to c_{\text{min}} < c$. This implies that $z_i\to z_0$, for some $z_0\in \overline {S_A}$, since $H\in C^2$. Note that $\overline {S_A}$ is bounded since $S$ is bounded. However, $z_0$ does not belong to $\partial S_A$ since $\inf_{z\in \partial S} W(z)=c > c_{min}$. Therefore $z_0 \in S_A$. 
+
+We claim that $y_e = \mathbb J_{2k}^T A^T X \mathbb J_2n z_0$ is a stable equilibrium point for the reduced system \eqref{p1.eq:nommor.0.10}. Let $\tilde W(y) = - \tilde H(y) = H(XAy)$. Note that $W$ attains its local minimum at $y_e$. Furthermore, $\nabla \tilde W(y_e) = 0$. Also we have
+\begin{equation}
+	\nabla^2 \tilde W = A^T X \nabla^2 H X A
+\end{equation}
+is a positive definite matrix. Finally, since the reduced system is a Hamiltonian system, \Cref{theorem:2.10} implies that any trajectory $\varphi_t$ of \eqref{p1.eq:nommor.0.10} satisfies $\frac{d}{dt} \tilde W(\varphi_t) = 0$. Therefore $\tilde W$ is a Lyapunov function for \eqref{p1.eq:nommor.0.10} and $y_e$ is a stable equilibrium point for \eqref{p1.eq:nommor.0.10}, in the Lyapunov sense.
+\end{proof}
+
+A reduced basis that is constructed accurate enough that satisfy the conditions in \Cref{theorem:ch5.1}, guarantees to preserve the stability of the stable equilibrium points, and therefore, preserves the overall dynamics of the high-fidelity system.
+}
 
 \section{Greedy Generation of a $J_{2n}$-Symplectic Basis} \label{sec:normmor.2}
 In this section we modify the greedy algorithm introduced in \Cref{p1.sec:Symo.PrSy:3} to construct a $J_{2n}$-symplectic basis. We recall that ortho-normalization is an essential step in greedy approaches to basis generation. Here, we summarize a variation of the GS orthogonalization process, known as the \emph{symplectic GS} process.

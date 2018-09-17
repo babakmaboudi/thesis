@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.4.4)  13 SEP 2018 13:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.4.4)  17 SEP 2018 17:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1763,18 +1763,14 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [52]
 [53]
-Overfull \hbox (23.97058pt too wide) in paragraph at lines 380--380
+Overfull \hbox (23.97058pt too wide) in paragraph at lines 383--383
 |[]\T1/put/b/n/14.4 Symplectic Dis-crete Em-pir-i-cal In-ter-po-la-tion Method 
 (SDEIM)| 
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [54]
-LaTeX Font Info:    Try loading font information for U+euf on input line 421.
-
-(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/ueuf.fd
+[54]
+LaTeX Font Info:    Try loading font information for U+euf on input line 424.
+ (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 )
 (/usr/local/texlive/2017/texmf-dist/tex/latex/microtype/mt-euf.cfg
@@ -1799,17 +1795,17 @@ eps-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=./images/paper1/wave/solut
 ion/solution_t0-eps-converted-to.pdf ./images/paper1/wave/solution/solution_t0.
 eps>
-(epstopdf)             \includegraphics on input line 513.
+(epstopdf)             \includegraphics on input line 516.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/paper1/wave/solution/solution_t0-eps-converted-to.pdf, id=1297, 578.1
+<./images/paper1/wave/solution/solution_t0-eps-converted-to.pdf, id=1299, 578.1
 6pt x 433.62pt>
 File: ./images/paper1/wave/solution/solution_t0-eps-converted-to.pdf Graphic fi
 le (type pdf)
 
 <use ./images/paper1/wave/solution/solution_t0-eps-converted-to.pdf>
 Package pdftex.def Info: ./images/paper1/wave/solution/solution_t0-eps-converte
-d-to.pdf used on input line 513.
+d-to.pdf used on input line 516.
 (pdftex.def)             Requested size: 208.84323pt x 156.6324pt.
 Package epstopdf Info: Source file: <./images/paper1/wave/solution/solution_t1.
 eps>
@@ -1822,17 +1818,17 @@ eps-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=./images/paper1/wave/solut
 ion/solution_t1-eps-converted-to.pdf ./images/paper1/wave/solution/solution_t1.
 eps>
-(epstopdf)             \includegraphics on input line 517.
+(epstopdf)             \includegraphics on input line 520.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/paper1/wave/solution/solution_t1-eps-converted-to.pdf, id=1298, 578.1
+<./images/paper1/wave/solution/solution_t1-eps-converted-to.pdf, id=1300, 578.1
 6pt x 433.62pt>
 File: ./images/paper1/wave/solution/solution_t1-eps-converted-to.pdf Graphic fi
 le (type pdf)
 
 <use ./images/paper1/wave/solution/solution_t1-eps-converted-to.pdf>
 Package pdftex.def Info: ./images/paper1/wave/solution/solution_t1-eps-converte
-d-to.pdf used on input line 517.
+d-to.pdf used on input line 520.
 (pdftex.def)             Requested size: 208.84323pt x 156.6324pt.
 Package epstopdf Info: Source file: <./images/paper1/wave/solution/solution_t2.
 eps>
@@ -1845,17 +1841,17 @@ eps-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=./images/paper1/wave/solut
 ion/solution_t2-eps-converted-to.pdf ./images/paper1/wave/solution/solution_t2.
 eps>
-(epstopdf)             \includegraphics on input line 520.
+(epstopdf)             \includegraphics on input line 523.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/paper1/wave/solution/solution_t2-eps-converted-to.pdf, id=1299, 578.1
+<./images/paper1/wave/solution/solution_t2-eps-converted-to.pdf, id=1301, 578.1
 6pt x 433.62pt>
 File: ./images/paper1/wave/solution/solution_t2-eps-converted-to.pdf Graphic fi
 le (type pdf)
 
 <use ./images/paper1/wave/solution/solution_t2-eps-converted-to.pdf>
 Package pdftex.def Info: ./images/paper1/wave/solution/solution_t2-eps-converte
-d-to.pdf used on input line 520.
+d-to.pdf used on input line 523.
 (pdftex.def)             Requested size: 208.84323pt x 156.6324pt.
 Package epstopdf Info: Source file: <./images/paper1/wave/error.eps>
 (epstopdf)                    date: 2018-03-20 16:09:54
@@ -1866,14 +1862,14 @@ o.pdf>
 (epstopdf)                    size: 14575 bytes
 (epstopdf)             Command: <repstopdf --outfile=./images/paper1/wave/error
 -eps-converted-to.pdf ./images/paper1/wave/error.eps>
-(epstopdf)             \includegraphics on input line 529.
+(epstopdf)             \includegraphics on input line 532.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/paper1/wave/error-eps-converted-to.pdf, id=1300, 706.64pt x 417.56pt>
+<./images/paper1/wave/error-eps-converted-to.pdf, id=1302, 706.64pt x 417.56pt>
 File: ./images/paper1/wave/error-eps-converted-to.pdf Graphic file (type pdf)
 <use ./images/paper1/wave/error-eps-converted-to.pdf>
 Package pdftex.def Info: ./images/paper1/wave/error-eps-converted-to.pdf used o
-n input line 529.
+n input line 532.
 (pdftex.def)             Requested size: 208.84323pt x 123.4085pt.
 Package epstopdf Info: Source file: <./images/paper1/wave/hamiltonian.eps>
 (epstopdf)                    date: 2018-03-20 16:09:54
@@ -1884,24 +1880,25 @@ rted-to.pdf>
 (epstopdf)                    size: 13164 bytes
 (epstopdf)             Command: <repstopdf --outfile=./images/paper1/wave/hamil
 tonian-eps-converted-to.pdf ./images/paper1/wave/hamiltonian.eps>
-(epstopdf)             \includegraphics on input line 533.
+(epstopdf)             \includegraphics on input line 536.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/paper1/wave/hamiltonian-eps-converted-to.pdf, id=1301, 702.625pt x 41
+<./images/paper1/wave/hamiltonian-eps-converted-to.pdf, id=1303, 702.625pt x 41
 7.56pt>
 File: ./images/paper1/wave/hamiltonian-eps-converted-to.pdf Graphic file (type 
 pdf)
  <use ./images/paper1/wave/hamiltonian-eps-converted-to.pdf>
 Package pdftex.def Info: ./images/paper1/wave/hamiltonian-eps-converted-to.pdf 
-used on input line 533.
+used on input line 536.
 (pdftex.def)             Requested size: 208.84323pt x 124.10934pt.
- [58 <./images/paper1/wave/solution/solution_t0-eps-converted-to.pdf> <./images
-/paper1/wave/solution/solution_t1-eps-converted-to.pdf> <./images/paper1/wave/s
-olution/solution_t2-eps-converted-to.pdf>]
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [59 <./images/paper1/wave/error-eps-converted-to.pdf> <./images/paper1/wave/ha
-miltonian-eps-converted-to.pdf>]
+ [58]
+[59 <./images/paper1/wave/solution/solution_t0-eps-converted-to.pdf> <./images/
+paper1/wave/solution/solution_t1-eps-converted-to.pdf> <./images/paper1/wave/so
+lution/solution_t2-eps-converted-to.pdf> <./images/paper1/wave/error-eps-conver
+ted-to.pdf> <./images/paper1/wave/hamiltonian-eps-converted-to.pdf>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [60]
@@ -1917,17 +1914,17 @@ ion_t0-eps-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=./images/paper1/schrodinge
 r/solution/solution_t0-eps-converted-to.pdf ./images/paper1/schrodinger/solutio
 n/solution_t0.eps>
-(epstopdf)             \includegraphics on input line 634.
+(epstopdf)             \includegraphics on input line 637.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/paper1/schrodinger/solution/solution_t0-eps-converted-to.pdf, id=1404
+<./images/paper1/schrodinger/solution/solution_t0-eps-converted-to.pdf, id=1406
 , 578.16pt x 433.62pt>
 File: ./images/paper1/schrodinger/solution/solution_t0-eps-converted-to.pdf Gra
 phic file (type pdf)
 
 <use ./images/paper1/schrodinger/solution/solution_t0-eps-converted-to.pdf>
 Package pdftex.def Info: ./images/paper1/schrodinger/solution/solution_t0-eps-c
-onverted-to.pdf used on input line 634.
+onverted-to.pdf used on input line 637.
 (pdftex.def)             Requested size: 208.84323pt x 156.6324pt.
 Package epstopdf Info: Source file: <./images/paper1/schrodinger/solution/solut
 ion_t10.eps>
@@ -1940,17 +1937,17 @@ ion_t10-eps-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=./images/paper1/schrodinge
 r/solution/solution_t10-eps-converted-to.pdf ./images/paper1/schrodinger/soluti
 on/solution_t10.eps>
-(epstopdf)             \includegraphics on input line 638.
+(epstopdf)             \includegraphics on input line 641.
 Package epstopdf Info: Output file is already uptodate.
 
 <./images/paper1/schrodinger/solution/solution_t10-eps-converted-to.pdf, id=140
-5, 578.16pt x 433.62pt>
+7, 578.16pt x 433.62pt>
 File: ./images/paper1/schrodinger/solution/solution_t10-eps-converted-to.pdf Gr
 aphic file (type pdf)
 
 <use ./images/paper1/schrodinger/solution/solution_t10-eps-converted-to.pdf>
 Package pdftex.def Info: ./images/paper1/schrodinger/solution/solution_t10-eps-
-converted-to.pdf used on input line 638.
+converted-to.pdf used on input line 641.
 (pdftex.def)             Requested size: 208.84323pt x 156.6324pt.
 Package epstopdf Info: Source file: <./images/paper1/schrodinger/solution/solut
 ion_t20.eps>
@@ -1963,17 +1960,17 @@ ion_t20-eps-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=./images/paper1/schrodinge
 r/solution/solution_t20-eps-converted-to.pdf ./images/paper1/schrodinger/soluti
 on/solution_t20.eps>
-(epstopdf)             \includegraphics on input line 641.
+(epstopdf)             \includegraphics on input line 644.
 Package epstopdf Info: Output file is already uptodate.
 
 <./images/paper1/schrodinger/solution/solution_t20-eps-converted-to.pdf, id=140
-6, 578.16pt x 433.62pt>
+8, 578.16pt x 433.62pt>
 File: ./images/paper1/schrodinger/solution/solution_t20-eps-converted-to.pdf Gr
 aphic file (type pdf)
 
 <use ./images/paper1/schrodinger/solution/solution_t20-eps-converted-to.pdf>
 Package pdftex.def Info: ./images/paper1/schrodinger/solution/solution_t20-eps-
-converted-to.pdf used on input line 641.
+converted-to.pdf used on input line 644.
 (pdftex.def)             Requested size: 208.84323pt x 156.6324pt.
 Package epstopdf Info: Source file: <./images/paper1/schrodinger/error.eps>
 (epstopdf)                    date: 2018-03-20 16:09:54
@@ -1984,16 +1981,16 @@ erted-to.pdf>
 (epstopdf)                    size: 20980 bytes
 (epstopdf)             Command: <repstopdf --outfile=./images/paper1/schrodinge
 r/error-eps-converted-to.pdf ./images/paper1/schrodinger/error.eps>
-(epstopdf)             \includegraphics on input line 650.
+(epstopdf)             \includegraphics on input line 653.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/paper1/schrodinger/error-eps-converted-to.pdf, id=1407, 699.61375pt x
+<./images/paper1/schrodinger/error-eps-converted-to.pdf, id=1409, 699.61375pt x
  417.56pt>
 File: ./images/paper1/schrodinger/error-eps-converted-to.pdf Graphic file (type
  pdf)
  <use ./images/paper1/schrodinger/error-eps-converted-to.pdf>
 Package pdftex.def Info: ./images/paper1/schrodinger/error-eps-converted-to.pdf
- used on input line 650.
+ used on input line 653.
 (pdftex.def)             Requested size: 208.84323pt x 124.64455pt.
 Package epstopdf Info: Source file: <./images/paper1/schrodinger/hamiltonian.ep
 s>
@@ -2006,17 +2003,17 @@ s-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=./images/paper1/schrodinge
 r/hamiltonian-eps-converted-to.pdf ./images/paper1/schrodinger/hamiltonian.eps>
 
-(epstopdf)             \includegraphics on input line 654.
+(epstopdf)             \includegraphics on input line 657.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/paper1/schrodinger/hamiltonian-eps-converted-to.pdf, id=1408, 689.576
+<./images/paper1/schrodinger/hamiltonian-eps-converted-to.pdf, id=1410, 689.576
 25pt x 417.56pt>
 File: ./images/paper1/schrodinger/hamiltonian-eps-converted-to.pdf Graphic file
  (type pdf)
 
 <use ./images/paper1/schrodinger/hamiltonian-eps-converted-to.pdf>
 Package pdftex.def Info: ./images/paper1/schrodinger/hamiltonian-eps-converted-
-to.pdf used on input line 654.
+to.pdf used on input line 657.
 (pdftex.def)             Requested size: 208.84323pt x 126.46042pt.
  [62 <./images/paper1/schrodinger/solution/solution_t0-eps-converted-to.pdf> <.
 /images/paper1/schrodinger/solution/solution_t10-eps-converted-to.pdf> <./image
@@ -2034,16 +2031,16 @@ rted-to.pdf>
 (epstopdf)                    size: 15563 bytes
 (epstopdf)             Command: <repstopdf --outfile=./images/paper1/wave/conve
 rgence-eps-converted-to.pdf ./images/paper1/wave/convergence.eps>
-(epstopdf)             \includegraphics on input line 683.
+(epstopdf)             \includegraphics on input line 686.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/paper1/wave/convergence-eps-converted-to.pdf, id=1483, 575.14874pt x 
+<./images/paper1/wave/convergence-eps-converted-to.pdf, id=1485, 575.14874pt x 
 335.2525pt>
 File: ./images/paper1/wave/convergence-eps-converted-to.pdf Graphic file (type 
 pdf)
  <use ./images/paper1/wave/convergence-eps-converted-to.pdf>
 Package pdftex.def Info: ./images/paper1/wave/convergence-eps-converted-to.pdf 
-used on input line 683.
+used on input line 686.
 (pdftex.def)             Requested size: 208.84323pt x 121.73438pt.
 Package epstopdf Info: Source file: <./images/paper1/schrodinger/convergence.ep
 s>
@@ -2056,17 +2053,17 @@ s-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=./images/paper1/schrodinge
 r/convergence-eps-converted-to.pdf ./images/paper1/schrodinger/convergence.eps>
 
-(epstopdf)             \includegraphics on input line 687.
+(epstopdf)             \includegraphics on input line 690.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/paper1/schrodinger/convergence-eps-converted-to.pdf, id=1484, 575.148
+<./images/paper1/schrodinger/convergence-eps-converted-to.pdf, id=1486, 575.148
 74pt x 335.2525pt>
 File: ./images/paper1/schrodinger/convergence-eps-converted-to.pdf Graphic file
  (type pdf)
 
 <use ./images/paper1/schrodinger/convergence-eps-converted-to.pdf>
 Package pdftex.def Info: ./images/paper1/schrodinger/convergence-eps-converted-
-to.pdf used on input line 687.
+to.pdf used on input line 690.
 (pdftex.def)             Requested size: 208.84323pt x 121.73438pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -2097,34 +2094,35 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [69]
 [70]
-Overfull \hbox (7.52992pt too wide) in paragraph at lines 118--120
+Overfull \hbox (7.52992pt too wide) in paragraph at lines 121--123
 \T1/put/m/n/10.95 (-20) Assuming that the er-ror vec-tor $\OML/cmm/m/it/10.95 r
 $ \T1/put/m/n/10.95 (-20) is sym-plec-ti-cally or-thog-o-nal to $[]$ and us-ing
  Lemma [][]5.2[][],
  []
 
-[71]
+
+Underfull \vbox (badness 1902) has occurred while \output is active []
+
+ [71]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [72]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [73]
+[73]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 196.
+(hyperref)                removing `math shift' on input line 214.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 196.
+(hyperref)                removing `subscript' on input line 214.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 196.
+(hyperref)                removing `math shift' on input line 214.
 
 [74]
-Overfull \hbox (2.25874pt too wide) in paragraph at lines 211--212
-[]\T1/put/b/n/10.95 Theorem 5.5. []\T1/put/m/it/10.95 (-20) The ba-sis gen-er-a
+Overfull \hbox (2.25874pt too wide) in paragraph at lines 229--230
+[]\T1/put/b/n/10.95 Theorem 5.4. []\T1/put/m/it/10.95 (-20) The ba-sis gen-er-a
 ted by the greedy method for con-struct-ing a $\OML/cmm/m/it/10.95 J[]$\T1/put/
 m/it/10.95 (-20) -symplectic
  []
@@ -2136,30 +2134,27 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [77]
-Underfull \vbox (badness 1616) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [78]
-<./images/paper2/beam3d.png, id=1747, 2055.68pt x 1156.32pt>
+<./images/paper2/beam3d.png, id=1758, 2055.68pt x 1156.32pt>
 File: ./images/paper2/beam3d.png Graphic file (type png)
 
 <use ./images/paper2/beam3d.png>
-Package pdftex.def Info: ./images/paper2/beam3d.png used on input line 356.
+Package pdftex.def Info: ./images/paper2/beam3d.png used on input line 374.
 (pdftex.def)             Requested size: 187.95763pt x 105.72284pt.
 
-<./images/paper2/beam2d.png, id=1748, 2055.68pt x 1156.32pt>
+<./images/paper2/beam2d.png, id=1759, 2055.68pt x 1156.32pt>
 File: ./images/paper2/beam2d.png Graphic file (type png)
 
 <use ./images/paper2/beam2d.png>
-Package pdftex.def Info: ./images/paper2/beam2d.png used on input line 356.
+Package pdftex.def Info: ./images/paper2/beam2d.png used on input line 374.
 (pdftex.def)             Requested size: 187.95763pt x 105.72284pt.
-
+ [79]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [79 <./images/paper2/beam3d.png (PNG copy)> <./images/paper2/beam2d.png (PNG c
+ [80 <./images/paper2/beam3d.png (PNG copy)> <./images/paper2/beam2d.png (PNG c
 opy)>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [80]
 Package epstopdf Info: Source file: <./images/paper2/beam/singulars.eps>
 (epstopdf)                    date: 2018-03-19 17:00:34
 (epstopdf)                    size: 198967 bytes
@@ -2169,16 +2164,16 @@ ed-to.pdf>
 (epstopdf)                    size: 13535 bytes
 (epstopdf)             Command: <repstopdf --outfile=./images/paper2/beam/singu
 lars-eps-converted-to.pdf ./images/paper2/beam/singulars.eps>
-(epstopdf)             \includegraphics on input line 435.
+(epstopdf)             \includegraphics on input line 453.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/paper2/beam/singulars-eps-converted-to.pdf, id=1779, 578.16pt x 325.2
+<./images/paper2/beam/singulars-eps-converted-to.pdf, id=1789, 578.16pt x 325.2
 15pt>
 File: ./images/paper2/beam/singulars-eps-converted-to.pdf Graphic file (type pd
 f)
  <use ./images/paper2/beam/singulars-eps-converted-to.pdf>
 Package pdftex.def Info: ./images/paper2/beam/singulars-eps-converted-to.pdf us
-ed on input line 435.
+ed on input line 453.
 (pdftex.def)             Requested size: 187.95763pt x 105.72339pt.
 Package epstopdf Info: Source file: <./images/paper2/beam/energy.eps>
 (epstopdf)                    date: 2018-03-19 17:00:34
@@ -2189,15 +2184,15 @@ to.pdf>
 (epstopdf)                    size: 12131 bytes
 (epstopdf)             Command: <repstopdf --outfile=./images/paper2/beam/energ
 y-eps-converted-to.pdf ./images/paper2/beam/energy.eps>
-(epstopdf)             \includegraphics on input line 435.
+(epstopdf)             \includegraphics on input line 453.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/paper2/beam/energy-eps-converted-to.pdf, id=1780, 578.16pt x 325.215p
+<./images/paper2/beam/energy-eps-converted-to.pdf, id=1790, 578.16pt x 325.215p
 t>
 File: ./images/paper2/beam/energy-eps-converted-to.pdf Graphic file (type pdf)
  <use ./images/paper2/beam/energy-eps-converted-to.pdf>
 Package pdftex.def Info: ./images/paper2/beam/energy-eps-converted-to.pdf used 
-on input line 435.
+on input line 453.
 (pdftex.def)             Requested size: 187.95763pt x 105.72339pt.
 Package epstopdf Info: Source file: <./images/paper2/beam/l2_norm.eps>
 (epstopdf)                    date: 2018-03-19 17:00:34
@@ -2208,16 +2203,16 @@ Package epstopdf Info: Source file: <./images/paper2/beam/l2_norm.eps>
 (epstopdf)                    size: 51096 bytes
 (epstopdf)             Command: <repstopdf --outfile=./images/paper2/beam/l2_no
 rm-eps-converted-to.pdf ./images/paper2/beam/l2_norm.eps>
-(epstopdf)             \includegraphics on input line 437.
+(epstopdf)             \includegraphics on input line 455.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/paper2/beam/l2_norm-eps-converted-to.pdf, id=1781, 578.16pt x 325.215
+<./images/paper2/beam/l2_norm-eps-converted-to.pdf, id=1791, 578.16pt x 325.215
 pt>
 File: ./images/paper2/beam/l2_norm-eps-converted-to.pdf Graphic file (type pdf)
 
  <use ./images/paper2/beam/l2_norm-eps-converted-to.pdf>
 Package pdftex.def Info: ./images/paper2/beam/l2_norm-eps-converted-to.pdf used
- on input line 437.
+ on input line 455.
 (pdftex.def)             Requested size: 187.95763pt x 105.72339pt.
 Package epstopdf Info: Source file: <./images/paper2/beam/energy_norm.eps>
 (epstopdf)                    date: 2018-03-19 17:00:34
@@ -2228,21 +2223,21 @@ rted-to.pdf>
 (epstopdf)                    size: 27640 bytes
 (epstopdf)             Command: <repstopdf --outfile=./images/paper2/beam/energ
 y_norm-eps-converted-to.pdf ./images/paper2/beam/energy_norm.eps>
-(epstopdf)             \includegraphics on input line 437.
+(epstopdf)             \includegraphics on input line 455.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/paper2/beam/energy_norm-eps-converted-to.pdf, id=1782, 578.16pt x 325
+<./images/paper2/beam/energy_norm-eps-converted-to.pdf, id=1792, 578.16pt x 325
 .215pt>
 File: ./images/paper2/beam/energy_norm-eps-converted-to.pdf Graphic file (type 
 pdf)
  <use ./images/paper2/beam/energy_norm-eps-converted-to.pdf>
 Package pdftex.def Info: ./images/paper2/beam/energy_norm-eps-converted-to.pdf 
-used on input line 437.
+used on input line 455.
 (pdftex.def)             Requested size: 187.95763pt x 105.72339pt.
-
+ [81]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [81 <./images/paper2/beam/singulars-eps-converted-to.pdf> <./images/paper2/bea
+ [82 <./images/paper2/beam/singulars-eps-converted-to.pdf> <./images/paper2/bea
 m/energy-eps-converted-to.pdf> <./images/paper2/beam/l2_norm-eps-converted-to.p
 df> <./images/paper2/beam/energy_norm-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <./images/paper2/beam_cracked/singulars.eps
@@ -2255,17 +2250,17 @@ Package epstopdf Info: Source file: <./images/paper2/beam_cracked/singulars.eps
 (epstopdf)                    size: 12939 bytes
 (epstopdf)             Command: <repstopdf --outfile=./images/paper2/beam_crack
 ed/singulars-eps-converted-to.pdf ./images/paper2/beam_cracked/singulars.eps>
-(epstopdf)             \includegraphics on input line 477.
+(epstopdf)             \includegraphics on input line 495.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/paper2/beam_cracked/singulars-eps-converted-to.pdf, id=1855, 578.16pt
+<./images/paper2/beam_cracked/singulars-eps-converted-to.pdf, id=1875, 578.16pt
  x 325.215pt>
 File: ./images/paper2/beam_cracked/singulars-eps-converted-to.pdf Graphic file 
 (type pdf)
 
 <use ./images/paper2/beam_cracked/singulars-eps-converted-to.pdf>
 Package pdftex.def Info: ./images/paper2/beam_cracked/singulars-eps-converted-t
-o.pdf used on input line 477.
+o.pdf used on input line 495.
 (pdftex.def)             Requested size: 187.95763pt x 105.72339pt.
 Package epstopdf Info: Source file: <./images/paper2/beam_cracked/energy.eps>
 (epstopdf)                    date: 2018-03-19 17:00:34
@@ -2276,16 +2271,16 @@ nverted-to.pdf>
 (epstopdf)                    size: 20719 bytes
 (epstopdf)             Command: <repstopdf --outfile=./images/paper2/beam_crack
 ed/energy-eps-converted-to.pdf ./images/paper2/beam_cracked/energy.eps>
-(epstopdf)             \includegraphics on input line 477.
+(epstopdf)             \includegraphics on input line 495.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/paper2/beam_cracked/energy-eps-converted-to.pdf, id=1856, 578.16pt x 
+<./images/paper2/beam_cracked/energy-eps-converted-to.pdf, id=1876, 578.16pt x 
 325.215pt>
 File: ./images/paper2/beam_cracked/energy-eps-converted-to.pdf Graphic file (ty
 pe pdf)
  <use ./images/paper2/beam_cracked/energy-eps-converted-to.pdf>
 Package pdftex.def Info: ./images/paper2/beam_cracked/energy-eps-converted-to.p
-df used on input line 477.
+df used on input line 495.
 (pdftex.def)             Requested size: 187.95763pt x 105.72339pt.
 Package epstopdf Info: Source file: <./images/paper2/beam_cracked/l2.eps>
 (epstopdf)                    date: 2018-03-19 17:00:34
@@ -2296,16 +2291,16 @@ ted-to.pdf>
 (epstopdf)                    size: 36972 bytes
 (epstopdf)             Command: <repstopdf --outfile=./images/paper2/beam_crack
 ed/l2-eps-converted-to.pdf ./images/paper2/beam_cracked/l2.eps>
-(epstopdf)             \includegraphics on input line 479.
+(epstopdf)             \includegraphics on input line 497.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/paper2/beam_cracked/l2-eps-converted-to.pdf, id=1857, 578.16pt x 325.
+<./images/paper2/beam_cracked/l2-eps-converted-to.pdf, id=1877, 578.16pt x 325.
 215pt>
 File: ./images/paper2/beam_cracked/l2-eps-converted-to.pdf Graphic file (type p
 df)
  <use ./images/paper2/beam_cracked/l2-eps-converted-to.pdf>
 Package pdftex.def Info: ./images/paper2/beam_cracked/l2-eps-converted-to.pdf u
-sed on input line 479.
+sed on input line 497.
 (pdftex.def)             Requested size: 187.95763pt x 105.72339pt.
 Package epstopdf Info: Source file: <./images/paper2/beam_cracked/energy_norm.e
 ps>
@@ -2318,21 +2313,18 @@ ps-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=./images/paper2/beam_crack
 ed/energy_norm-eps-converted-to.pdf ./images/paper2/beam_cracked/energy_norm.ep
 s>
-(epstopdf)             \includegraphics on input line 479.
+(epstopdf)             \includegraphics on input line 497.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/paper2/beam_cracked/energy_norm-eps-converted-to.pdf, id=1858, 578.16
+<./images/paper2/beam_cracked/energy_norm-eps-converted-to.pdf, id=1878, 578.16
 pt x 325.215pt>
 File: ./images/paper2/beam_cracked/energy_norm-eps-converted-to.pdf Graphic fil
 e (type pdf)
 
 <use ./images/paper2/beam_cracked/energy_norm-eps-converted-to.pdf>
 Package pdftex.def Info: ./images/paper2/beam_cracked/energy_norm-eps-converted
--to.pdf used on input line 479.
+-to.pdf used on input line 497.
 (pdftex.def)             Requested size: 187.95763pt x 105.72339pt.
- [82]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
  [83 <./images/paper2/beam_cracked/singulars-eps-converted-to.pdf> <./images/pa
 per2/beam_cracked/energy-eps-converted-to.pdf> <./images/paper2/beam_cracked/l2
 -eps-converted-to.pdf> <./images/paper2/beam_cracked/energy_norm-eps-converted-
@@ -2349,16 +2341,16 @@ ed-to.pdf>
 (epstopdf)                    size: 16176 bytes
 (epstopdf)             Command: <repstopdf --outfile=./images/paper2/sine/singu
 lars-eps-converted-to.pdf ./images/paper2/sine/singulars.eps>
-(epstopdf)             \includegraphics on input line 552.
+(epstopdf)             \includegraphics on input line 570.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/paper2/sine/singulars-eps-converted-to.pdf, id=1963, 578.16pt x 325.2
+<./images/paper2/sine/singulars-eps-converted-to.pdf, id=1973, 578.16pt x 325.2
 15pt>
 File: ./images/paper2/sine/singulars-eps-converted-to.pdf Graphic file (type pd
 f)
  <use ./images/paper2/sine/singulars-eps-converted-to.pdf>
 Package pdftex.def Info: ./images/paper2/sine/singulars-eps-converted-to.pdf us
-ed on input line 552.
+ed on input line 570.
 (pdftex.def)             Requested size: 187.95763pt x 105.72339pt.
 Package epstopdf Info: Source file: <./images/paper2/sine/energy.eps>
 (epstopdf)                    date: 2018-03-19 17:00:34
@@ -2369,15 +2361,15 @@ to.pdf>
 (epstopdf)                    size: 14911 bytes
 (epstopdf)             Command: <repstopdf --outfile=./images/paper2/sine/energ
 y-eps-converted-to.pdf ./images/paper2/sine/energy.eps>
-(epstopdf)             \includegraphics on input line 552.
+(epstopdf)             \includegraphics on input line 570.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/paper2/sine/energy-eps-converted-to.pdf, id=1964, 578.16pt x 325.215p
+<./images/paper2/sine/energy-eps-converted-to.pdf, id=1974, 578.16pt x 325.215p
 t>
 File: ./images/paper2/sine/energy-eps-converted-to.pdf Graphic file (type pdf)
  <use ./images/paper2/sine/energy-eps-converted-to.pdf>
 Package pdftex.def Info: ./images/paper2/sine/energy-eps-converted-to.pdf used 
-on input line 552.
+on input line 570.
 (pdftex.def)             Requested size: 187.95763pt x 105.72339pt.
 Package epstopdf Info: Source file: <./images/paper2/sine/l2.eps>
 (epstopdf)                    date: 2018-03-19 17:00:34
@@ -2388,15 +2380,15 @@ df>
 (epstopdf)                    size: 47452 bytes
 (epstopdf)             Command: <repstopdf --outfile=./images/paper2/sine/l2-ep
 s-converted-to.pdf ./images/paper2/sine/l2.eps>
-(epstopdf)             \includegraphics on input line 554.
+(epstopdf)             \includegraphics on input line 572.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/paper2/sine/l2-eps-converted-to.pdf, id=1965, 578.16pt x 325.215pt>
+<./images/paper2/sine/l2-eps-converted-to.pdf, id=1975, 578.16pt x 325.215pt>
 File: ./images/paper2/sine/l2-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./images/paper2/sine/l2-eps-converted-to.pdf>
 Package pdftex.def Info: ./images/paper2/sine/l2-eps-converted-to.pdf used on i
-nput line 554.
+nput line 572.
 (pdftex.def)             Requested size: 187.95763pt x 105.72339pt.
 Package epstopdf Info: Source file: <./images/paper2/sine/energy_norm.eps>
 (epstopdf)                    date: 2018-03-19 17:00:34
@@ -2407,18 +2399,21 @@ rted-to.pdf>
 (epstopdf)                    size: 47918 bytes
 (epstopdf)             Command: <repstopdf --outfile=./images/paper2/sine/energ
 y_norm-eps-converted-to.pdf ./images/paper2/sine/energy_norm.eps>
-(epstopdf)             \includegraphics on input line 554.
+(epstopdf)             \includegraphics on input line 572.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/paper2/sine/energy_norm-eps-converted-to.pdf, id=1966, 578.16pt x 325
+<./images/paper2/sine/energy_norm-eps-converted-to.pdf, id=1976, 578.16pt x 325
 .215pt>
 File: ./images/paper2/sine/energy_norm-eps-converted-to.pdf Graphic file (type 
 pdf)
  <use ./images/paper2/sine/energy_norm-eps-converted-to.pdf>
 Package pdftex.def Info: ./images/paper2/sine/energy_norm-eps-converted-to.pdf 
-used on input line 554.
+used on input line 572.
 (pdftex.def)             Requested size: 187.95763pt x 105.72339pt.
- [85 <./images/paper2/sine/singulars-eps-converted-to.pdf> <./images/paper2/sin
+ [85]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [86 <./images/paper2/sine/singulars-eps-converted-to.pdf> <./images/paper2/sin
 e/energy-eps-converted-to.pdf> <./images/paper2/sine/l2-eps-converted-to.pdf> <
 ./images/paper2/sine/energy_norm-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <./images/paper2/sine/nonlinear/l2.eps>
@@ -2430,16 +2425,16 @@ erted-to.pdf>
 (epstopdf)                    size: 21860 bytes
 (epstopdf)             Command: <repstopdf --outfile=./images/paper2/sine/nonli
 near/l2-eps-converted-to.pdf ./images/paper2/sine/nonlinear/l2.eps>
-(epstopdf)             \includegraphics on input line 570.
+(epstopdf)             \includegraphics on input line 588.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/paper2/sine/nonlinear/l2-eps-converted-to.pdf, id=2038, 578.16pt x 32
+<./images/paper2/sine/nonlinear/l2-eps-converted-to.pdf, id=2054, 578.16pt x 32
 5.215pt>
 File: ./images/paper2/sine/nonlinear/l2-eps-converted-to.pdf Graphic file (type
  pdf)
  <use ./images/paper2/sine/nonlinear/l2-eps-converted-to.pdf>
 Package pdftex.def Info: ./images/paper2/sine/nonlinear/l2-eps-converted-to.pdf
- used on input line 570.
+ used on input line 588.
 (pdftex.def)             Requested size: 187.95763pt x 105.72339pt.
 Package epstopdf Info: Source file: <./images/paper2/sine/nonlinear/energy_norm
 .eps>
@@ -2452,17 +2447,17 @@ Package epstopdf Info: Source file: <./images/paper2/sine/nonlinear/energy_norm
 (epstopdf)             Command: <repstopdf --outfile=./images/paper2/sine/nonli
 near/energy_norm-eps-converted-to.pdf ./images/paper2/sine/nonlinear/energy_nor
 m.eps>
-(epstopdf)             \includegraphics on input line 570.
+(epstopdf)             \includegraphics on input line 588.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/paper2/sine/nonlinear/energy_norm-eps-converted-to.pdf, id=2039, 578.
+<./images/paper2/sine/nonlinear/energy_norm-eps-converted-to.pdf, id=2055, 578.
 16pt x 325.215pt>
 File: ./images/paper2/sine/nonlinear/energy_norm-eps-converted-to.pdf Graphic f
 ile (type pdf)
 
 <use ./images/paper2/sine/nonlinear/energy_norm-eps-converted-to.pdf>
 Package pdftex.def Info: ./images/paper2/sine/nonlinear/energy_norm-eps-convert
-ed-to.pdf used on input line 570.
+ed-to.pdf used on input line 588.
 (pdftex.def)             Requested size: 187.95763pt x 105.72339pt.
 Package epstopdf Info: Source file: <./images/paper2/sine/nonlinear/energy.eps>
 
@@ -2474,21 +2469,18 @@ converted-to.pdf>
 (epstopdf)                    size: 12265 bytes
 (epstopdf)             Command: <repstopdf --outfile=./images/paper2/sine/nonli
 near/energy-eps-converted-to.pdf ./images/paper2/sine/nonlinear/energy.eps>
-(epstopdf)             \includegraphics on input line 574.
+(epstopdf)             \includegraphics on input line 592.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/paper2/sine/nonlinear/energy-eps-converted-to.pdf, id=2040, 578.16pt 
+<./images/paper2/sine/nonlinear/energy-eps-converted-to.pdf, id=2056, 578.16pt 
 x 325.215pt>
 File: ./images/paper2/sine/nonlinear/energy-eps-converted-to.pdf Graphic file (
 type pdf)
  <use ./images/paper2/sine/nonlinear/energy-eps-converted-to.pdf>
 Package pdftex.def Info: ./images/paper2/sine/nonlinear/energy-eps-converted-to
-.pdf used on input line 574.
+.pdf used on input line 592.
 (pdftex.def)             Requested size: 187.95763pt x 105.72339pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [86]
 [87 <./images/paper2/sine/nonlinear/l2-eps-converted-to.pdf> <./images/paper2/s
 ine/nonlinear/energy_norm-eps-converted-to.pdf> <./images/paper2/sine/nonlinear
 /energy-eps-converted-to.pdf>]) [88]
@@ -2558,7 +2550,7 @@ ion-eps-converted-to.pdf ./images/paper3/wave/solution.eps>
 (epstopdf)             \includegraphics on input line 287.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/paper3/wave/solution-eps-converted-to.pdf, id=2294, 462.72874pt x 347
+<./images/paper3/wave/solution-eps-converted-to.pdf, id=2306, 462.72874pt x 347
 .2975pt>
 File: ./images/paper3/wave/solution-eps-converted-to.pdf Graphic file (type pdf
 )
@@ -2578,7 +2570,7 @@ lar-eps-converted-to.pdf ./images/paper3/wave/singular.eps>
 (epstopdf)             \includegraphics on input line 288.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/paper3/wave/singular-eps-converted-to.pdf, id=2295, 462.72874pt x 347
+<./images/paper3/wave/singular-eps-converted-to.pdf, id=2307, 462.72874pt x 347
 .2975pt>
 File: ./images/paper3/wave/singular-eps-converted-to.pdf Graphic file (type pdf
 )
@@ -2598,7 +2590,7 @@ o.pdf>
 (epstopdf)             \includegraphics on input line 290.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/paper3/wave/error-eps-converted-to.pdf, id=2296, 578.16pt x 337.26pt>
+<./images/paper3/wave/error-eps-converted-to.pdf, id=2308, 578.16pt x 337.26pt>
 File: ./images/paper3/wave/error-eps-converted-to.pdf Graphic file (type pdf)
 <use ./images/paper3/wave/error-eps-converted-to.pdf>
 Package pdftex.def Info: ./images/paper3/wave/error-eps-converted-to.pdf used o
@@ -2616,7 +2608,7 @@ y-eps-converted-to.pdf ./images/paper3/wave/energy.eps>
 (epstopdf)             \includegraphics on input line 291.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/paper3/wave/energy-eps-converted-to.pdf, id=2297, 584.1825pt x 337.26
+<./images/paper3/wave/energy-eps-converted-to.pdf, id=2309, 584.1825pt x 337.26
 pt>
 File: ./images/paper3/wave/energy-eps-converted-to.pdf Graphic file (type pdf)
  <use ./images/paper3/wave/energy-eps-converted-to.pdf>
@@ -2636,7 +2628,7 @@ y_conserved-eps-converted-to.pdf ./images/paper3/wave/energy_conserved.eps>
 (epstopdf)             \includegraphics on input line 293.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/paper3/wave/energy_conserved-eps-converted-to.pdf, id=2298, 732.7375p
+<./images/paper3/wave/energy_conserved-eps-converted-to.pdf, id=2310, 732.7375p
 t x 342.27875pt>
 File: ./images/paper3/wave/energy_conserved-eps-converted-to.pdf Graphic file (
 type pdf)
@@ -2657,7 +2649,7 @@ _homo-eps-converted-to.pdf ./images/paper3/wave/error_homo.eps>
 (epstopdf)             \includegraphics on input line 294.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/paper3/wave/error_homo-eps-converted-to.pdf, id=2299, 699.61375pt x 4
+<./images/paper3/wave/error_homo-eps-converted-to.pdf, id=2311, 699.61375pt x 4
 17.56pt>
 File: ./images/paper3/wave/error_homo-eps-converted-to.pdf Graphic file (type p
 df)
@@ -2696,7 +2688,7 @@ s>
 (epstopdf)             \includegraphics on input line 370.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/paper3/wave_nonlin/error_nonlin-eps-converted-to.pdf, id=2399, 699.61
+<./images/paper3/wave_nonlin/error_nonlin-eps-converted-to.pdf, id=2411, 699.61
 375pt x 417.56pt>
 File: ./images/paper3/wave_nonlin/error_nonlin-eps-converted-to.pdf Graphic fil
 e (type pdf)
@@ -2719,7 +2711,7 @@ eps>
 (epstopdf)             \includegraphics on input line 371.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/paper3/wave_nonlin/energy_nonlin-eps-converted-to.pdf, id=2400, 699.6
+<./images/paper3/wave_nonlin/energy_nonlin-eps-converted-to.pdf, id=2412, 699.6
 1375pt x 417.56pt>
 File: ./images/paper3/wave_nonlin/energy_nonlin-eps-converted-to.pdf Graphic fi
 le (type pdf)
@@ -2746,7 +2738,7 @@ circuit-eps-converted-to.pdf ./images/paper3/porthamil/circuit.eps>
 (epstopdf)             \includegraphics on input line 387.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/paper3/porthamil/circuit-eps-converted-to.pdf, id=2415, 422.57875pt x
+<./images/paper3/porthamil/circuit-eps-converted-to.pdf, id=2427, 422.57875pt x
  84.315pt>
 File: ./images/paper3/porthamil/circuit-eps-converted-to.pdf Graphic file (type
  pdf)
@@ -2775,7 +2767,7 @@ error_capac-eps-converted-to.pdf ./images/paper3/porthamil/error_capac.eps>
 (epstopdf)             \includegraphics on input line 429.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/paper3/porthamil/error_capac-eps-converted-to.pdf, id=2502, 652.4375p
+<./images/paper3/porthamil/error_capac-eps-converted-to.pdf, id=2514, 652.4375p
 t x 417.56pt>
 File: ./images/paper3/porthamil/error_capac-eps-converted-to.pdf Graphic file (
 type pdf)
@@ -2795,7 +2787,7 @@ error_flux-eps-converted-to.pdf ./images/paper3/porthamil/error_flux.eps>
 (epstopdf)             \includegraphics on input line 430.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/paper3/porthamil/error_flux-eps-converted-to.pdf, id=2503, 652.4375pt
+<./images/paper3/porthamil/error_flux-eps-converted-to.pdf, id=2515, 652.4375pt
  x 417.56pt>
 File: ./images/paper3/porthamil/error_flux-eps-converted-to.pdf Graphic file (t
 ype pdf)
@@ -2815,7 +2807,7 @@ error1-eps-converted-to.pdf ./images/paper3/porthamil/error1.eps>
 (epstopdf)             \includegraphics on input line 432.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/paper3/porthamil/error1-eps-converted-to.pdf, id=2504, 652.4375pt x 4
+<./images/paper3/porthamil/error1-eps-converted-to.pdf, id=2516, 652.4375pt x 4
 17.56pt>
 File: ./images/paper3/porthamil/error1-eps-converted-to.pdf Graphic file (type 
 pdf)
@@ -2882,7 +2874,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [117]
-<./TikzFigures/thesis-figure0.pdf, id=2760, 155.1938pt x 108.14302pt>
+<./TikzFigures/thesis-figure0.pdf, id=2773, 155.1938pt x 108.14302pt>
 File: ./TikzFigures/thesis-figure0.pdf Graphic file (type pdf)
 
 <use ./TikzFigures/thesis-figure0.pdf>
@@ -2890,7 +2882,7 @@ Package pdftex.def Info: ./TikzFigures/thesis-figure0.pdf used on input line 29
 6.
 (pdftex.def)             Requested size: 171.25298pt x 119.33719pt.
 
-<./TikzFigures/thesis-figure1.pdf, id=2761, 172.43623pt x 108.99219pt>
+<./TikzFigures/thesis-figure1.pdf, id=2774, 172.43623pt x 108.99219pt>
 File: ./TikzFigures/thesis-figure1.pdf Graphic file (type pdf)
 
 <use ./TikzFigures/thesis-figure1.pdf>
@@ -2901,7 +2893,7 @@ Package pdftex.def Info: ./TikzFigures/thesis-figure1.pdf used on input line 29
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [118 <./TikzFigures/thesis-figure0.pdf> <./TikzFigures/thesis-figure1.pdf>]
-<data/Incompressible_Euler/Snapshots/red_17_2.png, id=2813, 1506.1068pt x 1506.
+<data/Incompressible_Euler/Snapshots/red_17_2.png, id=2825, 1506.1068pt x 1506.
 1068pt>
 File: data/Incompressible_Euler/Snapshots/red_17_2.png Graphic file (type png)
  <use data/Incompressible_Euler/Snapshots/red_17_2.png>
@@ -2909,7 +2901,7 @@ Package pdftex.def Info: data/Incompressible_Euler/Snapshots/red_17_2.png used
 on input line 311.
 (pdftex.def)             Requested size: 90.3625pt x 90.3625pt.
 
-<data/Incompressible_Euler/Snapshots/red_35_2.png, id=2814, 1506.1068pt x 1506.
+<data/Incompressible_Euler/Snapshots/red_35_2.png, id=2826, 1506.1068pt x 1506.
 1068pt>
 File: data/Incompressible_Euler/Snapshots/red_35_2.png Graphic file (type png)
  <use data/Incompressible_Euler/Snapshots/red_35_2.png>
@@ -2917,7 +2909,7 @@ Package pdftex.def Info: data/Incompressible_Euler/Snapshots/red_35_2.png used
 on input line 312.
 (pdftex.def)             Requested size: 90.3625pt x 90.3625pt.
 
-<data/Incompressible_Euler/Snapshots/Full_2.png, id=2815, 2182.554pt x 1506.106
+<data/Incompressible_Euler/Snapshots/Full_2.png, id=2827, 2182.554pt x 1506.106
 8pt>
 File: data/Incompressible_Euler/Snapshots/Full_2.png Graphic file (type png)
  <use data/Incompressible_Euler/Snapshots/Full_2.png>
@@ -2925,7 +2917,7 @@ Package pdftex.def Info: data/Incompressible_Euler/Snapshots/Full_2.png used on
  input line 313.
 (pdftex.def)             Requested size: 130.94759pt x 90.3625pt.
 
-<data/Incompressible_Euler/Snapshots/red_17_3.png, id=2816, 1506.1068pt x 1506.
+<data/Incompressible_Euler/Snapshots/red_17_3.png, id=2828, 1506.1068pt x 1506.
 1068pt>
 File: data/Incompressible_Euler/Snapshots/red_17_3.png Graphic file (type png)
  <use data/Incompressible_Euler/Snapshots/red_17_3.png>
@@ -2933,7 +2925,7 @@ Package pdftex.def Info: data/Incompressible_Euler/Snapshots/red_17_3.png used
 on input line 315.
 (pdftex.def)             Requested size: 90.3625pt x 90.3625pt.
 
-<data/Incompressible_Euler/Snapshots/red_35_3.png, id=2817, 1506.1068pt x 1506.
+<data/Incompressible_Euler/Snapshots/red_35_3.png, id=2829, 1506.1068pt x 1506.
 1068pt>
 File: data/Incompressible_Euler/Snapshots/red_35_3.png Graphic file (type png)
  <use data/Incompressible_Euler/Snapshots/red_35_3.png>
@@ -2941,7 +2933,7 @@ Package pdftex.def Info: data/Incompressible_Euler/Snapshots/red_35_3.png used
 on input line 316.
 (pdftex.def)             Requested size: 90.3625pt x 90.3625pt.
 
-<data/Incompressible_Euler/Snapshots/Full_3.png, id=2818, 2182.554pt x 1506.106
+<data/Incompressible_Euler/Snapshots/Full_3.png, id=2830, 2182.554pt x 1506.106
 8pt>
 File: data/Incompressible_Euler/Snapshots/Full_3.png Graphic file (type png)
  <use data/Incompressible_Euler/Snapshots/Full_3.png>
@@ -2949,7 +2941,7 @@ Package pdftex.def Info: data/Incompressible_Euler/Snapshots/Full_3.png used on
  input line 317.
 (pdftex.def)             Requested size: 130.94759pt x 90.3625pt.
 
-<data/Incompressible_Euler/Snapshots/red_17_4.png, id=2819, 1506.1068pt x 1506.
+<data/Incompressible_Euler/Snapshots/red_17_4.png, id=2831, 1506.1068pt x 1506.
 1068pt>
 File: data/Incompressible_Euler/Snapshots/red_17_4.png Graphic file (type png)
  <use data/Incompressible_Euler/Snapshots/red_17_4.png>
@@ -2957,7 +2949,7 @@ Package pdftex.def Info: data/Incompressible_Euler/Snapshots/red_17_4.png used
 on input line 319.
 (pdftex.def)             Requested size: 90.3625pt x 90.3625pt.
 
-<data/Incompressible_Euler/Snapshots/red_35_4.png, id=2820, 1506.1068pt x 1506.
+<data/Incompressible_Euler/Snapshots/red_35_4.png, id=2832, 1506.1068pt x 1506.
 1068pt>
 File: data/Incompressible_Euler/Snapshots/red_35_4.png Graphic file (type png)
  <use data/Incompressible_Euler/Snapshots/red_35_4.png>
@@ -2965,7 +2957,7 @@ Package pdftex.def Info: data/Incompressible_Euler/Snapshots/red_35_4.png used
 on input line 320.
 (pdftex.def)             Requested size: 90.3625pt x 90.3625pt.
 
-<data/Incompressible_Euler/Snapshots/Full_4.png, id=2821, 2182.554pt x 1506.106
+<data/Incompressible_Euler/Snapshots/Full_4.png, id=2833, 2182.554pt x 1506.106
 8pt>
 File: data/Incompressible_Euler/Snapshots/Full_4.png Graphic file (type png)
  <use data/Incompressible_Euler/Snapshots/Full_4.png>
@@ -2973,7 +2965,7 @@ Package pdftex.def Info: data/Incompressible_Euler/Snapshots/Full_4.png used on
  input line 321.
 (pdftex.def)             Requested size: 130.94759pt x 90.3625pt.
 
-<data/Incompressible_Euler/Snapshots/red_17_5.png, id=2822, 1506.1068pt x 1506.
+<data/Incompressible_Euler/Snapshots/red_17_5.png, id=2834, 1506.1068pt x 1506.
 1068pt>
 File: data/Incompressible_Euler/Snapshots/red_17_5.png Graphic file (type png)
  <use data/Incompressible_Euler/Snapshots/red_17_5.png>
@@ -2981,7 +2973,7 @@ Package pdftex.def Info: data/Incompressible_Euler/Snapshots/red_17_5.png used
 on input line 323.
 (pdftex.def)             Requested size: 90.3625pt x 90.3625pt.
 
-<data/Incompressible_Euler/Snapshots/red_35_5.png, id=2823, 1506.1068pt x 1506.
+<data/Incompressible_Euler/Snapshots/red_35_5.png, id=2835, 1506.1068pt x 1506.
 1068pt>
 File: data/Incompressible_Euler/Snapshots/red_35_5.png Graphic file (type png)
  <use data/Incompressible_Euler/Snapshots/red_35_5.png>
@@ -2989,7 +2981,7 @@ Package pdftex.def Info: data/Incompressible_Euler/Snapshots/red_35_5.png used
 on input line 324.
 (pdftex.def)             Requested size: 90.3625pt x 90.3625pt.
 
-<data/Incompressible_Euler/Snapshots/Full_5.png, id=2824, 2182.554pt x 1506.106
+<data/Incompressible_Euler/Snapshots/Full_5.png, id=2836, 2182.554pt x 1506.106
 8pt>
 File: data/Incompressible_Euler/Snapshots/Full_5.png Graphic file (type png)
  <use data/Incompressible_Euler/Snapshots/Full_5.png>
@@ -3008,7 +3000,7 @@ _Euler/Snapshots/red_35_4.png> <./data/Incompressible_Euler/Snapshots/Full_4.pn
 g> <./data/Incompressible_Euler/Snapshots/red_17_5.png> <./data/Incompressible_
 Euler/Snapshots/red_35_5.png> <./data/Incompressible_Euler/Snapshots/Full_5.png
 >]
-<./TikzFigures/thesis-figure2.pdf, id=2833, 163.69255pt x 107.83687pt>
+<./TikzFigures/thesis-figure2.pdf, id=2845, 163.69255pt x 107.83687pt>
 File: ./TikzFigures/thesis-figure2.pdf Graphic file (type pdf)
 
 <use ./TikzFigures/thesis-figure2.pdf>
@@ -3016,7 +3008,7 @@ Package pdftex.def Info: ./TikzFigures/thesis-figure2.pdf used on input line 34
 6.
 (pdftex.def)             Requested size: 171.25298pt x 112.82065pt.
 
-<./TikzFigures/thesis-figure3.pdf, id=2834, 187.10904pt x 107.83588pt>
+<./TikzFigures/thesis-figure3.pdf, id=2846, 187.10904pt x 107.83588pt>
 File: ./TikzFigures/thesis-figure3.pdf Graphic file (type pdf)
 
 <use ./TikzFigures/thesis-figure3.pdf>
@@ -3024,7 +3016,7 @@ Package pdftex.def Info: ./TikzFigures/thesis-figure3.pdf used on input line 34
 9.
 (pdftex.def)             Requested size: 187.95763pt x 108.33252pt.
  [120 <./TikzFigures/thesis-figure2.pdf> <./TikzFigures/thesis-figure3.pdf>]
-<./TikzFigures/thesis-figure4.pdf, id=2885, 193.12651pt x 104.08687pt>
+<./TikzFigures/thesis-figure4.pdf, id=2897, 193.12651pt x 104.08687pt>
 File: ./TikzFigures/thesis-figure4.pdf Graphic file (type pdf)
 
 <use ./TikzFigures/thesis-figure4.pdf>
@@ -3032,7 +3024,7 @@ Package pdftex.def Info: ./TikzFigures/thesis-figure4.pdf used on input line 38
 7.
 (pdftex.def)             Requested size: 208.84323pt x 112.55664pt.
 
-<./TikzFigures/thesis-figure5.pdf, id=2888, 156.41336pt x 104.08687pt>
+<./TikzFigures/thesis-figure5.pdf, id=2900, 156.41336pt x 104.08687pt>
 File: ./TikzFigures/thesis-figure5.pdf Graphic file (type pdf)
 
 <use ./TikzFigures/thesis-figure5.pdf>
@@ -3040,7 +3032,7 @@ Package pdftex.def Info: ./TikzFigures/thesis-figure5.pdf used on input line 39
 8.
 (pdftex.def)             Requested size: 187.95763pt x 125.08305pt.
 
-<./TikzFigures/thesis-figure6.pdf, id=2889, 156.41336pt x 104.08687pt>
+<./TikzFigures/thesis-figure6.pdf, id=2901, 156.41336pt x 104.08687pt>
 File: ./TikzFigures/thesis-figure6.pdf Graphic file (type pdf)
 
 <use ./TikzFigures/thesis-figure6.pdf>
@@ -3048,7 +3040,7 @@ Package pdftex.def Info: ./TikzFigures/thesis-figure6.pdf used on input line 40
 1.
 (pdftex.def)             Requested size: 187.95763pt x 125.08305pt.
 
-<./TikzFigures/thesis-figure7.pdf, id=2890, 157.99225pt x 108.59471pt>
+<./TikzFigures/thesis-figure7.pdf, id=2902, 157.99225pt x 108.59471pt>
 File: ./TikzFigures/thesis-figure7.pdf Graphic file (type pdf)
 
 <use ./TikzFigures/thesis-figure7.pdf>
@@ -3056,7 +3048,7 @@ Package pdftex.def Info: ./TikzFigures/thesis-figure7.pdf used on input line 40
 4.
 (pdftex.def)             Requested size: 187.95763pt x 129.19615pt.
 
-<data/Compressible_Euler/KH/Snapshots/density_200_307.png, id=2897, 807.015pt x
+<data/Compressible_Euler/KH/Snapshots/density_200_307.png, id=2909, 807.015pt x
  807.015pt>
 File: data/Compressible_Euler/KH/Snapshots/density_200_307.png Graphic file (ty
 pe png)
@@ -3065,7 +3057,7 @@ Package pdftex.def Info: data/Compressible_Euler/KH/Snapshots/density_200_307.p
 ng used on input line 414.
 (pdftex.def)             Requested size: 92.81093pt x 92.81093pt.
 
-<data/Compressible_Euler/KH/Snapshots/density_500_307.png, id=2898, 807.015pt x
+<data/Compressible_Euler/KH/Snapshots/density_500_307.png, id=2910, 807.015pt x
  807.015pt>
 File: data/Compressible_Euler/KH/Snapshots/density_500_307.png Graphic file (ty
 pe png)
@@ -3074,7 +3066,7 @@ Package pdftex.def Info: data/Compressible_Euler/KH/Snapshots/density_500_307.p
 ng used on input line 415.
 (pdftex.def)             Requested size: 92.81093pt x 92.81093pt.
 
-<data/Compressible_Euler/KH/Snapshots/density_exact_307.png, id=2899, 1077.0237
+<data/Compressible_Euler/KH/Snapshots/density_exact_307.png, id=2911, 1077.0237
 4pt x 807.015pt>
 File: data/Compressible_Euler/KH/Snapshots/density_exact_307.png Graphic file (
 type png)
@@ -3089,7 +3081,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 414--417
  []
 
 
-<data/Compressible_Euler/KH/Snapshots/density_200_461.png, id=2900, 807.015pt x
+<data/Compressible_Euler/KH/Snapshots/density_200_461.png, id=2912, 807.015pt x
  807.015pt>
 File: data/Compressible_Euler/KH/Snapshots/density_200_461.png Graphic file (ty
 pe png)
@@ -3098,7 +3090,7 @@ Package pdftex.def Info: data/Compressible_Euler/KH/Snapshots/density_200_461.p
 ng used on input line 418.
 (pdftex.def)             Requested size: 92.81093pt x 92.81093pt.
 
-<data/Compressible_Euler/KH/Snapshots/density_500_461.png, id=2901, 807.015pt x
+<data/Compressible_Euler/KH/Snapshots/density_500_461.png, id=2913, 807.015pt x
  807.015pt>
 File: data/Compressible_Euler/KH/Snapshots/density_500_461.png Graphic file (ty
 pe png)
@@ -3107,7 +3099,7 @@ Package pdftex.def Info: data/Compressible_Euler/KH/Snapshots/density_500_461.p
 ng used on input line 419.
 (pdftex.def)             Requested size: 92.81093pt x 92.81093pt.
 
-<data/Compressible_Euler/KH/Snapshots/density_exact_461.png, id=2902, 1077.0237
+<data/Compressible_Euler/KH/Snapshots/density_exact_461.png, id=2914, 1077.0237
 4pt x 807.015pt>
 File: data/Compressible_Euler/KH/Snapshots/density_exact_461.png Graphic file (
 type png)
@@ -3122,7 +3114,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 418--421
  []
 
 
-<data/Compressible_Euler/KH/Snapshots/density_200_614.png, id=2903, 807.015pt x
+<data/Compressible_Euler/KH/Snapshots/density_200_614.png, id=2915, 807.015pt x
  807.015pt>
 File: data/Compressible_Euler/KH/Snapshots/density_200_614.png Graphic file (ty
 pe png)
@@ -3131,7 +3123,7 @@ Package pdftex.def Info: data/Compressible_Euler/KH/Snapshots/density_200_614.p
 ng used on input line 422.
 (pdftex.def)             Requested size: 92.81093pt x 92.81093pt.
 
-<data/Compressible_Euler/KH/Snapshots/density_500_614.png, id=2904, 807.015pt x
+<data/Compressible_Euler/KH/Snapshots/density_500_614.png, id=2916, 807.015pt x
  807.015pt>
 File: data/Compressible_Euler/KH/Snapshots/density_500_614.png Graphic file (ty
 pe png)
@@ -3140,7 +3132,7 @@ Package pdftex.def Info: data/Compressible_Euler/KH/Snapshots/density_500_614.p
 ng used on input line 423.
 (pdftex.def)             Requested size: 92.81093pt x 92.81093pt.
 
-<data/Compressible_Euler/KH/Snapshots/density_exact_614.png, id=2905, 1077.0237
+<data/Compressible_Euler/KH/Snapshots/density_exact_614.png, id=2917, 1077.0237
 4pt x 807.015pt>
 File: data/Compressible_Euler/KH/Snapshots/density_exact_614.png Graphic file (
 type png)
@@ -3155,7 +3147,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 422--425
  []
 
 
-<data/Compressible_Euler/KH/Snapshots/density_200_768.png, id=2906, 807.015pt x
+<data/Compressible_Euler/KH/Snapshots/density_200_768.png, id=2918, 807.015pt x
  807.015pt>
 File: data/Compressible_Euler/KH/Snapshots/density_200_768.png Graphic file (ty
 pe png)
@@ -3164,7 +3156,7 @@ Package pdftex.def Info: data/Compressible_Euler/KH/Snapshots/density_200_768.p
 ng used on input line 426.
 (pdftex.def)             Requested size: 92.81093pt x 92.81093pt.
 
-<data/Compressible_Euler/KH/Snapshots/density_500_768.png, id=2907, 807.015pt x
+<data/Compressible_Euler/KH/Snapshots/density_500_768.png, id=2919, 807.015pt x
  807.015pt>
 File: data/Compressible_Euler/KH/Snapshots/density_500_768.png Graphic file (ty
 pe png)
@@ -3173,7 +3165,7 @@ Package pdftex.def Info: data/Compressible_Euler/KH/Snapshots/density_500_768.p
 ng used on input line 427.
 (pdftex.def)             Requested size: 92.81093pt x 92.81093pt.
 
-<data/Compressible_Euler/KH/Snapshots/density_exact_768.png, id=2908, 1077.0237
+<data/Compressible_Euler/KH/Snapshots/density_exact_768.png, id=2920, 1077.0237
 4pt x 807.015pt>
 File: data/Compressible_Euler/KH/Snapshots/density_exact_768.png Graphic file (
 type png)
@@ -3203,7 +3195,7 @@ ta/Compressible_Euler/KH/Snapshots/density_500_614.png> <./data/Compressible_Eu
 ler/KH/Snapshots/density_exact_614.png> <./data/Compressible_Euler/KH/Snapshots
 /density_200_768.png> <./data/Compressible_Euler/KH/Snapshots/density_500_768.p
 ng> <./data/Compressible_Euler/KH/Snapshots/density_exact_768.png>]
-<./TikzFigures/thesis-figure8.pdf, id=3012, 151.02824pt x 109.45692pt>
+<./TikzFigures/thesis-figure8.pdf, id=3024, 151.02824pt x 109.45692pt>
 File: ./TikzFigures/thesis-figure8.pdf Graphic file (type pdf)
 
 <use ./TikzFigures/thesis-figure8.pdf>
@@ -3211,7 +3203,7 @@ Package pdftex.def Info: ./TikzFigures/thesis-figure8.pdf used on input line 46
 1.
 (pdftex.def)             Requested size: 167.07202pt x 121.09276pt.
 
-<./TikzFigures/thesis-figure9.pdf, id=3013, 173.3697pt x 106.86626pt>
+<./TikzFigures/thesis-figure9.pdf, id=3025, 173.3697pt x 106.86626pt>
 File: ./TikzFigures/thesis-figure9.pdf Graphic file (type pdf)
 
 <use ./TikzFigures/thesis-figure9.pdf>
@@ -3219,7 +3211,7 @@ Package pdftex.def Info: ./TikzFigures/thesis-figure9.pdf used on input line 46
 4.
 (pdftex.def)             Requested size: 187.95763pt x 115.86388pt.
 
-<./TikzFigures/thesis-figure10.pdf, id=3014, 151.02824pt x 109.45894pt>
+<./TikzFigures/thesis-figure10.pdf, id=3026, 151.02824pt x 109.45894pt>
 File: ./TikzFigures/thesis-figure10.pdf Graphic file (type pdf)
 
 <use ./TikzFigures/thesis-figure10.pdf>
@@ -3227,7 +3219,7 @@ Package pdftex.def Info: ./TikzFigures/thesis-figure10.pdf used on input line 4
 67.
 (pdftex.def)             Requested size: 167.07202pt x 121.09499pt.
 
-<./TikzFigures/thesis-figure11.pdf, id=3015, 173.3697pt x 105.43289pt>
+<./TikzFigures/thesis-figure11.pdf, id=3027, 173.3697pt x 105.43289pt>
 File: ./TikzFigures/thesis-figure11.pdf Graphic file (type pdf)
 
 <use ./TikzFigures/thesis-figure11.pdf>
@@ -3235,7 +3227,7 @@ Package pdftex.def Info: ./TikzFigures/thesis-figure11.pdf used on input line 4
 70.
 (pdftex.def)             Requested size: 187.95763pt x 114.30983pt.
 
-<./TikzFigures/thesis-figure12.pdf, id=3016, 152.60612pt x 109.57137pt>
+<./TikzFigures/thesis-figure12.pdf, id=3028, 152.60612pt x 109.57137pt>
 File: ./TikzFigures/thesis-figure12.pdf Graphic file (type pdf)
 
 <use ./TikzFigures/thesis-figure12.pdf>
@@ -3243,7 +3235,7 @@ Package pdftex.def Info: ./TikzFigures/thesis-figure12.pdf used on input line 4
 73.
 (pdftex.def)             Requested size: 167.07202pt x 119.9671pt.
 
-<./TikzFigures/thesis-figure13.pdf, id=3017, 169.51932pt x 107.43538pt>
+<./TikzFigures/thesis-figure13.pdf, id=3029, 169.51932pt x 107.43538pt>
 File: ./TikzFigures/thesis-figure13.pdf Graphic file (type pdf)
 
 <use ./TikzFigures/thesis-figure13.pdf>
@@ -3254,7 +3246,7 @@ Package pdftex.def Info: ./TikzFigures/thesis-figure13.pdf used on input line 4
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./TikzFigures/thesis-figure14.pdf, id=3018, 193.12451pt x 106.2108pt>
+<./TikzFigures/thesis-figure14.pdf, id=3030, 193.12451pt x 106.2108pt>
 File: ./TikzFigures/thesis-figure14.pdf Graphic file (type pdf)
 
 <use ./TikzFigures/thesis-figure14.pdf>
@@ -3265,7 +3257,7 @@ Package pdftex.def Info: ./TikzFigures/thesis-figure14.pdf used on input line 4
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./TikzFigures/thesis-figure15.pdf, id=3019, 154.1479pt x 108.09485pt>
+<./TikzFigures/thesis-figure15.pdf, id=3031, 154.1479pt x 108.09485pt>
 File: ./TikzFigures/thesis-figure15.pdf Graphic file (type pdf)
 
 <use ./TikzFigures/thesis-figure15.pdf>
@@ -3273,7 +3265,7 @@ Package pdftex.def Info: ./TikzFigures/thesis-figure15.pdf used on input line 4
 93.
 (pdftex.def)             Requested size: 187.95763pt x 131.80788pt.
 
-<./TikzFigures/thesis-figure16.pdf, id=3020, 156.68338pt x 106.44167pt>
+<./TikzFigures/thesis-figure16.pdf, id=3032, 156.68338pt x 106.44167pt>
 File: ./TikzFigures/thesis-figure16.pdf Graphic file (type pdf)
 
 <use ./TikzFigures/thesis-figure16.pdf>
@@ -3281,7 +3273,7 @@ Package pdftex.def Info: ./TikzFigures/thesis-figure16.pdf used on input line 4
 96.
 (pdftex.def)             Requested size: 187.95763pt x 127.69524pt.
 
-<./TikzFigures/thesis-figure17.pdf, id=3021, 154.1479pt x 106.43965pt>
+<./TikzFigures/thesis-figure17.pdf, id=3033, 154.1479pt x 106.43965pt>
 File: ./TikzFigures/thesis-figure17.pdf Graphic file (type pdf)
 
 <use ./TikzFigures/thesis-figure17.pdf>
@@ -3289,7 +3281,7 @@ Package pdftex.def Info: ./TikzFigures/thesis-figure17.pdf used on input line 4
 99.
 (pdftex.def)             Requested size: 187.95763pt x 129.78957pt.
 
-<./TikzFigures/thesis-figure18.pdf, id=3022, 152.6232pt x 106.44267pt>
+<./TikzFigures/thesis-figure18.pdf, id=3034, 152.6232pt x 106.44267pt>
 File: ./TikzFigures/thesis-figure18.pdf Graphic file (type pdf)
 
 <use ./TikzFigures/thesis-figure18.pdf>
@@ -3297,7 +3289,7 @@ Package pdftex.def Info: ./TikzFigures/thesis-figure18.pdf used on input line 5
 02.
 (pdftex.def)             Requested size: 187.95763pt x 131.09586pt.
 
-<./TikzFigures/thesis-figure19.pdf, id=3023, 154.1479pt x 106.44066pt>
+<./TikzFigures/thesis-figure19.pdf, id=3035, 154.1479pt x 106.44066pt>
 File: ./TikzFigures/thesis-figure19.pdf Graphic file (type pdf)
 
 <use ./TikzFigures/thesis-figure19.pdf>
@@ -3305,7 +3297,7 @@ Package pdftex.def Info: ./TikzFigures/thesis-figure19.pdf used on input line 5
 05.
 (pdftex.def)             Requested size: 187.95763pt x 129.79082pt.
 
-<./TikzFigures/thesis-figure20.pdf, id=3024, 152.6232pt x 106.44267pt>
+<./TikzFigures/thesis-figure20.pdf, id=3036, 152.6232pt x 106.44267pt>
 File: ./TikzFigures/thesis-figure20.pdf Graphic file (type pdf)
 
 <use ./TikzFigures/thesis-figure20.pdf>
@@ -3316,7 +3308,7 @@ Package pdftex.def Info: ./TikzFigures/thesis-figure20.pdf used on input line 5
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./TikzFigures/thesis-figure21.pdf, id=3025, 162.5523pt x 109.23811pt>
+<./TikzFigures/thesis-figure21.pdf, id=3037, 162.5523pt x 109.23811pt>
 File: ./TikzFigures/thesis-figure21.pdf Graphic file (type pdf)
 
 <use ./TikzFigures/thesis-figure21.pdf>
@@ -3327,7 +3319,7 @@ Package pdftex.def Info: ./TikzFigures/thesis-figure21.pdf used on input line 5
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./TikzFigures/thesis-figure22.pdf, id=3026, 160.42836pt x 117.97374pt>
+<./TikzFigures/thesis-figure22.pdf, id=3038, 160.42836pt x 117.97374pt>
 File: ./TikzFigures/thesis-figure22.pdf Graphic file (type pdf)
 
 <use ./TikzFigures/thesis-figure22.pdf>
@@ -3335,7 +3327,7 @@ Package pdftex.def Info: ./TikzFigures/thesis-figure22.pdf used on input line 5
 25.
 (pdftex.def)             Requested size: 187.95763pt x 138.22131pt.
 
-<./TikzFigures/thesis-figure23.pdf, id=3027, 151.24605pt x 118.7878pt>
+<./TikzFigures/thesis-figure23.pdf, id=3039, 151.24605pt x 118.7878pt>
 File: ./TikzFigures/thesis-figure23.pdf Graphic file (type pdf)
 
 <use ./TikzFigures/thesis-figure23.pdf>
@@ -3350,7 +3342,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [124]
-<./TikzFigures/thesis-figure24.pdf, id=3056, 334.63521pt x 102.81813pt>
+<./TikzFigures/thesis-figure24.pdf, id=3069, 334.63521pt x 102.81813pt>
 File: ./TikzFigures/thesis-figure24.pdf Graphic file (type pdf)
 
 <use ./TikzFigures/thesis-figure24.pdf>
@@ -3391,7 +3383,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [130]
-[131] <./TikzFigures/thesis-figure25.pdf, id=3364, 144.60324pt x 112.58963pt>
+[131] <./TikzFigures/thesis-figure25.pdf, id=3377, 144.60324pt x 112.58963pt>
 File: ./TikzFigures/thesis-figure25.pdf Graphic file (type pdf)
 
 <use ./TikzFigures/thesis-figure25.pdf>
@@ -3399,7 +3391,7 @@ Package pdftex.def Info: ./TikzFigures/thesis-figure25.pdf used on input line 7
 13.
 (pdftex.def)             Requested size: 187.95763pt x 146.35445pt.
 
-<./TikzFigures/thesis-figure26.pdf, id=3365, 151.83125pt x 115.62799pt>
+<./TikzFigures/thesis-figure26.pdf, id=3378, 151.83125pt x 115.62799pt>
 File: ./TikzFigures/thesis-figure26.pdf Graphic file (type pdf)
 
 <use ./TikzFigures/thesis-figure26.pdf>
@@ -3407,7 +3399,7 @@ Package pdftex.def Info: ./TikzFigures/thesis-figure26.pdf used on input line 7
 16.
 (pdftex.def)             Requested size: 187.95763pt x 143.14255pt.
 
-<./TikzFigures/thesis-figure27.pdf, id=3366, 152.4907pt x 108.89883pt>
+<./TikzFigures/thesis-figure27.pdf, id=3379, 152.4907pt x 108.89883pt>
 File: ./TikzFigures/thesis-figure27.pdf Graphic file (type pdf)
 
 <use ./TikzFigures/thesis-figure27.pdf>
@@ -3415,7 +3407,7 @@ Package pdftex.def Info: ./TikzFigures/thesis-figure27.pdf used on input line 7
 19.
 (pdftex.def)             Requested size: 187.95763pt x 134.23055pt.
 
-<./TikzFigures/thesis-figure28.pdf, id=3367, 156.73958pt x 113.57832pt>
+<./TikzFigures/thesis-figure28.pdf, id=3380, 156.73958pt x 113.57832pt>
 File: ./TikzFigures/thesis-figure28.pdf Graphic file (type pdf)
 
 <use ./TikzFigures/thesis-figure28.pdf>
@@ -3465,7 +3457,7 @@ t model re-duc-tion of
 
 
 ]
-<tail/cv.pdf, id=3517, 597.50829pt x 845.0471pt>
+<tail/cv.pdf, id=3529, 597.50829pt x 845.0471pt>
 File: tail/cv.pdf Graphic file (type pdf)
  <use tail/cv.pdf>
 Package pdftex.def Info: tail/cv.pdf used on input line 5.
@@ -3475,7 +3467,7 @@ File: tail/cv.pdf Graphic file (type pdf)
 <use tail/cv.pdf>
 Package pdftex.def Info: tail/cv.pdf used on input line 5.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
- <tail/cv.pdf, id=3520, page=1, 597.50829pt x 845.0471pt>
+ <tail/cv.pdf, id=3532, page=1, 597.50829pt x 845.0471pt>
 File: tail/cv.pdf Graphic file (type pdf)
 
 <use tail/cv.pdf, page 1>
@@ -3499,7 +3491,7 @@ File: tail/cv.pdf Graphic file (type pdf)
 Package pdftex.def Info: tail/cv.pdf, page1 used on input line 5.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
  [149 <./tail/cv.pdf>]
-<tail/cv.pdf, id=3552, page=2, 597.50829pt x 845.0471pt>
+<tail/cv.pdf, id=3564, page=2, 597.50829pt x 845.0471pt>
 File: tail/cv.pdf Graphic file (type pdf)
 
 <use tail/cv.pdf, page 2>
@@ -3536,11 +3528,11 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 62.
  ) 
 Here is how much of TeX's memory you used:
- 28395 strings out of 492995
- 518998 string characters out of 6132705
- 750790 words of memory out of 5000000
- 30136 multiletter control sequences out of 15000+600000
- 155489 words of font info for 297 fonts, out of 8000000 for 9000
+ 28401 strings out of 492995
+ 519059 string characters out of 6132705
+ 749800 words of memory out of 5000000
+ 30137 multiletter control sequences out of 15000+600000
+ 155506 words of font info for 298 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,18n,77p,1609b,1317s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/t
@@ -3550,43 +3542,44 @@ ive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/local/texliv
 e/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive
 /2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/
 2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2
-017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/201
-7/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2017/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2017/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2017/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2017/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2017/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2017/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2017/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2017/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2017/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public
-/amsfonts/euler/eufm10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/publ
-ic/fpl/fplrc8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/fpl/f
-plrij8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/sym
-bols/msbm10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts
-/symbols/msbm7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/adobe/utopia
-/putb8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/adobe/utopia/putr8a
-.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/adobe/utopia/putri8a.pfb><
-/usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfss1000.pfb></u
-sr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfss1095.pfb></usr
-/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfss2074.pfb></usr/l
-ocal/texlive/2017/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/te
-xlive/2017/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2
-017/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb></usr/local/texlive/2017/te
-xmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/local/texlive/2017/texmf-dist/fo
-nts/type1/urw/symbol/usyr.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/u
-rw/times/utmb8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/times/u
-tmr8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/times/utmri8a.pfb
->
-Output written on thesis.pdf (158 pages, 6422720 bytes).
+017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/201
+7/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2017/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2017/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2017/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2017/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2017/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2017/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2017/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2017/texmf-dist/font
+s/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2017/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmr9.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmsy8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmsy9.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsf
+onts/euler/eufm10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/fp
+l/fplrc8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/fpl/fplrij
+8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/
+msbm10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/symb
+ols/msbm7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/adobe/utopia/putb
+8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/adobe/utopia/putr8a.pfb>
+</usr/local/texlive/2017/texmf-dist/fonts/type1/adobe/utopia/putri8a.pfb></usr/
+local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfss1000.pfb></usr/lo
+cal/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfss1095.pfb></usr/loca
+l/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfss2074.pfb></usr/local/
+texlive/2017/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive
+/2017/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2017/t
+exmf-dist/fonts/type1/urw/palatino/uplri8a.pfb></usr/local/texlive/2017/texmf-d
+ist/fonts/type1/urw/symbol/usyr.pfb></usr/local/texlive/2017/texmf-dist/fonts/t
+ype1/urw/symbol/usyr.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/ti
+mes/utmb8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/times/utmr8a
+.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on thesis.pdf (158 pages, 6443284 bytes).
 PDF statistics:
- 3818 PDF objects out of 4296 (max. 8388607)
- 3447 compressed objects within 35 object streams
- 819 named destinations out of 1000 (max. 500000)
+ 3837 PDF objects out of 4296 (max. 8388607)
+ 3464 compressed objects within 35 object streams
+ 823 named destinations out of 1000 (max. 500000)
  37930 words of extra memory for PDF output out of 42996 (max. 10000000)
 
