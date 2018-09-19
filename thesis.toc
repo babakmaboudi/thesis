@@ -32,7 +32,7 @@
 \contentsline {subsection}{\numberline {4.6.3}Numerical Convergence}{64}{subsection.4.6.3}
 \contentsline {section}{\numberline {4.7}Conclusion}{65}{section.4.7}
 \contentsline {chapter}{\numberline {5}Symplectic Model Order Reduction With a Weighted Inner Product}{67}{chapter.5}
-\contentsline {section}{\numberline {5.1}Generalization of the Symplectic Galerkin Projection}{68}{section.5.1}
+\contentsline {section}{\numberline {5.1}Generalization of the Symplectic Galerkin Projection}{69}{section.5.1}
 \contentsline {section}{\numberline {5.2}Proper Symplectic Decomposition Revisited}{72}{section.5.2}
 \contentsline {section}{\numberline {5.3}Stability Conservation}{73}{section.5.3}
 \contentsline {section}{\numberline {5.4}Greedy Generation of a $J_{2n}$-Symplectic Basis}{74}{section.5.4}
