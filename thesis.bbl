@@ -36,6 +36,12 @@ F.~Ballarin, A.~Manzoni, A.~Quarteroni, and G.~Rozza.
 \newblock {\em International Journal for Numerical Methods in Engineering},
   102(5):1136--1161, 2015.
 
+\bibitem{barone2009stable}
+M.~F. Barone, I.~Kalashnikova, D.~J. Segalman, and H.~K. Thornquist.
+\newblock Stable galerkin reduced order models for linearized compressible
+  flow.
+\newblock {\em Journal of Computational Physics}, 228(6):1932--1946, 2009.
+
 \bibitem{barrault2004empirical}
 M.~Barrault, Y.~Maday, N.~C. Nguyen, and A.~T. Patera.
 \newblock An ‘empirical interpolation’method: application to efficient
@@ -585,6 +591,11 @@ R.~Smith, M.~Ellis, G.~Xia, V.~Sankaran, W.~Anderson, and C.~Merkle.
 \newblock Computational investigation of acoustics and instabilities in a
   longitudinal-mode rocket combustor.
 \newblock {\em AIAA Journal}, 46(11):2659--2673, 2008.
+
+\bibitem{strang09}
+G.~Strang.
+\newblock {\em Introduction to Linear Algebra}.
+\newblock Wellesley-Cambridge Press, Wellesley, MA, fourth edition, 2009.
 
 \bibitem{tadmor1984skew}
 E.~Tadmor.

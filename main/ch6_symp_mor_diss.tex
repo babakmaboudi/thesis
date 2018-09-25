@@ -21,14 +21,14 @@ To account for dissipation in a quadratic Hamiltonian $H(z) = \frac 1 2 z^T K^T 
 \begin{equation} \label{p3.eq:2.4}
 	\left\{
 	\begin{aligned}
-		& \dot {z} = \mathbb J_{2n} K^T f(t), \\
+		& \dot {z} = \mathbb J_{2n} K^T f(t,\edit{z}), \\
 		& z(0) = z_0,
 	\end{aligned}
 	\right.
 \end{equation}
 where $f$ is the solution to the Volterra integral equation \cite{jerri1999introduction,corduneanu1991integral}
 \begin{equation} \label{p3.eq:2.4.1}
-	f(t) + \int_0^t \chi(t-s) \cdot f(s)\ ds = K z.
+	f(t,\edit{z}) + \int_0^t \chi(t-s) f(s,\edit{z})\ ds = K z.
 \end{equation}
 Here $\chi:\mathbb R^+\to \mathbb R^{2n\times 2n}$ is a bounded matrix valued function with respect to the Frobenius norm and is called the \emph{general susceptibility}. Note that the integral term in (\ref{p3.eq:2.4.1}) accounts to the accumulation of the dissipation, whereas $\chi(s) = 0$ implies \eqref{p3.eq:2.4} is equivalent to \eqref{p1.eq:SyMo:1}. Furthermore, under suitable assumptions on $K$, both \eqref{p1.eq:SyMo:1} and \eqref{p3.eq:2.4} are well-posed \cite{figotin2007hamiltonian}.
 
@@ -58,7 +58,7 @@ It is shown in \cite{figotin2007hamiltonian,figotin2005spectral} that under natu
 \begin{equation} \label{p3.eq:2.7}
 	\dot x = \mathcal J_{2n} \frac{\delta H_{\text{ex}}}{\delta x}.
 \end{equation}
-Here $H_{\text{ex}}:\mathbb R^{2n}\times \mathcal H^{2n} \to \mathbb R$ is an extended quadratic Hamiltonian function and $\mathcal J_{2n}$ is the symplectic operator defined on $\mathbb R^{2n}\times \mathcal H^{2n}$ respectively.
+Here, $x\in \mathbb R^{2n}\times \mathcal H^{2n} $, $H_{\text{ex}}:\mathbb R^{2n}\times \mathcal H^{2n} \to \mathbb R$ is an extended quadratic Hamiltonian function and $\mathcal J_{2n}$ is the symplectic operator defined on $\mathbb R^{2n}\times \mathcal H^{2n}$ respectively.
 
 
 \begin{theorem} \cite{figotin2007hamiltonian}
@@ -75,82 +75,96 @@ When $\chi$ is a constant symmetric matrix, condition (\ref{p3.eq:2.8}) correspo
 \begin{subequations}
 \begin{align}
 		\label{p3.eq:2.10.a} & \dot{z}(t) = \mathbb J_{2n} K^T f(t), \\
-		\label{p3.eq:2.10.b} & \partial_t \phi(t,x) = \theta(t,x), \\
-		\label{p3.eq:2.10.c} & \partial_t \theta(t,x) = \partial_x^2 \phi(t,x) + \sqrt 2 \delta_0(x) \cdot \sqrt{\chi}  f(t), 
+		\label{p3.eq:2.10.b} & \partial_t \phi(t,x,,\edit{z}) = \theta(t,x,\edit{z}), \\
+		\label{p3.eq:2.10.c} & \partial_t \theta(t,x,\edit{z}) = \partial_x^2 \phi(t,x,\edit{z}) + \sqrt 2 \delta_0(x) \cdot \sqrt{\chi}  f(t,\edit{z}), 
 \end{align}
 \end{subequations}
 together with the initial condition
 \begin{equation} \label{p3.eq:2.10.1}
-	z(0) = z_0,\quad \phi(0,\cdot) = 0, \quad \theta(0,\cdot) = 0.
+	z(0) = z_0,\quad \phi(0,\cdot,\cdot) = 0, \quad \theta(0,\cdot,\cdot) = 0.
 \end{equation}
 Here $\theta$ and $\phi$ are vector valued functions in $\mathcal H^{2n}$, $\delta_0(s)$ is the Dirac's delta function, $\sqrt{ \chi}$ is the matrix square root of $\chi$ and $f$ is the solution to the equation
 \begin{equation} \label{p3.eq:2.11}
-	f(t) + \sqrt{2} \cdot \sqrt{ \chi } \phi(t,0) = Kz(t).
+	f(t,\edit{z}) + \sqrt{2} \cdot \sqrt{ \chi } \phi(t,0,\edit{z}) = Kz(t).
 \end{equation}
 Equations (\ref{p3.eq:2.10.b}) and (\ref{p3.eq:2.10.c}) are equations for a vibrating string, and can be solved analytically
 \begin{equation} \label{p3.eq:2.12}
-	\phi(t,x) = \frac {\sqrt 2} 2 \int_0^{t-|x|} \sqrt{\chi} f(s)\ ds,\quad \theta(t,x) = \frac{\sqrt 2}{2} \cdot \sqrt{\chi} f(t - |x|).
+	\phi(t,x,\edit{z}) = \frac {\sqrt 2} 2 \int_0^{t-|x|} \sqrt{\chi} f(s,\edit{z})\ ds,\quad \theta(t,x,\edit{z}) = \frac{\sqrt 2}{2} \cdot \sqrt{\chi} f(t - |x|,\edit{z}).
 \end{equation}
-We can recover (\ref{p3.eq:2.4.1}) by substituting (\ref{p3.eq:2.12}) into (\ref{p3.eq:2.11}). The extended Hamiltonian $H_\text{ex}$ for the system \Cref{p3.eq:2.10.a,p3.eq:2.10.b,p3.eq:2.10.c} takes the quadratic from
+We can recover (\ref{p3.eq:2.4.1}) by substituting (\ref{p3.eq:2.12}) into (\ref{p3.eq:2.11}). The extended Hamiltonian $H_\text{ex}$ for the system \Cref{p3.eq:2.10.a,p3.eq:2.10.b,p3.eq:2.10.c} takes the quadratic form
 \begin{equation} \label{p3.eq:2.13}
-	H_\text{ex}(z,\phi,\theta) = \frac 1 2 \left( \| Kz - \phi(t,0) \|_2^2 + \| \theta(t) \|^2_{\mathcal H^{2n} } + \| \partial_x\phi(t)\|^2_{\mathcal H^{2n} }\right),
+	H_\text{ex}(z,\phi,\theta) = \edit{\int_{\Gamma} }\frac 1 2 \left( \| Kz - \phi(t,0,\edit{z}) \|_2^2 + \| \theta(t,\edit{z}) \|^2_{\mathcal H^{2n} } + \| \partial_x\phi(t,\edit{z})\|^2_{\mathcal H^{2n} }\right)\ \edit{dz},
 \end{equation}
-where $\| \cdot \|_2$ is the Euclidean norm on $\mathbb R^{2n}$ and $\| \cdot \|_{\mathcal H^{2n}}$ is the induced norm from the inner product on $\mathcal H^{2n}$. 
+\edit{where $z\in \Gamma$,} $\| \cdot \|_2$ is the Euclidean norm on $\mathbb R^{2n}$ and $\| \cdot \|_{\mathcal H^{2n}}$ is the induced norm from the inner product on $\mathcal H^{2n}$. 
 
 Equations (\ref{p3.eq:2.10.b}) and (\ref{p3.eq:2.10.c}) are called the \emph{hidden strings}. The dissipation of energy in the original system (\ref{p3.eq:2.4}) is carried away, as vibrations, along the added strings making the extended system conservative. The Hamiltonian extension of the damped harmonic oscillator in Example \ref{example:2.1} is exactly the Lamb model \cite{lamb:1900} which is a harmonic oscillator coupled with a vibrating string, and the tension in the string causes linear dissipation in the dynamics of the harmonic oscillator.
 
-Note that the time integration of \Cref{p3.eq:2.10.a,p3.eq:2.10.b,p3.eq:2.10.c} involves the integration of $f$ in (\ref{p3.eq:2.12}). In general, the history of $f(t)$ must be stored and may cause storage limitation in long-time integration. However, we are interested solely in finding $z(t)$ which depends on $f$ at time $t$, and $\phi(t,0)$, i.e. the integral of the history of $f$. So by carefully choosing a quadrature rule that uses the same quadrature nodes as the time integrator we can avoid storing the history of $f$. For example for the trapezoidal rule, we recover the recursive relation
+Note that the time integration of \Cref{p3.eq:2.10.a,p3.eq:2.10.b,p3.eq:2.10.c} involves the integration of $f$ in (\ref{p3.eq:2.12}). In general, the history of $f(t,\edit{z})$ must be stored and may cause storage limitation in long-time integration. However, we are interested solely in finding $z(t,\edit{z})$ which depends on $f$ at time $t$, and $\phi(t,0,\edit{z})$, i.e. the integral of the history of $f$. So by carefully choosing a quadrature rule that uses the same quadrature nodes as the time integrator we can avoid storing the history of $f$. For example for the trapezoidal rule, we recover the recursive relation
 \begin{equation} \label{p3.eq:2.14}
-	\int_{0}^{t_n} f(s) \ ds \approx \frac{\Delta t}{2} f(t_n) + \frac{\Delta t}{2} f(t_{n-1}) + \int_{0}^{t_{n-1}} f(s) \ ds,
+	\int_{0}^{t_n} f(s,\edit{z}) \ ds \approx \frac{\Delta t}{2} f(t_n,\edit{z}) + \frac{\Delta t}{2} f(t_{n-1},\edit{z}) + \int_{0}^{t_{n-1}} f(s,\edit{z}) \ ds,
 \end{equation}
 where $\Delta t$ is the time step. The recursive relation in (\ref{p3.eq:2.14}) suggests that storing the value of the integral term together with the state of $f$ in the previous time step suffices to evaluate the integral for the new time step. For other interpolation based quadrature rules, we can construct similar recursive rules of the form
 \begin{equation}
-	\int_{0}^{t_n} f(s) \ ds \approx \sum_{i=0}^{k} \omega_i f(t_{n-i})  + \int_{0}^{t_{n-k}} f(s) \ ds
+	\int_{0}^{t_n} f(s,\edit{z}) \ ds \approx \sum_{i=0}^{k} \omega_i f(t_{n-i},\edit{z})  + \int_{0}^{t_{n-k}} f(s,\edit{z}) \ ds
 \end{equation}
 for some quadrature weights $\omega_i$, $i=1,\dots,k$ with $k\ll n$. Thus, time integration of \Cref{p3.eq:2.10.a,p3.eq:2.10.b,p3.eq:2.10.c}, only requires storage of $k$ evaluations of $f$.
 
 
 \section{The Reduced Dissipative Hamiltonian Method} \label{p3.sec:3}
 
-Since the symplectic model reduction in discussed in \Cref{chapter:4,chapter:5} are based on the conservation law in Theorem \ref{theorem:2.10}, it can no longer be applied to dissipative Hamiltonian systems. Instead in the reduced dissipative Hamiltonian method, we considers a Hamiltonian extension to a dissipative Hamiltonian system to construct a closed system. A symplectic model reduction can then be naturally applied to conserve the total energy.
+Since the symplectic model reduction discussed in \Cref{chapter:4,chapter:5} are based on the conservation law in Theorem \ref{theorem:2.10}, it can no longer be applied to dissipative Hamiltonian systems. Instead in the reduced dissipative Hamiltonian method, we consider a Hamiltonian extension to a dissipative Hamiltonian system to construct a closed system. A symplectic model reduction can then be naturally applied to conserve the total energy.
 
 Consider a dissipative Hamiltonian system of the form (\ref{p3.eq:2.4}) with a quadratic Hamiltonian, $H(z) = z^TK^TKz$. Since $K^TK$ is symmetric and positive definite, it has a unique Cholesky factorization $K^TK = L^T L$ where $L$ is upper triangular \cite{strang09}. So we can write 
 \begin{equation} \label{p3.eq:3.7}
 H(z) = z^T L^T L z.
 \end{equation}
-Further, suppose that the solution $z(t)$ lies on a low-dimensional symplectic subspace such that $z \approx Ay$, where $A$ is an ortho-symplectic matrix of the size $2n\times 2k$ and $y$ is the expansion coefficients of $z$ in the basis of $A$. The Hamiltonian $H$ then takes the form
-\begin{equation} \label{p3.eq:3.8}
-	H(z) \approx H(Ay) = y^T A^T L^T L A y.
-\end{equation}
-Since $A^T L^T L A$ is symmetric and positive definite, it too has a unique Cholesky factorization $\tilde L^T \tilde L$ where $\tilde L = A^T L A$ is an upper triangular matrix of size $2k \times 2k$. Writing (\ref{p3.eq:2.4}) in terms of the reduced coordinates $y$ and the Hamiltonian (\ref{p3.eq:3.7}) reads
+Further, suppose that the solution $z(t)$ lies on a low-dimensional symplectic subspace such that $z \approx Ay$, where $A$ is an ortho-symplectic matrix of the size $2n\times 2k$ \edit{satisfying condition (d) in \Cref{p1.theorem:1}}, and $y$ is the expansion coefficients of $z$ in the basis of $A$.
+%The Hamiltonian $H$ then takes the form
+%\begin{equation} \label{p3.eq:3.8}
+%	H(z) \approx H(Ay) = y^T A^T L^T L A y.
+%\end{equation}
+%Since $A^T L^T L A$ is symmetric and positive definite, it too has a unique Cholesky factorization $\tilde L^T \tilde L$ where $\tilde L = A^T L A$ is an upper triangular matrix of size $2k \times 2k$. 
+Writing (\ref{p3.eq:2.4}) in terms of the reduced coordinates $y$ reads
 \begin{equation} \label{p3.eq:3.9}
-		A\dot{y}(t) = \mathbb J_{2n} L^T f(t) + r(z),
+		A\dot{y}(t) = \mathbb J_{2n} L^T f(t,\edit{Ay}) + r(z),
 \end{equation}
 together with the complementary equation
 \begin{equation} \label{p3.eq:3.10}
-	f(t) + \sqrt 2 \cdot \sqrt{\chi} \phi(t,0) = LAy.
+	f(t,A\edit{y}) + \sqrt 2 \cdot \sqrt{\chi} \phi(t,0,\edit{y}) = LAy.
 \end{equation}
 The symplectic Galerkin projection implies
 \begin{align} \label{p3.eq:3.11}
-	& \dot y(t) = \mathbb J_{2k} A^T L^T f(t), \\
-	& A^T f(t) + \sqrt{2} A^T \sqrt{\chi} \phi(t,0) = A^T L A y,
+	& \dot y(t) = \mathbb J_{2k} A^T L^T f(t,\edit{Ay}), \\
+	& A^T f(t,\edit{Ay}) + \sqrt{2} A^T \sqrt{\chi} \phi(t,0,\edit{Ay}) = A^T L A y,
 \end{align}
-where we use the fact that $A^+\mathbb J_{2n} = \mathbb{J}_{2k} A^T$. If we define $f = A \tilde f$, $\phi = A \tilde \phi$, $\theta = A\tilde \theta$ and the \emph{reduced susceptibility} as $\tilde \chi = A^T \chi A$ we recover the reduced Hamiltonian system
+where we use the fact that $A^+\mathbb J_{2n} = \mathbb{J}_{2k} A^T$. If we define
+\edit{
+\[
+	f = A \tilde f,\quad \phi = A \tilde \phi,\quad \theta = A\tilde \theta, \quad \tilde L = A^T L A,
+\]
+}
+and the \emph{reduced susceptibility} as $\tilde \chi = A^T \chi A$ we recover the reduced Hamiltonian system
 \begin{subequations}
 \begin{align}
-		\label{p3.eq:3.12.a} & \dot{y}(t) = \mathbb J_{2k} {\tilde L}^T \tilde f(t), \\
-		\label{p3.eq:3.12.b} & \partial_t \tilde \phi(t,x) = \tilde \theta(t,x),\\
-		\label{p3.eq:3.12.c} & \partial_t \tilde \theta(t,x) = \partial_x^2 \tilde \phi(t,x) + \sqrt 2 \delta_0(x) \cdot \sqrt{\tilde \chi}  \tilde f(t),
+		\label{p3.eq:3.12.a} & \dot{y}(t) = \mathbb J_{2k} {\tilde L}^T \tilde f(t,\edit{y}), \\
+		\label{p3.eq:3.12.b} & \partial_t \tilde \phi(t,x,\edit{y}) = \tilde \theta(t,x,\edit{y}),\\
+		\label{p3.eq:3.12.c} & \partial_t \tilde \theta(t,x,\edit{y}) = \partial_x^2 \tilde \phi(t,x,\edit{y}) + \sqrt 2 \delta_0(x,\edit{y}) \cdot \sqrt{\tilde \chi}  \tilde f(t,\edit{y}),
 \end{align}
 \end{subequations}
 together with the auxiliary equation
 \begin{equation} \label{p3.eq:3.13}
-	\tilde f(t) + \sqrt{2} \sqrt{\tilde \chi} \tilde \phi(t,0) = \tilde L y.
+	\tilde f(t,\edit{y}) + \sqrt{2} \sqrt{\tilde \chi} \tilde \phi(t,0,\edit{y}) = \tilde L y.
 \end{equation}
 \Cref{p3.eq:3.12.a,p3.eq:3.12.b,p3.eq:3.12.c} is a Hamiltonian system on the symplectic linear vector space $\mathbb R^{2k} \times \mathcal H^{2k}$ and contributes to the \emph{reduced TDD system}
 \begin{equation} \label{p3.eq:3.14}
-	\dot {y} = \mathbb J_{2k} \tilde L^T \tilde f(t), \quad \tilde f(t) + \int_0^t \tilde \chi\cdot \tilde f(s)\ ds = \tilde L y.
+	\dot {y} = \mathbb J_{2k} \tilde L^T \tilde f(t,\edit{y}), \quad \tilde f(t,\edit{y}) + \int_0^t \tilde \chi\cdot \tilde f(s,\edit{y})\ ds = \tilde L y.
 \end{equation}
+\edit{
+with the Hamiltonian defined as
+\begin{equation} \label{p3.eq:3.8}
+\tilde H (y) = y^T \tilde L^T \tilde L y.
+\end{equation}
+}
 Therefore, the system energy will be conserved along integral curves of \Cref{p3.eq:3.12.a,p3.eq:3.12.b,p3.eq:3.12.c}.
 
 We point out that the transformation that connects \Cref{p3.eq:2.10.a,p3.eq:2.10.b,p3.eq:2.10.c}) to \Cref{p3.eq:3.12.a,p3.eq:3.12.b,p3.eq:3.12.c} is given by
@@ -178,8 +192,8 @@ Note that Algorithm \ref{alg:6.1} does not depend on the choice of the method to
 The main advantage of the RDH method compared to the existing methods is that it enables the reduced system to be integrated using a symplectic integrator. The reduced system constructed using the RDH is a closed Hamiltonian system, therefore the conservation law in \Cref{theorem:2.10} holds and a symplectic integrator guarantees that the total energy is preserved in the reduced system. Alternative methods, e.g. \cite{peng2016geometric,polyuga2010structure,beattie2011structure}, either integrate the reduced system with a non-symplectic integrator, or do not construct a closed reduced system which result in accumulation of local errors or unstable solution during long time integration, respectively \cite{hairer2006geometric}.
 
 The following theorem provides an indication for the boundedness of the reduced system.
-\begin{theorem}
-Consider the TDD system (\ref{p3.eq:2.4}) together with the initial condition (\ref{p3.eq:2.10.1}). If in the absence of dissipation $(\chi = 0)$, a bounded open neighborhood $U\subset \mathbb R^{2n}$ of $z_0$ exists such that $H(z)<c$, for some constant value $c > H(z_0)$, then the RDH method yields a bounded reduced system.
+\begin{theorem} \label{theorem:6.1}
+Consider the TDD system (\ref{p3.eq:2.4}) together with the initial condition (\ref{p3.eq:2.10.1}). If in the absence of dissipation $(\chi = 0)$, a bounded open neighborhood $U\subset \mathbb R^{2n}$ of $z_0$ exists such that $H(z)<c$, for all $z\in U$, and for some constant value $c > H(z_0)$, then the RDH method yields a bounded reduced system.
 \end{theorem}
 \begin{proof} For a Hamiltonian of the form (\ref{p3.eq:3.7}), $H(z)\geq 0$ for all $z\in \mathbb R^{2n}$. It is shown in \cite{figotin2007hamiltonian,figotin2005spectral} that for a symmetric and positive definite $\chi$, $\frac d {dt} H(z(t)) \leq 0$. Therefore, for all $0\leq t <\infty$, $H(z) < c$ which implies $z(t) \in U$. Now suppose that the symplectic basis $A$ is used to construct the RDH reduced system (\ref{p3.eq:3.12.a})-(\ref{p3.eq:3.12.c}) such that $y_0 = A^+z_0$. It is easily checked that $V = \text{Range}(A)\cap U$ is a bounded open neighborhood of $z_0$ and that $H(z) = H(Ay) < c$ for all $z \in V$. Since $\tilde H(y) = H(Ay)$ is a Hamiltonian function for the dissipative Hamiltonian system (\ref{p3.eq:3.14}) and that $\tilde \chi$ is symmetric and positive definite, then $\frac d {dt} \tilde H(y) \leq0$. This implies that $\tilde H(y)<c$ and $y(t)\in U$ for all $0\leq t <\infty$. Also it is easy to check that the boundedness of the solution of the original TDD system implies boundedness of the extended system in $\mathbb R^{2n}\times \mathcal H^{2n}$ with respect to the norm $\| (x,f) \|_{\text{ex}} = \|x\|_2 + \| f \|_{\mathcal H ^{2n}}$.
 \end{proof}
@@ -187,22 +201,30 @@ Consider the TDD system (\ref{p3.eq:2.4}) together with the initial condition (\
 Note that in practice, ensuring $\frac d {dt} H(z(t)) \leq 0$, requires a careful time integration of the dissipative system. The symplectic time integration of the extended system guarantees the correct evolution of the Hamiltonian.
 
 We conclude this section by showing that the RDH method preserves the stability of the equilibrium points of the extended system. This provides a strong indication that the overall dynamics and stability of the original system system is translated into the RDH system. 
-
-\begin{definition}
-Consider a dynamical system of the form $\dot z = f( z)$ and suppose that $z_e$ is an equilibrium point for the system so that $ f( z_e) = 0$. $z_e$ is called Lyapunov stable if, for any $\epsilon > 0$, we can find $\delta > 0$ such that for any trajectory $\psi_t$, if $\| \psi_0 - z_e \|_{\text{ex}} \leq \delta$, then for all $0 \leq t < \infty$, we have $\| \psi_t - z_e \|_{\text{ex}} < \epsilon$.
-\end{definition}
-
-The Dirichlet's theorem \cite{bhatia2002stability}, states that the sufficient condition for an equilibrium point to be stable is the existence of a Lyapunov function \cite{bhatia2002stability}. In the context of the Hamiltonian systems, the Hamiltonian is a candidate for the Lyapunov function.
-
+\edit{
 \begin{theorem}
-Consider the Hamiltonian system \Cref{p3.eq:2.10.a,p3.eq:2.10.b,p3.eq:2.10.c} together with the reduced system \Cref{p3.eq:3.12.a,p3.eq:3.12.b,p3.eq:3.12.c}. Suppose that $(z_e,\phi_e,\theta_e)$ is an equilibrium point of \Cref{p3.eq:2.10.a,p3.eq:2.10.b,p3.eq:2.10.c} and that $z_e$ is in the range of the symplectic basis $A$. Further, suppose that $H_{\text{ex}}$ is a Lyapunov function ($\nabla^2_{(z,\phi,\theta)}H_{\text{ex}}$ is a positive definite operator). Then $(z_e,\phi_e,\theta_e)$ and $(A^+z_e,A^+\phi_e,A^+\theta_e)$ are lyapunov stable points of \Cref{p3.eq:2.10.a,p3.eq:2.10.b,p3.eq:2.10.c} and \Cref{p3.eq:2.10.a,p3.eq:2.10.b,p3.eq:2.10.c}), respectively.
+\cite{doi:10.1137/17M1111991} Consider a Hamiltonian system of the form \Cref{p3.eq:2.10.a,p3.eq:2.10.b,p3.eq:2.10.c} with a Hamiltonian $H\in C^{2}$  together with the reduced system \Cref{p3.eq:3.12.a,p3.eq:3.12.b,p3.eq:3.12.c}. Suppose that $(z_e,\phi_e,\theta_e)$ is a strict local minimum of $H_{\text{ex}}$. If we can find an open ball neighborhood $S$ of $(z_e,\phi_e,\theta_e)$ with respelct to the norm $\| \cdot \|_{\text{ex}}$ such that $\text{Range}(\mathbf A)\cap S \neq \emptyset$, then the reduced system \eqref{p1.eq:SyMo:4} remains bounded.
 \end{theorem}
-\begin{proof} It is easily checked that $(z_e,\phi_e,\theta_e)$ is a local minimum of $H_{\text{ex}}(z,\phi,\theta)$ and a lypunov stable point for (\ref{p3.eq:2.10.a})-(\ref{p3.eq:2.10.c}) and also $(A^+z_e,A^+\phi_e,A^+\theta_e)$ is a local minimum of $\tilde H(y,\tilde \phi,\tilde \theta) = H_{\text{ex}}(Ay,A\tilde \phi,A\tilde \theta)$. We notice that
-\begin{equation}
-	\nabla^2_{(y,\tilde \phi,\tilde \theta)}\tilde H_{\text{ex}} = \mathbf A^T \nabla^2_{(z,\phi,\theta)}H_{\text{ex}} \mathbf A,
-\end{equation}
-is positive definite. Therefore, $\tilde H$ is a lyapunov function for \Cref{p3.eq:2.10.a,p3.eq:2.10.b,p3.eq:2.10.c}) and $(A^+z_e,A^+\phi_e,A^+\theta_e)$ is a Lyapunov stable point of  \Cref{p3.eq:2.10.a,p3.eq:2.10.b,p3.eq:2.10.c}).
+
+\begin{proof}
+Since $H\in C^2$ and $H_{\text{ex}}$ is a quadratic extention of $H$, then $H_{\text{ex}}$ is continuously differentiable with respect to all variables $(z,\phi,\theta)$. Furthermore, we can assume that there is a bounded neighborhood $S$ of $(z_e,\phi_e,\theta_e)$ with respect to the norm $\| \cdot \|_{\text{ex}}$ such that $H(z)<c<\infty$ for all $z\in S$, and $\inf_{z\in \partial S} H = c$. \Cref{theorem:6.1} suggests that the reduced system remains bouded in $\text{Range}(\mathbf A)\cap S \neq \emptyset$
 \end{proof}
+}
+%\begin{definition}
+%Consider a dynamical system of the form $\dot z = f( z)$ and suppose that $z_e$ is an equilibrium point for the system so that $ f( z_e) = 0$. $z_e$ is called Lyapunov stable if, for any $\epsilon > 0$, we can find $\delta > 0$ such that for any trajectory $\psi_t$, if $\| \psi_0 - z_e \|_{\text{ex}} \leq \delta$, then for all $0 \leq t < \infty$, we have $\| \psi_t - z_e \|_{\text{ex}} < \epsilon$.
+%\end{definition}
+%
+%The Dirichlet's theorem \cite{bhatia2002stability}, states that the sufficient condition for an equilibrium point to be stable is the existence of a Lyapunov function \cite{bhatia2002stability}. In the context of the Hamiltonian systems, the Hamiltonian is a candidate for the Lyapunov function.
+%
+%\begin{theorem}
+%Consider the Hamiltonian system \Cref{p3.eq:2.10.a,p3.eq:2.10.b,p3.eq:2.10.c} together with the reduced system \Cref{p3.eq:3.12.a,p3.eq:3.12.b,p3.eq:3.12.c}. Suppose that $(z_e,\phi_e,\theta_e)$ is an equilibrium point of \Cref{p3.eq:2.10.a,p3.eq:2.10.b,p3.eq:2.10.c} and that $z_e$ is in the range of the symplectic basis $A$. Further, suppose that $H_{\text{ex}}$ is a Lyapunov function ($\nabla^2_{(z,\phi,\theta)}H_{\text{ex}}$ is a positive definite operator). Then $(z_e,\phi_e,\theta_e)$ and $(A^+z_e,A^+\phi_e,A^+\theta_e)$ are lyapunov stable points of \Cref{p3.eq:2.10.a,p3.eq:2.10.b,p3.eq:2.10.c} and \Cref{p3.eq:2.10.a,p3.eq:2.10.b,p3.eq:2.10.c}), respectively.
+%\end{theorem}
+%\begin{proof} It is easily checked that $(z_e,\phi_e,\theta_e)$ is a local minimum of $H_{\text{ex}}(z,\phi,\theta)$ and a lypunov stable point for (\ref{p3.eq:2.10.a})-(\ref{p3.eq:2.10.c}) and also $(A^+z_e,A^+\phi_e,A^+\theta_e)$ is a local minimum of $\tilde H(y,\tilde \phi,\tilde \theta) = H_{\text{ex}}(Ay,A\tilde \phi,A\tilde \theta)$. We notice that
+%\begin{equation}
+%	\nabla^2_{(y,\tilde \phi,\tilde \theta)}\tilde H_{\text{ex}} = \mathbf A^T \nabla^2_{(z,\phi,\theta)}H_{\text{ex}} \mathbf A,
+%\end{equation}
+%is positive definite. Therefore, $\tilde H$ is a lyapunov function for \Cref{p3.eq:2.10.a,p3.eq:2.10.b,p3.eq:2.10.c}) and $(A^+z_e,A^+\phi_e,A^+\theta_e)$ is a Lyapunov stable point of  \Cref{p3.eq:2.10.a,p3.eq:2.10.b,p3.eq:2.10.c}).
+%\end{proof}
 
 
 
@@ -246,9 +268,9 @@ where $z = (q_1,\dots,q_{N_{\Delta x}},p_1,\dots,p_{N_{\Delta x}})$ and $K$ and 
 \end{equation}
 with $D_x^TD_x = D_{xx}$ as the central finite differences matrix operator. Writing (\ref{p3.eq:4.2}) in a TDD formulation yields
 \begin{equation} \label{p3.eq:4.4}
-	\dot z = \mathbb J_{2n} K^T f(t), \quad f(t) + R \int_0^t f(s) \ ds = K z.
+	\dot z = \mathbb J_{2n} K^T f(t), \quad f(t,\edit{z}) + R \int_0^t f(s,\edit{z}) \ ds = K z.
 \end{equation}
-Since $R$ is not time dependent, it commutes with the integration operator. The Hamiltonian extension of (\ref{p3.eq:4.4}), then takes the form (\ref{p3.eq:2.10.a})-(\ref{p3.eq:2.10.b}).
+Since $R$ is not time dependent, it commutes with the integration operator. The Hamiltonian extension of (\ref{p3.eq:4.4}), then takes the form \eqref{p3.eq:2.10.a} to \eqref{p3.eq:2.10.c}.
 
 The initial condition used is given by
 \begin{equation} \label{p3.eq:4.5}
@@ -265,7 +287,7 @@ h(s) =
 \end{aligned}
 \right.
 \end{equation}
-For the numerical time integration of the extended Hamiltonian system, the Str\"omer-Verlet time stepping scheme \Cref{eq:2.23} is used. In each time step, the system of linear equations (\ref{p3.eq:2.11}) is solved to recover $z$. System parameters are summarized below.
+For the numerical time integration of the extended Hamiltonian system, the Str\"omer-Verlet time stepping scheme \eqref{eq:2.23} is used. In each time step, the system of linear equations (\ref{p3.eq:2.11}) is solved to recover $z$. System parameters are summarized below.
 \vspace{0.5cm}
 \begin{center}
 \begin{tabular}{|l|l|}
@@ -334,7 +356,7 @@ defined on a domain of length $L$, which is known as the sine-Gordon equation. I
 \end{equation}
 where $|v|< 1$ is the wave speed. In the presence of dissipation, where $r(x)\geq 0$, the traveling wave de-accelerates and stops. The TDD formulation for (\ref{p3.eq:added.4.1}) takes the form
 \begin{equation} \label{p3.eq:added.4.3}
-	\dot z = \mathbb J_{2n} K^T f(t) + \mathbb J_{2n} g(z) - \mathbb J_{2n} z_{\text{bd}}, \quad f(t) + R \int_0^t f(s) \ ds = K z.	
+	\dot z = \mathbb J_{2n} K^T f(t) + \mathbb J_{2n} g(z) - \mathbb J_{2n} z_{\text{bd}}, \quad f(t,\edit{z}) + R \int_0^t f(s,\edit{z}) \ ds = K z.	
 \end{equation}
 where $z$, $K$, $R$ and $f$ are defined similar to (\ref{p3.eq:4.4}), with $r_{\Delta} = rI_{n}$, and 
 \begin{equation}
@@ -362,7 +384,7 @@ Dissipation coefficient & $r = 0.1$ \\
 \end{center}
 \vspace{0.5cm}
 
-The RDH reduced system is constructed following Algorithm \ref{alg:6.1}. To reduce the complexity of the nonlinear term, we used the symplectic DEIM discussed in \Cref{sec:3.6}. The performance of the method is then compared to the SVD based method introduced in \Cref{chap:SyMo.PrSy:2} (here referred to as the ``PSD'') and the POD. To reduce the complexity of the nonlinear terms we compare the symplectic DEIM with the method proposed in \cite{doi:10.1137/140978922} and the classical DEIM in \Cref{sec:3.5}
+The RDH reduced system is constructed following Algorithm \ref{alg:6.1}. To reduce the complexity of the nonlinear term, we used the symplectic DEIM discussed in \Cref{sec:3.6}. The performance of the method is then compared to the SVD based method introduced in \Cref{p1.chap:SyMo.PrSy:2} (here referred to as the ``PSD'') and the POD. To reduce the complexity of the nonlinear terms we compare the symplectic DEIM with the method proposed in \cite{doi:10.1137/140978922} and the classical DEIM in \Cref{sec:3.5}
 
 
 \begin{figure}[t]
@@ -374,14 +396,14 @@ The RDH reduced system is constructed following Algorithm \ref{alg:6.1}. To redu
 \caption{(a) The $L^2$-error for the different methods, (a) Evolution of error in the kinetic energy for different methods.} \label{fig:added4.1}
 \end{figure}
 
-Figure \ref{fig:added4.1}.(a) shows the The $L^2$-error between the full system and the RDH, the PSD, and the POD methods. Although the Hamiltonian system of the sine-Gordon equation is nonlinear, the errors for the different methods show a similar behavior as those in Section (\ref{sec:4.1}). We observe that the POD does not yield a stable reduce system while the symplectic methods provide a high accuracy. Furthermore, we notice that enriching the PSD basis does not significantly enhance the accuracy of the method.
+Figure \ref{fig:added4.1}.(a) shows the $L^2$-error between the full system and the RDH, the PSD, and the POD methods. Although the Hamiltonian system of the sine-Gordon equation is nonlinear, the errors for the different methods show a similar behavior as those in Section (\ref{sec:4.1}). We observe that the POD does not yield a stable reduced system while the symplectic methods provide a high accuracy. Furthermore, we notice that enriching the PSD basis does not significantly enhance the accuracy of the method.
 
 The evolution of error in the kinetic energy $K(p) = \|p\|_2^2/2$ is illustrated in Figure \ref{fig:added4.1}.(b). We see that the POD does not conserve the evolution of the kinetic energy. The RDH method conserves the kinetic energy of the system with a higher accuracy than the PSD method. Furthermore, the accuracy of the RDH method is better scaled under enrichment of the reduced basis, compared to the PSD method. 
 
 It is observed in Figure 1 that the symplectic treatment of the nonlinear terms is essential in correct model reduction of Hamiltonian systems. In addition, the SDEIM can be combined with the RDH method to construct a reduced Hamiltonian system that can be integrated using a symplectic integrator. Thus, the combination preserves the system energy and the symplectic symmetry of Hamiltonian systems.
 
 \subsection{Port-Hamiltonian Systems}
-Port-Hamiltonian systems are popular in network modeling and electrical engineering. In the framework of port-Hamiltonian modelling, energy conservation and Hamiltonian structure is the fundamental principle of the dynamics of the system. Ports in the system network then allows the exchange of energy with the environment in the form of sources, capacitors, and dissipations \cite{vanderSchaft:2014:PST:2693645.2693646}. Port-Hamiltonian systems can be viewed as a forced and dissipative Hamiltonian system.
+Port-Hamiltonian systems are popular in network modeling and electrical engineering. In the framework of port-Hamiltonian modelling, energy conservation and Hamiltonian structure is the fundamental principle of the dynamics of the system. Ports in the system network then allow the exchange of energy with the environment in the form of sources, capacitors, and dissipations \cite{vanderSchaft:2014:PST:2693645.2693646}. Port-Hamiltonian systems can be viewed as a forced and dissipative Hamiltonian system.
 \begin{figure}[t]
 \begin{center}
 	\includegraphics[width=0.7\textwidth]{./images/paper3/porthamil/circuit}
@@ -399,7 +421,7 @@ Here $x = (c_1,\phi_1,\dots,c_n,\phi_n)^T$ where $c_i$ and $\phi_i$, for $i=1,\d
 \end{equation}
 $u=(1,0,\dots,0)^T$ is a constant input current and $J_{2n}$ is a skew-symmetric $2n\times 2n$ matrix with -1 and 1 on the superdiagonal and subdiagonal, respectively. 
 
-The energy associated with a port-Hamiltonian system of the form (\ref{p3.eq:4.7}) at time $t$, is given as $H(x(t)) = \frac 1 2 x^T Q^T Q x$. Since $J_{2n}$ is skew symmetric we have that that $\frac d {dt} H(x) = u^T Q^T Q x - x^T Q^T Q R Q^T Q x \leq u^T Q^T Q x$ which is referred to as the \emph{passivity} of the system (\ref{p3.eq:4.7}) \cite{vanderSchaft:1996es,Willems:1972ek}.
+The energy associated with a port-Hamiltonian system of the form (\ref{p3.eq:4.7}) at time $t$, is given as $H(x(t)) = \frac 1 2 x^T Q^T Q x$. Since $J_{2n}$ is skew symmetric we have that $\frac d {dt} H(x) = u^T Q^T Q x - x^T Q^T Q R Q^T Q x \leq u^T Q^T Q x$ which is referred to as the \emph{passivity} of the system (\ref{p3.eq:4.7}) \cite{vanderSchaft:1996es,Willems:1972ek}.
 
 Since $J_{2n}$ is full rank, one can always find a coordinate transformation $ x= T \tilde x$ such that $T^{-1} J_{2n} T^{-T} = \mathbb J_{2n}$. The dissipative Hamiltonian formulation of (\ref{p3.eq:4.7}) takes the form
 \begin{equation} \label{p3.eq:4.8}
@@ -407,7 +429,7 @@ Since $J_{2n}$ is full rank, one can always find a coordinate transformation $ x
 \end{equation}
 where $\tilde Q = QT$, $\tilde R = T^{-1}RT^{-T}Q^TQ$ and $\tilde u = T^{-1} u$. Note that in this case, $\tilde R$ is symmetric and semi-positive definite since $T$ is orthogonal and $R$ is diagonal. The TDD formulation of (\ref{p3.eq:4.8}) takes the form
 \begin{equation} \label{p3.eq:4.9}
-	\dot{\tilde x} = \mathbb{J}_{2n} \tilde Q^T f(t) + \tilde u, \quad f(t) + \tilde R \int_0^t f(t) = \tilde Q \tilde x.
+	\dot{\tilde x} = \mathbb{J}_{2n} \tilde Q^T f(t,\edit{\tilde x}) + \tilde u, \quad f(t,\edit{\tilde x}) + \tilde R \int_0^t f(t,\edit{\tilde x}) = \tilde Q \tilde x.
 \end{equation}
 
 

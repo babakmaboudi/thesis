@@ -108,7 +108,7 @@ Let $\tilde A\in \mathbb R^{2n\times 2n}$ be a $J_{2n}$-symplectic mapping. We d
 \begin{equation} \label{p1.eq:nommor.0.5}
 	\frac{d}{dt} y = \tilde A^+ J_{2n}^{-1} (\tilde A^+)^T \nabla_y H_X(\tilde Ay).
 \end{equation}
-However, \Cref{thm:2.1} indicates that $(\tilde A^+)^T$ is $J_{2n}^{-1}$-symplectic, thus,
+However, \Cref{th2} indicates that $(\tilde A^+)^T$ is $J_{2n}^{-1}$-symplectic, thus,
 \begin{equation} \label{p1.eq:nommor.0.6}
 	\frac{d}{dt} y = \mathbb J_{2n} \nabla_y H_X(\tilde Ay).
 \end{equation}
@@ -195,17 +195,17 @@ We discussed in \Cref{p1.sec:SyMo:1} that a Hamiltonian reduced system, construc
 %Consider a dynamical system with a Lyapunov stable equilibrium point $z_e$ with a smooth Lyapunov function $W\in C^2$ where $z_e$ is a strict local minimum of $W$. Smoothness of $W$ implies that there is a bounded open neighborhood $S$ of an equilibrium point $z_e$ such that $\inf_{z\in \partial S} W(z)=c<\infty$, $W(z) < c$ and $W(z_e)<W(z)$, for any $z\in S$ \footnote{We can always consider a small ball $B\subset S$ centered at $z_e$, such that $W(z) < \partial S$, for all $z\in B$. We then restrict $S$ to only $B$ so that $W(z) < c$ for any $z\in S$.}.
 
 \begin{theorem} \label{theorem:ch5.1}
-\cite{doi:10.1137/17M1111991} Consider a Hamiltonian system of the form \eqref{p1.eq:nommor.0} with a Hamiltonian $H\in C^{2}$  together with the reduced system \eqref{p1.eq:nommor.0.10}. Suppose that $z_e$ is a strict local minimum of $H$. Furthermore, suppose that $H$ (or $-H$) is a Lyapunov function satisfying \Cref{p1.proposition:SyMo:1}. If $\text{Range}(XA)\cap S \neq \emptyset$, then the reduced system \eqref{p1.eq:nommor.0.10} has a stable equilibrium point in $\text{Range}(XA)\cap S$.
+\cite{doi:10.1137/17M1111991} Consider a Hamiltonian system of the form \eqref{p1.eq:nommor.0} with a Hamiltonian $H\in C^{2}$  together with the reduced system \eqref{p1.eq:nommor.0.10}. Suppose that $z_e$ is a strict local minimum of $H$. Furthermore, suppose that $H$ (or $-H$) is a Lyapunov function satisfying \Cref{p1.proposition:SyMo:1}. If we can find an open ball neighborhood $S$ of $z_e$ such that $\text{Range}(XA)\cap S \neq \emptyset$, then the reduced system \eqref{p1.eq:nommor.0.10} has a stable equilibrium point in $\text{Range}(XA)\cap S$.
 \end{theorem}
 
 \begin{proof}
-Assume that $H$ satisfies the conditions in \Cref{p1.proposition:SyMo:1} for a Lyapunov function. Since $z_e$ is a local minimum of $H$, smoothness of $H$ implies that $\nabla_z H(z_e) = 0$, and threfore $z_e$ is a Lyapunov stable point for \eqref{p1.eq:nommor.0}. Furthermore, since $z_e$ is a strict local minimum, we can find an open ball $S$ of $z_e$ such that $H(z_e)< H(z)$, for any $z \in \overline S$ and $z\neq z_e$, where $\overline S$ is the closure of $B$. Note that $\overline S$ is bounded. Define $c := \inf_{z\in \partial S} H(z)$, where $\partial S$ is the boundary of $S$. Since $H$ is continues and $z_e$ is a strict minimum we can assume that $H(z)<c$, for all $z\in S$ \footnote{If there is no such open ball, we can construct a sequence $\{z\}_{i=1}^\infty$ such that $z_i\to z_e$ and $H(z_i) = c$, for all $i$, implying that $H(z_e) = c$ which is a contradiction.}.
+Assume that $H$ satisfies the conditions in \Cref{p1.proposition:SyMo:1} for a Lyapunov function. Since $z_e$ is a local minimum of $H$, smoothness of $H$ implies that $\nabla_z H(z_e) = 0$, and threfore $z_e$ is a Lyapunov stable point for \eqref{p1.eq:nommor.0}. Furthermore, since $z_e$ is a strict local minimum, we can find an open ball $S$ of $z_e$ such that $H(z_e)< H(z)$, for any $z \in \overline S$ and $z\neq z_e$, where $\overline S$ is the closure of $B$. Note that $\overline S$ is bounded. Since $H\in C^2$ and $\nabla^2 H$ is positive definite at $z_e$, we also take $S$ to be small enough such that $\nabla^2 H > 0$, for all $z\in S$. Define $c := \inf_{z\in \partial S} H(z)$, where $\partial S$ is the boundary of $S$. Since $H$ is continues and $z_e$ is a strict minimum we can assume that $H(z)<c$, for all $z\in S$ \footnote{If there is no such open ball, we can construct a sequence $\{z\}_{i=1}^\infty$ such that $z_i\to z_e$ and $H(z_i) = c$, for all $i$, implying that $H(z_e) = c$ which is a contradiction.}.
 
 Let $S_A = \text{Range}(XA)\cap S$. Since Range$(XA)$ is a linear vector space, then $S_A$ is an open set. Furthermore, for any $z\in S_A$, $H(z) < c$. 
 		
 We now show that $H|_{S_A}$ attains its minimum inside $S_A$. Let $c_{\text{min}} = \inf_{z\in S_A} H(z)$. $c_{min}$ exists since $H$ has a minimum on $S$. We can find a sequence $\{ H(z_i) \}_{i=1}^\infty$, with $z_i\in S_A$, such that $H(z_i)\to c_{\text{min}} < c$. This implies that $z_i\to z_0$, for some $z_0\in \overline {S_A}$, since $H\in C^2$. Note that $\overline {S_A}$ is bounded since $S$ is bounded. However, $z_0$ does not belong to $\partial S_A$ since $\inf_{z\in \partial S} W(z)=c > c_{min}$. Therefore $z_0 \in S_A$. 
 
-We claim that $y_e = \mathbb J_{2k}^T A^T X \mathbb J_2n z_0$ is a stable equilibrium point for the reduced system \eqref{p1.eq:nommor.0.10}. Let $\tilde W(y) = - \tilde H(y) = H(XAy)$. Note that $W$ attains its local minimum at $y_e$. Furthermore, $\nabla \tilde W(y_e) = 0$. Also we have
+We claim that $y_e = \mathbb J_{2k}^T A^T X \mathbb J_{2n} z_0$ is a stable equilibrium point for the reduced system \eqref{p1.eq:nommor.0.10}. Let $\tilde W(y) = - \tilde H(y) = H(XAy)$. Note that $\tilde W$ attains its local minimum at $y_e$. Furthermore, $\nabla \tilde W(y_e) = 0$. Also we have
 \begin{equation}
 	\nabla^2 \tilde W = A^T X \nabla^2 H X A
 \end{equation}
@@ -300,7 +300,7 @@ where $P_{X,A}^{\text{symp}}$ is defined in \eqref{p1.eq:nommor.0.11}. Alternati
 It was discussed in \Cref{p1.sec:SyMo.PrSy:4} that under natural assumptions on the solution manifold of a Hamiltonian system, the symplectic greedy method for symplectic basis generation converges exponentially fast. We expect the generalized greedy method, equipped with the error function (\ref{eq:normmor.14}), to converge as fast, since the $X$-norm is topologically equivalent to the standard Euclidean norm \cite{friedman1970foundations}, for a full rank matrix $X$.
 
 \section{Efficient Evaluation of Nonlinear Terms} \label{sec:normmor.3}
-As discussed previously, the evaluation of the nonlinear term in \eqref{p1.eq:nommor.0.11} retains a computational complexity proportional to the size of the full order system \eqref{p1.eq:nommor.0}. To overcome this, we take an approach similar to that in \Cref{sec:3.6}. \edit{Let $H(z) = H_1(z) + H_2(z)$ such that $\nabla_z H_1(z) = Lz$, for some $L\in \mathbb R^{2n\times 2n}$ and $\nabla_z H_2(z) = g(z)$, where $g:\mathbb R^{2n} \to \mathbb R^{2n}$ is a vector valued function. We use a $J_{2n}$-symplectic reduced basis $\tilde A$ to construct a reduced Hamiltonian system from \eqref{p1.eq:nommor.0.1} as
+As discussed previously, the evaluation of the nonlinear term in \eqref{p1.eq:nommor.0.10} retains a computational complexity proportional to the size of the full order system \eqref{p1.eq:nommor.0}. To overcome this, we take an approach similar to that in \Cref{sec:3.6}. \edit{Let $H(z) = H_1(z) + H_2(z)$ such that $\nabla_z H_1(z) = Lz$, for some $L\in \mathbb R^{2n\times 2n}$ and $\nabla_z H_2(z) = g(z)$, where $g:\mathbb R^{2n} \to \mathbb R^{2n}$ is a vector valued function. We use a $J_{2n}$-symplectic reduced basis $\tilde A$ to construct a reduced Hamiltonian system from \eqref{p1.eq:nommor.0.1} as
 \begin{equation}
 \begin{aligned}
 	\dot y &= \tilde A^+ X^{-1/2} \mathbb J_{2n} \nabla_z H_1(z) + \tilde A^+ X^{-1/2} \mathbb J_{2n} \nabla_z H_2(z) \\

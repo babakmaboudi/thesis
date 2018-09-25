@@ -1,7 +1,7 @@
 \chapter{Model Order Reduction} \label{chapter:3}
 Mathematical simulation is increasingly important in engineering, science, and related domains, thanks to substantial advances in computational sciences and the rapid growth in computational capacity during the past decades. Numerical evaluation of partial differential equations (PDEs) lies at the core of these disciplines which includes design, optimization, and prediction of inputs and outputs of interest. However, the need for accuracy, the complexity of multi-physics applications, and inefficiencies in evaluating multi-query systems makes conventional approaches for solving large systems of partial differential equations impractical. 
 
-To cope with these limitations, \emph{reduced order modelling} (ROM), as apposed to \emph{full-order} or \emph{high-fidelity} modelling, has been an area of active research for the past decade. These methods eliminate the redundant physical or computational complexities of the full-order problem to construct a low dimensional reduced-order system. This approximation in return significantly accelerates the evaluation of the system of PDEs. Reduced basis (RB) methods are among the most successful ROMs and are used throughout academia and industry. RB methods seek a low dimensional reduced subspace that accurately represents the full-order solution. Confining the system to this subspace, through a projection, allows to accelerate the evaluation of the system.
+To cope with these limitations, \emph{reduced order modelling} (ROM), apposed to \emph{full-order} or \emph{high-fidelity} modelling, has been an area of active research for the past decade. These methods eliminate the redundant physical or computational complexities of the full-order problem to construct a low dimensional reduced-order system. This approximation in return significantly accelerates the evaluation of the system of PDEs. Reduced basis (RB) methods are among the most successful ROMs and are used throughout academia and industry. RB methods seek a low dimensional reduced subspace that accurately represents the full-order solution. Confining the system to this subspace, through a projection, allows to accelerate the evaluation of the system.
 
 In this chapter we summarize the fundamentals of model order reduction (MOR) and especially RB methods. We present various conventional techniques and algorithms for linear and nonlinear problems. Since time, as a parameter, is particularly important in the context of Hamiltonian systems, we will develop this chapter with an emphasis on time-dependent problems.
 
@@ -28,7 +28,7 @@ The solution manifold is a set of all solutions to \eqref{eq:3.1} under the vari
 Note that the solution manifold may not be smooth. A main assumption in an RB method is that $\mathcal M_{u}$ has a low dimensional representation. This allows us to chose a small number of basis vectors $E_k = \{ w_1,\dots,w_k\}$, with $k\ll n$, where $\mathcal W_k = \text{span}(E_k)$ represents $\mathcal M_{u}$ with a small error. $E_k$ is often referred to as the \emph{reduced basis}. To understand when a low dimensional reduced basis exists and to quantify the error in the approximation, we need to introduce the notion of the \emph{Kolmogorov $n$-width} \cite{Kolmogoroff:1936fj,pinkus1985n}.
 
 \begin{definition} \label{def:3.1}
-Let $\mathcal W$ be a subset of a Banach space $\mathcal X$. The distance of a point $x\in \mathcal X$ from $\mathcal Y$ is given by
+Let $\mathcal W$ be a subset of a Banach space $\mathcal X$. The distance of a point $x\in \mathcal X$ from $\mathcal W$ is given by
 \begin{equation}  \label{eq:3.3}
 	\text{dist}(x,\mathcal W) := \inf_{w\in \mathcal W} \| x-w \|.
 \end{equation}
@@ -57,7 +57,7 @@ for some small tolerance $\delta$. Therefore, it is desirable that the above seq
 \end{aligned}
 \right.
 \end{equation}
-Note that in this thesis, we assume that the projection operator $P_{<,>,\mathcal W_k}$ (and subsequently the reduced space $\mathcal W_k$) is not time dependent\footnote{We refer the reader to \cite{doi:10.1137/140967787,doi:10.1137/16M1095202} for dynamically orthogonal reduced basis method: an RB method with a time varying basis.}. Therefore, we may commute the projection operator with the time derivation operator. Given that $k \ll n$, \eqref{eq:3.6} can possibly be evaluated with a lower computational complexity as compared to \eqref{eq:3.1}. However, reducibility of $\mathcal M_u$ does not say anything about the stability of \eqref{eq:3.6}. As the matter of fact, \eqref{eq:3.6} could be unstable even if \eqref{eq:3.1} is a stable dynamical system \cite{doi:10.1137/140978922,doi:10.1137/17M1111991}. In \Cref{chapter:4,chapter:5,chapter:6} we discuss how we can enhance the stability of \eqref{eq:3.6} given that \eqref{eq:3.1} is a Hamiltonian system.
+Note that in this thesis, we assume that the projection operator $P_{<,>,\mathcal W_k}$ (and subsequently the reduced space $\mathcal W_k$) is not time dependent\footnote{We refer the reader to \cite{doi:10.1137/140967787,doi:10.1137/16M1095202} for dynamically orthogonal reduced basis method: an RB method with a time varying basis.}. Therefore, we may commute the projection operator with the time derivation operator. Given that $k \ll n$, \eqref{eq:3.6} has a lower order than \eqref{eq:3.1}. However, reducibility of $\mathcal M_u$ does not say anything about the stability of \eqref{eq:3.6}. As the matter of fact, \eqref{eq:3.6} could be unstable even if \eqref{eq:3.1} is a stable dynamical system \cite{doi:10.1137/140978922,doi:10.1137/17M1111991}. In \Cref{chapter:4,chapter:5,chapter:6} we discuss how we can enhance the stability of \eqref{eq:3.6} given that \eqref{eq:3.1} is a Hamiltonian system.
 
 In the following we summarize numerical methods for choosing the dimension $k$, finding the reduced space $\mathcal W_k$, constructing the projection operator $P_{<,>,\mathcal W_k}$ and, finally, efficient ways to construct and integrate the reduced system (\ref{eq:3.6}).
 
@@ -263,7 +263,7 @@ Here, $s^*$ is then a candidate for the next basis vector. Let $w_{k+1}$ be the 
 \end{equation}
 Note that the choice of an orthonormalization process is important when constructing a reduced basis with a low condition number. Therefore, a backward stable method is preferred. The process discussed above is referred to as the \emph{strong greedy method} \cite{quarteroni2015reduced}. The following theorem from approximation theory shows that the convergence rate of the strong greedy method, is as fast as the decay of the Kolmogorov $n$-width. 
 \begin{theorem}
-	\cite{doi:10.1137/100795772} Let $S\subset \mathbb R^{n}$ has an exponentially small Kolmogorov $n$-width $d_n(S) \leq c\cdot \exp(-\alpha n)$ with $\alpha > \log 2$. Then there exists $\beta > 0$ such that the subspace $\mathcal W_k$ constructed by the strong greedy process is exponentially accurate in the sense
+	\cite{doi:10.1137/100795772} Let $S\subset \mathbb R^{n}$ have an exponentially small Kolmogorov $n$-width $d_n(S) \leq c\cdot \exp(-\alpha n)$ with $\alpha > \log 2$. Then there exists $\beta > 0$ such that the subspace $\mathcal W_k$ constructed by the strong greedy process is exponentially accurate in the sense
 \begin{equation} \label{eq:3.24.3}
 	\| s - P_{X,\mathcal W_k}(s) \|_X \leq C\cdot \exp(-\beta k), \quad s \in S.
 \end{equation}
@@ -327,7 +327,7 @@ Here we used the fact that $W_k^TW_k = I_k$. We may instead use a non-Euclidean 
 	\end{aligned}
 	\right.
 \end{equation}
-The \emph{Petrov-Galerkin} projection, on the other hand, requires $r$ in \eqref{eq:3.25} to be orthogonal to some $k$-dimensional linear subspace $\mathcal U$. Given $U$ as the basis matrix for this subspace, and requiring $U^TW_k$ to be invertible, a projection operator that projections the elements of the high-fidelity space onto $\mathcal W_k$ orthogonal to $\mathcal U$ can be constructed as $\Pi = W_k(U^T W_k)^{-1} U$. This results in the reduced system
+The \emph{Petrov-Galerkin} projection, on the other hand, requires $r$ in \eqref{eq:3.25} to be orthogonal to some $k$-dimensional linear subspace $\mathcal U$. Given $U$ as the basis matrix for this subspace, and requiring $U^TW_k$ to be invertible, a projection operator that projects the elements of the high-fidelity space onto $\mathcal W_k$ orthogonal to $\mathcal U$ can be constructed as $\Pi = W_k(U^T W_k)^{-1} U$. This results in the reduced system
 \begin{equation} \label{eq:3.28}
 	\left\{
 	\begin{aligned}

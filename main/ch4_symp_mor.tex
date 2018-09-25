@@ -25,7 +25,7 @@ Let $(\mathcal Z,\Omega)$ be a $2n$-dimensional symplectic linear vector space a
 	\end{aligned}
 	\right.
 \end{equation}
-Here $z = [q_1,\dots,q_n,p_1,\dots,p_n]^T\in \mathbb R^{2n}$ is the expansion of basis vectors in $Z$ (compare to \eqref{eq:2.19}). Suppose that the solution manifold $\mathcal M_H$ of \eqref{p1.eq:SyMo:1} is well approximated by a low dimensional symplectic subspace $(\mathcal A,\Omega)$ of dimension $2k$ $(k\ll n)$. We can then construct a symplectic basis $E=\{ \tilde e_i,\tilde f_i \}_{i=1}^k$ for $\mathcal A$ and assemble the matrix
+Here $z = [q_1,\dots,q_n,p_1,\dots,p_n]^T\in \mathcal Z$ \edit{is the state vector} (compare to \eqref{eq:2.19}). Suppose that the solution manifold $\mathcal M_H$ of \eqref{p1.eq:SyMo:1} is well approximated by a low dimensional symplectic subspace $(\mathcal A,\Omega)$ of dimension $2k$ $(k\ll n)$. We can then construct a symplectic basis $E=\{ \tilde e_i,\tilde f_i \}_{i=1}^k$ for $\mathcal A$ and assemble the matrix
 \begin{equation} \label{p1.eq:SyMo:1.1}
 	A = [\tilde e_1,\dots,\tilde e_k,\tilde f_1,\dots,\tilde f_k]\in \mathbb R^{2n\times 2k},
 \end{equation} \label{p1.eq:SyMo:1.2}
@@ -53,7 +53,7 @@ The matrix $A^+ := \mathbb J_{2k}^T A^T \mathbb J_{2n}$ is known as the \emph{sy
 \item $A^+A = I$.
 \item $\left(\left(\left(A^+\right)^T\right)^+\right)^T = A$.
 \item $(A^+)^T$ is a symplectic matrix.
-\item If $A$ is ortho-symplectic then $(A^+)^T = A$.
+\item If $A$ is an ortho-symplectic of the form $A = [e_1,\dots,e_k,\mathbb J_{2n}^Te_1,\dots,J_{2n}^Te_k]$, then $(A^+)^T = A$.
 \end{enumerate}
 \end{proposition}
 }
@@ -62,15 +62,15 @@ The proof follows immediately from symplecticity of $A$.
 \end{proof}
 We can use the symplectic projection operator to project \eqref{p1.eq:SyMo:1} onto $\mathcal A$. Substituting (\ref{eq:SyMo:1.2}) into \eqref{p1.eq:SyMo:1} yields
 \begin{equation} \label{p1.eq:SyMo:2}
-	A y = \mathbb{J}_{2n} \nabla_{z} H(A y) + r(z). 
+	A \frac d {dt}y = \mathbb{J}_{2n} \nabla_{z} H(A y) + r(z). 
 \end{equation}
 We use the chain rule and property (b) in \Cref{p1.theorem:1} to write 
 \begin{equation}
 	\nabla_{z} H(A y) = (A^+)^T \nabla_{y} H( Ay ).
 \end{equation}
-Furthermore, the symplectic projection yields
+\edit{Note that the symplectic inverse is not unique, in general, for a non-square matrix.} Furthermore, the symplectic projection yields
 \begin{equation} \label{p1.eq:SyMo:3}
-	y = A^+ \mathbb J_{2n} (A^+)^T \nabla_{y} H(A y) + A^+ r(z).
+	\frac d {dt} y = A^+ \mathbb J_{2n} (A^+)^T \nabla_{y} H(A y) + A^+ r(z).
 \end{equation}
 \Cref{p1.theorem:1} (a) ensures that $(A^+)^T$ is a symplectic matrix i.e., $A^+ \mathbb J_{2n} (A^+)^T = \mathbb{J}_{2k}$. By defining the reduced Hamiltonian $\tilde H:\mathcal A \to \mathbb R$ as $\tilde H (y) = H(Ay)$ and assuming that the error vector $r$ is symplectically orthogonal ($\mathbb J_{2n}$-orthogonal) to $\mathcal A$ we obtain the reduced system
 \begin{equation} \label{p1.eq:SyMo:4}
@@ -114,20 +114,45 @@ The following proposition, also known as Dirichlet's theorem \cite{bhatia2002sta
 An equilibrium point $ z_e$ is Lyapunov stable if there exists a scalar function $W : \mathbb R^{n} \to  \mathbb R$ such that $\nabla W( z_e) = 0$, $\nabla^2 W(z_e)$ is positive definite, and that for any trajectory $\varphi_t$ defined in the neighborhood of $ z_e$, we have $\frac{d}{dt} W(\varphi_t) \leq 0$. Here $\nabla^2W$ is the Hessian matrix of $W$.
 \end{proposition}
 The scalar function $W$ is referred to as the \emph{Lyapunov function}. In the context of the Hamiltonian systems, a suitable candidate for the Lyapunov function is the Hamiltonian function $H$. The following theorem shows that when $H$ (or $-H$) is a Lyapunov function, then the equilibrium points of the original and the reduced system are Lyapunov stable \cite{abraham1978foundations}. 
+
+
+\edit{
 \begin{theorem} \label{p1.theorem:SyMo:1}
-Consider the Hamiltonian system (\ref{p1.eq:SyMo:1}) together with the reduced system (\ref{p1.eq:SyMo:4}). Suppose $z_e$ is an equilibrium point for (\ref{p1.eq:SyMo:1}) and that $y_e = A^+z_e$. If $H$ (or $-H$) is a Lyapunov function satisfying Proposition \ref{p1.proposition:SyMo:1}, then $z_e$ and $ y_e$ are Lyapunov stable equilibrium points for (\ref{p1.eq:SyMo:1}) and (\ref{p1.eq:SyMo:4}), respectively. 
+\cite{doi:10.1137/17M1111991} Consider a Hamiltonian system of the form \eqref{p1.eq:SyMo:1} with a Hamiltonian $H\in C^{2}$  together with the reduced system \eqref{p1.eq:SyMo:4}. Suppose that $z_e$ is a strict local minimum of $H$. Furthermore, suppose that $H$ (or $-H$) is a Lyapunov function satisfying \Cref{p1.proposition:SyMo:1}. If we can find an open ball neighborhood $S$ of $z_e$ such that $\text{Range}(A)\cap S \neq \emptyset$, then the reduced system \eqref{p1.eq:SyMo:4} has a stable equilibrium point in $\text{Range}(A)\cap S$.
 \end{theorem}
+
 \begin{proof}
-	It is a direct consequence of Proposition \ref{p1.proposition:SyMo:1} that $ z_e$ is a local minimum or maximum of (\ref{p1.eq:SyMo:1}) and also a Lyapunov stable point. It can be easily checked that if $ z_e$ is a local minimum of $H$ then $y_e$ is a local minimum for $\tilde H$ and an equilibrium point for (\ref{p1.eq:SyMo:4}). Also from the chain rule we have
-\[
-	\nabla^2_{y} \tilde H = A^T \nabla^2_{z} H A.
-\]
-So for any $\xi \in \mathbb R^{2k}$
-\[
-	\xi^T \nabla^2_{y} \tilde H \xi = (A\xi)^T \nabla^2_{z} H (A\xi) \geq 0.
-\]
-Here the last inequality is due to the positive definiteness of $\nabla^2_z H$. Therefore, $\tilde H$ is also positive definite. By Proposition \ref{p1.proposition:SyMo:1} we conclude that $ y_e$ is a Lyapunov stable point.
+Assume that $H$ satisfies the conditions in \Cref{p1.proposition:SyMo:1} for a Lyapunov function. Since $z_e$ is a local minimum of $H$, smoothness of $H$ implies that $\nabla_z H(z_e) = 0$, and threfore $z_e$ is a Lyapunov stable point for \eqref{p1.eq:SyMo:1}. Furthermore, since $z_e$ is a strict local minimum, we can find an open ball $S$ of $z_e$ such that $H(z_e)< H(z)$, for any $z \in \overline S$ and $z\neq z_e$, where $\overline S$ is the closure of $B$. Note that $\overline S$ is bounded. Since $H\in C^2$ and $\nabla^2 H$ is positive definite at $z_e$, we also take $S$ to be small enough such that $\nabla^2 H > 0$, for all $z\in S$. Define $c := \inf_{z\in \partial S} H(z)$, where $\partial S$ is the boundary of $S$. Since $H$ is continues and $z_e$ is a strict minimum we can assume that $H(z)<c$, for all $z\in S$ \footnote{If there is no such open ball, we can construct a sequence $\{z\}_{i=1}^\infty$ such that $z_i\to z_e$ and $H(z_i) = c$, for all $i$, implying that $H(z_e) = c$ which is a contradiction.}.
+
+Let $S_A = \text{Range}(A)\cap S$. Since Range$(A)$ is a linear vector space, then $S_A$ is an open set. Furthermore, for any $z\in S_A$, $H(z) < c$. 
+		
+We now show that $H|_{S_A}$ attains its minimum inside $S_A$. Let $c_{\text{min}} = \inf_{z\in S_A} H(z)$. $c_{min}$ exists since $H$ has a minimum on $S$. We can find a sequence $\{ H(z_i) \}_{i=1}^\infty$, with $z_i\in S_A$, such that $H(z_i)\to c_{\text{min}} < c$. This implies that $z_i\to z_0$, for some $z_0\in \overline {S_A}$, since $H\in C^2$. Note that $\overline {S_A}$ is bounded since $S$ is bounded. However, $z_0$ does not belong to $\partial S_A$ since $\inf_{z\in \partial S} W(z)=c > c_{min}$. Therefore $z_0 \in S_A$. 
+
+We claim that $y_e = \mathbb J_{2k}^T A^T \mathbb J_{2n} z_0$ is a stable equilibrium point for the reduced system \eqref{p1.eq:SyMo:4}. Let $\tilde H(y) = H(Ay)$. Note that $\tilde H$ attains its local minimum at $y_e$. Furthermore, $\nabla \tilde W(y_e) = 0$. Also we have
+\begin{equation}
+	\nabla^2 \tilde H = A^T \nabla^2 H A
+\end{equation}
+is a positive definite matrix. Finally, since the reduced system is a Hamiltonian system, \Cref{theorem:2.10} implies that any trajectory $\varphi_t$ of \eqref{p1.eq:SyMo:4} satisfies $\frac{d}{dt} \tilde H(\varphi_t) = 0$. Therefore $\tilde H$ is a Lyapunov function for \eqref{p1.eq:SyMo:4} and $y_e$ is a stable equilibrium point for \eqref{p1.eq:SyMo:4}, in the Lyapunov sense.
+
+Similar derivations confirms the theorem when $-H$ is a candidate for a Lyapunov function.
 \end{proof}
+}
+
+
+%\begin{theorem} \label{p1.theorem:SyMo:1}
+%Consider the Hamiltonian system (\ref{p1.eq:SyMo:1}) together with the reduced system (\ref{p1.eq:SyMo:4}). Suppose $z_e$ is an equilibrium point for (\ref{p1.eq:SyMo:1}) and that $y_e = A^+z_e$. If $H$ (or $-H$) is a Lyapunov function satisfying Proposition \ref{p1.proposition:SyMo:1}, then $z_e$ and $ y_e$ are Lyapunov stable equilibrium points for (\ref{p1.eq:SyMo:1}) and (\ref{p1.eq:SyMo:4}), respectively. 
+%\end{theorem}
+%\begin{proof}
+%It is a direct consequence of Proposition \ref{p1.proposition:SyMo:1} that $ z_e$ is a local minimum or maximum of (\ref{p1.eq:SyMo:1}) and also a Lyapunov stable point. It can be easily checked that if $ z_e$ is a local minimum of $H$ then $y_e$ is a local minimum for $\tilde H$ and an equilibrium point for (\ref{p1.eq:SyMo:4}). Also from the chain rule we have
+%\[
+%	\nabla^2_{y} \tilde H = A^T \nabla^2_{z} H A.
+%\]
+%So for any $\xi \in \mathbb R^{2k}$
+%\[
+%	\xi^T \nabla^2_{y} \tilde H \xi = (A\xi)^T \nabla^2_{z} H (A\xi) \geq 0.
+%\]
+%Here the last inequality is due to the positive definiteness of $\nabla^2_z H$. Therefore, $\tilde H$ is also positive definite. By Proposition \ref{p1.proposition:SyMo:1} we conclude that $ y_e$ is a Lyapunov stable point.
+%\end{proof}
 
 While the symplectic structure is not guaranteed to be preserved in the reduced systems obtained by the Petrov-Galerkin projection, the reduced system obtained by the symplectic projection guarantees the preservation of the Hamiltonian up to the error \eqref{p1.eq:SyMo:5}. In the next section we discuss  different methods for recovering a symplectic basis.
 
@@ -152,6 +177,9 @@ Finding eigen-spaces of Hamiltonian and symplectic matrices is studied in the co
 In \Cref{p1.chap:SyMo.PrSy:2} we briefly outline non-direct methods for finding solutions to (\ref{p1.eq:SyMo:8}), proposed in \cite{doi:10.1137/140978922}, assuming a specific structure for $A$. In \Cref{p1.sec:Symo.PrSy:3} we propose a greedy approach for the symplectic basis generation.
 
 \subsection{SVD Based Methods for Symplectic Basis Generation} \label{p1.chap:SyMo.PrSy:2} 
+The methods presented in this section are taken from \cite{doi:10.1137/140978922}. 
+
+
 {\bf Cotangent lift:} Suppose that $A$ is of the form
 \begin{equation} \label{p1.eq:SyMo:9}
 	A = 
@@ -205,7 +233,7 @@ If we introduce $e_{k+1} = \tilde z / \| \tilde z \|_2$, it is easily checked th
 
 Note that the $SR$ method is chosen due to its simplicity. It can be replaced with backward stable routines such as the isotropic Arnoldi or the isotropic Lanczos methods \cite{doi:10.1137/S1064827500366434}, if required.
 
-A key element of the greedy algorithm is the availability of an error indicator which efficiently evaluates the error associated with the reduced model \cite{hesthaven2015certified}. In the framework of symplectic model reduction for a parametric Hamiltonian system, one possible candidate is the error in the Hamiltonian (\ref{p1.eq:SyMo:5}). Correctly approximating symplectic systems relies on preservation of the Hamiltonian, hence the error in the Hamiltonian arises as a a natural choice. Moreover, since the error in the Hamiltonian depends on the initial condition and the reduced symplectic basis, evaluation of the error does not require the time integration of the full system. On the other hand, the error in the Hamiltonian fails to identify the best snapshot when $z_0\in E_{2k}$, where $z_0$ is the initial condition in \eqref{p1.eq:SyMo:1}.
+A key element of the greedy algorithm is the availability of an error indicator which efficiently evaluates the error associated with the reduced model \cite{hesthaven2015certified}. In the framework of symplectic model reduction for a parametric Hamiltonian system, one possible candidate is the error in the Hamiltonian (\ref{p1.eq:SyMo:5}). Correctly approximating symplectic systems relies on preservation of the Hamiltonian, hence the error in the Hamiltonian arises as a natural choice. Moreover, since the error in the Hamiltonian depends on the initial condition and the reduced symplectic basis, evaluation of the error does not require the time integration of the full system. On the other hand, the error in the Hamiltonian fails to identify the best snapshot when $z_0\in E_{2k}$, where $z_0$ is the initial condition in \eqref{p1.eq:SyMo:1}.
 
 Suppose that a $2k$-dimensional ortho-symplectic basis $E_{2k}$ is generated at the $k$-th step of the greedy method and we seek to enrich it by two additional vectors. Using the error in the Hamiltonian (\ref{p1.eq:SyMo:7}) we search the parameter space to identify the value that maximizes the error in the Hamiltonian
 \begin{equation} \label{eq:SyMo:14.5}
@@ -213,7 +241,7 @@ Suppose that a $2k$-dimensional ortho-symplectic basis $E_{2k}$ is generated at 
 \end{equation}
 Here, $\mathbb P^{\Delta} \subset \mathbb R^{d}$ is the discretized parameter space. The goal is to approximate the Hamiltonian function as well as possible. We compute the temporal snapshots of (\ref{p1.eq:SyMo:1}) with respect to $\mu_{k+1}$ and form the temporal snapshot matrix
 \begin{equation}
-	S_{t,\mu_{k+1}}= [ z(t_i;\omega_{k+1}) ]_{i=1}^{N_t}.
+	S_{t,\mu_{k+1}}= [ z(t_i;\mu_{k+1}) ]_{i=1}^{N_t}.
 \end{equation} 
 The next basis vector is the snapshot that maximises the projection error 
 \begin{equation} \label{eq:SyMo:14.6}
@@ -239,7 +267,7 @@ We summarize the greedy algorithm for the generation of a symplectic basis in \C
 		\State compute the temporal snapshots $S_{t,\mu^*}$.
 		\State Find the snapshot with maximum projection error
 		\[
-			z := \underset{s\in S_{t,\mu_{k+1}}}{\text{arg\ max }} \| s - A_{2k}{A_{2k}}^+s \|_2.
+			z := \underset{s\in S_{t,\mu_{k}}}{\text{arg\ max }} \| s - A_{2k}{A_{2k}}^+s \|_2.
 		\]
 		\State Apply symplectic orthonormalization on $z$ to obtain $e_{k+1}$.
 		\State Assemble $A_{2k+2} = [e_1,\dots,e_{k+1},\mathbb J_{2n}^T e_1,\dots,\mathbb J_{2n}^T e_{k+1} ]$.
@@ -278,7 +306,7 @@ We seek to show that the decay of $\sigma_{2k}$, obtained by the greedy algorith
 We start by $\mathbb J_{2n}$-orthogonalizing the vectors provided by the greedy algorithm as
 \begin{equation} \label{eq:new6}
 \begin{aligned}
-	& \xi_1 = e_i, & \bar{\xi}_1 = \mathbb{J}_{2n}^T \xi_1, &\\
+	& \xi_1 = e_1, & \bar{\xi}_1 = \mathbb{J}_{2n}^T \xi_1, &\\
 	& \xi_i = e_i - P_{2(i-1)} (e_i), & \bar{\xi}_i = \mathbb{J}_{2n}^T, \xi_i &\quad i = 2,3,\dots
 \end{aligned}
 \end{equation}
@@ -391,7 +419,7 @@ Here, we used the fact that $\nabla_y H_1 = A^TLA$ and \Cref{p1.theorem:1}. As d
 \begin{equation} \label{eq:new25}
 	\frac{d}{dt} y = \mathbb J_{2k} \tilde L y + \underbrace{ A^+ \mathbb J_{2n} V (P^TV)^{-1} P^T g(Ay) }_{N( y)},
 \end{equation}
-where $V$ is a basis for the nonlinear snapshots $S_{g} = [g(z_i)]_{i=1}^{N_t}$ and $P$ is the index matrix for interpolation in \Cref{alg:3.4}. For a general choice of $V$ the system (\ref{eq:new25}) is not guaranteed to be a Hamiltonian system, impacting long time accuracy and stability. However, we can guarantee that (\ref{eq:new25}) is a Hamiltonian system by choosing $V=(A^+)^T$. To see this, note that the system (\ref{eq:new25}) is a Hamiltonian system if and only if $N(y) = \mathbb J_{2k} \nabla_{y} g(y)$. Also we have 
+where $V$ is a basis for the nonlinear snapshots $S_{g} = [g(z_i)]_{i=1}^{N_t}$ and $P$ is the index matrix for interpolation in \Cref{alg:3.4}. For a general choice of $V$ the system (\ref{eq:new25}) is not guaranteed to be a Hamiltonian system, impacting long time accuracy and stability. However, we can guarantee that (\ref{eq:new25}) is a Hamiltonian system by choosing $V=(A^+)^T$. To see this, note that the system (\ref{eq:new25}) is a Hamiltonian system if and only if $N(y) = \mathbb J_{2k} \nabla_{y} \bar H(y)$ for some scalar function $\bar H$. Also we have 
 \begin{equation} \label{eq:new26}
 	g(Ay) = \nabla_{z} H_2(z) = (A^+)^T \nabla_{y} H_2(Ay),
 \end{equation}
@@ -405,13 +433,42 @@ Taking $V = (A^+)^T$ yields
 \end{equation}
 since $(A^+)^T$ is a symplectic matrix. Hence, $V = (A^+)^T$ is a sufficient condition for (\ref{eq:new25}) to be Hamiltonian. 
 
+\edit{
+Regarding the construction of the projection space, suppose that we have already constructed a symplectic basis $A=\{ e_1,\dots , e_k,f_1,\dots f_k \}$ using the greedy algorithm. Note that $(A^+)^T$ is a symplectic basis and $(A^+)^+=A$. Thus, we can move between these two symplectic bases by simply using the transpose operator and the symplectic inverse operator. Let $S_{g}$ be the nonlinear snapshots. We form $(A^+)^T = \{ e'_1,\dots, e'_k,f'_1,\dots,f'_k\}$ and use a greedy approach to add new basis vectors to $(A^+)^T$. At the $i$-th iteration of the symplectic DEIM, we use $(A^+)^T$ to approximate elements in $S_{g}$ and choose the vector that maximizes the error as the next basis vector 
+\begin{equation}
+	s^* := \underset{s \in S_{g}}{\text{argmax }}\| s - (A^+)^T A^+ s \|_2.	
+\end{equation}
+After applying the symplectic Gram-Schmidt on $s^*$, we update $(A^+)^T$ using vectors
+\begin{equation}
+\begin{aligned}
+	e'_{k+i+1} = \frac{s^*}{\| s^* \|_2},\quad f'_{k+i+1} = \mathbb J_{2n}^T e'_{k+i+1}.
+\end{aligned}
+\end{equation}
+Finally when $(A^+)^T$ approximates elements $S_{\mathbf g}$ with the desired accuracy, we transpose and symplectically invert $(A^+)^T$ to obtain $A$. We summarize the symplectic DEIM algorithm in \Cref{alg:4.2}.
+
+\begin{algorithm} 
+	\caption{the symplectic DEIM for extending a symplectic basis $A_{2k}$} \label{alg:4.2}
+	\textbf{Input:} nonlinear snapshots $S_g$, symplectic reduced basis $A_{2k}$.
+	\begin{algorithmic} [1]
+		\State compute $B_{2k} := (A_{2k}^+)^T = [e'_1,\dots,e'_{k},\mathbb J_{2n}^T e'_1,\dots,\mathbb J_{2n}^T e'_{k} ]$
+		\State find $s^* := \underset{s \in S_{g}}{\text{argmax }}\| s - B B^+ s \|_2$.
+		\State Apply symplectic orthonormalization on $s^*$ to obtain $e'_{k+1}$.
+		\State Assemble $B_{2k+2} = [e'_1,\dots,e'_{k+1},\mathbb J_{2n}^T e'_1,\dots,\mathbb J_{2n}^T e'_{k+1} ]$.
+		\State Compute $A_{2k+2} = (B^+)^T$.
+	\end{algorithmic}
+	\vspace{0.5cm}
+	\textbf{Output:} symplectic reduced basis $A_{2k+2}$.
+\end{algorithm}
+When the symplectic reduced basis is an ortho-symplectic basis of the form $A = [e_1,\dots,e_k,\mathbb J_{2k}^T e_1,\dots,\mathbb J_{2k}^T e_k]$, \Cref{p1.theorem:1} suggests that $(A^+)^T = A$. Therefore, $A$ can be directly enriched with nonlinear snapshots. This is also suggested in \cite{doi:10.1137/140978922}. However, not all ortho-symplectic bases are of this form. Given a proper vector selection procedure, the symplectic DEIM can be modified to construct an accurate symplectic basis for any symplectic basis. This feature is exploited in \Cref{sec:normmor.3}, where the reduced symplectic basis is no longer orthonormal with respect to the Euclidean inner-product.
+}
+
 Note that \Cref{p1.theorem:1} implies that $(A^+)^T=A$, therefore it suffices to ensure that $A$ is also a basis for $S_g$, the nonlinear snapshots. Suppose that we have already constructed a symplectic basis $E =\{ e_1,\dots , e_k,f_1,\dots f_k \}$ using the symplectic greedy in \Cref{alg:4.1}. We seek to enrich it with the nonlinear snapshots. We can use the projection error to identify the nonlinear snapshot that is worst approximated by $\mathcal A = \text{span}(E)$ as
 \begin{equation}
 	s^* := \underset{s \in S_{ g}}{\text{arg\ max }}\| s - AA^+ s \|_2.	
 \end{equation}
 We then symplectically ortho-normalize $s^*$ to obtain $e_{k+1}$ and $f_{k+1} = \mathbb J_{2n}^T e_{k+1}$ and add them to $E$. We can continue this process until $E$ approximates the nonlinear snapshots with the desired accuracy. Therefore, we may simply call \Cref{alg:4.1} while passing a symplectic basis $A$ with the nonlinear snapshots $S_g$ as its arguments.
 
-When using an implicit time integration scheme we face inefficiencies when evaluating the Jacobian of nonlinear terms, as discussed in Section \Cref{sec:3.5}. We recall that a key ingredient to a fast approximation of the Jacobian is that the interpolating index matrix $P$, obtained in the DEIM approximation, commutes with the nonlinear function. Nonlinear terms in Hamiltonian systems often take the from
+When using an implicit time integration scheme we face inefficiencies when evaluating the Jacobian of nonlinear terms, as discussed in \Cref{sec:3.5}. We recall that a key ingredient to a fast approximation of the Jacobian is that the interpolating index matrix $P$, obtained in the DEIM approximation, commutes with the nonlinear function. Nonlinear terms in Hamiltonian systems often take the from
 \begin{equation} \label{eq:new29}
 	g (z) = g (q,p) = 
 	\begin{pmatrix}
@@ -421,7 +478,7 @@ When using an implicit time integration scheme we face inefficiencies when evalu
 		g_{2n}(q_{n},p_{n})
 	\end{pmatrix}, \quad g_{i}:\mathbb R^{2}\to \mathbb R, \quad 1\leq i \leq n.
 \end{equation}
-Thus, the interpolating index matrix, obtained by \Cref{alg:3.4} does not necessarily commute with the function $g$. To overcome this, when index $\mathfrak p_i$ with $\mathfrak p_i\leq n$ or $\mathfrak p_i>n$ is chosen in \Cref{alg:3.4} we also include $\mathfrak p_i + n$ or $\mathfrak p_i-n$, respectively. Simple calculations verifying that $g$ and $P$ then commute.
+Thus, the interpolating index matrix, obtained by \Cref{alg:3.4} does not necessarily commute with the function $g$. To overcome this, when index $\mathfrak p_i$ with $\mathfrak p_i\leq n$ or $\mathfrak p_i>n$ is chosen in \Cref{alg:3.4} we also include $\mathfrak p_i + n$ or $\mathfrak p_i-n$, respectively. Simple calculations verify that $g$ and $P$ then commute.
 
 In case $g$ is not of the form (\ref{eq:new29}) one can use MDEIM \cite{carlberg2012efficient,negri2015efficient} to accelerate the assembly of the Jacobian matrix.
 

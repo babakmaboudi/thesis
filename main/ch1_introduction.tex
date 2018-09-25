@@ -8,9 +8,9 @@ Reduced order modeling (ROM), as opposed to high-fidelity modeling, has emerged 
 
 The recognition of patterns in data makes ROM comparable with machine learning techniques, e.g. in computer science and statistics developed during the past decades \cite{machinelearning}. However, the deterministic nature of PDEs, Combined with the control in the choice of data generation process, gives ROM a distinct take. 
 
-This difference between ROM and conventional machine learning techniques becomes more apparent with time-dependent problems. Time-symmetries of high-fidelity models are lost in the ensembly of data, which sometimes, result in an ill-represented ROM \cite{doi:10.1137/1.9780898718713}. Although this inaccuracy in the representation is less evident for parabolic PDEs, the development of ROMs for hyperbolic PDEs, where symmetries are a fundamental feature, remains a challenge \cite{doi:10.1137/17M1111991,kalashnikova2014stabilization,farhat2015structure,doi:10.1137/110836742,doi:10.1137/140959602,beattie2011structure,doi:10.1137/140978922}.
+This difference between ROM and conventional machine learning techniques becomes more apparent with time-dependent problems. Time-symmetries of high-fidelity models are lost in the assembly of data, which sometimes, result in an ill-represented ROM \cite{doi:10.1137/1.9780898718713}. Although this inaccuracy in the representation is less evident for parabolic PDEs, the development of ROMs for hyperbolic PDEs, where symmetries are a fundamental feature, remains a challenge \cite{doi:10.1137/17M1111991,kalashnikova2014stabilization,farhat2015structure,doi:10.1137/110836742,doi:10.1137/140959602,beattie2011structure,doi:10.1137/140978922}.
 
-The main aim of this thesis is to develop ROM techniques that capture symmetries in a system of PDEs. The conservation of such symmetries not only results in a robust ROM, but helps with the construction of a meaningful reduced order model. Time, as a parameter, plays a crucial role in the existence and the conservation of symmetries. Therefore, this thesis puts a particular emphasis on the treatment of the time variable by study systems that depend on none, or otherwise very small number of additional parameters. This might, at first glance, sounds counter intuitive in the context ROM. However, the isolation of time provides remarkable insight into the theory of ROM, and into the mathematical modeling. Nevertheless, the main results of this thesis can be extended to the general parameter setting while retaining all the benefits associated with the conservation of symmetries.
+The main aim of this thesis is to develop ROM techniques that capture symmetries in a system of PDEs. The conservation of such symmetries not only results in a robust ROM, but helps with the construction of a meaningful reduced order model. Time, as a parameter, plays a crucial role in the existence and the conservation of symmetries. Therefore, this thesis puts a particular emphasis on the treatment of the time variable by studying systems that depend on none, or otherwise very small number of additional parameters. This might, at first glance, sounds counter intuitive in the context ROM. However, the isolation of time provides remarkable insight into the theory of ROM, and into the mathematical modeling. Nevertheless, the main results of this thesis can be extended to the general parameter setting while retaining all the benefits associated with the conservation of symmetries.
 
 In what is left of this chapter, we discuss the difficulties involved in treating time as a parameter in the context of ROM, and conclude by briefly discussing the content of the thesis.
 
@@ -27,7 +27,7 @@ together with some initial condition $u(t,x) = u_0(x)$. A standard finite elemen
 \begin{equation} \label{eq:ch1.2}
 	u(x,t) \approx \sum_{i=1}^n c_i(t) \varphi_i(x),
 \end{equation}
-where $c_i(t)$ are the expansion coefficients that yield the degrees of freedom. In this setting, the choice of $\varphi_i$ is independent of \eqref{eq:ch1.1}. Exploiting some problem-specific patterns, e.g., in the initial or the boundary conditions, problem geometry, or numerical properties, allow us to introduce a new, but potentially smaller, set of basis functions $\psi_i$. By
+where $c_i(t)$ are the expansion coefficients that yield the degrees of freedom. In this setting, the choice of $\varphi_i$ is independent of \eqref{eq:ch1.1}. Exploiting some problem-specific patterns, e.g., in the initial or the boundary conditions, problem geometry, or numerical properties, allows us to introduce a new, but potentially smaller, set of basis functions $\psi_i$. By
 \begin{equation} \label{eq:ch1.3}
 	u(x,t) \approx \sum_{i=1}^k c'_i(t) \psi_i(x),
 \end{equation}
@@ -38,14 +38,14 @@ where $c_i(t)$ are the expansion coefficients that yield the degrees of freedom.
 	\subfloat[RB basis functions\label{fig:ch1.1b}]{%
 			\includegraphics[width=0.45\textwidth]{./images/intro/pod}
 	}
-	\caption{spacial representation of MOR}
+	\caption{spatial representation of MOR}
 	\label{fig:ch1.1}
 \end{figure}
 where $\psi_i$ are chosen such that \eqref{eq:ch1.3} delivers comparable accuracy to \eqref{eq:ch1.2}. If $k \ll n$, we gain acceleration by evaluating only $k$ coefficients rather than $n$. Often, RB methods require the relation between $\psi_i$ and $\varphi_i$ to be a linear relation, i.e.
 \begin{equation} \label{eq:ch1.3.1}
-	\psi_i = \sum_{j=1}^n r_j \varphi_j, \quad i=1,\dots,k.
+	\psi_i = \sum_{j=1}^n r_{ij} \varphi_j, \quad i=1,\dots,k.
 \end{equation}
-A rough sketch of basis functions $\varphi_i$ and $\psi_i$ is illustrated in \Cref{fig:ch1.1}. This is a \emph{spacial perspective} of reduced order modeling.
+A rough sketch of basis functions $\varphi_i$ and $\psi_i$ is illustrated in \Cref{fig:ch1.1}. This is a \emph{spatial perspective} of reduced order modeling.
 
 To be able to visualize the temporal aspect of MOR, we simplify \eqref{eq:ch1.1} to obtain an ordinary differential equation (ODE) $\ddot u(t) - u(t) = 0$, which can be expressed in terms of first order ODEs as
 \begin{equation} \label{eq:ch1.4}
@@ -74,7 +74,7 @@ Introduction of the new variable $v$ is not only an algebraic tool, but carries 
 \end{figure}
 
 
-Let us now study the symmetries of \eqref{eq:ch1.4} in a transformed coordinate system. \Cref{fig:ch1.2b} shows the transformation of $\nabla H$ and $(\dot u, \dot v)^T$ over some linear transformation $(\tilde u, \tilde v) = T(u,v)$. We notice that the orthogonality of the two vector fields is destroyed. Although, the dynamics of the original and the transformed system is the same, the transformed system carries less symmetry. For some class of linear transformations, \emph{symplectic transformations}, the orthogonality of the two vector fields is preserved. This can be seen in \Cref{fig:ch1.2c} where a linear symplectic transformation is applied to $\nabla H$ and $(\dot u, \dot v)^T$.
+Let us now study the symmetries of \eqref{eq:ch1.4} in a transformed coordinate system. \Cref{fig:ch1.2b} shows the transformation of $\nabla H$ and $(\dot u, \dot v)^T$ over some linear transformation $(\tilde u, \tilde v) = T(u,v)$. We notice that the orthogonality of the two vector fields is destroyed. Although, the dynamics of the original and the transformed system are the same, the transformed system carries less symmetry. For some class of linear transformations, \emph{symplectic transformations}, the orthogonality of the two vector fields is preserved. This can be seen in \Cref{fig:ch1.2c} where a linear symplectic transformation is applied to $\nabla H$ and $(\dot u, \dot v)^T$.
 
 In a numerical approximation, loss of symmetries can have profound consequences for the overall dynamics of a system. For example, the periodic trajectory of \eqref{eq:ch1.4}, which is a distinctive feature of the dynamics, may no longer remain periodic in a non-symmetric coordinate system.
 

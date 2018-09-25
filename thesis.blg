@@ -14,7 +14,6 @@ A level-1 auxiliary file: tail/biblio.aux
 The style file: abbrv.bst
 A level-1 auxiliary file: tail/cv.aux
 Database file #1: tail/bibliography.bib
-Warning--I didn't find a database entry for "strang09"
 Warning--empty publisher in abraham1978foundations
 Warning--empty year in abraham1978foundations
 Warning--can't use both author and editor fields in Benner2018
@@ -23,45 +22,45 @@ Warning--empty year in carlberg2012efficient
 Warning--empty journal in HHS
 Warning--empty publisher in honein2005numerical
 Warning--empty journal in robbin2011introduction
-You've used 111 entries,
+You've used 113 entries,
             2118 wiz_defined-function locations,
-            1138 strings with 23570 characters,
-and the built_in function-call counts, 36506 in all, are:
-= -- 3636
-> -- 1582
+            1147 strings with 23842 characters,
+and the built_in function-call counts, 37146 in all, are:
+= -- 3699
+> -- 1612
 < -- 22
-+ -- 637
-- -- 511
-* -- 2554
-:= -- 6061
-add.period$ -- 348
-call.type$ -- 111
-change.case$ -- 555
++ -- 649
+- -- 521
+* -- 2602
+:= -- 6170
+add.period$ -- 354
+call.type$ -- 113
+change.case$ -- 566
 chr.to.int$ -- 0
-cite$ -- 119
-duplicate$ -- 1396
-empty$ -- 2948
-format.name$ -- 511
-if$ -- 7643
+cite$ -- 121
+duplicate$ -- 1419
+empty$ -- 2999
+format.name$ -- 521
+if$ -- 7774
 int.to.chr$ -- 0
-int.to.str$ -- 111
-missing$ -- 135
-newline$ -- 556
-num.names$ -- 226
-pop$ -- 593
+int.to.str$ -- 113
+missing$ -- 138
+newline$ -- 566
+num.names$ -- 230
+pop$ -- 604
 preamble$ -- 1
-purify$ -- 474
+purify$ -- 483
 quote$ -- 0
-skip$ -- 943
+skip$ -- 956
 stack$ -- 0
-substring$ -- 2481
-swap$ -- 246
+substring$ -- 2522
+swap$ -- 248
 text.length$ -- 22
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 388
+type$ -- 394
 warning$ -- 8
-while$ -- 363
-width$ -- 114
-write$ -- 1211
-(There were 9 warnings)
+while$ -- 369
+width$ -- 116
+write$ -- 1234
+(There were 8 warnings)
