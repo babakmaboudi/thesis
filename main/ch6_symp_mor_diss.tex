@@ -12,6 +12,10 @@ This chapter presents the reduced dissipative Hamiltonian (RDH) method as a stru
 
 This chapter is organized as follows: \Cref{p3.sec:2} covers the required background on dissipative Hamiltonian systems and the Hamiltonian extension. In \Cref{p3.sec:3} we introduce the reduced dissipative Hamiltonian (RDH) method. Accuracy, stability and efficiency of the RDH method is discussed in \Cref{p3.sec:4}, and illustrated through simulation of the dissipative wave equation and a linear port-Hamiltonian system of an electrical circuit. We offer conclusive remarks in \Cref{p3.sec:5}.
 
+\edit{
+The main contribution of this chapter is presenting an application of symplectic model reduction for dissipative Hamiltonian systems. The connection of a Hamiltonian extension (conservative extension) with the symplectic model reduction is discussed.
+}
+
 
 \section{Dissipative Hamiltonian Systems and Hamiltonian Extensions} \label{p3.sec:2}
 
@@ -140,20 +144,20 @@ The symplectic Galerkin projection implies
 where we use the fact that $A^+\mathbb J_{2n} = \mathbb{J}_{2k} A^T$. If we define
 \edit{
 \[
-	f = A \tilde f,\quad \phi = A \tilde \phi,\quad \theta = A\tilde \theta, \quad \tilde L = A^T L A,
+	\tilde f = A^+  f,\quad \tilde \phi = A^+ \phi,\quad \tilde \theta = A^+ \theta, \quad \tilde L = A^T L A,
 \]
 }
-and the \emph{reduced susceptibility} as $\tilde \chi = A^T \chi A$ we recover the reduced Hamiltonian system
+and the \emph{reduced susceptibility} as $\tilde \chi = \tilde {\mathcal Y} \tilde {\mathcal Y}$, where $\tilde {\mathcal Y} = A^T \sqrt{\chi} A$, we recover the reduced Hamiltonian system
 \begin{subequations}
 \begin{align}
 		\label{p3.eq:3.12.a} & \dot{y}(t) = \mathbb J_{2k} {\tilde L}^T \tilde f(t,\edit{y}), \\
 		\label{p3.eq:3.12.b} & \partial_t \tilde \phi(t,x,\edit{y}) = \tilde \theta(t,x,\edit{y}),\\
-		\label{p3.eq:3.12.c} & \partial_t \tilde \theta(t,x,\edit{y}) = \partial_x^2 \tilde \phi(t,x,\edit{y}) + \sqrt 2 \delta_0(x,\edit{y}) \cdot \sqrt{\tilde \chi}  \tilde f(t,\edit{y}),
+		\label{p3.eq:3.12.c} & \partial_t \tilde \theta(t,x,\edit{y}) = \partial_x^2 \tilde \phi(t,x,\edit{y}) + \sqrt 2 \delta_0(x,\edit{y}) \cdot \tilde {\mathcal Y}  \tilde f(t,\edit{y}),
 \end{align}
 \end{subequations}
 together with the auxiliary equation
 \begin{equation} \label{p3.eq:3.13}
-	\tilde f(t,\edit{y}) + \sqrt{2} \sqrt{\tilde \chi} \tilde \phi(t,0,\edit{y}) = \tilde L y.
+	\tilde f(t,\edit{y}) + \sqrt{2} \tilde {\mathcal Y} \tilde \phi(t,0,\edit{y}) = \tilde L y.
 \end{equation}
 \Cref{p3.eq:3.12.a,p3.eq:3.12.b,p3.eq:3.12.c} is a Hamiltonian system on the symplectic linear vector space $\mathbb R^{2k} \times \mathcal H^{2k}$ and contributes to the \emph{reduced TDD system}
 \begin{equation} \label{p3.eq:3.14}
@@ -203,12 +207,16 @@ Note that in practice, ensuring $\frac d {dt} H(z(t)) \leq 0$, requires a carefu
 We conclude this section by showing that the RDH method preserves the stability of the equilibrium points of the extended system. This provides a strong indication that the overall dynamics and stability of the original system system is translated into the RDH system. 
 \edit{
 \begin{theorem}
-\cite{doi:10.1137/17M1111991} Consider a Hamiltonian system of the form \Cref{p3.eq:2.10.a,p3.eq:2.10.b,p3.eq:2.10.c} with a Hamiltonian $H\in C^{2}$  together with the reduced system \Cref{p3.eq:3.12.a,p3.eq:3.12.b,p3.eq:3.12.c}. Suppose that $(z_e,\phi_e,\theta_e)$ is a strict local minimum of $H_{\text{ex}}$. If we can find an open ball neighborhood $S$ of $(z_e,\phi_e,\theta_e)$ with respelct to the norm $\| \cdot \|_{\text{ex}}$ such that $\text{Range}(\mathbf A)\cap S \neq \emptyset$, then the reduced system \eqref{p1.eq:SyMo:4} remains bounded.
+\cite{doi:10.1137/17M1111991} Consider a Hamiltonian system of the form \Cref{p3.eq:2.10.a,p3.eq:2.10.b,p3.eq:2.10.c} with a quadratic Hamiltonian $H=L^TL$. The reduced reduced system \Cref{p3.eq:3.12.a,p3.eq:3.12.b,p3.eq:3.12.c} is also stable.
 \end{theorem}
 
 \begin{proof}
-Since $H\in C^2$ and $H_{\text{ex}}$ is a quadratic extention of $H$, then $H_{\text{ex}}$ is continuously differentiable with respect to all variables $(z,\phi,\theta)$. Furthermore, we can assume that there is a bounded neighborhood $S$ of $(z_e,\phi_e,\theta_e)$ with respect to the norm $\| \cdot \|_{\text{ex}}$ such that $H(z)<c<\infty$ for all $z\in S$, and $\inf_{z\in \partial S} H = c$. \Cref{theorem:6.1} suggests that the reduced system remains bouded in $\text{Range}(\mathbf A)\cap S \neq \emptyset$
+Note that a quadratic Hamiltonian result in a linear Hamiltonian system with. The Hamiltonian extension is as well a linear Hamiltonian system with a quadratic Hamiltonian. Furthermore, the application of the symplectic model reduction also result in a quadratic linear reduced Hamiltonian system with the Hamiltonian $\tilde H = \tilde L^T \tilde L$. Therefore, the reduced system remains stable. 
 \end{proof}
+
+%\begin{proof}
+%Since $H\in C^2$ and $H_{\text{ex}}$ is a quadratic extention of $H$, then $H_{\text{ex}}$ is continuously differentiable with respect to all variables $(z,\phi,\theta)$. Furthermore, we can assume that there is a bounded neighborhood $S$ of $(z_e,\phi_e,\theta_e)$ with respect to the norm $\| \cdot \|_{\text{ex}}$ such that $H(z)<c<\infty$ for all $z\in S$, and $\inf_{z\in \partial S} H = c$. \Cref{theorem:6.1} suggests that the reduced system remains bouded in $\text{Range}(\mathbf A)\cap S \neq \emptyset$
+%\end{proof}
 }
 %\begin{definition}
 %Consider a dynamical system of the form $\dot z = f( z)$ and suppose that $z_e$ is an equilibrium point for the system so that $ f( z_e) = 0$. $z_e$ is called Lyapunov stable if, for any $\epsilon > 0$, we can find $\delta > 0$ such that for any trajectory $\psi_t$, if $\| \psi_0 - z_e \|_{\text{ex}} \leq \delta$, then for all $0 \leq t < \infty$, we have $\| \psi_t - z_e \|_{\text{ex}} < \epsilon$.

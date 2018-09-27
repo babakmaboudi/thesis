@@ -198,7 +198,12 @@ Here $\| \cdot \|_X = \sqrt{<\cdot , \cdot>_X}$ and the constraint arises from $
 	& = \| X^{1/2}S - X^{1/2}W_kW_k^TX^{1/2} X^{1/2}S \|_F^2.
 \end{aligned}
 \end{equation}
-Here $X^{1/2}$ is the matrix square root of $X$. Now if we define $\bar S = X^{1/2} S$ and $\bar W_k = X^{1/2} W_k$, we can rewrite (\ref{eq:3.20}) as 
+\edit{
+Here $X^{1/2}$ is the matrix square root of $X$ defined as
+\begin{equation}
+	X^{1/2} = V \Lambda^{1/2} V^T,
+\end{equation}
+where $X=V \Lambda V^T$ is the eigenvalue decomposition of $X$.} Now if we define $\bar S = X^{1/2} S$ and $\bar W_k = X^{1/2} W_k$, we can rewrite (\ref{eq:3.20}) as 
 \begin{equation} \label{eq:3.22}
 \begin{aligned}
 &  \underset{\bar W_k\in\mathbb R^{n\times k}}{\text{minimize}}

@@ -6,7 +6,7 @@ R.~Abraham and J.~E. Marsden.
 
 \bibitem{doi:10.1137/17M1111991}
 B.~M. Afkham and J.~S. Hesthaven.
-\newblock Structure preserving model reduction of parametric hamiltonian
+\newblock Structure preserving model reduction of parametric {Hamiltonian}
   systems.
 \newblock {\em SIAM Journal on Scientific Computing}, 39(6):A2616--A2644, 2017.
 
@@ -38,13 +38,13 @@ F.~Ballarin, A.~Manzoni, A.~Quarteroni, and G.~Rozza.
 
 \bibitem{barone2009stable}
 M.~F. Barone, I.~Kalashnikova, D.~J. Segalman, and H.~K. Thornquist.
-\newblock Stable galerkin reduced order models for linearized compressible
+\newblock Stable {G}alerkin reduced order models for linearized compressible
   flow.
 \newblock {\em Journal of Computational Physics}, 228(6):1932--1946, 2009.
 
 \bibitem{barrault2004empirical}
 M.~Barrault, Y.~Maday, N.~C. Nguyen, and A.~T. Patera.
-\newblock An ‘empirical interpolation’method: application to efficient
+\newblock An ‘empirical interpolation’ method: application to efficient
   reduced-basis discretization of partial differential equations.
 \newblock {\em Comptes Rendus Mathematique}, 339(9):667--672, 2004.
 
@@ -70,15 +70,15 @@ P.~Benner, R.~Byers, H.~Fa{\ss}bender, V.~Mehrmann, and D.~Watkins.
 
 \bibitem{Benner2018}
 P.~Benner and P.~Goyal.
-\newblock {\em An Iterative Model Reduction Scheme forÂ Quadratic-Bilinear
-  Descriptor Systems with an Application to Navier--Stokes Equations}, pages
-  1--19.
+\newblock {\em An Iterative Model Reduction Scheme for Quadratic-Bilinear
+  Descriptor Systems with an Application to {N}avier--{S}tokes Equations},
+  pages 1--19.
 \newblock Springer International Publishing, Cham, 2018.
 
 \bibitem{benner1997new}
 P.~Benner, V.~Mehrmann, and H.~Xu.
 \newblock A new method for computing the stable invariant subspace of a real
-  hamiltonian matrix.
+  {H}amiltonian matrix.
 \newblock {\em Journal of computational and applied mathematics}, 86(1):17--43,
   1997.
 
@@ -118,12 +118,8 @@ A.~Buffa, Y.~Maday, A.~T. Patera, C.~Prud’homme, and G.~Turinici.
 
 \bibitem{bunse1986matrix}
 A.~Bunse-Gerstner.
-\newblock Matrix factorizations for symplectic qr-like methods.
+\newblock Matrix factorizations for symplectic {QR}-like methods.
 \newblock {\em Linear Algebra and its Applications}, 83:49--77, 1986.
-
-\bibitem{1711.11550}
-K.~Carlberg, Y.~Choi, and S.~Sargsyan.
-\newblock Conservative model reduction for finite-volume models, 2017.
 
 \bibitem{carlberg2018conservative}
 K.~Carlberg, Y.~Choi, and S.~Sargsyan.
@@ -151,7 +147,7 @@ S.~Chandrasekhar.
 
 \bibitem{doi:10.1137/15M1055085}
 S.~Chaturantabut, C.~Beattie, and S.~Gugercin.
-\newblock Structure-preserving model reduction for nonlinear port-hamiltonian
+\newblock Structure-preserving model reduction for nonlinear port-{H}amiltonian
   systems.
 \newblock {\em SIAM Journal on Scientific Computing}, 38(5):B837--B865, 2016.
 
@@ -181,7 +177,7 @@ S.~Deparis and G.~Rozza.
 \bibitem{desjardins2008high}
 O.~Desjardins, G.~Blanquart, G.~Balarac, and H.~Pitsch.
 \newblock High order conservative finite difference scheme for variable density
-  low mach number turbulent flows.
+  low {M}ach number turbulent flows.
 \newblock {\em Journal of Computational Physics}, 227(15):7125--7159, 2008.
 
 \bibitem{filaments_vort2}
@@ -198,13 +194,14 @@ L.~Edsberg.
 
 \bibitem{faou2012geometric}
 E.~Faou.
-\newblock {\em Geometric Numerical Integration and Schr{\"o}dinger Equations}.
+\newblock {\em Geometric Numerical Integration and {S}chr{\"o}dinger
+  Equations}.
 \newblock Zurich lectures in advanced mathematics. European Mathematical
   Society, 2012.
 
 \bibitem{farantos2014nonlinear}
 S.~C. Farantos.
-\newblock {\em Nonlinear Hamiltonian Mechanics Applied to Molecular Dynamics:
+\newblock {\em Nonlinear {H}amiltonian Mechanics Applied to Molecular Dynamics:
   Theory and Computational Methods for Understanding Molecular Spectroscopy and
   Chemical Reactions}.
 \newblock Springer, 2014.
@@ -236,14 +233,14 @@ A.~Figotin and J.~H. Schenker.
 
 \bibitem{figotin2007hamiltonian}
 A.~Figotin and J.~H. Schenker.
-\newblock Hamiltonian structure for dispersive and dissipative dynamical
+\newblock {H}amiltonian structure for dispersive and dissipative dynamical
   systems.
 \newblock {\em Journal of Statistical Physics}, 128(4):969--1056, 2007.
 
 \bibitem{frezzotti2017numerical}
 M.~L. Frezzotti, S.~D{'}Alessandro, B.~Favini, and F.~Nasuti.
 \newblock Numerical issues in modeling combustion instability by quasi-1{D}
-  euler equations.
+  {E}uler equations.
 \newblock {\em International Journal of Spray and Combustion Dynamics},
   9(4):349--366, 2017.
 
@@ -318,6 +315,11 @@ J.~Hesthaven, G.~Rozza, and B.~Stamm.
 \newblock SpringerBriefs in Mathematics. Springer International Publishing,
   2015.
 
+\bibitem{hofer1995symplectic}
+H.~Hofer and E.~Zehnder.
+\newblock Symplectic invariants and {H}amiltonian dynamics.
+\newblock In {\em The Floer memorial volume}, pages 525--544. Springer, 1995.
+
 \bibitem{honein2005numerical}
 A.~E. Honein.
 \newblock {\em Numerical aspects of compressible turbulence simulations}.
@@ -383,7 +385,7 @@ A.~Kolmogoroff.
 
 \bibitem{doi:10.1137/S0036142900382612}
 K.~Kunisch and S.~Volkwein.
-\newblock Galerkin proper orthogonal decomposition methods for a general
+\newblock {G}alerkin proper orthogonal decomposition methods for a general
   equation in fluid dynamics.
 \newblock {\em SIAM Journal on Numerical Analysis}, 40(2):492--515, 2002.
 
@@ -400,7 +402,7 @@ H.~Lamb.
 
 \bibitem{langtangen2017solving}
 H.~Langtangen and A.~Logg.
-\newblock {\em Solving PDEs in Python: The FEniCS Tutorial I}.
+\newblock {\em Solving {PDE}s in Python: The {FEniCS} Tutorial I}.
 \newblock Simula SpringerBriefs on Computing. Springer International
   Publishing, 2017.
 
@@ -418,13 +420,13 @@ J.~E. Marsden and T.~S. Ratiu.
 
 \bibitem{doi:10.1137/110850773}
 V.~Mehrmann and F.~Poloni.
-\newblock Doubling algorithms with permuted lagrangian graph bases.
+\newblock Doubling algorithms with permuted {L}agrangian graph bases.
 \newblock {\em SIAM Journal on Matrix Analysis and Applications},
   33(3):780--805, 2012.
 
 \bibitem{mehrmann2016inverse}
 V.~Mehrmann and F.~Poloni.
-\newblock An inverse-free adi algorithm for computing lagrangian invariant
+\newblock An inverse-free {ADI} algorithm for computing {L}agrangian invariant
   subspaces.
 \newblock {\em Numerical Linear Algebra with Applications}, 23(1):147--168,
   2016.
@@ -432,7 +434,7 @@ V.~Mehrmann and F.~Poloni.
 \bibitem{doi:10.1137/S1064827500366434}
 V.~Mehrmann and D.~Watkins.
 \newblock Structure-preserving methods for computing eigenpairs of large sparse
-  skew-hamiltonian/hamiltonian pencils.
+  skew-{H}amiltonian/{H}amiltonian pencils.
 \newblock {\em SIAM Journal on Scientific Computing}, 22(6):1905--1925, 2001.
 
 \bibitem{Misumi2015}
@@ -449,7 +451,7 @@ K.~S. Mohamed.
 \bibitem{morinishi2010skew}
 Y.~Morinishi.
 \newblock Skew-symmetric form of convective terms and fully conservative finite
-  difference schemes for variable density low-mach number flows.
+  difference schemes for variable density low-{M}ach number flows.
 \newblock {\em Journal of Computational Physics}, 229(2):276--300, 2010.
 
 \bibitem{morinishi1998fully}
@@ -478,14 +480,14 @@ F.~Negri, A.~Manzoni, and D.~Amsallem.
 
 \bibitem{peng2016geometric}
 L.~Peng and K.~Mohseni.
-\newblock Geometric model reduction of forced and dissipative hamiltonian
+\newblock Geometric model reduction of forced and dissipative {H}amiltonian
   systems.
 \newblock In {\em Decision and Control (CDC), 2016 IEEE 55th Conference on},
   pages 7465--7470. IEEE, 2016.
 
 \bibitem{doi:10.1137/140978922}
 L.~Peng and K.~Mohseni.
-\newblock Symplectic model reduction of hamiltonian systems.
+\newblock Symplectic model reduction of {H}amiltonian systems.
 \newblock {\em SIAM Journal on Scientific Computing}, 38(1):A1--A27, 2016.
 
 \bibitem{doi:10.1137/0910047}
@@ -502,13 +504,13 @@ A.~Pinkus.
 
 \bibitem{polyuga2010structure}
 R.~V. Polyuga and A.~Van~der Schaft.
-\newblock Structure preserving model reduction of port-hamiltonian systems by
+\newblock Structure preserving model reduction of port-{H}amiltonian systems by
   moment matching at infinity.
 \newblock {\em Automatica}, 46(4):665--672, 2010.
 
 \bibitem{prajna2003pod}
 S.~Prajna.
-\newblock Pod model reduction with stability guarantee.
+\newblock {POD} model reduction with stability guarantee.
 \newblock In {\em Decision and Control, 2003. Proceedings. 42nd IEEE Conference
   on}, volume~5, pages 5254--5258. IEEE, 2003.
 
@@ -527,7 +529,7 @@ S.~S. Ravindran.
 \bibitem{reiss2014conservative}
 J.~Reiss and J.~Sesterhenn.
 \newblock A conservative, skew-symmetric finite difference scheme for the
-  compressible navier--stokes equations.
+  compressible {N}avier--{S}tokes equations.
 \newblock {\em Computers \& Fluids}, 101:208--219, 2014.
 
 \bibitem{Ripamonti:2017}
@@ -564,8 +566,8 @@ T.~Ruiner, J.~Fehr, B.~Haasdonk, and P.~Eberhard.
 
 \bibitem{Salam2014}
 A.~Salam and E.~Al-Aidarous.
-\newblock Equivalence between modified symplectic gram-schmidt and householder
-  sr algorithms.
+\newblock Equivalence between modified symplectic {G}ram-{S}chmidt and
+  {H}ouseholder {SR} algorithms.
 \newblock {\em BIT Numerical Mathematics}, 54(1):283--302, 2014.
 
 \bibitem{schutz2004statistical}
@@ -582,7 +584,7 @@ S.~Sen, K.~Veroy, D.~Huynh, S.~Deparis, N.~C. Nguyen, and A.~T. Patera.
 \bibitem{sjogreen2010skew}
 B.~Sj{\"o}green and H.~Yee.
 \newblock On skew-symmetric splitting and entropy conservation schemes for the
-  euler equations.
+  {E}uler equations.
 \newblock In {\em Numerical Mathematics and Advanced Applications 2009}, pages
   817--827. Springer, 2010.
 
@@ -611,7 +613,7 @@ G.~Teschl.
 
 \bibitem{thompson1992fourier}
 W.~J. Thompson.
-\newblock Fourier series and the gibbs phenomenon.
+\newblock {F}ourier series and the {G}ibbs phenomenon.
 \newblock {\em American journal of physics}, 60(5):425--429, 1992.
 
 \bibitem{trefethen97}
@@ -627,7 +629,7 @@ A.~van~der Schaft.
 
 \bibitem{vanderSchaft:2014:PST:2693645.2693646}
 A.~van~der Schaft and D.~Jeltsema.
-\newblock Port-hamiltonian systems theory: An introductory overview.
+\newblock Port-{H}amiltonian systems theory: An introductory overview.
 \newblock {\em Found. Trends Syst. Control}, 1(2-3):173--378, June 2014.
 
 \bibitem{Wald:106274}
@@ -643,7 +645,7 @@ Q.~Wang, J.~S. Hesthaven, and D.~Ray.
 
 \bibitem{watkins2004hamiltonian}
 D.~S. Watkins.
-\newblock On hamiltonian and symplectic lanczos processes.
+\newblock On {H}amiltonian and symplectic lanczos processes.
 \newblock {\em Linear algebra and its applications}, 385:23--45, 2004.
 
 \bibitem{Willems:1972ek}
@@ -654,13 +656,13 @@ J.~C. Willems.
 
 \bibitem{xu2003svd}
 H.~Xu.
-\newblock An svd-like matrix decomposition and its applications.
+\newblock An {SVD}-like matrix decomposition and its applications.
 \newblock {\em Linear algebra and its applications}, 368:1--24, 2003.
 
 \bibitem{artificial_dissipation}
 J.~Yu and J.~S. Hesthaven.
 \newblock A comparative study of shock capturing models for the discontinuous
-  galerkin method.
+  {G}alerkin method.
 \newblock {\em No. EPFL-ARTICLE-231188.}, 2017.
 
 \bibitem{yu2008combustion}

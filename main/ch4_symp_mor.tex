@@ -12,6 +12,10 @@ In this chapter, we present a greedy approach for the construction of a reduced 
 
 This chapter is organized as follows. In \Cref{p1.sec:SyMo:1} the symplectic Galerkin projection to construct a Hamiltonian reduced system is discussed.  \Cref{p1.sec:SyMo.PrSy:1,p1.sec:Symo.PrSy:3} discuss the greedy generation of a symplectic reduced basis as well as other SVD-based symplectic model reduction techniques. Accuracy, stability, and efficiency of the greedy method compared to other SVD-based methods are discussed in \Cref{p1.sec:NuRe:1}. Finally we offer some concluding remarks in \Cref{p1.sec:Con:1}.
 
+\edit{
+The main contribution of this chapter is the introduction of a greedy generation of a symplectic basis. Furthermore, the convergence of the greedy method is investigated with respect to the Kolmogorov $n$-width. A symplectic DEIM for accelerated evaluation of the nonlinear terms is proposed that preserves the symplectic structure of Hamiltonian systems. Although this method is identical to the one proposed in \cite{doi:10.1137/140978922} for an ortho-symplectic basis, this method can also be used for construction of a basis that is not orthonormal with respect to the Euclidean norm.
+}
+
 
 \section{Symplectic Galerkin Projection} \label{p1.sec:SyMo:1}
 We now discuss how to modify conventional MOR methods to ensure that the resulting scheme preserves the symplectic structure of the Hamiltonian system. 
@@ -48,18 +52,27 @@ It is easily verified that $P^{\text{symp}}_{\mathcal A}$ is idempotent, i.e., t
 The matrix $A^+ := \mathbb J_{2k}^T A^T \mathbb J_{2n}$ is known as the \emph{symplectic inverse} of $A$ in canonical coordinates. We summarize the properties of $A^+$ in the following proposition.
 \edit{
 \begin{proposition} \label{p1.theorem:1}
-\cite{doi:10.1137/140978922} Let $A\in \mathbb R^{2n\times 2k}$ be a symplectic matrix in a canonical coordinate system. With this notation the symplectic projection takes the form $P^{\text{symp}}_{\mathcal A} = AA^+$.The symplectic inverse of $A$ satisfies the following
+\cite{doi:10.1137/140978922} Let $A\in \mathbb R^{2n\times 2k}$ be a symplectic matrix. The symplectic projection takes the form $P^{\text{symp}}_{\mathcal A} = AA^+$.The symplectic inverse of $A$ satisfies the following
 \begin{enumerate} [label=(\alph*)]
 \item $A^+A = I$.
 \item $\left(\left(\left(A^+\right)^T\right)^+\right)^T = A$.
 \item $(A^+)^T$ is a symplectic matrix.
-\item If $A$ is an ortho-symplectic of the form $A = [e_1,\dots,e_k,\mathbb J_{2n}^Te_1,\dots,J_{2n}^Te_k]$, then $(A^+)^T = A$.
+\item If $A$ is an ortho-symplectic of the form $A = [e_1,\dots,e_k,\mathbb J_{2n}^Te_1,\dots,\mathbb J_{2n}^Te_k]$, then $(A^+)^T = A$.
 \end{enumerate}
 \end{proposition}
-}
 \begin{proof}
-The proof follows immediately from symplecticity of $A$.
+The proof of (a)-(c) follows immediately from symplecticity of $A$. For (d) $A$ takes the form
+\[
+	A = \begin{bmatrix} A_{11} & -A_{21} \\ A_{21} & A_{11}  \end{bmatrix}.
+\]
+It follows
+\[
+\begin{aligned}
+	(A^+)^T = \mathbb J_{2n}^T A \mathbb J_{2k} = \mathbb J_{2n}^T \begin{bmatrix}  A_{11} & -A_{21} \\ A_{21} & A_{11}   \end{bmatrix} \mathbb J_{2k} &= \begin{bmatrix}  -A_{21} & -A_{11} \\ A_{11} & -A_{21}   \end{bmatrix} \mathbb J_{2k} = \begin{bmatrix}  A_{11} & -A_{21} \\ A_{21} & A_{11}   \end{bmatrix} = A.
+\end{aligned}
+\]
 \end{proof}
+}
 We can use the symplectic projection operator to project \eqref{p1.eq:SyMo:1} onto $\mathcal A$. Substituting (\ref{eq:SyMo:1.2}) into \eqref{p1.eq:SyMo:1} yields
 \begin{equation} \label{p1.eq:SyMo:2}
 	A \frac d {dt}y = \mathbb{J}_{2n} \nabla_{z} H(A y) + r(z). 
@@ -113,20 +126,30 @@ The following proposition, also known as Dirichlet's theorem \cite{bhatia2002sta
 \begin{proposition} \label{p1.proposition:SyMo:1} \cite{bhatia2002stability}
 An equilibrium point $ z_e$ is Lyapunov stable if there exists a scalar function $W : \mathbb R^{n} \to  \mathbb R$ such that $\nabla W( z_e) = 0$, $\nabla^2 W(z_e)$ is positive definite, and that for any trajectory $\varphi_t$ defined in the neighborhood of $ z_e$, we have $\frac{d}{dt} W(\varphi_t) \leq 0$. Here $\nabla^2W$ is the Hessian matrix of $W$.
 \end{proposition}
-The scalar function $W$ is referred to as the \emph{Lyapunov function}. In the context of the Hamiltonian systems, a suitable candidate for the Lyapunov function is the Hamiltonian function $H$. The following theorem shows that when $H$ (or $-H$) is a Lyapunov function, then the equilibrium points of the original and the reduced system are Lyapunov stable \cite{abraham1978foundations}. 
-
+The scalar function $W$ is referred to as the \emph{Lyapunov function}. In the context of the Hamiltonian systems, a suitable candidate for the Lyapunov function is the Hamiltonian function $H$. %The following theorem shows that when $H$ (or $-H$) is a Lyapunov function, then the equilibrium points of the original and the reduced system are Lyapunov stable \cite{abraham1978foundations}. 
 
 \edit{
+\begin{lemma} \label{p1.lemma:SyMo:1}
+Consider a Hamiltonian system of the form \eqref{p1.eq:SyMo:1} with a Hamiltonian $H\in C^{2}$. Let $z_e$ be a strict local minimum of $H$. There is an open ball $S$ of $z_e$ such that $\nabla^2 H(z)>0$ and $H(z)<c$, for all $z\in S$ and some $c\in \mathbb R$, and $H(z^*) = c$ for some $z^* \in \partial S$, where $\partial S$ is the boundary of $S$.  
+
+\begin{proof}
+Since $z_e$ is a strict local minimum of $H$ and $H\in C^2$, then there is an open neighborhood $N_1$ around $z_e$ such that $\nabla^2H(z) > 0$ for all $z\in N_1$.
+
+Let $c_e = H(z_e)$. Since $z_e$ is a strict local minimum and $H$ is continuous, there is an open ball $N_2$ of $z_e$ such that $H(z)<c_1$, for all $z\in N_2$ and some $c_1>c_e$. We require $N_2$ to be small enough such that $N_2 \subset N_1$. Let $c_2 = \inf_{\partial N_2} H(z)$, where $c_e<c_2\leq c_1$. We can require $N_2$ to be small enough such that $H(z)<c_2$, for all $z\in N_2$, but $H(z^*)=c_2$ \footnote{$c_2$ depends on $N_2$} for some $z^*\in \partial N_2$ \footnote{Since $H$ is continuous and $z_e$ is a strict local minimum, then level curves of $H$ around $z_e$ are bounded. We can start with an open ball $B$ around $z_e$ small enough such that $H(z)<c_2$ for all $z\in \bar{B}$, the closure of $B$. We can then continuously increase the radius of $B$ until $H(z^*) = c_2$ for some $z^*\in \partial B$ and $H(z)<c_2$ for all $z\in B$.}. We then let $c=c_{N_1}$ and $S=N_2=N_1\cap N_2$.
+\end{proof}
+		
+\end{lemma}
+
 \begin{theorem} \label{p1.theorem:SyMo:1}
-\cite{doi:10.1137/17M1111991} Consider a Hamiltonian system of the form \eqref{p1.eq:SyMo:1} with a Hamiltonian $H\in C^{2}$  together with the reduced system \eqref{p1.eq:SyMo:4}. Suppose that $z_e$ is a strict local minimum of $H$. Furthermore, suppose that $H$ (or $-H$) is a Lyapunov function satisfying \Cref{p1.proposition:SyMo:1}. If we can find an open ball neighborhood $S$ of $z_e$ such that $\text{Range}(A)\cap S \neq \emptyset$, then the reduced system \eqref{p1.eq:SyMo:4} has a stable equilibrium point in $\text{Range}(A)\cap S$.
+Consider a Hamiltonian system of the form \eqref{p1.eq:SyMo:1} with a Hamiltonian $H\in C^{2}$  together with the reduced system \eqref{p1.eq:SyMo:4}. Suppose that $z_e$ is a strict local minimum of $H$ and let $S$ be the open set defined in \Cref{p1.lemma:SyMo:1}. If we can find an open ball neighborhood $S$ of $z_e$ such that $\text{Range}(A)\cap S \neq \emptyset$, then the reduced system \eqref{p1.eq:SyMo:4} has a stable equilibrium point in $\text{Range}(A)\cap S$.
 \end{theorem}
 
 \begin{proof}
-Assume that $H$ satisfies the conditions in \Cref{p1.proposition:SyMo:1} for a Lyapunov function. Since $z_e$ is a local minimum of $H$, smoothness of $H$ implies that $\nabla_z H(z_e) = 0$, and threfore $z_e$ is a Lyapunov stable point for \eqref{p1.eq:SyMo:1}. Furthermore, since $z_e$ is a strict local minimum, we can find an open ball $S$ of $z_e$ such that $H(z_e)< H(z)$, for any $z \in \overline S$ and $z\neq z_e$, where $\overline S$ is the closure of $B$. Note that $\overline S$ is bounded. Since $H\in C^2$ and $\nabla^2 H$ is positive definite at $z_e$, we also take $S$ to be small enough such that $\nabla^2 H > 0$, for all $z\in S$. Define $c := \inf_{z\in \partial S} H(z)$, where $\partial S$ is the boundary of $S$. Since $H$ is continues and $z_e$ is a strict minimum we can assume that $H(z)<c$, for all $z\in S$ \footnote{If there is no such open ball, we can construct a sequence $\{z\}_{i=1}^\infty$ such that $z_i\to z_e$ and $H(z_i) = c$, for all $i$, implying that $H(z_e) = c$ which is a contradiction.}.
+Since $z_e$ is a local minimum of $H$, smoothness of $H$ implies that $\nabla_z H(z_e) = 0$, and therefore $z_e$ is a Lyapunov stable point for \eqref{p1.eq:SyMo:1}.
 
 Let $S_A = \text{Range}(A)\cap S$. Since Range$(A)$ is a linear vector space, then $S_A$ is an open set. Furthermore, for any $z\in S_A$, $H(z) < c$. 
 		
-We now show that $H|_{S_A}$ attains its minimum inside $S_A$. Let $c_{\text{min}} = \inf_{z\in S_A} H(z)$. $c_{min}$ exists since $H$ has a minimum on $S$. We can find a sequence $\{ H(z_i) \}_{i=1}^\infty$, with $z_i\in S_A$, such that $H(z_i)\to c_{\text{min}} < c$. This implies that $z_i\to z_0$, for some $z_0\in \overline {S_A}$, since $H\in C^2$. Note that $\overline {S_A}$ is bounded since $S$ is bounded. However, $z_0$ does not belong to $\partial S_A$ since $\inf_{z\in \partial S} W(z)=c > c_{min}$. Therefore $z_0 \in S_A$. 
+We now show that $H|_{S_A}$ attains its minimum inside $S_A$. Let $c_{\text{min}} = \inf_{z\in S_A} H(z)$. $c_{min}$ exists since $H$ has a minimum on $S$. We can find a sequence $\{ H(z_i) \}_{i=1}^\infty$, with $z_i\in S_A$, such that $H(z_i)\to c_{\text{min}} < c$. This implies that $z_i\to z_0$, for some $z_0\in \overline {S_A}$, since $H$ is continuous. Note that $\overline {S_A}$ is bounded since $S$ is bounded. However, $z_0$ does not belong to $\partial S_A$ since $\inf_{z\in \partial S} W(z)=c > c_{min}$. Therefore $z_0 \in S_A$. 
 
 We claim that $y_e = \mathbb J_{2k}^T A^T \mathbb J_{2n} z_0$ is a stable equilibrium point for the reduced system \eqref{p1.eq:SyMo:4}. Let $\tilde H(y) = H(Ay)$. Note that $\tilde H$ attains its local minimum at $y_e$. Furthermore, $\nabla \tilde W(y_e) = 0$. Also we have
 \begin{equation}
@@ -134,7 +157,6 @@ We claim that $y_e = \mathbb J_{2k}^T A^T \mathbb J_{2n} z_0$ is a stable equili
 \end{equation}
 is a positive definite matrix. Finally, since the reduced system is a Hamiltonian system, \Cref{theorem:2.10} implies that any trajectory $\varphi_t$ of \eqref{p1.eq:SyMo:4} satisfies $\frac{d}{dt} \tilde H(\varphi_t) = 0$. Therefore $\tilde H$ is a Lyapunov function for \eqref{p1.eq:SyMo:4} and $y_e$ is a stable equilibrium point for \eqref{p1.eq:SyMo:4}, in the Lyapunov sense.
 
-Similar derivations confirms the theorem when $-H$ is a candidate for a Lyapunov function.
 \end{proof}
 }
 
@@ -459,7 +481,7 @@ Finally when $(A^+)^T$ approximates elements $S_{\mathbf g}$ with the desired ac
 	\vspace{0.5cm}
 	\textbf{Output:} symplectic reduced basis $A_{2k+2}$.
 \end{algorithm}
-When the symplectic reduced basis is an ortho-symplectic basis of the form $A = [e_1,\dots,e_k,\mathbb J_{2k}^T e_1,\dots,\mathbb J_{2k}^T e_k]$, \Cref{p1.theorem:1} suggests that $(A^+)^T = A$. Therefore, $A$ can be directly enriched with nonlinear snapshots. This is also suggested in \cite{doi:10.1137/140978922}. However, not all ortho-symplectic bases are of this form. Given a proper vector selection procedure, the symplectic DEIM can be modified to construct an accurate symplectic basis for any symplectic basis. This feature is exploited in \Cref{sec:normmor.3}, where the reduced symplectic basis is no longer orthonormal with respect to the Euclidean inner-product.
+When the symplectic reduced basis is an ortho-symplectic basis of the form $A = [e_1,\dots,e_k,\mathbb J_{2k}^T e_1,\dots,\mathbb J_{2k}^T e_k]$, \Cref{p1.theorem:1} suggests that $(A^+)^T = A$. Therefore, $A$ can be directly enriched with nonlinear snapshots. This is also suggested in \cite{doi:10.1137/140978922}. However, when $A$ is not orthonormal (when $A$ is only symplectic) $(A^+)^T \neq A$, and therefore, the method proposed in \cite{doi:10.1137/140978922} can no longer be applied. The symplectic DEIM in \Cref{alg:4.2}, on the other hand, can be modified to account for any symplectic basis $A$. This feature is exploited in \Cref{sec:normmor.3}, where the reduced symplectic basis is no longer orthonormal with respect to the Euclidean inner-product.
 }
 
 Note that \Cref{p1.theorem:1} implies that $(A^+)^T=A$, therefore it suffices to ensure that $A$ is also a basis for $S_g$, the nonlinear snapshots. Suppose that we have already constructed a symplectic basis $E =\{ e_1,\dots , e_k,f_1,\dots f_k \}$ using the symplectic greedy in \Cref{alg:4.1}. We seek to enrich it with the nonlinear snapshots. We can use the projection error to identify the nonlinear snapshot that is worst approximated by $\mathcal A = \text{span}(E)$ as

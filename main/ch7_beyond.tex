@@ -1,16 +1,17 @@
 \chapter{Conservative Model Order Reduction of Fluid Flow} \label{chapter:7}
 
-In \Cref{chapter:4,chapter:5,chapter:6} it is discussed how MOR can be modified to ensure conservation of symmetries and invariants in the context of Hamiltonian system. A reduced Hamiltonian, as an approximation of the Hamiltonian for the original system, is introduced for the reduced system. Conservation of a skew-symmetric form can then ensures that correct evolution of the reduced system and conservation of the reduced Hamiltonian. In this chapter, we apply the same principle to construct a MOR technique for the fluid flow that conserves energy of the flow.
+In \Cref{chapter:4,chapter:5,chapter:6} it is discussed how MOR can be modified to ensure conservation of symmetries and invariants in the context of Hamiltonian system. A reduced Hamiltonian, as an approximation of the Hamiltonian for the original system, is introduced for the reduced system. Conservation of a skew-symmetric form can then ensure correct evolution of the reduced system and conservation of the reduced Hamiltonian. In this chapter, we apply the same principle to construct a MOR technique for the fluid flow that conserves energy of the flow.
 
-Large scale simulations of fluid flows arise in a wide range of disciplines and industries. Therefore, MOR of fluid flows, specially when advective terms are dominant, is important. It is well known that conservation of the energy, specially kinetic energy, is essential for a qualitatively correct numerical integration of fluid flows. Conventional model reduction techniques often violate conservation of mass, momentum \cite{carlberg2018conservative}, or energy in fluid flows which result in an unstable reduced system, in particular for long time-integration. \edit{In \cite{barone2009stable} an entropy stable model reduction method for linear compressible flows is presented by considering an entropy-stable formulation of linearized compressible flows. Furthermore, a conservative model reduction for finite-volume models is presented in \cite{carlberg2018conservative} that that conserves any quantity conserved by the finite-volume scheme. This method finds a reduced linear subspace that ensures conservation of quantities by solving an optimization problem with, generally nonlinear, equality constraints that has to be solved in each time instance.}
+Large scale simulations of fluid flows arise in a wide range of disciplines and industries. Therefore, MOR of fluid flows, specially when advective terms are dominant, is important. It is well known that conservation of the energy, specially kinetic energy, is essential for a qualitatively correct numerical integration of fluid flows. Conventional model reduction techniques often violate conservation of mass, momentum \cite{carlberg2018conservative}, or energy in fluid flows which result in an unstable reduced system, in particular for long time-integration. \edit{In \cite{barone2009stable} an entropy stable model reduction method for linear compressible flows is presented by considering an entropy-stable formulation of linearized compressible flows. Furthermore, a conservative model reduction for finite-volume models is presented in \cite{carlberg2018conservative} that that conserves any quantity conserved by the finite-volume scheme. This method finds a reduced linear subspace that ensures conservation of quantities by solving an optimization problem with, generally nonlinear, equality constraints.}
 
-The method discussed in \cite{carlberg2018conservative} conserves the mass and momentum for a finite volume discretization scheme. However, a method that also conserves the energy of the fluid flow is not known to the authors.
+Skew-symmetric formulation of fluid flows constructs a skew-symmetric differential operator, acting on the momentum vector field, that ensures conservation of quadratic invariants, such as energy. Combined with centered time and space discretization schemes, typically a finite differences discretization method, they recover time-symmetries of a fluid at the discrete level. Such discretization schemes are studies comprehensively over the past few decades and can be found in the works of \cite{morinishi2010skew,morinishi1998fully,desjardins2008high,tadmor1984skew,reiss2014conservative} and the references therein.
 
-Skew-symmetric formulation of fluid flows constructs a skew-symmetric differential operator, acting on the momentum vector field, that ensures conservation of quadratic invariants, such as energy. Combined wirh centered time and space discretization schemes, typically a finite differences discretization method, they recover time-symmetries of a fluid at the discrete level. Such discretization schemes are studies comprehensively over the past few decades and can be found in the works of \cite{morinishi2010skew,morinishi1998fully,desjardins2008high,tadmor1984skew,reiss2014conservative} and the references therein.
-
-This chapter discusses how to preserve skew-symmetry of the differential operators at the level of the reduced system. This results in conservation of quadratic invariants. \edit{As the reduced system is constructed using a proper orthogonal decomposition (POD) basis, the proposed method avoids solving nonlinear optimization problems at each time instance. This saves significant costs at the online stage, compared to other conservative model reduction methods for fluid flow}. Furthermore, we show that the reduced system, as a system of coupled differential equations, contains quadratic invariants and an associated energy which approximates the energy of the high-fidelity system. Therefore, a proper time stepping scheme preserves the reduced representation of the energy, and therefore, the loss in energy due to model reduction remains constant in time.Furthermore, we demonstrate, through numerical experiments, that a quasi-skew-symmetric form of fluid flow, i.e. a formulation where only spacial differential operators are in a skew-symmetric form, offer remarkable stability properties in terms of MOR. This allows an explicit time-integration to be utilized while recovering robustness of skew-symmetric forms at the reduced level.
+This chapter discusses how to preserve skew-symmetry of the differential operators at the level of the reduced system. This results in conservation of quadratic invariants. \edit{The conservation of quantities in the proposed method is guaranteed through the mathematical formulation of the reduced system, for any orthonormal reduced basis. Therefore, the offline computational costs of this method is comparable with conventional MOR techniques. However, other conservative model reduction methods, e.g. \cite{carlberg2018conservative}, often require solving multiple nonlinear optimization problems to ensure conservation. This can significantly increase the offline computational cost.} Furthermore, we show that the reduced system, as a system of coupled differential equations, contains quadratic invariants and an associated energy which approximates the energy of the high-fidelity system. Therefore, a proper time stepping scheme preserves the reduced representation of the energy, and therefore, the loss in energy due to model reduction remains constant in time.Furthermore, we demonstrate, through numerical experiments, that a quasi-skew-symmetric form of fluid flow, i.e. a formulation where only spacial differential operators are in a skew-symmetric form, offer remarkable stability properties in terms of MOR. This allows an explicit time-integration to be utilized while recovering robustness of skew-symmetric forms at the reduced level.
 
 The rest of this chapter is organized as follows. We discuss skew-symmetric and conservatives methods for compressible and incompressible fluid flows in \Cref{p4.sec:skew}. Conservative and energy-preserving model reduction of fluid flows is discussed in \Cref{p4.sec:mor_skew}. We evaluate the performance of the method through numerical simulations of incompressible and compressible fluid flow in \Cref{p4.sec:res}. We also apply the method to construct a reduced system for the continuous variable resonance combustor, a one dimensional reaction-diffusion model for a rocket engine. Finally, we present conclusive remarks in \Cref{p4.sec:con}.
+
+\edit{The main contribution of this chapter is the introduction of a conservative model reduction technique for compressible and incompressible fluids in skew-symmetric form. 
+}
 
 \section{Skew Symmetric and Centered Schemes for Fluid Flows} \label{p4.sec:skew}
 
@@ -47,15 +48,15 @@ Using the product rule, we recover
 \begin{equation}
 	\frac{\partial }{\partial t} \rho \varphi^2 + \nabla \cdot ( \rho u \varphi^2  ) = \varphi \nabla \cdot F_{\varphi}.
 \end{equation}
-Therefore, $\varphi^2$ is a conserved quantity for a flux-free $\varphi$. Since the divergence, the advective and the skew-symmetric forms are identical at the continuous level, $\varphi^2$ is a conserved quantity for all forms. However, the equivalence of these forms is not preserved through a general discretization scheme and we can not expect $\varphi^2$ to be a conserved quantity at the discrete level. To motivate numerical advantages of the skew-symmetric form consider the operator 
+Therefore, $\rho \varphi^2$ is a conserved quantity for a flux-free $\varphi$. Since the divergence, the advective and the skew-symmetric forms are identical at the continuous level, $\varphi^2$ is a conserved quantity for all forms. However, the equivalence of these forms is not preserved through a general discretization scheme and we can not expect $\varphi^2$ to be a conserved quantity at the discrete level. To motivate numerical advantages of the skew-symmetric form consider the operator 
 \begin{equation}
 	S_{\rho u}(\cdot) = \frac 1 2 ( [ \nabla \cdot \rho u ](\cdot) + (\rho u)\cdot \nabla(\cdot) ),
 \end{equation}
-\edit{where $[ \nabla \cdot \rho u ](x) = \nabla \cdot( \rho u x) $}. With a proper set of boundary condition, this operator is a skew-adjoint operator on $L^2$. Here, $[\cdot]$ indicates that the inside of the brackets act as a differential operator. This skew-adjoint property is used later to show the conservation of some quadratic quantities in \eqref{eq:3.1}. Similarly, we can define a skew-adjoint operator with respect to the time variable as
+\edit{where $[ \nabla \cdot \rho u ](x) = \nabla \cdot( \rho u x) $}. With a proper set of boundary condition, this operator is a skew-adjoint operator on $L^2$. Here, $[\cdot]$ indicates that the inside of the brackets act as a differential operator. This skew-adjoint property is used later to show the conservation of some quadratic quantities in \eqref{p4.eq:3.1}. Similarly, we can define a skew-adjoint operator with respect to the time variable as
 \begin{equation}
 	S_{\rho,\partial_t} = \frac{1}{2} \left( \rho \frac{\partial}{\partial t} + [ \frac{\partial}{\partial t} \rho] \right).
 \end{equation}
-Here, the subscript $\partial t$ is to emphasize that $S_{\rho,\partial_t}$ is a differential operator with respect to $t$. A proper time and space discretization of $S_{\rho u}$ and $S_{\rho,\partial_t}$ can preserve the skewness property.
+Here, the subscript $\partial_t$ is to emphasize that $S_{\rho,\partial_t}$ is a differential operator with respect to $t$. A proper time and space discretization of $S_{\rho u}$ and $S_{\rho,\partial_t}$ can preserve the skewness property.
 
 Numerical time integration of \eqref{p4.eq:3.5} can be challenging since the time differentiation of different variables is present. Following \cite{morinishi2010skew}, we have
 \edit{
@@ -172,11 +173,11 @@ Furthermore, we recover conservation of momentum in the discrete sense as
 \begin{equation} \label{p4.eq:3.24}
 \begin{aligned}
 	\frac{d}{dt}(\mathbf r^T \mathbf u) &= \frac{1}{2} \frac{d}{dt}(\mathbf r^T \mathbf u) + \frac{1}{2} \left( \mathbf r^T \frac d{dt} \mathbf u +\mathbf u^T \frac{d}{dt} \mathbf r \right)\\
-	&= \frac{1}{2}u^T \frac d{dt} \mathbf r + \mathbf 1^T S_{\mathbf r,\partial_t} (\mathbf u) \\
-	&= -\frac 1 2 \mathbf u^T DU \mathbf r  - \frac 1 2 \mathbf 1^T S_{\mathbf r \mathbf u} \mathbf u - \mathbf 1^T D\mathbf p +  \mathbf 1^T D T = 0.
+	&= \frac{1}{2}\mathbf u^T \frac d{dt} \mathbf r + \mathbf 1^T S_{\mathbf r,\partial_t} (\mathbf u) \\
+	&= -\frac 1 2 \mathbf u^T DU \mathbf r  - \mathbf 1^T S_{\mathbf r \mathbf u} \mathbf u - \mathbf 1^T D\mathbf p +  \mathbf 1^T D T = 0.
 \end{aligned}
 \end{equation}
-Here we used \eqref{p4.eq:3.22} and the mass and the momentum equation in \eqref{eq:3.21}. Similarly, for conservation of the total energy, we have
+Here we used \eqref{p4.eq:3.22} and the mass and the momentum equation in \eqref{p4.eq:3.21}. Similarly, for conservation of the total energy, we have
 \begin{equation} \label{p4.eq:3.25}
 \begin{aligned}
 	\frac{d}{dt} \left( \frac{1}{\gamma - 1} \mathbf 1^T \mathbf p + \frac 1 2 \mathbf (R\mathbf u)^T \mathbf u  \right) &= \frac{d}{dt} \left( \frac{1}{\gamma - 1} \mathbf 1^T \mathbf p \right) + \frac 1 2 \mathbf u^T  S_{\mathbf r,\partial_t} (\mathbf u) = 0.
@@ -185,8 +186,8 @@ Here we used \eqref{p4.eq:3.22} and the mass and the momentum equation in \eqref
 In addition to the conservation of the total energy, the skew-symmetric form of \eqref{p4.eq:3.21} also conserves the evolutions of the kinetic energy:
 \begin{equation} \label{p4.eq:3.26}
 \begin{aligned}
-	\frac{d}{dt} ( \frac 1 2 \mathbf u^T R\mathbf u) = \frac 1 2 \mathbf u^T S_{\mathbf r,\partial_t} (\mathbf u) &= -\mathbf u ^T S_{\mathbf r \mathbf u} \mathbf u + \mathbf u^T D p + \mathbf u^T DT \\
-	&= \mathbf u^T D p + \mathbf u^T DT.
+	\frac{d}{dt} ( \frac 1 2 \mathbf u^T R\mathbf u) = \mathbf u^T S_{\mathbf r,\partial_t} (\mathbf u) &= -\mathbf u ^T S_{\mathbf r \mathbf u} \mathbf u - \mathbf u^T D \mathbf p + \mathbf u^T DT \\
+	&= \mathbf u^T D \mathbf p + \mathbf u^T DT.
 \end{aligned}
 \end{equation}
 Here, we used the skew-symmetry of $S_{\mathbf r \mathbf u}$. Therefore, only the pressure and the viscous terms contribute to a change in the kinetic energy.
@@ -199,12 +200,12 @@ Following \cite{reiss2014conservative,morinishi2010skew} we can construct a full
 	\left\{
 	\begin{aligned}
 	&\frac 1 2 \sqrt{\mathbf r} ^{n+1/2} \frac{\sqrt{\mathbf r}^{n+1} - \sqrt{\mathbf r}^{n}}{\Delta t} + DU^{n+1/2} \mathbf r^{n} = 0, \\
-	& \sqrt{\mathbf r} ^{n+1/2}  \frac{\sqrt{ \mathbf R}^{n+1} u^{n+1} - \sqrt{\mathbf R}^{n}u^n}{\Delta t} + S_{\mathbf r^{n} \mathbf u^n} \mathbf u^{n+1/2}_\alpha + D \mathbf p^{n} = DT^{n}, \\
-	& \frac 1 {\gamma -1} \frac{\mathbf p^{n+1} - \mathbf p^n}{\Delta t} + \frac{\gamma}{\gamma -1} D U^{n} \mathbf p - U^{n} D \mathbf p = - U^{n}D T^{n} + D (U^nT^n - \phi^n).
+	& \sqrt{\mathbf r} ^{n+1/2}  \frac{\sqrt{ \mathbf R}^{n+1} \mathbf u^{n+1} - \sqrt{\mathbf R}^{n}\mathbf u^n}{\Delta t} + S_{\mathbf r^{n} \mathbf u^n} \mathbf u^{n+1/2}_\alpha + D \mathbf p^{n} = DT^{n}, \\
+	& \frac 1 {\gamma -1} \frac{\mathbf p^{n+1} - \mathbf p^n}{\Delta t} + \frac{\gamma}{\gamma -1} D U^{n} \mathbf p^n - U^{n} D \mathbf p^n = - U^{n}D T^{n} + D (U^nT^n - \phi^n).
 	\end{aligned}
 	\right.
 \end{equation}
-Here, $\Delta t$ is the time step, superscript $n$ denotes evaluating at $t = n\Delta t$, superscript $n+1/2$ denotes the arithmetic average of a variable evaluated at $t=n\Delta t$ and $t=(n+1)\Delta t$, the square root sign denotes element-wise application of square root, and 
+Here, $\Delta t$ is the time step, $\sqrt{\mathbf R}$ is a square matrix containing elements of $\sqrt{\mathbf r}$ on its diagonal, superscript $n$ denotes evaluating at $t = n\Delta t$, superscript $n+1/2$ denotes the arithmetic average of a variable evaluated at $t=n\Delta t$ and $t=(n+1)\Delta t$, the square root sign denotes element-wise application of square root, and 
 \begin{equation}
 	\mathbf u_{\alpha}^{n+1/2} = \frac{\sqrt{\mathbf R}^{n+1} \mathbf u^{n+1} + \sqrt{\mathbf R}^{n} \mathbf u^{n}}{2\sqrt{\mathbf r}^{n+1/2} }.
 \end{equation}
@@ -213,7 +214,7 @@ As discussed in \cite{reiss2014conservative}, this time discretization scheme pr
 \section{Model Order Reduction of Fluid Flow} \label{p4.sec:mor_skew}
 A straight-forward model reduction of \eqref{p4.eq:3.8} and \eqref{p4.eq:3.18} does not, in general, preserve symmetries and conservation laws, presented in \Cref{p4.sec:skew}. In this section we discuss how to exploit the discrete skew-symmetric structure of \eqref{p4.eq:3.13} and \eqref{p4.eq:3.21} to recover conservation of mass, momentum, and energy at the level of the reduced system.
 
-Let $V_{\mathbf r}$, $V_{\mathbf r \mathbf u}$, and $V_{\mathbf u_i}$ be the reduced bases for the snapshots of $\mathbf r$, $R \mathbf u$, and $\mathbf u_i$, respectively. For the one dimensional case, the subscript ``$i$'' is omitted and for an incompressible fluid, $V_{ \mathbf r}$ and $V_{\mathbf r \mathbf u}$ are not computed. For the purpose of simplicity, we assume that all bases have the size $k$. We seek to project $S_{\mathbf u}$ and $S_{\mathbf r \mathbf u}$ onto the reduced space, such that the projection preserves the skew-symmetric property. The projected operators, using a Galerkin projection, read
+Let $V_{\mathbf r}$, $V_{\mathbf r \mathbf u}$, and $V_{\mathbf u_i}$ be the reduced bases for the snapshots of $\mathbf r$, $R \mathbf u$, and $\mathbf u_i$, respectively. For the one dimensional case, the subscript ``$i$'' is omitted and for an incompressible fluid, $V_{ \mathbf r}$ and $V_{\mathbf r \mathbf u}$ are not computed. For the purpose of simplicity, we assume that all bases have the size $k$. We seek to project $S_{\mathbf u}$ and $S_{\mathbf r \mathbf u}$ onto the reduced space, such that the projection preserves the skew-symmetric property. \edit{To obtain a reduced system, the continuity equation and the momentum equation is multiplied from the left with $V_{\mathbf r}^T$ and $V_{\mathbf r \mathbf u}^T$, respectively}. The projected operators read
 \begin{equation} \label{p4.eq:4.1}
 	S^r _{\mathbf u} = V_{ \mathbf u_i}^T S _{\mathbf u} V_{ \mathbf u_i}, \quad i=1,\dots,d,
 \end{equation}
@@ -223,14 +224,14 @@ and
 \end{equation}
 Note that $S^r_{\mathbf r ,\partial_t}$ is not computed explicitly. It is clear that $S^r _{\mathbf u}$ is already in a skew-symmetric form. On the other hand, $S^r_{\mathbf r ,\partial_t}$ and $S^r _{\mathbf r \mathbf u}$ are not, in general, skew-adjoint and skew-symmetric, respectively. This can be ensured, however, by requiring $V_{\mathbf r \mathbf u} = V_{\mathbf u}$. We denote such a basis by $V_{\mathbf r \mathbf u, \mathbf u}$.Using \eqref{p4.eq:4.1} and \eqref{p4.eq:4.2}, a Galerkin projection of the momentum equation in \eqref{p4.eq:3.13} and the governing equations for a compressible fluid in \eqref{p4.eq:3.21} take the form
 \begin{equation} \label{p4.eq:4.3}
-	\frac{d}{dt} {\mathbf u^r}_i + S^r_{\mathbf u} \mathbf u^r_i + V_{\mathbf u_i} ^T D_i \mathbf p = \sum_{j=1}^d V_{k_3, \mathbf u_i}^T D_j T_{ij}(V_{ \mathbf u_i} \mathbf u^r_i), \quad i=1,\dots,d,
+	\frac{d}{dt} {\mathbf u^r}_i + S^r_{\mathbf u} \mathbf u^r_i + V_{\mathbf u_i} ^T D_i \mathbf p = \sum_{j=1}^d V_{\mathbf u_i}^T D_j T_{ij}(V_{ \mathbf u_i} \mathbf u^r_i), \quad i=1,\dots,d,
 \end{equation}
 and
 \begin{equation} \label{p4.eq:4.4}
 \left\{
 \begin{aligned}
 	& \frac{d}{dt} \mathbf r^r + \sum_{i=1}^k V^T_{\mathbf r}DU_iV_{\mathbf r}\mathbf r^r = 0, \\
-	& S^r_{\mathbf r ,\partial_t} + S^r _{\mathbf r \mathbf u} \mathbf u^r + V_{\mathbf r \mathbf u, \mathbf u}^T D V_{\mathbf p} \mathbf p^r = V_{\mathbf r \mathbf u, \mathbf u}^T D T, \\
+	& S^r_{\mathbf r ,\partial_t} \mathbf u^r+ S^r _{\mathbf r \mathbf u} \mathbf u^r + V_{\mathbf r \mathbf u, \mathbf u}^T D V_{\mathbf p} \mathbf p^r = V_{\mathbf r \mathbf u, \mathbf u}^T D T, \\
 	&\frac{1}{\gamma -1} \frac{d}{dt} \mathbf p^r + \frac{\gamma}{\gamma -1} V_{\mathbf p}^T D U V_{\mathbf p} \mathbf p^r - V_{\mathbf p}^T UD V_{\mathbf p} \mathbf p^r = - V_{\mathbf p}^T UDT + V_{\mathbf p}^T D(UT - \mathbf \phi),
 \end{aligned}
 \right.
@@ -282,7 +283,7 @@ To integrate \eqref{p4.eq:4.4} in time, the fully discrete system \eqref{p4.eq:3
 \section{Numerical Experiments} \label{p4.sec:res}
 
 \subsection{Vortex Merging} \label{p4.sec:res.1}
-Consider the 2-dimensional incompressible Euler equation \eqref{p4.eq:3.8} on a square domain $\Omega = [0,2\pi]^2$, with periodic boundary conditions. Spatial derivatives are discretized using a Fourier spectral method. To capture the fine details characterizing the solution, $256\times 256$ modes is used. We consider the evolution of three vortices, with the initial structure given by
+Consider the 2-dimensional incompressible Euler equation \eqref{p4.eq:3.8} on a square domain $\Omega = [0,2\pi]^2$, with periodic boundary conditions. Spatial derivatives are discretized using a Fourier spectral method. To capture the fine details characterizing the solution, $256\times 256$ modes is used for both the velocity and pressure. We consider the evolution of three vortices, with the initial structure given by
 \begin{equation}\label{p4.eqn:initial_cond_vort}
 \omega = \omega_0 + \sum_{i=1}^{3} \alpha_i e^{-\dfrac{\left(x-x_i\right)^{2}+\left(y-y_i\right)^{2}}{\beta^2}}.
 \end{equation}
@@ -324,7 +325,7 @@ obtained by applying the divergence operator to \eqref{p4.eq:3.8} and using the 
 	\end{centering}
 \end{figure}
 
-A total of $5000$ temporal snapshots is used to construct a reduced basis, following \Cref{alg:3.2}. The decay of the singular values, used as an indication of the reducibility of the problem, is presented in \Cref{p4.singular_values_decay}. The first $35$ POD modes corresponds to over $99\%$ of the modes of the high fidelity solution. This suggests that an accurate reduced system can be constructed using a small number of basis vectors. To illustrate the effectiveness of the method, smaller bases are also considered.
+A total of $5000$ temporal snapshots is used to construct a reduced basis, following \Cref{alg:3.2}. The decay of the singular values, used as an indication of the reducibility of the problem, is presented in \Cref{p4.singular_values_decay}. The first $35$ POD modes correspond to over $99\%$ of the modes of the high fidelity solution. This suggests that an accurate reduced system can be constructed using a small number of basis vectors. To illustrate the effectiveness of the method, smaller bases are also considered.
 
 For a qualitative analysis, in Figure \ref{p4.fig:snap_solution_incompressible_Euler}, four solutions at different times are shown for the high fidelity system and the reduced system with $k=17$ and $k=35$ modes. The overall dynamics of the problem, and in particular the formation and development of vorticity filaments, are correctly represented, even with a moderate number of basis vectors. Although small details are not captured by the reduced system with a small number of basis vectors, the position and the spreading of the vortices are comparable.
 
@@ -467,7 +468,7 @@ The domain is discretized into $N=2000$ nodes and a centered finite differences 
 
 The fully discrete skew-symmetric form \eqref{p4.eq:3.27} is used for time integration over a time interval $[0,0.3]$. To resolve the discontinuous solution we use an artificial viscosity with $\tau = \mu \partial u / \partial x$, where $\mu = 0.5 \cdot 10^{-4}$.
 
-\Cref{p4.fig:energy_pres_1D} shows the evolution of conserved quantities for the high-fidelity and reduced system. Here, the high-fidelity model is also considered in the divergence and advective form in addition to the skew-symmetric form. It is clear that when the reduced systems is not in skew-symmetric form, it violates conservation of mass, momentum, and energy. Even while the high-fidelity systems in divergence and advective forms are stable, the constructed reduced system is unstable, independent on the number of basis vectors. On the other hand, the skew-symmetric form yields a stable and conservative reduce system. Note that the loss in the energy associated with the skew-symmetric form, illustrated in \Cref{p4.conservation_1D_focus.b,p4.conservation_1D_focus.d,p4.conservation_1D_focus.f}, is due to the application of an artificial viscosity. 
+\Cref{p4.fig:energy_pres_1D} shows the evolution of conserved quantities for the high-fidelity and reduced system. Here, the high-fidelity model is also considered in the divergence and advective form in addition to the skew-symmetric form. It is clear that when the reduced systems is not in skew-symmetric form, it violates conservation of mass, momentum, and energy. Even while the high-fidelity systems in divergence and advective forms are stable, the constructed reduced system is unstable, independently by the number of basis vectors. On the other hand, the skew-symmetric form yields a stable and conservative reduced system. Note that the loss in the energy associated with the skew-symmetric form, illustrated in \Cref{p4.conservation_1D_focus.b,p4.conservation_1D_focus.d,p4.conservation_1D_focus.f}, is due to the application of an artificial viscosity. 
 
 \Cref{p4.error_behaviour_1D} shows the total error, when the reduced system captures a discontinuous solution at $t=0.16$. It is observed that the formation of a discontinuity affects the accuracy of the method. This is expected as a sharp gradient is approximated by a relatively few POD modes. However, the method remains robust and stable during the period of time integration.
 
@@ -747,18 +748,18 @@ The three-stage Runge-Kutta (SSP RK3) \cite{jiang1996efficient} is used to integ
 	\end{centering}
 \end{figure}
 
-The discontinuities that appear in the solution of \eqref{p4.eq:5p2.10} suggests that a relatively large basis is required to resolve fine structures in the solution. Here, a POD basis is generated with $k=200$, $k=300$ and $k=400$ number of basis vectors. To avoid basis changes in the reduced system, only one POD basis is considered for $\rho$, $\rho u$ $\rho E$ and $\rho Y_{ox}$. The explicit SSP RK3 is then used to integrated the reduced system in time, for the unsteady system. The source terms are evaluated in the high-fidelity space and projected onto the reduced space. However, in principle, the DEIM can be applied to accelerate the evaluation this component. 
+The discontinuities that appear in the solution of \eqref{p4.eq:5p2.10} suggest that a relatively large basis is required to resolve fine structures in the solution. Here, a POD basis is generated with $k=200$, $k=300$ and $k=400$ number of basis vectors. To avoid basis changes in the reduced system, only one POD basis is considered for $\rho$, $\rho u$ $\rho E$ and $\rho Y_{ox}$. The explicit SSP RK3 is then used to integrate the reduced system in time, for the unsteady system. The source terms are evaluated in the high-fidelity space and projected onto the reduced space. However, in principle, the DEIM can be applied to accelerate the evaluation of this component. 
 
-\Cref{p4.fig:5p2.2c} shows the approximation error of the pressure, due to MOR. It is observed that the approximation is consistently improved as the number of basis vectors increases. Furthermore, the approximate solution maintains high accuracy over a relatively long time-integration. The oscillations of pressure is demonstrated in \Cref{p4.fig:5p2.2d}. The overall behaviour of pressure is well approximated by the reduced system. Similar results are obtained for a POD basis with higher number of modes.
+\Cref{p4.fig:5p2.2c} shows the approximation error of the pressure, due to MOR. It is observed that the approximation is consistently improved as the number of basis vectors increases. Furthermore, the approximate solution maintains high accuracy over a relatively long time-integration. The oscillation of pressure is demonstrated in \Cref{p4.fig:5p2.2d}. The overall behaviour of pressure is well approximated by the reduced system. Similar results are obtained for a POD basis with higher number of modes.
 
 We note that the discrete form of \eqref{p4.eq:5p2.10} is not in the full skew-symmetric form. Nonetheless, the quasi-skew-symmetric discretization offers remarkable stability preservation.
 
 \section{Conclusions} \label{p4.sec:con}
 
-Conservation of nonlinear invariants are not, in general, guaranteed with conventional model reduction techniques. The violation of such invariants often result in a qualitatively wrong or unstable reduced system, even when the high-fidelity system is stable. This is particularly important for fluid flow, where conservation of the energy, as a nonlinear invariant of the system, is crucial for a correct numerical evaluation.
+Conservation of nonlinear invariants are not, in general, guaranteed with conventional model reduction techniques. The violation of such invariants often results in a qualitatively wrong or unstable reduced system, even when the high-fidelity system is stable. This is particularly important for fluid flow, where conservation of the energy, as a nonlinear invariant of the system, is crucial for a correct numerical evaluation.
 
-In this paper, we discuss that conservative properties of the skew-symmetric form for fluid flow can naturally be extended to the reduced system. Conventional MOR techniques preserves the skew-symmetry of differential operator which result in the conservation of quadratic invariants at the level of the reduced system. Furthermore, the reduced system also contains quadratic invariants with respect to the reduced variables that approximates the invariants of the high-fidelity system. This results in the construction of a physically meaningful reduced system, rather than a mere couple systems of differential equations.
+In this paper, we discuss that conservative properties of the skew-symmetric form for fluid flow can naturally be extended to the reduced system. Conventional MOR techniques preserve the skew-symmetry of differential operator which result in the conservation of quadratic invariants at the level of the reduced system. Furthermore, the reduced system also contains quadratic invariants with respect to the reduced variables that approximates the invariants of the high-fidelity system. This results in the construction of a physically meaningful reduced system, rather than a mere couple systems of differential equations.
 
-Numerical experiments for the incompressible and compressible Euler equation confirms conservation of mass, momentum and energy for the reduced model with the skew-symmetric discretization. In contrast, when a non-skew-symmetric form, e.g. divergence form or advective form, is considered, MOR does not necessarily yield a stable reduced system. On the other hand the skew-symmetric form consistently yields a robust reduced system over long time-integration, even when the reduced space does not represent the high-fidelity solution accurately. 
+Numerical experiments for the incompressible and compressible Euler equation confirm conservation of mass, momentum and energy for the reduced model with the skew-symmetric discretization. In contrast, when a non-skew-symmetric form, e.g. divergence form or advective form, is considered, MOR does not necessarily yield a stable reduced system. On the other hand the skew-symmetric form consistently yields a robust reduced system over long time-integration, even when the reduced space does not represent the high-fidelity solution accurately. 
 
 Finally, a MOR of a quasi-skew-symmetric form for the CVRC model is presented. Although this model is not in a full skew-symmetric form and an explicit Runge-Kutta method used for time-integration, we still recover a reduced model with excellent stability properties.
