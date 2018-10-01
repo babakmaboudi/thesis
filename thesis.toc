@@ -1,5 +1,6 @@
 \select@language {english}
-\contentsline {chapter}{Abstract (English/Fran\IeC {\c c}ais/Deutsch)}{iii}{chapter*.1}
+\contentsline {chapter}{Acknowledgements}{v}{chapter*.1}
+\contentsline {chapter}{Abstract (English/Fran\IeC {\c c}ais/Deutsch)}{vii}{chapter*.2}
 \select@language {french}
 \select@language {english}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
@@ -65,5 +66,5 @@
 \contentsline {subsection}{\numberline {7.3.4}Continuous Variable Resonance Combustor}{130}{subsection.7.3.4}
 \contentsline {section}{\numberline {7.4}Conclusions}{137}{section.7.4}
 \contentsline {chapter}{\numberline {8}Conclusions}{139}{chapter.8}
-\contentsline {chapter}{Bibliography}{151}{chapter*.35}
-\contentsline {chapter}{Curriculum Vitae}{153}{section*.36}
+\contentsline {chapter}{Bibliography}{151}{chapter*.36}
+\contentsline {chapter}{Curriculum Vitae}{153}{section*.37}
